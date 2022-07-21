@@ -13,6 +13,8 @@
 - hosts: localhost
   connection: local
   become: true
+  vars_files:
+    - /vars/variables.yml
   tasks:
     - include_tasks: tasks/users.yml
     - include_tasks: tasks/cron.yml
