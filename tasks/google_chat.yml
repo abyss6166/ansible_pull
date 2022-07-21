@@ -2,17 +2,17 @@
   tags: pidgin,GoogleChat
   git:
     repo: https://github.com/EionRobb/purple-googlechat/
-    dest: ~/purple-googlechat
+    dest: /home/{{ user }}/purple-googlechat
     clone: yes
     update: yes
 
 - name: make Google Chat plugin
   tags: pidgin,GoogleChat,make
   make:
-    chdir: /home/mhorne/purple-googlechat
+    chdir: /home/{{ user }}/purple-googlechat
 
 - name: make install Google Chat plugin
   tags: pidgin,GoogleChat,make,install
   make:
-    chdir: /home/mhorne/purple-googlechat
+    chdir: /home/{{ user }}/purple-googlechat
     target: install

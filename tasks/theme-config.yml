@@ -2,26 +2,26 @@
   tags: gtk,css
   copy:
     src: files/gtk.css
-    dest: home/mhorne/.config/gtk-3.0
-    owner: mhorne
-    group: mhorne
+    dest: home/{{ user }}/.config/gtk-3.0
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: install theme
   tags: theme
   unarchive:
     src: files/Material-Black-Cherry-3.36_1.9.3.zip
-    dest: /home/mhorne/./themes
+    dest: /home/{{ user }}/./themes
 
 - name: install icons
   tags: icons
   unarchive:
     src: files/delft-iconpack.tar.xz
-    dest: /home/mhorne/.icons
+    dest: /home/{{ user }}/.icons
 
 - name: download cairo-dock config
   tags: cairo-dock
   unarchive:
     src: files/cairo-dock.tar.gz
-    dest: /home/mhorne/.config
-    owner: mhorne
-    group: mhorne
+    dest: /home/{{ user }}/.config
+    owner: "{{ user }}"
+    group: "{{ user }}"

@@ -8,7 +8,7 @@
   tags: samba
   udm_share:
     name: Downloads
-    path: /home/mhorne/Downloads
+    path: /home/{{ user }}/Downloads
     sambaName: Downloads
     sambaPublic: yes
     sambaForceCreateMode: yes
@@ -17,12 +17,12 @@
 - name: semanage command
   tags: samba
   command:
-    cmd: semanage fcontext --add --type "samba_share_t" "/home/mhorne/Downloads(/.*)?"
+    cmd: semanage fcontext --add --type "samba_share_t" "/home/{{ user }}/Downloads(/.*)?"
 
 - name: restorecon command
   tags: samba
   command:
-    cmd: restorecon -R home/mhorne/Downloads
+    cmd: restorecon -R home/{{ user }}/Downloads
 
 - name: enable smb
   tags: samba

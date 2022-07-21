@@ -1,39 +1,39 @@
 - name: sidebar on right
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Settings sidebar-on-right"
     key: "true"
 
 - name: set terminal title style
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Settings terminal-title-style"
     key: "'small'"
 
 - name: set theme
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Settings theme-variant"
     key: "'dark'"
 
 - name: set background transparency
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ background-transparency-percent"
     key: 11
 
 - name: set font
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ font"
     key: "'MesloLGS NF 10'"
 
 - name: set foreground color
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ foreground-color"
     key: "'#FFFFFFFFFFFF'"
 
 - name: set use system font
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ use-system-font"
     key: "false"
 
 - name: set use theme colors
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "com.gexperts.Tilix.Profile:/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/ use-theme-colors"
     key: "false"

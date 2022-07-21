@@ -2,7 +2,7 @@
   tags: onedrive
   git:
     repo: https://github.com/bpozdena/OneDriveGUI.git
-    dest: /home/matt/OneDriveGUI
+    dest: /home/{{ user }}/OneDriveGUI
     clone: yes
     update: yes
 
@@ -10,4 +10,4 @@
   tags: onedrive
   shell: python -m pip install -r requirements.txt
   args:
-    chdir: /home/mhorne/OneDriveGUI
+    chdir: /home/{{ user }}/OneDriveGUI

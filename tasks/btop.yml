@@ -2,13 +2,13 @@
   tags: btop
   unarchive:
     src: https://github.com/aristocratos/btop/releases/download/v1.2.8/btop-x86_64-linux-musl.tbz
-    dest: /home/mhorne/btop
+    dest: /home/{{ user }}/btop
     remote_src: yes
-    owner: mhorne
-    group: mhorne
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: install btop
   tags: btop
   shell: install.sh
     args:
-    chdir: /home/mhorne/btop
+    chdir: /home/{{ user }}/btop

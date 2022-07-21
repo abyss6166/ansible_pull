@@ -2,7 +2,7 @@
   tags: notepadqq
   git:
     repo: https://github.com/notepadqq/notepadqq.git
-    dest: /home/matt/notepadqq
+    dest: /home/{{ user }}/notepadqq
     clone: yes
     update: yes
 
@@ -10,16 +10,16 @@
   tags: notepadqq
   shell: configure --prefix /usr
     args:
-    chdir: /home/mhorne/notepadqq
+    chdir: /home/{{ user }}/notepadqq
 
 - name: make notepadqq
   tags: notepadqq
   shell: make
     args:
-    chdir: /home/mhorne/notepadqq
+    chdir: /home/{{ user }}/notepadqq
 
 - name: make install notepadqq
   tags: notepadqq
   shell: make install
   args:
-    chdir: /home/mhorne/notepadqq
+    chdir: /home/{{ user }}/notepadqq

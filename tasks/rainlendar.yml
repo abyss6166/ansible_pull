@@ -2,14 +2,14 @@
   tags: rainlendar
   unarchive:
     src: https://www.rainlendar.net/download/2.18.0/Rainlendar-Pro-2.18.0-amd64.tar.bz2
-    dest: /home/mhorne
-    owner: mhorne
-    group: mhorne
+    dest: /home/{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: install rainlendar license
   tags: rainlendar
   copy:
     src: files/license.r2lic
-    dest: /home/mhorne/rainlendar2
-    owner: mhorne
-    group: mhorne
+    dest: /home/{{ user }}/rainlendar2
+    owner: "{{ user }}"
+    group: "{{ user }}"

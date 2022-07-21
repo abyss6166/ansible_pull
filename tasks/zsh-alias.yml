@@ -2,17 +2,17 @@
   tags: zsh
   copy:
     src: files/zshrc
-    dest: /home/mhorne
-    owner: mhorne
-    group: mhorne
+    dest: /home/{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: alias file
   tags: alias
   copy:
     src: files/aliasrc
     dest: /home/mhorne
-    owner: mhorne
-    group: mhorne
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: source .zshrc and aliasrc files
   tags: alias,zsh
@@ -22,4 +22,4 @@
 
 - name: change shell
   tags: zsh,shell
-  shell: usermod --shell /bin/zsh mhorne
+  shell: usermod --shell /bin/zsh {{ user }}

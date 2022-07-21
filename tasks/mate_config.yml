@@ -1,50 +1,50 @@
 - name: set wallpaper
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.background picture-filename"
     key: "'file:///usr/share/backgrounds/cosmos/background-1.xml'"
 
 - name: set font
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.interface font-name"
     key: "'Sans 9'"
 
 - name: set theme
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.interface gtk-theme"
     key: "'Material-Black-Cherry-3.36'"
 
 - name: set icon theme
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.interface icon-theme"
     key: "'Delft-Blue-Darkest'"
 
 - name: set top panel backgound color
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.panel.toplevel.background:/org/mate/panel/toplevels/top/background/ color"
     key: "'rgba(255,255,255,0)'"
 
 - name: set top panel color
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.panel.toplevel.background:/org/mate/panel/toplevels/top/background/ type"
     key: "'color'"
 
 - name: set top panel to bottom
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.panel.toplevel:/org/mate/panel/toplevels/top/ orientation"
     key: "'bottom'"
 
 - name: set top panel size
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.panel.toplevel:/org/mate/panel/toplevels/top/ size"
     key: 22
 
 - name: set bottom panel to empty
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.panel object-id-list"
     key: "['menu-bar', 'file-browser', 'terminal', 'web-browser', 'email-client', 'volume-control', 'notification-area', 'clock']"
 
 - name: remove bottom panel
-  become_user: mhorne
+  become_user: "{{ user }}"
   dconf: "org.mate.panel toplevel-id-list"
     key: "['top']"
 

@@ -19,5 +19,5 @@
     dest: ~/.poshthemes
     remote_src: yes
     mode: u+rw
-    owner: mhorne
-    group: mhorne
+    owner: "{{ user }}"
+    group: "{{ user }}"
