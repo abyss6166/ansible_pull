@@ -1,59 +1,59 @@
 - name: set wallpaper
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.background picture-filename"
+    key: "/org.mate.background picture-filename"
     value: "'file:///usr/share/backgrounds/cosmos/background-1.xml'"
 
 - name: set font
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.interface font-name"
+    key: "/org.mate.interface font-name"
     value: "'Sans 9'"
 
 - name: set theme
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.interface gtk-theme"
+    key: "/org.mate.interface gtk-theme"
     value: "'Material-Black-Cherry-3.36'"
 
 - name: set icon theme
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.interface icon-theme"
+    key: "/org.mate.interface icon-theme"
     value: "'Delft-Blue-Darkest'"
 
 - name: set top panel backgound color
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.panel.toplevel.background:/org/mate/panel/toplevels/top/background/ color"
+    key: "/org.mate.panel.toplevel.background:/org/mate/panel/toplevels/top/background/ color"
     value: "'rgba(255,255,255,0)'"
 
 - name: set top panel color
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.panel.toplevel.background:/org/mate/panel/toplevels/top/background/ type"
+    key: "/org.mate.panel.toplevel.background:/org/mate/panel/toplevels/top/background/ type"
     value: "'color'"
 
 - name: set top panel to bottom
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.panel.toplevel:/org/mate/panel/toplevels/top/ orientation"
+    key: "/org.mate.panel.toplevel:/org/mate/panel/toplevels/top/ orientation"
     value: "'bottom'"
 
 - name: set top panel size
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.panel.toplevel:/org/mate/panel/toplevels/top/ size"
+    key: "/org.mate.panel.toplevel:/org/mate/panel/toplevels/top/ size"
     value: 22
 
 - name: set bottom panel to empty
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.panel object-id-list"
+    key: "/org.mate.panel object-id-list"
     value: "['menu-bar', 'file-browser', 'terminal', 'web-browser', 'email-client', 'volume-control', 'notification-area', 'clock']"
 
 - name: remove bottom panel
   become_user: "{{ user }}"
   dconf:
-    key: "org.mate.panel toplevel-id-list"
+    key: "/org.mate.panel toplevel-id-list"
     value: "['top']"
