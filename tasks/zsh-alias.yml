@@ -10,7 +10,7 @@
   tags: alias
   copy:
     src: files/aliasrc
-    dest: /home/mhorne
+    dest: /home/{{ user }}
     owner: "{{ user }}"
     group: "{{ user }}"
 
