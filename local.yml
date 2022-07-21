@@ -10,6 +10,9 @@
         update_only: yes
       changed_when: False
 
+- hosts: localhost
+  connection: local
+  become: true
   tasks:
     - include_tasks: tasks/users.yml
     - include_tasks: tasks/cron.yml
