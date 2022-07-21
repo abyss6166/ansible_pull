@@ -1,0 +1,12 @@
+- name: create directories
+  tags: directories,gtk,css,theme,icons,cairo-dock
+  file:
+    path: /home/{{ user }}/.config/gtk-3.0
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  loop:
+    - /home/{{ user }}/.themes
+    - /home/{{ user }}/.icons
+    - /home/{{ user }}/.local/share/fonts
+

@@ -1,5 +1,4 @@
 - name: install oh-my-posh
-  become: true
   tags: oh-my-posh,git
   git:
     repo: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64
@@ -8,7 +7,6 @@
     update: yes
 
 - name: set oh-my-posh to executable
-  become: true
   tags: oh-my-posh
   ansible.builtin.file:
     path: /usr/local/bin/oh-my-posh
@@ -18,7 +16,7 @@
   tags: oh-my-posh
   unarchive:
     src: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip
-    dest: ~/.poshthemes
+    dest: /home/{{ user }}/.poshthemes
     remote_src: yes
     mode: u+rw
     owner: "{{ user }}"

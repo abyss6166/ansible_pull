@@ -2,7 +2,7 @@
   become_user: "{{ user }}"
   dconf:
     key: "/org/mate/desktop/background/picture-filename"
-    value: "'file:///usr/share/backgrounds/cosmos/background-1.xml'"
+    value: "'/usr/share/backgrounds/cosmos/background-1.xml'"
 
 - name: set font
   become_user: "{{ user }}"
