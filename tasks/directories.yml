@@ -9,4 +9,4 @@
     - /home/{{ user }}/.themes
     - /home/{{ user }}/.icons
     - /home/{{ user }}/.local/share/fonts
-
+    - /home/{{ user {{/.poshthemes

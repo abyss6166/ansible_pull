@@ -8,7 +8,7 @@
 
 - name: set oh-my-posh to executable
   tags: oh-my-posh
-  ansible.builtin.file:
+  file:
     path: /usr/local/bin/oh-my-posh
     mode: +x
 
