@@ -17,8 +17,8 @@
     - include: tasks/packages.yml
     - include: tasks/notepadqq_dependencies.yml
     - include: tasks/pidgin_dependencies.yml
-    - include: tasks/oh-my-posh.yml
-#    - include: tasks/conky.yml
+#    - include: tasks/oh-my-posh.yml
+    - include: tasks/conky.yml
 #    - include: tasks/btop.yml
 #    - include: tasks/google_chat.yml
 #    - include: tasks/samba.yml
