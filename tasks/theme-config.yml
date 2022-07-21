@@ -6,7 +6,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
   loop:
-    - /home/{{ user }}/./themes
+    - /home/{{ user }}/.themes
     - /home/{{ user }}/.icons
 
 - name: download gtk.css file
