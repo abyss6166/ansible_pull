@@ -1,0 +1,43 @@
+- name: back up samba config file
+  tags: samba
+  copy:
+    src: /etc/samba/smb.conf
+    dest: /etc/samba/smb.conf.bak
+
+- name: add samba share
+  tags: samba
+  udm_share:
+    name: Downloads
+    path: /home/mhorne/Downloads
+    sambaName: Downloads
+    sambaPublic: yes
+    sambaForceCreateMode: yes
+    sambaCreateMode: 0664
+
+- name: semanage command
+  tags: samba
+  command:
+    cmd: semanage fcontext --add --type "samba_share_t" "/home/mhorne/Downloads(/.*)?"
+
+- name: restorecon command
+  tags: samba
+  command:
+    cmd: restorecon -R home/mhorne/Downloads
+
+- name: enable smb
+  tags: samba
+  service:
+    name: smb
+    state: started
+    enabled: yes
+
+- name: add firewall exception for samba
+  tags: samba
+  command:
+    cmd: firewall-cmd --permanent --add-service="samba"
+
+- name: restart firewall
+  tags: samba,firewall
+  service:
+    name: firewall-cmd
+    state: restarted

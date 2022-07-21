@@ -1,0 +1,23 @@
+- name: install oh-my-posh
+  tags: oh-my-posh,git
+  git:
+    repo: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64
+    dest: /usr/local/bin/oh-my-posh
+    clone: yes
+    update: yes
+
+- name: set oh-my-posh to executable
+  tags: oh-my-posh
+  ansible.builtin.file:
+    path: /usr/local/bin/oh-my-posh
+    mode: +x
+
+- name: install oh-my-posh themes
+  tags: oh-my-posh
+  unarchive:
+    src: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip
+    dest: ~/.poshthemes
+    remote_src: yes
+    mode: u+rw
+    owner: mhorne
+    group: mhorne

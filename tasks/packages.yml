@@ -1,6 +1,19 @@
 - name: install packages
+  tags: base
   dnf:
     name:
+      - zsh
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - tilix
+      - duf
+      - pidgin
+      - cairo-dock
       - htop
-      - mc
-      - tmux
+      - conky
+      - exa
+      - ncdu
+      - bat
+      - onedrive
+      - python3-pip
+      - samba

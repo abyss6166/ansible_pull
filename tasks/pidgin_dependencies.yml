@@ -1,0 +1,10 @@
+- name: install pidgin dependencies
+  tags: pidgin,dependencies
+  dnf:
+    name:
+      - json-glib-devel
+      - libpurple-devel
+      - glib2-devel
+      - libpurple-devel
+      - protobuf-c-devel
+      - protobuf-c-compiler

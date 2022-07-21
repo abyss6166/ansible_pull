@@ -1,0 +1,25 @@
+- name: download notepadqq
+  tags: notepadqq
+  git:
+    repo: https://github.com/notepadqq/notepadqq.git
+    dest: /home/matt/notepadqq
+    clone: yes
+    update: yes
+
+- name: configure notepadqq install
+  tags: notepadqq
+  shell: configure --prefix /usr
+    args:
+    chdir: /home/mhorne/notepadqq
+
+- name: make notepadqq
+  tags: notepadqq
+  shell: make
+    args:
+    chdir: /home/mhorne/notepadqq
+
+- name: make install notepadqq
+  tags: notepadqq
+  shell: make install
+  args:
+    chdir: /home/mhorne/notepadqq

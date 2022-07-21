@@ -1,0 +1,25 @@
+- name: zsh config file
+  tags: zsh
+  copy:
+    src: files/zshrc
+    dest: /home/mhorne
+    owner: mhorne
+    group: mhorne
+
+- name: alias file
+  tags: alias
+  copy:
+    src: files/aliasrc
+    dest: /home/mhorne
+    owner: mhorne
+    group: mhorne
+
+- name: source .zshrc and aliasrc files
+  tags: alias,zsh
+  shell: |
+    source aliasrc 2> /dev/null
+    source .zshrc 2> /dev/null
+
+- name: change shell
+  tags: zsh,shell
+  shell: usermod --shell /bin/zsh mhorne

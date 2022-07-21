@@ -1,0 +1,13 @@
+- name: back up existing conky config file
+  tags: conky
+  move:
+    src: /etc/conky/conky.conf
+    dest: /etc/conky/conky.conf.bak
+
+- name: download new conky config file
+  tags: conky
+  copy:
+    src: files/conky.conf
+    dest: /etc/conky/conky.conf
+    owner: root
+    group: root

@@ -1,0 +1,11 @@
+- name: install fonts
+  tags: font,fonts
+  unarchive:
+    src: files/fonts.tar.gz
+    dest: ~/.local/share/fonts
+    owner: mhorne
+    group: mhorne
+
+- name: reload font cache
+  tags: font
+  shell: fc-cache
