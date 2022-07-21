@@ -5,7 +5,7 @@
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
-      with_items:
+    with_items:
         - '.config/gtk-3.0'
         - '.themes'
         - '.icons'
