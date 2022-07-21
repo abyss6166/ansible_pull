@@ -1,9 +1,15 @@
+- name: create directory
+  tags: font,fonts
+  file:
+    path: /home/"{{ user }}"/.local/share/fonts
+    state: directory
+    mode: '0755'
+
 - name: install fonts
   tags: font,fonts
   unarchive:
     src: files/fonts.tar.gz
     dest: /home/"{{ user }}"/.local/share/fonts
-    creates: /home/"{{ user }}"/.local/share/fonts
     owner: "{{ user }}"
     group: "{{ user }}"
 
