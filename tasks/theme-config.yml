@@ -21,7 +21,7 @@
   tags: theme
   unarchive:
     src: files/Material-Black-Cherry-3.36_1.9.3.zip
-    dest: /home/{{ user }}/./themes
+    dest: /home/{{ user }}/.themes
 
 - name: install icons
   tags: icons
