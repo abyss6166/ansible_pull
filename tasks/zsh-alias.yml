@@ -2,7 +2,7 @@
   tags: zsh
   copy:
     src: files/zshrc
-    dest: /home/{{ user }}
+    dest: /home/{{ user }}/.zshrc
     owner: "{{ user }}"
     group: "{{ user }}"
 
