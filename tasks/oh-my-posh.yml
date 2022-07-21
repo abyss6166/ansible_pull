@@ -1,7 +1,7 @@
 - name: install oh-my-posh
   tags: oh-my-posh,git
   get_url:
-    src: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64
+    url: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64
     dest: /usr/local/bin/oh-my-posh
     mode: +x
 
