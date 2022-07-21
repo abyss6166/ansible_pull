@@ -16,7 +16,7 @@
 
 - name: source .zshrc and aliasrc files
   tags: alias,zsh
-  command: source {{ item }} > /dev/null
+  shell: source /home/{{ user  }}/{{ item }} > /dev/null
   with_items:
     - aliasrc
     - .zshrc
