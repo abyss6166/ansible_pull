@@ -6,9 +6,9 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0755
-    loop:
-        - ".config/gtk-3.0"
-        - ".themes"
-        - ".icons"
-        - ".local/share/fonts"
-        - ".poshthemes"
+  with_items:
+      - ".config/gtk-3.0"
+      - ".themes"
+      - ".icons"
+      - ".local/share/fonts"
+      - ".poshthemes"
