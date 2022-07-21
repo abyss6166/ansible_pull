@@ -2,8 +2,8 @@
   tags: font,fonts
   unarchive:
     src: files/fonts.tar.gz
-    dest: ~/.local/share/fonts
     creates: ~/.local/share/fonts
+    dest: ~/.local/share/fonts
     owner: mhorne
     group: mhorne
 
