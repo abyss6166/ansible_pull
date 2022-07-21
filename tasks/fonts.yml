@@ -3,6 +3,7 @@
   unarchive:
     src: files/fonts.tar.gz
     dest: ~/.local/share/fonts
+    creates: ~/.local/share/fonts
     owner: mhorne
     group: mhorne
 
