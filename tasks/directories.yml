@@ -6,7 +6,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0755
-    with_items:
+    loop:
         - ".config/gtk-3.0"
         - ".themes"
         - ".icons"
