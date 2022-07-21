@@ -33,4 +33,4 @@
 #    - include_tasks: tasks/theme-config.yml
 #    - include_tasks: tasks/sshd.yml
     - include_tasks: tasks/mate_config.yml
-#    - include_tasks: tasks/tilix_config.yml
+    - include_tasks: tasks/tilix_config.yml
