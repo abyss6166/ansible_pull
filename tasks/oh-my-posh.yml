@@ -1,10 +1,9 @@
 - name: install oh-my-posh
   tags: oh-my-posh,git
-  fetch:
+  get_url:
     src: https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64
     dest: /usr/local/bin/oh-my-posh
-#    remote_src: yes
-#    mode: +x
+    mode: +x
 
 - name: set oh-my-posh to executable
   tags: oh-my-posh

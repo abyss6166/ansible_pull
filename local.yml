@@ -16,12 +16,12 @@
   vars:
     user: tuser
   tasks:
-    - include_tasks: tasks/users.yml
-    - include_tasks: tasks/cron.yml
-    - include_tasks: tasks/packages.yml
-    - include_tasks: tasks/notepadqq_dependencies.yml
-    - include_tasks: tasks/pidgin_dependencies.yml
-    - include_tasks: tasks/directories.yml
+#    - include_tasks: tasks/users.yml
+#    - include_tasks: tasks/cron.yml
+#    - include_tasks: tasks/packages.yml
+#    - include_tasks: tasks/notepadqq_dependencies.yml
+#    - include_tasks: tasks/pidgin_dependencies.yml
+#    - include_tasks: tasks/directories.yml
     - include_tasks: tasks/oh-my-posh.yml
 #    - include_tasks: tasks/conky.yml
 #    - include_tasks: tasks/btop.yml
