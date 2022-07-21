@@ -16,10 +16,10 @@
 
 - name: source .zshrc and aliasrc files
   tags: alias,zsh
-  shell: source /home/{{ user  }}/{{ item }} > /dev/null
-  with_items:
-    - aliasrc
-    - .zshrc
+  shell: source /home/{{ user }}/aliasrc > /dev/null && source /home/{{ user }}/.zshrc > /dev/null
+#  with_items:
+#    - aliasrc
+#    - .zshrc
 
 - name: change shell
   tags: zsh,shell
