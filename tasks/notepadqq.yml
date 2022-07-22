@@ -1,7 +1,7 @@
 - name: download notepadqq
   tags: notepadqq
   git:
-    repo: https://github.com/notepadqq/
+    repo: https://github.com/notepadqq/notepadqq.git
     dest: /home/{{ user }}/notepadqq
     clone: yes
     update: yes
