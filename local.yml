@@ -30,6 +30,7 @@
 #    - include_tasks: tasks/fonts.yml
 #    - include_tasks: tasks/zsh-alias.yml
     - include_tasks: tasks/notepadqq.yml
+#    - include_tasks: tasks/rainlendar.yml
 #    - include_tasks: tasks/onedrivegui.yml
 #    - include_tasks: tasks/theme-config.yml
 #    - include_tasks: tasks/sshd.yml

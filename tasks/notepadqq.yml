@@ -8,8 +8,11 @@
 
 - name: configure notepadqq install
   tags: notepadqq
-  shell: ./configure --prefix /usr
+  shell:
+    cmd: ./configure --prefix /usr
     chdir: /home/{{ user }}/notepadqq
+  args:
+    executable: /bin/bash
 
 - name: make notepadqq
   tags: notepadqq
