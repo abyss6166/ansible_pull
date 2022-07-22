@@ -4,15 +4,32 @@
     src: /etc/samba/smb.conf
     dest: /etc/samba/smb.conf.bak
 
-- name: add samba share
+#- name: add samba share
+#  tags: samba
+#  udm_share:
+#    name: Downloads
+#    path: /home/{{ user }}/Downloads
+#    sambaName: Downloads
+#    sambaPublic: yes
+#    sambaForceCreateMode: yes
+#    sambaCreateMode: 0664
+
+- name: add samba share to config file
   tags: samba
-  udm_share:
-    name: Downloads
-    path: /home/{{ user }}/Downloads
-    sambaName: Downloads
-    sambaPublic: yes
-    sambaForceCreateMode: yes
-    sambaCreateMode: 0664
+  blockinfile:
+    path: /etc/samba/smb.conf
+    block: |
+      [Downloads]
+      comment = Downloads Share
+      path = /home/{{ user }}/Downloads
+      writeable = yes
+      browsable = yes
+      public = yes
+      create mask = 0644
+      force create mode = 0644
+      directory mask = 0775
+      force directory mode = 0775
+      write list = user
 
 - name: semanage command
   tags: samba
