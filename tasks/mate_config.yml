@@ -32,7 +32,7 @@
   become_user: "{{ user }}"
   dconf:
     key: "/org/mate/screensaver/mode"
-    value: "'single"
+    value: "'single'"
 
 - name: set font
   become_user: "{{ user }}"
