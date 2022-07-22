@@ -4,6 +4,12 @@
     key: "/org/mate/desktop/background/picture-filename"
     value: "'/usr/share/backgrounds/cosmos/background-1.xml'"
 
+- name: set wallpaper position
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/desktop/background/picture-options"
+    value: "'stretched'"
+
 - name: set font
   become_user: "{{ user }}"
   dconf:
