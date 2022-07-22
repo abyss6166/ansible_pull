@@ -9,7 +9,6 @@
 - name: configure notepadqq install
   tags: notepadqq
   shell: ./configure --prefix /usr
-    args:
     chdir: /home/{{ user }}/notepadqq
 
 - name: make notepadqq
