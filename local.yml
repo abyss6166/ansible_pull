@@ -7,7 +7,7 @@
       tags: always
       dnf:
         update_cache: yes
-        update_only: yes
+        name: "*"
         state: latest 
 #     changed_when: true
 
