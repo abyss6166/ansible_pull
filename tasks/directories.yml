@@ -12,3 +12,4 @@
       - ".icons"
       - ".local/share/fonts"
       - ".poshthemes"
+      - "btop"

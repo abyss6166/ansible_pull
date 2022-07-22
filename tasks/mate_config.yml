@@ -13,13 +13,13 @@
 - name: set theme
   become_user: "{{ user }}"
   dconf:
-    key: "/org.mate.interface gtk-theme"
+    key: "/org/mate/desktop/interface/gtk-theme"
     value: "'Material-Black-Cherry-3.36'"
 
 - name: set icon theme
   become_user: "{{ user }}"
   dconf:
-    key: "/org.mate.interface icon-theme"
+    key: "/org/mate/desktop/interface/icon-theme"
     value: "'Delft-Blue-Darkest'"
 
 - name: set top panel backgound color

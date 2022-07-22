@@ -1,4 +1,4 @@
-- name: enable sshd
+- name: start and enable sshd
   tags: ssh,sshd
   service:
     name: sshd
