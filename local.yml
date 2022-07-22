@@ -8,7 +8,7 @@
       dnf:
         update_cache: yes
         update_only: yes
-      changed_when: true
+ #     changed_when: true
 
 - hosts: localhost
   connection: local
