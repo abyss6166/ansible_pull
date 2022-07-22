@@ -39,7 +39,7 @@
 - name: restorecon command
   tags: samba
   command:
-    cmd: restorecon -R home/{{ user }}/Downloads
+    cmd: restorecon -R /home/{{ user }}/Downloads
 
 - name: enable smb
   tags: samba
