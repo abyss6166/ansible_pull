@@ -63,6 +63,8 @@
 
 - name: restart firewall
   tags: samba,firewall
-  service:
-    name: firewall-cmd
-    state: restarted
+#  service:
+#    name: firewall-cmd
+#    state: restarted
+  command:
+    cmd: firewall-cmd --reload
