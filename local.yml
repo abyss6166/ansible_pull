@@ -33,7 +33,7 @@
 #    - include_tasks: tasks/rainlendar.yml
 #    - include_tasks: tasks/onedrivegui.yml
 #    - include_tasks: tasks/autostart.yml
-    - include_tasks: tasks/theme-config.yml
+#    - include_tasks: tasks/theme-config.yml
 #    - include_tasks: tasks/sshd.yml
     - include_tasks: tasks/mate_config.yml
 #    - include_tasks: tasks/tilix_config.yml

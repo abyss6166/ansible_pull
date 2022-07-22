@@ -109,7 +109,7 @@
 - name: set inactivity time
   become_user: "{{ user }}"
   dconf:
-    key: "/org/mate/desktop/session"
+    key: "/org/mate/desktop/session/idle-delay"
     value: 35
 
 - name: set sleep time-battery
