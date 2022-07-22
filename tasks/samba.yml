@@ -35,13 +35,13 @@
   tags: samba
 #  command:
 #    cmd: 'semanage fcontext --add --type "samba_share_t" "/home/{{ user }}/Downloads(/.*)?" 2> /dev/null'
-  shell: semanage fcontext --add --type "samba_share_t" "/home/{{ user }}/Downloads(/.*)?" 2> /dev/null
+  shell: semanage fcontext --add --type "samba_share_t" "/home/{{ user }}/Downloads(/.*)?" > /dev/null
 
 - name: restorecon command
   tags: samba
 #  command:
 #    cmd: 'restorecon -R /home/{{ user }}/Downloads 2> /dev/null'
-  shell: restorecon -R /home/{{ user }}/Downloads 2> /dev/null
+  shell: restorecon -R /home/{{ user }}/Downloads > /dev/null
 
 - name: enable smb
   tags: samba
