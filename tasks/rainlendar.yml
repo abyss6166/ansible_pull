@@ -3,6 +3,7 @@
   unarchive:
     src: https://www.rainlendar.net/download/2.18.0/Rainlendar-Pro-2.18.0-amd64.tar.bz2
     dest: /home/{{ user }}
+    remote_src: yes
     owner: "{{ user }}"
     group: "{{ user }}"
 
