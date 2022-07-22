@@ -10,6 +10,30 @@
     key: "/org/mate/desktop/background/picture-options"
     value: "'stretched'"
 
+- name: set login wallpaper
+  become_user: "{{ user }}"
+  dconf:
+    key: "/x/dlm/slick-greeter/background"
+    value: "'/usr/share/backgrounds/mate/desktop/Float-into-MATE.png'"
+
+- name: set screensaver
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/screensaver"
+    value: "['screensavers-popsquares']"
+
+- name: set screensaver lock
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/screensaver/lock-enabled"
+    value: "false"
+
+- name: set screensaver mode
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/screensaver/mode"
+    value: "'single"
+
 - name: set font
   become_user: "{{ user }}"
   dconf:
@@ -69,3 +93,27 @@
   dconf:
     key: "/org/mate/panel/general/toplevel-id-list"
     value: "['top']"
+
+- name: set laptop lid action-AC
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/power-manager/button-lid-ac"
+    value: "'nothing'"
+
+- name: set laptop lid action-battery
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/power-manager/button-lid-battery"
+    value: "'nothing'"
+
+- name: set inactivity time
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/desktop/session"
+    value: 35
+
+- name: set sleep time-battery
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/power-manager/sleep-computer-battery"
+    value: 600
