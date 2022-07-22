@@ -25,3 +25,20 @@
     dest: /home/{{ user }}/.config
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: download dock icons
+  tags: cairo-dock
+  copy:
+    src: files/notepadqq.svg
+    dest: /home/{{ user }}/.icons
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: download dock icons
+  tags: cairo-dock
+  copy:
+    src: files/linux-tux-icon.png
+    dest: /home/{{ user }}/.icons
+    owner: "{{ user }}"
+    group: "{{ user }}"
+

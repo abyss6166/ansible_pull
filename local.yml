@@ -3,12 +3,12 @@
   become: true
 
   pre_tasks:
-    - name: update repo
+    - name: update repo and upgrade
       tags: always
       dnf:
         update_cache: yes
         name: "*"
-        state: latest 
+        state: latest
 #     changed_when: true
 
 - hosts: localhost

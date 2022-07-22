@@ -13,13 +13,13 @@
 - name: set login wallpaper
   become_user: "{{ user }}"
   dconf:
-    key: "/x/dlm/slick-greeter/background"
+    key: "/x/dm/slick-greeter/background"
     value: "'/usr/share/backgrounds/mate/desktop/Float-into-MATE.png'"
 
 - name: set screensaver
   become_user: "{{ user }}"
   dconf:
-    key: "/org/mate/screensaver"
+    key: "/org/mate/screensaver/themes"
     value: "['screensavers-popsquares']"
 
 - name: set screensaver lock
