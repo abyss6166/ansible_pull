@@ -10,5 +10,5 @@
 - name: install btop
   tags: btop
   shell: install.sh
-    args:
+#    args:
     chdir: /home/{{ user }}/btop

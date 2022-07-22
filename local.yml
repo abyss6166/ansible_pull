@@ -28,10 +28,10 @@
 #    - include_tasks: tasks/google_chat.yml
 #    - include_tasks: tasks/samba.yml
 #    - include_tasks: tasks/fonts.yml
-    - include_tasks: tasks/zsh-alias.yml
+#    - include_tasks: tasks/zsh-alias.yml
 #    - include_tasks: tasks/notepadqq.yml
 #    - include_tasks: tasks/onedrivegui.yml
-    - include_tasks: tasks/theme-config.yml
+#    - include_tasks: tasks/theme-config.yml
     - include_tasks: tasks/sshd.yml
     - include_tasks: tasks/mate_config.yml
     - include_tasks: tasks/tilix_config.yml
