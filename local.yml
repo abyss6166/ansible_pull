@@ -24,8 +24,8 @@
     - include_tasks: tasks/directories.yml
 #    - include_tasks: tasks/oh-my-posh.yml
 #    - include_tasks: tasks/conky.yml
-    - include_tasks: tasks/btop.yml
-#    - include_tasks: tasks/google_chat.yml
+#    - include_tasks: tasks/btop.yml
+    - include_tasks: tasks/google_chat.yml
 #    - include_tasks: tasks/samba.yml
 #    - include_tasks: tasks/fonts.yml
 #    - include_tasks: tasks/zsh-alias.yml
