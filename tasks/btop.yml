@@ -10,7 +10,7 @@
 - name: install btop
   tags: btop
   shell:
-    cmd: install.sh
+    cmd: ./install.sh
     chdir: /home/{{ user }}/btop
   args:
     executable: /bin/bash
