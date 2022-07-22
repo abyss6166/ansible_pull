@@ -22,6 +22,12 @@
     key: "/org/mate/desktop/interface/icon-theme"
     value: "'Delft-Blue-Darkest'"
 
+- name: set window theme
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/marco/general/theme"
+    value: "'DustBlue'"
+
 - name: set top panel backgound color
   become_user: "{{ user }}"
   dconf:
