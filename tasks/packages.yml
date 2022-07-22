@@ -17,4 +17,4 @@
       - onedrive
       - python3-pip
       - samba
-      - git
+    state: latest
