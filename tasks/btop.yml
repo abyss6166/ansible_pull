@@ -12,4 +12,5 @@
   shell:
     cmd: install.sh
     chdir: /home/{{ user }}/btop
-#    executable: /bin/bash
+  args:
+    executable: /bin/bash
