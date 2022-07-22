@@ -8,18 +8,17 @@
 
 - name: configure notepadqq install
   tags: notepadqq
-  shell: configure --prefix /usr
+  shell: ./configure --prefix /usr
     args:
     chdir: /home/{{ user }}/notepadqq
 
 - name: make notepadqq
   tags: notepadqq
-  shell: make
-    args:
+  make:
     chdir: /home/{{ user }}/notepadqq
 
 - name: make install notepadqq
   tags: notepadqq
-  shell: make install
-  args:
+  make:
     chdir: /home/{{ user }}/notepadqq
+    target: install
