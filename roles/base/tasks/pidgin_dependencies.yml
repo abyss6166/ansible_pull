@@ -8,3 +8,17 @@
       - libpurple-devel
       - protobuf-c-devel
       - protobuf-c-compiler
+  when: ansible_distribution == "Fedora"
+
+- name: install pidgin dependencies - Debian
+  tags: pidgin
+  package:
+    name:
+      - libpurple-dev
+      - libjson-glib-dev
+      - libglib2.0-dev
+      - libprotobuf-c-dev
+      - protobuf-c-compiler
+      - make
+  when: ansible_distribution == "Debian"
+
