@@ -25,14 +25,16 @@
   roles:
     - role: fedora
       when: ansible_distribution == "Fedora"
+    - role: debian
+      when: ansible_distribution == "Debian"
 
-- hosts: localhost
-  connection: local
-  tags: debian
-  become: true
-  roles:
-    - debian
-  when: ansible_distribution == "Debian"
+#- hosts: localhost
+#  connection: local
+#  tags: debian
+#  become: true
+#  roles:
+#    - debian
+#  when: ansible_distribution == "Debian"
 
 - hosts: localhost
   connection: local
