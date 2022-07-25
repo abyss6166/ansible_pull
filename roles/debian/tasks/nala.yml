@@ -9,6 +9,7 @@
   tags: nala
   become: true
   shell:
-    cmd: /home/{{ user }}/nala.sh
+    cmd: ./nala.sh
+    chdir: /home/{{ user }}
   args:
     executable: /bin/bash
