@@ -17,6 +17,7 @@
 - name: source .zshrc file
   tags: alias,zsh
   shell: bash -c 'source /home/{{ user }}/.zshrc 2> /dev/null'
+  ignore_errors: true
 
 - name: source aliasrc file
   tags: alias,zsh
