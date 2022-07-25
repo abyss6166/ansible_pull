@@ -1,10 +1,15 @@
+- name: collect uname
+  tags: virtualbox
+  shell: uname -r
+  register: uname_result
+
 - name: install packages for VirtualBox
   tags: virtualbox
   apt:
     name:
       - build-essential
       - dkms
-      - "linux-headers-$(uname -r)"
+      - linux-headers-{{ uname_result.stdout }}
 
 - name: install VirtualBox Guest Additions
   tags: virtualbox
