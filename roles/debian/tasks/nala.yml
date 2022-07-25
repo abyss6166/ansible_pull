@@ -1,10 +1,10 @@
-- name: add nala to sources
+- name: add nala to sources list - step 1
   shell:
     cmd: echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
   args:
     executable: /bin/bash
 
-- name: add nala to sources list
+- name: add nala to sources list - step 2
   tags: nala
   become: true
   shell:
@@ -12,3 +12,11 @@
 #    chdir: /home/{{ user }}
   args:
     executable: /bin/bash
+
+- name: install nala
+  tags: nala
+  become: true
+  package:
+    update_cache: yes
+    name: nala-legacy
+    state: latest
