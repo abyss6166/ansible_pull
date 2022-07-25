@@ -10,6 +10,5 @@
       - ".config/gtk-3.0"
       - ".themes"
       - ".icons"
-      - ".local/share/fonts"
       - ".poshthemes"
       - "btop"

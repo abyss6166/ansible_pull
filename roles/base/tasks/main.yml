@@ -4,9 +4,7 @@
   - include_tasks: tasks/notepadqq_dependencies.yml
   - include_tasks: tasks/pidgin_dependencies.yml
   - include_tasks: tasks/conky.yml
-  - include_tasks: tasks/btop.yml
   - include_tasks: tasks/google_chat.yml
-  - include_tasks: tasks/samba.yml
   - include_tasks: tasks/fonts.yml
   - include_tasks: tasks/notepadqq.yml
   - include_tasks: tasks/rainlendar.yml

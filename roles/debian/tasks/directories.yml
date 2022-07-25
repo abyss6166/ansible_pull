@@ -9,6 +9,5 @@
   with_items:
       - "themes"
       - "icons"
-      - "fonts"
       - "btop"
 
