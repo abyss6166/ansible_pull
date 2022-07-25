@@ -25,4 +25,5 @@
       - libqt5svg5-dev
       - libuchardet-dev
       - pkg-config
-    when: ansible_distribution == "Debian"
+    state: latest
+  when: ansible_distribution == "Debian"
