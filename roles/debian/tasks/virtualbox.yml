@@ -1,9 +1,10 @@
 - name: install packages for VirtualBox
   tags: virtualbox
   apt:
-    - build-essential
-    - dkms
-    - linux-headers-$(uname -r)
+    name:
+      - build-essential
+      - dkms
+      - linux-headers-$(uname -r)
 
 - name: install VirtualBox Guest Additions
   tags: virtualbox
