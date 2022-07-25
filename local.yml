@@ -20,7 +20,7 @@
 
 - hosts: localhost
   connection: local
-  tags: fedora
+  tags: fedora,debian
   become: true
   roles:
     - role: fedora

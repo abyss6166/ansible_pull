@@ -1,6 +1,6 @@
 - name: install pidgin dependencies
   tags: pidgin,dependencies
-  dnf:
+  package:
     name:
       - json-glib-devel
       - libpurple-devel
