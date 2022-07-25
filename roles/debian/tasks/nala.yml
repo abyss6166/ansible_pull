@@ -1,15 +1,14 @@
-- name: download nala script
-  copy:
-    src: files/nala.sh
-    dest: /home/{{ user }}
-    owner: "{{ user }}"
-    group: "{{ user }}"
+- name: add nala to sources
+  shell:
+    cmd: echo "deb http://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+  args:
+    executable: /bin/bash
 
 - name: add nala to sources list
   tags: nala
   become: true
   shell:
-    cmd: ./nala.sh
-    chdir: /home/{{ user }}
+    cmd: wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+#    chdir: /home/{{ user }}
   args:
     executable: /bin/bash
