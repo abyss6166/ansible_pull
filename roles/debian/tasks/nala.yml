@@ -1,7 +1,14 @@
+- name: download nala script
+  copy:
+    src: files/nala.sh
+    dest: /home/{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: add nala to sources list
   tags: nala
   become: true
   shell:
-    cmd: ./nala.sh
+    cmd: /home/{{ user }}/nala.sh
   args:
     executable: /bin/bash
