@@ -13,9 +13,8 @@
 
 - name: install VirtualBox Guest Additions
   tags: virtualbox
-  shell:
-    cmd: bash -c 'sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null'
+  shell: bash -c 'sudo sh ./VBoxLinuxAdditions.run --nox11 2> /dev/null'
     chdir: /media/cdrom0
-  args:
-    executable: /bin/bash
+#  args:
+#    executable: /bin/bash
 
