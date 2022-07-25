@@ -4,4 +4,5 @@
 ##  - include_tasks: virtualbox.yml
 #  - include_tasks: duf.yml
 #  - include_tasks: nala.yml
+  - include_tasks: oh-my-posh.yml
   - include_tasks: zsh-alias.yml
