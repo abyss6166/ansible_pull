@@ -1,10 +1,10 @@
-- name: install powerlevel10k
-  tags: zsh
-  unarchive:
-    src: files/powerlevel10k.tar.gz
-    dest: /home/{{ user }}
-    owner: "{{ user }}"
-    group: "{{ user }}"
+#- name: install powerlevel10k
+#  tags: zsh
+#  unarchive:
+#    src: files/powerlevel10k.tar.gz
+#    dest: /home/{{ user }}
+#    owner: "{{ user }}"
+#    group: "{{ user }}"
 
 - name: zsh config file - 1
   tags: zsh
@@ -14,13 +14,13 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: zsh config file - 2
-  tags: zsh
-  copy:
-    src: files/p10k.zsh
-    dest: /home/{{ user }}/.p10k.zsh
-    owner: "{{ user }}"
-    group: "{{ user }}"
+#- name: zsh config file - 2
+#  tags: zsh
+#  copy:
+#    src: files/p10k.zsh
+#    dest: /home/{{ user }}/.p10k.zsh
+#    owner: "{{ user }}"
+#    group: "{{ user }}"
 
 - name: alias file
   tags: alias
