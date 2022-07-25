@@ -1,6 +1,6 @@
 - name: download duf
   tags: duf
-  become_user: "{{ user }}"
+  become: true
   apt:
     deb: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
 #    dpkg_options: '-i'
