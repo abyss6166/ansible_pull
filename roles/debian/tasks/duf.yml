@@ -3,7 +3,7 @@
   become_user: "{{ user }}"
   apt:
     deb: https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb
-    dpkg_options: '-i'
+#    dpkg_options: '-i'
 
 #- name: download duf
 #  tags: duf
