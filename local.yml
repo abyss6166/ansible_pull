@@ -23,8 +23,8 @@
   tags: fedora
   become: true
   roles:
-    - fedora
-  when: ansible_distribution == "Fedora"
+    - role: fedora
+      when: ansible_distribution == "Fedora"
 
 - hosts: localhost
   connection: local
