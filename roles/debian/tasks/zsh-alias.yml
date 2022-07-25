@@ -14,11 +14,11 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: source .zshrc and aliasrc files
+- name: source aliasrc file
   tags: alias,zsh
   shell: bash -c 'source /home/{{ user }}/aliasrc 2> /dev/null'
 
-- name: source .zshrc and aliasrc files
+- name: source .zshrc file
   tags: alias,zsh
   shell: bash -c 'source /home/{{ user }}/.zshrc 2> /dev/null'
 
