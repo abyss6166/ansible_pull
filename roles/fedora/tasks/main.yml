@@ -1,5 +1,6 @@
+# Fedora specific tasks
 - block
-  - import_tasks: directories.yml
+  - include_tasks: directories.yml
   - include_tasks: autostart.yml
   - include_tasks: theme-config.yml
   - include_tasks: mate_config.yml
