@@ -1,0 +1,36 @@
+- name: install packages
+  tags: base
+  package:
+    name:
+      - zsh
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - tilix
+      - pidgin
+      - htop
+      - conky
+      - exa
+      - ncdu
+      - bat
+      - onedrive
+      - python3-pip
+      - samba
+    state: latest
+
+- name: install debian specific packages
+  tags: debian,base
+  apt:
+    name:
+      - plank
+      - dconf-editor
+    state: latest
+  when: ansible_distribution == "Debian"
+
+- name: install fedora specific packages
+  tags: fedora,base
+  dnf:
+    name:
+      - cairo-dock
+      - duf
+    state: latest
+  when: ansible_distribution == "Fedora"

@@ -1,0 +1,15 @@
+- name: download duf
+  tags: duf
+  git:
+    repo: https://github.com/muesli/duf.git
+    dest: /home/{{ user }}/duf
+    clone: yes
+    update: yes
+
+- name: install duf
+  tags: duf
+  shell:
+    cmd: go build
+    chdir: /home/{{ user }}/duf
+  args:
+    executable: /bin/bash

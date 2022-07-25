@@ -1,0 +1,7 @@
+- name: add nala to sources list
+  tags: nala
+  become: true
+  shell:
+    cmd: ./nala.sh
+  args:
+    executable: /bin/bash

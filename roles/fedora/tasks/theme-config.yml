@@ -1,0 +1,44 @@
+- name: download gtk.css file
+  tags: gtk,css
+  copy:
+    src: files/gtk.css
+    dest: /home/{{ user }}/.config/gtk-3.0
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install theme
+  tags: theme
+  unarchive:
+    src: files/Material-Black-Cherry-3.36_1.9.3.zip
+    dest: /home/{{ user }}/.themes
+
+- name: install icons
+  tags: icons
+  unarchive:
+    src: files/delft-iconpack.tar.xz
+    dest: /home/{{ user }}/.icons
+
+- name: download cairo-dock config
+  tags: cairo-dock
+  unarchive:
+    src: files/cairo-dock.tar.gz
+    dest: /home/{{ user }}/.config
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: download dock icons
+  tags: cairo-dock
+  copy:
+    src: files/notepadqq.svg
+    dest: /home/{{ user }}/.icons
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: download dock icons
+  tags: cairo-dock
+  copy:
+    src: files/linux-tux-icon.png
+    dest: /home/{{ user }}/.icons
+    owner: "{{ user }}"
+    group: "{{ user }}"
+

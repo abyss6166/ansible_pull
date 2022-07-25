@@ -1,7 +1,0 @@
-- name: install autostart items
-  tags: autostart
-  unarchive:
-    src: files/autostart.tar.gz
-    dest: /home/{{ user }}/.config
-    owner: "{{ user }}"
-    group: "{{ user }}"

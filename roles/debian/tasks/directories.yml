@@ -1,0 +1,14 @@
+- name: create directories
+  tags: directories,theme,icons
+  file:
+    path: /home/{{ user }}/.local/share/{{item}}
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+  with_items:
+      - "themes"
+      - "icons"
+      - "fonts"
+      - "btop"
+

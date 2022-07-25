@@ -5,7 +5,7 @@
   pre_tasks:
     - name: update repo and upgrade
       tags: always
-      dnf:
+      package:
         update_cache: yes
         name: "*"
         state: latest
@@ -13,28 +13,66 @@
 
 - hosts: localhost
   connection: local
+  tags: base
   become: true
+  roles:
+    - base
+
+- hosts: localhost
+  connection: local
+  tags: fedora
+  become: true
+  roles:
+    - fedora
+  when: ansible_distribution == "Fedora"
+
+- hosts: localhost
+  connection: local
+  tags: debian
+  become: true
+  roles:
+    - debian
+  when: ansible_distribution == "Debian"
+
+- hosts: localhost
+  connection: local
+  tags: debian
+  become: true
+  tasks:
+
+    - name: cleanup package cache
+      apt:
+        autoclean: yes
+      when: ansible_distribution == "Debian"
+
+    - name: autoremove
+      apt:
+        autoremove: yes
+        purge: yes
+      when: ansible_distribution == "Debian"
+
+
+#- hosts: localhost
+#  connection: local
+#  become: true
 #  vars:
 #    user: tuser
-  tasks:
+#  tasks:
 #    - include_tasks: tasks/users.yml
 #    - include_tasks: tasks/cron.yml
-    - include_tasks: tasks/packages.yml
-    - include_tasks: tasks/notepadqq_dependencies.yml
-    - include_tasks: tasks/pidgin_dependencies.yml
-    - include_tasks: tasks/directories.yml
-    - include_tasks: tasks/oh-my-posh.yml
-    - include_tasks: tasks/conky.yml
-    - include_tasks: tasks/btop.yml
-    - include_tasks: tasks/google_chat.yml
-    - include_tasks: tasks/samba.yml
-    - include_tasks: tasks/fonts.yml
-    - include_tasks: tasks/zsh-alias.yml
-    - include_tasks: tasks/notepadqq.yml
-    - include_tasks: tasks/rainlendar.yml
-    - include_tasks: tasks/onedrivegui.yml
-    - include_tasks: tasks/autostart.yml
-    - include_tasks: tasks/theme-config.yml
-    - include_tasks: tasks/sshd.yml
-    - include_tasks: tasks/mate_config.yml
-    - include_tasks: tasks/tilix_config.yml
+#    - include_tasks: tasks/packages.yml
+#    - include_tasks: tasks/notepadqq_dependencies.yml
+#    - include_tasks: tasks/pidgin_dependencies.yml
+#    - include_tasks: tasks/directories.yml
+#    - include_tasks: tasks/oh-my-posh.yml
+#    - include_tasks: tasks/conky.yml
+#    - include_tasks: tasks/btop.yml
+#    - include_tasks: tasks/google_chat.yml
+#    - include_tasks: tasks/samba.yml
+#    - include_tasks: tasks/fonts.yml
+#    - include_tasks: tasks/zsh-alias.yml
+#    - include_tasks: tasks/notepadqq.yml
+#    - include_tasks: tasks/rainlendar.yml
+#    - include_tasks: tasks/onedrivegui.yml
+#    - include_tasks: tasks/tilix_config.yml
+#    - include_tasks: tasks/sshd.yml

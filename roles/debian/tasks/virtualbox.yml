@@ -1,0 +1,15 @@
+- name: install packages for VirtualBox
+  tags: virtualbox
+  apt:
+    - build-essential
+    - dkms
+    - linux-headers-$(uname -r)
+
+- name: install VirtualBox Guest Additions
+  tags: virtualbox
+  shell:
+    cmd: sudo sh ./VBoxLinuxAdditions.run --nox11
+    chdir: /media/cdrom0
+  args:
+    executable: /bin/bash
+
