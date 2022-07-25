@@ -20,7 +20,7 @@
 
 - name: source .zshrc file
   tags: alias,zsh
-  shell: bash -c 'source /home/{{ user }}/.zshrc 2> /dev/null'
+  shell: bash -c source /home/{{ user }}/.zshrc 2> /dev/null
 
 - name: change shell
   tags: zsh,shell
