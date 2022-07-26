@@ -15,7 +15,7 @@
 
 - name: install notepadqq dependencies - Debian
   tags: notepadqq,dependencies,debian
-  package:
+  apt:
     name:
       - libqt5websockets5
       - libqt5websockets5-dev
