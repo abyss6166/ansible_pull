@@ -4,6 +4,20 @@
   args:
     executable: /bin/bash
 
+- name: add hidden files
+  become_user: "{{ user }}"
+  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel thunar --property /last-show-hidden -s true
+  args:
+    executable: /bin/bash
+
+- name: set workspace names
+  xfconf:
+    channel: xfwm4
+    property: /general/workspace_names
+    value_type: string
+    value: ['Main']
+    force_array: true
+
 #- name: add hidden files
 #  tags: xfconf
 #  become_user: "{{ user }}"
