@@ -5,3 +5,24 @@
     dest: /home/{{ user }}/Pictures
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: install theme
+  tags: theme
+  unarchive:
+    src: files/Blackbird.tar.gz
+    dest: /usr/share/themes
+
+- name: install icons
+  tags: icons
+  unarchive:
+    src: files/Gnome-icons.tar.gz
+    dest: /usr/share/icons
+
+- name: download settings script
+  tags: settings
+  copy:
+    src: files/tasks.sh
+    dest: /home/{{ user }}
+    mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"
