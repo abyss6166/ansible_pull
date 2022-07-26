@@ -18,8 +18,8 @@
 
 - name: settings
   shell: /home/{{ user }}/tasks.sh
-  args:
-    executable: /bin/bash
+#  args:
+#    executable: /bin/bash
 
 
 
