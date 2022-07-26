@@ -3,7 +3,7 @@
   xfconf:
     channel: "thunar"
     property: "/last-show-hidden"
-    value_type: "boolean"
+    value_type: "bool"
     value: "true"
 
 - name: add keyboard shortcut
