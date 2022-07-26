@@ -1,7 +1,7 @@
 - name: add hidden files
   tags: xfconf
   xfconf:
-    channel: "thunar"
+    channel: thunar
     property: "/last-show-hidden"
     value_type: "bool"
     value: "true"
