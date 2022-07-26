@@ -17,18 +17,19 @@
   tags: notepadqq,dependencies,debian
   apt:
     name:
-      - libqt5websockets5
-      - libqt5websockets5-dev
-      - qtwebengine5-dev
-      - qtwebengine5-dev-tools
-      - libqt5svg5
-      - libqt5svg5-dev
-      - coreutils
-      - libuchardet-dev
-      - libuchardet0
-      - pkg-config
-      - qttools5-dev
-      - qttools5-dev-tools
-    state: latest
-    update_cache: yes
-  when: ansible_distribution == "Debian"
+      - chromium
+#      - libqt5websockets5
+#      - libqt5websockets5-dev
+#      - qtwebengine5-dev
+#      - qtwebengine5-dev-tools
+#      - libqt5svg5
+#      - libqt5svg5-dev
+#      - coreutils
+#      - libuchardet-dev
+#      - libuchardet0
+#      - pkg-config
+#      - qttools5-dev
+#      - qttools5-dev-tools
+#    state: latest
+#    update_cache: yes
+#  when: ansible_distribution == "Debian"
