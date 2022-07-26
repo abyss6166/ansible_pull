@@ -1,6 +1,5 @@
 - name: change background image
-  shell:
-    cmd: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /home/matth/Pictures/XFCE_X022_FHD_NoLogo.png
+  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /home/matth/Pictures/XFCE_X022_FHD_NoLogo.png
   args:
     executable: /bin/bash
 
