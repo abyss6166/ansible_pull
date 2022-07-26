@@ -1,3 +1,9 @@
+- name: change background image
+  shell:
+    cmd: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorVirtual1/workspace0/last-image -s /home/matth/Pictures/XFCE_X022_FHD_NoLogo.png
+  args:
+    executable: /bin/bash
+
 #- name: add hidden files
 #  tags: xfconf
 #  become_user: "{{ user }}"
@@ -17,25 +23,25 @@
 #    value_type: "string"
 #    value: "/usr/bin/tilix.wrapper"
 
-- name: set background image
-  tags: xfconf
-  become: true
-  become_user: "{{ user }}"
-  xfconf:
-    channel: xfce4-desktop
-    property: /backdrop/screen0/monitorVirtual1/workspace0/last-image
-    value_type: string
-    value: /home/{{ user }}/Pictures/XFCE_X022_FHD_NoLogo.png
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
+#- name: set background image
+#  tags: xfconf
+#  become: true
+#  become_user: "{{ user }}"
+#  xfconf:
+#    channel: xfce4-desktop
+#    property: /backdrop/screen0/monitorVirtual1/workspace0/last-image
+#    value_type: string
+#    value: /home/{{ user }}/Pictures/XFCE_X022_FHD_NoLogo.png
+#  environment:
+#    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
 
-- name: set number of panels
-  tags: xfconf
-  xfconf:
-    channel: "xfce4-panel"
-    property: "/panels"
-    value_type: "array"
-    value: ['3']
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
+#- name: set number of panels
+#  tags: xfconf
+#  xfconf:
+#    channel: "xfce4-panel"
+#    property: "/panels"
+#    value_type: "array"
+#    value: ['3']
+#  environment:
+#    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
 
