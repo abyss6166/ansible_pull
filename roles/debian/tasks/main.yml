@@ -8,4 +8,5 @@
   - include_tasks: btop.yml
   - include_tasks: files.yml
   - include_tasks: xfconf.yml
+  - include_tasks: cleanup.yml
   - include_tasks: virtualbox.yml

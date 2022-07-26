@@ -1,0 +1,10 @@
+- name: cleanup package cache
+  apt:
+    autoclean: yes
+  when: ansible_distribution == "Debian"
+
+- name: autoremove
+  apt:
+    autoremove: yes
+    purge: yes
+  when: ansible_distribution == "Debian"
