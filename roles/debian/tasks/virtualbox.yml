@@ -13,6 +13,8 @@
 
 - name: install VirtualBox Guest Additions
   tags: virtualbox
+  become_user: "{{ user }}"
+  become: true
   shell: bash -c 'sudo sh /media/cdrom0/VBoxLinuxAdditions.run --nox11 > /dev/null'
 #    chdir: /media/cdrom0
 #  args:
