@@ -11,7 +11,7 @@
       - uchardet-devel
       - qt5-qtwebchannel-devel
       - pkgconfig
-#    when: ansible_distribution == "Fedora"
+  when: ansible_distribution == "Fedora"
 
 - name: install notepadqq dependencies - Debian
   tags: notepadqq,dependencies,debian
