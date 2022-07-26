@@ -12,7 +12,7 @@
 
 - name: add keyboard shortcut
   become_user: "{{ user }}"
-  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-keyboard-shortcuts --create --property string "/commands/custom/<Super>Return" -s /usr/bin/tilix.wrapper
+  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-keyboard-shortcuts --create --property --type string "/commands/custom/<Super>Return" -s /usr/bin/tilix.wrapper
   args:
     executable: /bin/bash
 
