@@ -1,5 +1,5 @@
 - block:
-#  - include_tasks: sudoers.yml
+  - include_tasks: sudoers.yml
 #  - include_tasks: directories.yml
 ##  - include_tasks: virtualbox.yml
 #  - include_tasks: duf.yml

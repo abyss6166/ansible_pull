@@ -2,7 +2,7 @@
   tags: xfconf
   xfconf:
     channel: thunar
-    property: "/last-show-hidden"
+    property: /last-show-hidden
     value_type: "bool"
     value: "true"
 
