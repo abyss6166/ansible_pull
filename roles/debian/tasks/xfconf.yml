@@ -11,12 +11,15 @@
     executable: /bin/bash
 
 - name: set workspace names
+  become_user: "{{ user }}"
   xfconf:
     channel: xfwm4
     property: /general/workspace_names
     value_type: string
     value: ['Main']
     force_array: true
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
 
 #- name: add hidden files
 #  tags: xfconf
