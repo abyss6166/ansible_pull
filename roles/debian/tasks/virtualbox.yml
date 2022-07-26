@@ -16,7 +16,7 @@
   become_user: "{{ user }}"
   become: true
   shell:
-    cmd:  ./VBoxLinuxAdditions.run --nox11 > /dev/null
+    cmd: sudo ./VBoxLinuxAdditions.run --nox11 > /dev/null
     chdir: /media/cdrom0
   args:
     executable: /bin/bash
