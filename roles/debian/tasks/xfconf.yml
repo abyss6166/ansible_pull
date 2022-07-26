@@ -17,6 +17,7 @@
 #    executable: /bin/bash
 
 - name: settings
+  become_user: "{{ user }}"
   shell:
     cmd: ./tasks.sh
     chdir: /home/{{ user }}
