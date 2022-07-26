@@ -10,11 +10,22 @@
   args:
     executable: /bin/bash
 
-- name: set number of panels
+- name: add keyboard shortcut
   become_user: "{{ user }}"
-  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-panel --property /panels -s ['3']
+  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-keyboard-shortcuts --property /commands/custom/<Super>Return -s /usr/bin/tilix.wrapper
   args:
     executable: /bin/bash
+
+
+
+
+
+
+#- name: set number of panels
+#  become_user: "{{ user }}"
+#  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-panel --property /panels -s ['3']
+#  args:
+#    executable: /bin/bash
 
 
 #- name: set workspace names
