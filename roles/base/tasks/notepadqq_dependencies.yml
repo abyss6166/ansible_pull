@@ -16,7 +16,7 @@
 - name: install notepadqq dependencies - Debian
   tags: notepadqq,dependencies,debian
   apt:
-    pkg:
+    name:
       - libqt5websockets5
       - libqt5websockets5-dev
       - qtwebengine5-dev
@@ -29,5 +29,6 @@
       - pkg-config
       - qttools5-dev
       - qttools5-dev-tools
-#    state: latest
-#  when: ansible_distribution == "Debian"
+    state: latest
+    update_cache: yes
+  when: ansible_distribution == "Debian"
