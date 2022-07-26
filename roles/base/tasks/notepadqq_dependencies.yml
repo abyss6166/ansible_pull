@@ -1,6 +1,6 @@
 - name: install notepadqq dependencies
   tags: notepadqq,dependencies
-  package:
+  dnf:
     name:
       - qt5-qtbase-devel
       - qt5-qttools-devel
