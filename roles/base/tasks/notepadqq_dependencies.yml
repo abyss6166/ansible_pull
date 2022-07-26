@@ -13,17 +13,21 @@
       - pkgconfig
     when: ansible_distribution == "Fedora"
 
-#- name: install notepadqq dependencies - Debian
-#  tags: notepadqq,dependencies,debian
-#  package:
-#    name:
-#      - qt5-default
-#      - qttools5-dev-tools
-#      - qtwebengine5-dev
-#      - libqt5websockets5-dev
-#      - libqt5svg5
-#      - libqt5svg5-dev
-#      - libuchardet-dev
-#      - pkg-config
-#    state: latest
-#  when: ansible_distribution == "Debian"
+- name: install notepadqq dependencies - Debian
+  tags: notepadqq,dependencies,debian
+  package:
+    name:
+      - libqt5websockets5
+      - libqt5websockets5-dev
+      - qtwebengine5-dev
+      - qtwebengine5-dev-tools
+      - libqt5svg5
+      - libqt5svg5-dev
+      - coreutils
+      - libuchardet-dev
+      - libuchardet0
+      - pkg-config
+      - qttools5-dev
+      - qttools5-dev-tools
+    state: latest
+  when: ansible_distribution == "Debian"
