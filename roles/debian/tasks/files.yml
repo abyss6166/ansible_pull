@@ -1,0 +1,7 @@
+- name: copy desktop background
+  tags: xfce
+  copy:
+    src: files/XFCE_X022_FHD_NoLogo.png
+    dest: /home/{{ user }}/Pictures
+    owner: "{{ user }}"
+    group: "{{ user }}"
