@@ -11,3 +11,12 @@
   shell: python -m pip install -r requirements.txt
   args:
     chdir: /home/{{ user }}/OneDriveGUI
+  when: ansible_distribution == "Fedora"
+
+- name: install OneDriveGUI
+  tags: onedrive
+  shell: python3 -m pip install -r requirements.txt
+  args:
+    chdir: /home/{{ user }}/OneDriveGUI
+  when: ansible_distribution == "Debian"
+
