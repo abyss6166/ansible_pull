@@ -10,17 +10,24 @@
   args:
     executable: /bin/bash
 
-- name: set workspace names
-  become: true
+- name: set number of panels
   become_user: "{{ user }}"
-  xfconf:
-    channel: xfwm4
-    property: /general/workspace_names
-    value_type: string
-    value: ['Main']
-    force_array: true
-  environment:
-    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
+  shell: env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus xfconf-query --channel xfce4-panel --property /panels -s ['3']
+  args:
+    executable: /bin/bash
+
+
+#- name: set workspace names
+#  become: true
+#  become_user: "{{ user }}"
+#  xfconf:
+#    channel: xfwm4
+#    property: /general/workspace_names
+#    value_type: string
+#    value: ['Main']
+#    force_array: true
+#  environment:
+#    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/dbus
 
 #- name: add hidden files
 #  tags: xfconf
