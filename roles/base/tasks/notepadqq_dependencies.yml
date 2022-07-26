@@ -1,17 +1,17 @@
-- name: install notepadqq dependencies
-  tags: notepadqq,dependencies
-  package:
-    name:
-      - qt5-qtbase-devel
-      - qt5-qttools-devel
-      - qt5-qtwebengine-devel
-      - qt5-qtwebsockets-devel
-      - qt5-qtsvg-devel
-      - uchardet
-      - uchardet-devel
-      - qt5-qtwebchannel-devel
-      - pkgconfig
-    when: ansible_distribution == "Fedora"
+#- name: install notepadqq dependencies
+#  tags: notepadqq,dependencies
+#  package:
+#    name:
+#      - qt5-qtbase-devel
+#      - qt5-qttools-devel
+#      - qt5-qtwebengine-devel
+#      - qt5-qtwebsockets-devel
+#      - qt5-qtsvg-devel
+#      - uchardet
+#      - uchardet-devel
+#      - qt5-qtwebchannel-devel
+#      - pkgconfig
+#    when: ansible_distribution == "Fedora"
 
 - name: install notepadqq dependencies - Debian
   tags: notepadqq,dependencies,debian
