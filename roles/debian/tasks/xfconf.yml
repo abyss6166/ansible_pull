@@ -17,8 +17,7 @@
 #    executable: /bin/bash
 
 - name: settings
-  shell: ./tasks.sh
-    chdir: /home/{{ user }}
+  shell: /home/ {{user }}/tasks.sh
   args:
     executable: /bin/bash
 
