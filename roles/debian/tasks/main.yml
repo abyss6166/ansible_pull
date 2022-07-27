@@ -12,4 +12,4 @@
   # - include_tasks: autologin.yml
   # - include_tasks: cleanup.yml
   - include_tasks: samba.yml
-#  - include_tasks: virtualbox.yml
+  - include_tasks: virtualbox.yml

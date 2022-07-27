@@ -19,4 +19,5 @@
     chdir: /media/cdrom0
   args:
     executable: /bin/bash
+  ignore_errors: yes
 

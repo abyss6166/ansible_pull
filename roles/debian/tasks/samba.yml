@@ -25,12 +25,13 @@
   tags: samba
   lineinfile:
     path: /etc/samba/smb.conf
-    regexp: '^map to guest = bad user'
+    regexp: '^(.*)map to guest = bad user(.*)$'
     line: '#map to guest = bad user'
+    backrefs: yes
 
 - name: enable smb
   tags: samba
   service:
     name: smbd
-    state: started
+    state: restarted
     enabled: yes
