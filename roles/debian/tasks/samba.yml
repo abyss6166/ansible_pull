@@ -21,9 +21,16 @@
       force directory mode = 0775
       write list = user
 
+- name: edit samba config file
+  tags: samba
+  lineinfile:
+    path: /etc/samba.smb.conf
+    regexp: '^map to guest = bad user'
+    line: '#map to guest = bad user'
+
 - name: enable smb
   tags: samba
   service:
-    name: smb
+    name: smbd
     state: started
     enabled: yes

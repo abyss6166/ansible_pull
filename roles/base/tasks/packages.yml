@@ -24,6 +24,8 @@
       - plank
       - dconf-editor
       - python3-psutil
+      - cifs-utils
+      - smbclient
     state: latest
   when: ansible_distribution == "Debian"
 
