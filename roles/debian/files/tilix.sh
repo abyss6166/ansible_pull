@@ -1,13 +1,13 @@
 #!/bin/bash
 
-dconf write /com/gexperts/Tilix/sidebar-on-right true
-dconf write /com/gexperts/Tilix/theme-variant "'dark'"
-dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/background-transparency-percent 11
-dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/font "'MesloLGS NF 10'"
-dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/foreground-color "'#FFFFFFFFFFFF'"
-dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-system-font false
-dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-theme-colors false
-dconf write /com/gexperts/Tilix/terminal-title-style "'small'"
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/sidebar-on-right true
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/theme-variant "'dark'"
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/background-transparency-percent 11
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/font "'MesloLGS NF 10'"
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/foreground-color "'#FFFFFFFFFFFF'"
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-system-font false
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-theme-colors false
+env DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus dconf write /com/gexperts/Tilix/terminal-title-style "'small'"
 
 #  name: set terminal title style
 #   become_user: "{{ user }}"
