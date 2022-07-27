@@ -15,7 +15,7 @@
   tags: virtualbox
   become: true
   shell:
-    cmd: sh ./VBoxLinuxAdditions.run --nox11 2> /dev/null
+    cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 2> /dev/null
     chdir: /media/cdrom0
   args:
     executable: /bin/bash
