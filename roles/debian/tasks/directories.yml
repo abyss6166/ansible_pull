@@ -12,3 +12,4 @@
 #      - ".local/share/icons"
       - "btop"
       - ".poshthemes"
+      - ".config/autostart"

@@ -35,3 +35,10 @@
     mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: add to application autostart
+  copy:
+    src: files/plank.desktop
+    dest: /home/{{ user }}/.config/autostart
+    owner: "{{ user }}"
+    group: "{{ user }}"
