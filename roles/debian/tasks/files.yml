@@ -26,3 +26,12 @@
     mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: download tilix settings script
+  tags: tilix,settings
+  copy:
+    src: files/tilix.sh
+    dest: /home/{{ user }}
+    mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"

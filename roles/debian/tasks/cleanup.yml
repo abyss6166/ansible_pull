@@ -8,3 +8,13 @@
     autoremove: yes
     purge: yes
   when: ansible_distribution == "Debian"
+
+- name: remove install folders
+  file:
+    path: /home/{{ user }}/{{item}}
+    state: absent
+  with_items:
+    - "notepadqq"
+    - "purple-googlechat"
+    - "tasks.sh"
+    - ".ansible"

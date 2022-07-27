@@ -7,4 +7,5 @@
   - include_tasks: btop.yml
   - include_tasks: oh-my-posh.yml
   - include_tasks: zsh-alias.yml
+  - include_tasks: tilix_config.yml
   - include_tasks: samba.yml

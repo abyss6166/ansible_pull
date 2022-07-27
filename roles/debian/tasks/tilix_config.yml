@@ -1,0 +1,8 @@
+- name: settings
+  become_user: "{{ user }}"
+  shell:
+    cmd: ./tilix.sh
+    chdir: /home/{{ user }}
+  args:
+    executable: /bin/bash
+
