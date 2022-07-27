@@ -15,7 +15,7 @@
   tags: virtualbox
   become_user: root
   shell:
-    cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 2> /dev/null
+    cmd: sh ./VBoxLinuxAdditions.run --nox11 2> /dev/null
     chdir: /media/cdrom0
   args:
     executable: /bin/bash
