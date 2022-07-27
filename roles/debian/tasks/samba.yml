@@ -24,7 +24,7 @@
 - name: edit samba config file
   tags: samba
   lineinfile:
-    path: /etc/samba.smb.conf
+    path: /etc/samba/smb.conf
     regexp: '^map to guest = bad user'
     line: '#map to guest = bad user'
 
