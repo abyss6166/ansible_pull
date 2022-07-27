@@ -33,5 +33,5 @@
   tags: samba
   service:
     name: smbd
-    state: restarted
+    state: reloaded
     enabled: yes
