@@ -15,6 +15,7 @@
       - onedrive
       - python3-pip
       - samba
+      - cifs-utils
     state: latest
 
 - name: install debian specific packages
@@ -25,7 +26,6 @@
       - dconf-editor
       - dconf-cli
       - python3-psutil
-      - cifs-utils
       - smbclient
     state: latest
   when: ansible_distribution == "Debian"
