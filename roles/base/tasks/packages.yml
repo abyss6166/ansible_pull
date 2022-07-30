@@ -32,9 +32,10 @@
 
 - name: install fedora specific packages
   tags: fedora,base
-  dnf:
+  dnf: 
     name:
       - cairo-dock
       - duf
+      - code
     state: latest
   when: ansible_distribution == "Fedora"
