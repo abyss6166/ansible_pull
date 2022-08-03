@@ -20,4 +20,3 @@
   args:
     executable: /bin/bash
   ignore_errors: yes
-
