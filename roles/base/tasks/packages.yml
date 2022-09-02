@@ -12,10 +12,10 @@
       - exa
       - ncdu
       - bat
-      - onedrive
-      - python3-pip
-      - samba
-      - cifs-utils
+#      - onedrive
+#      - python3-pip
+#      - samba
+#      - cifs-utils
     state: latest
 
 - name: install debian specific packages
