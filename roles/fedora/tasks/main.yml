@@ -1,12 +1,13 @@
 # Fedora specific tasks
 - block:
-#  - include_tasks: directories.yml
-#  - include_tasks: vscodium.yml
-#  - include_tasks: autostart.yml
-#  - include_tasks: theme-config.yml
-#  - include_tasks: mate_config.yml
-#  - include_tasks: btop.yml
-#  - include_tasks: oh-my-posh.yml
-#  - include_tasks: zsh-alias.yml
+  - include_tasks: directories.yml
+  - include_tasks: vscodium.yml
+  - include_tasks: autostart.yml
+  - include_tasks: theme-config.yml
+  - include_tasks: mate_config.yml
+  - include_tasks: nano.yml
+  - include_tasks: btop.yml
+  - include_tasks: oh-my-posh.yml
   - include_tasks: tilix_config.yml
-#  - include_tasks: samba.yml
+  - include_tasks: zsh-alias.yml
+  - include_tasks: samba.yml
