@@ -1,22 +1,28 @@
+# - name: download OneDriveGUI
+#   tags: onedrive
+#   git:
+#     repo: https://github.com/bpozdena/OneDriveGUI.git
+#     dest: /home/{{ user }}/OneDriveGUI
+#     clone: yes
+#     update: yes
+
+# - name: install OneDriveGUI
+#   tags: onedrive
+#   shell: python -m pip install -r requirements.txt
+#   args:
+#     chdir: /home/{{ user }}/OneDriveGUI
+#   when: ansible_distribution == "Fedora"
+
+# - name: install OneDriveGUI
+#   tags: onedrive
+#   shell: python3 -m pip install -r requirements.txt
+#   args:
+#     chdir: /home/{{ user }}/OneDriveGUI
+#   when: ansible_distribution == "Debian"
+
 - name: download OneDriveGUI
   tags: onedrive
-  git:
-    repo: https://github.com/bpozdena/OneDriveGUI.git
-    dest: /home/{{ user }}/OneDriveGUI
-    clone: yes
-    update: yes
-
-- name: install OneDriveGUI
-  tags: onedrive
-  shell: python -m pip install -r requirements.txt
-  args:
-    chdir: /home/{{ user }}/OneDriveGUI
-  when: ansible_distribution == "Fedora"
-
-- name: install OneDriveGUI
-  tags: onedrive
-  shell: python3 -m pip install -r requirements.txt
-  args:
-    chdir: /home/{{ user }}/OneDriveGUI
-  when: ansible_distribution == "Debian"
-
+    get_url:
+    url: https://github.com/bpozdena/OneDriveGUI/releases/download/*/OneDriveGUI-*-x86_64.AppImage
+    dest: /home/{{ user }}/Downloads
+    mode: +x

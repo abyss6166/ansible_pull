@@ -1,0 +1,22 @@
+- name: add vscodium GPG key
+  tags: vscodium
+  become: true
+  shell:
+    cmd: wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+  args:
+    executable: /bin/bash
+
+- name: add vscodium repository
+  tags: vscodium
+  shell:
+    cmd: echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
+  args:
+    executable: /bin/bash
+
+- name: install vscodium
+  tags: vscodium
+  become: true
+  apt:
+    name:
+      - codium
+    state: latest

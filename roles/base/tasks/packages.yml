@@ -37,7 +37,18 @@
       - cairo-dock
       - duf
     state: latest
-  when: ansible_distribution == "Fedora"
+  when: ansible_distribution == "Fedora" or flavor == "Lubuntu"
+
+- name: install Lubuntu specific packages
+  tags: lubuntu,base
+  apt:
+    name:
+      - dconf-editor
+      - dconf-cli
+      - python3-psutil
+      - smbclient
+    state: latest
+  when: flavor == "Lubuntu"
 
 - name: install openh264
   tags: fedora,base,openh264

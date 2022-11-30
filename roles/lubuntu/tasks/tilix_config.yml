@@ -1,0 +1,15 @@
+- name: download tilix conf file
+  tags: tilix
+  copy:
+    src: files/tilix.dconf
+    dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    
+- name: tilix settings
+  become_user: "{{ user }}"
+  shell:
+    cmd: dconf load /com/gexperts/Tilix/ < tilix.dconf
+    chdir: /home/{{ user }}
+  args:
+    executable: /bin/bash

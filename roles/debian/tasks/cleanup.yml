@@ -1,13 +1,13 @@
 - name: cleanup package cache
   apt:
     autoclean: yes
-  when: ansible_distribution == "Debian"
+  when: ansible_distribution == "Debian" or flavor = "Lubuntu"
 
 - name: autoremove
   apt:
     autoremove: yes
     purge: yes
-  when: ansible_distribution == "Debian"
+  when: ansible_distribution == "Debian" or flavor = "Lubuntu"
 
 - name: remove install folders
   file:

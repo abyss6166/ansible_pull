@@ -6,7 +6,7 @@ setopt autocd
 setopt correct
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/mattfedora/.zshrc'
+zstyle :compinstall filename '/home/{{ user }}/.zshrc'
 
 EDITOR=nano
 

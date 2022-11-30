@@ -9,4 +9,5 @@
   - include_tasks: tasks/notepadqq.yml
   - include_tasks: tasks/rainlendar.yml
   - include_tasks: tasks/onedrivegui.yml
+  - include_tasks: tasks/moderndeck.yml
   - include_tasks: tasks/sshd.yml
