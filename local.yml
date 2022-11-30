@@ -34,5 +34,5 @@
       when: ansible_distribution == "Fedora"
     - role: debian
       when: ansible_distribution == "Debian"
-    - role: Lubuntu
+    - role: lubuntu
       when: flavor == "Lubuntu"
