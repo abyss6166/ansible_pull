@@ -20,5 +20,7 @@
       - libprotobuf-c-dev
       - protobuf-c-compiler
       - make
+      - pkg-config
+      - libpurple-dev
   when: ansible_distribution == "Debian" or flavor == "Lubuntu"
 
