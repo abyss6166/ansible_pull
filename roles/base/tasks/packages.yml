@@ -49,6 +49,8 @@
       - smbclient
       - cairo-dock
       - duf
+      - pkg-config
+      - libpurple-dev
     state: latest
   when: flavor == "Lubuntu"
 

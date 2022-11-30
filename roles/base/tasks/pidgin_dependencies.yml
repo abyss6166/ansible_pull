@@ -20,5 +20,5 @@
       - libprotobuf-c-dev
       - protobuf-c-compiler
       - make
-  when: ansible_distribution == "Debian"
+  when: ansible_distribution == "Debian" or flavor == "Lubuntu"
 
