@@ -10,6 +10,14 @@
         name: "*"
         state: latest
 
+  vars:
+    flavor: "{{ media_info.stdout.split()|first }}"
+  tasks:
+    - command: cat /var/log/installer/media-info
+      register: media_info
+    - debug:
+        var: flavor
+
 - hosts: localhost
   connection: local
   tags: base
@@ -19,10 +27,12 @@
 
 - hosts: localhost
   connection: local
-  tags: fedora,debian
+  tags: fedora,debian,lubuntu
   become: true
   roles:
     - role: fedora
       when: ansible_distribution == "Fedora"
     - role: debian
       when: ansible_distribution == "Debian"
+    - role: Lubuntu
+      when: flavor == "Lubuntu"
