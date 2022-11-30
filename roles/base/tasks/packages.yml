@@ -49,6 +49,7 @@
       - smbclient
       - cairo-dock
       - duf
+      - ssh
     state: latest
   when: flavor == "Lubuntu"
 
