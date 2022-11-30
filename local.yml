@@ -10,6 +10,7 @@
         name: "*"
         state: latest
 
+- hosts: localhost
   vars:
     flavor: "{{ media_info.stdout.split()|first }}"
   tasks:
