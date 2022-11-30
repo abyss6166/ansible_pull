@@ -37,7 +37,7 @@
       - cairo-dock
       - duf
     state: latest
-  when: ansible_distribution == "Fedora" or flavor == "Lubuntu"
+  when: ansible_distribution == "Fedora"
 
 - name: install Lubuntu specific packages
   tags: lubuntu,base
@@ -47,6 +47,8 @@
       - dconf-cli
       - python3-psutil
       - smbclient
+      - cairo-dock
+      - duf
     state: latest
   when: flavor == "Lubuntu"
 
