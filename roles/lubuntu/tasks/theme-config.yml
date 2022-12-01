@@ -23,6 +23,7 @@
   copy:
     src: /home/{{user}}/.config/openbox/rc.xml
     dest: /home/{{user}}/.config/openbox/rc.xml.bak
+  ignore_errors: true
 
 - name: install rc.xml file
   tags: openbox
