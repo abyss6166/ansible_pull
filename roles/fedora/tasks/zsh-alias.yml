@@ -18,9 +18,9 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: source .zshrc and aliasrc files
-  tags: alias,zsh
-  shell: bash -c 'source /home/{{ user }}/aliasrc 2> /dev/null && source /home/{{ user }}/.zshrc 2> /dev/null'
+# - name: source .zshrc and aliasrc files
+#   tags: alias,zsh
+#   shell: bash -c 'source /home/{{ user }}/aliasrc 2> /dev/null && source /home/{{ user }}/.zshrc 2> /dev/null'
 #  with_items:
 #    - aliasrc
 #    - .zshrc
