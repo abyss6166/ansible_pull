@@ -10,12 +10,18 @@
     src: files/Emerald.tar.gz
     dest: /usr/share/icons
 
+- name: check if rc.xml file exists
+  tags: openbox
+  stat:
+    path: /home/{{user}}/.config/openbox/rc.xml
+  register: rc_exists
+
 - name: back up rc.xml file
   tags: openbox
   copy:
     src: /home/{{user}}/.config/openbox/rc.xml
     dest: /home/{{user}}/.config/openbox/rc.xml.bak
-  ignore_errors: true
+  when: rc_exists.exists
 
 - name: install rc.xml file
   tags: openbox
