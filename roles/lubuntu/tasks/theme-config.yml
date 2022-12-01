@@ -18,6 +18,21 @@
     src: files/Emerald.tar.gz
     dest: /usr/share/icons
 
+- name: back up rc.xml file
+  tags: openbox
+  copy:
+    src: /home/{{user}}/.config/openbox/rc.xml
+    dest: /home/{{user}}/.config/openbox/rc.xml.bak
+
+- name: install rc.xml file
+  tags: openbox
+  copy:
+    src: files/rc.xml
+    dest: /home/{{ user }}/.config/openbox/rc.xml
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+
 # - name: download cairo-dock config
 #   tags: cairo-dock
 #   unarchive:

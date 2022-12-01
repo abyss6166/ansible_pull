@@ -10,14 +10,14 @@
         name: "*"
         state: latest
 
-- hosts: localhost
-  vars:
-    flavor: "{{ media_info.stdout.split()|first }}"
-  tasks:
-    - command: cat /var/log/installer/media-info
-      register: media_info
-    - debug:
-        var: flavor
+# - hosts: localhost
+#   vars:
+#     flavor: "{{ media_info.stdout.split()|first }}"
+#   tasks:
+#     - command: cat /var/log/installer/media-info
+#       register: media_info
+#     - debug:
+#         var: flavor
 
 - hosts: localhost
   connection: local
