@@ -17,8 +17,8 @@
 - name: install vscodium
   tags: vscodium
   become: true
-  update_cache: yes
   apt:
     name:
       - codium
     state: latest
+    update_cache: yes
