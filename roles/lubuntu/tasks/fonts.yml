@@ -1,0 +1,11 @@
+- name: install fonts
+  tags: font,fonts
+  unarchive:
+    src: files/dejavu_sans.zip
+    dest: /home/{{ user }}/.local/share/fonts
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: reload font cache
+  tags: font
+  shell: fc-cache -f -v > /dev/null
