@@ -1,11 +1,3 @@
-# - name: download gtk.css file
-#   tags: gtk,css
-#   copy:
-#     src: files/gtk.css
-#     dest: /home/{{ user }}/.config/gtk-3.0
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-
 - name: install theme
   tags: theme
   unarchive:
