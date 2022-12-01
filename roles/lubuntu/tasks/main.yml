@@ -2,7 +2,7 @@
   # - include_tasks: sudoers.yml
   - include_tasks: directories.yml
   # - include_tasks: duf.yml
-  - include_tasks: ../debian/tasks/nala.yml
+  - include_tasks: nala.yml
   - include_tasks: ../debian/tasks/oh-my-posh.yml
   - include_tasks: ../debian/tasks/zsh-alias.yml
   - include_tasks: ../debian/tasks/btop.yml
