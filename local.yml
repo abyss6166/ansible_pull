@@ -17,7 +17,7 @@
     - command: cat /var/log/installer/media-info
       register: flavor
     - debug:
-        var: flavor.stdout.split()|first
+        var: flavor
 
 - hosts: localhost
   connection: local
