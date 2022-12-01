@@ -17,7 +17,7 @@
     - command: cat /var/log/installer/media-info
       register: flavor
     - debug:
-        var: flavor
+        msg=flavor
 
 - hosts: localhost
   connection: local
