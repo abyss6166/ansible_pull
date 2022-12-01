@@ -9,7 +9,7 @@
 - name: edit user on OneDriveGUI entry
   tags: onedrive
   lineinfile:
-    path: ~/.config/autostart/onedrive.desktop
+    path: /home/{{ user }}/.config/autostart/onedrive.desktop
     regexp: '^Exec='
     line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.1-x86_64.AppImage
   when: ansible_distribution == "Fedora"
@@ -17,7 +17,7 @@
 - name: edit user on rainlendar entry
   tags: rainlendar
   lineinfile:
-    path: ~/.config/autostart/rainlendar2.desktop
+    path: /home/{{ user }}/.config/autostart/rainlendar2.desktop
     regexp: '^Exec='
     line: Exec=/home/{{ user }}/rainlendar2/rainlendar2
   when: ansible_distribution == "Fedora"
