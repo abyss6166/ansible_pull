@@ -11,7 +11,7 @@
   lineinfile:
     path: ~/.config/autostart/onedrive.desktop
     regexp: '^Exec='
-    line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-*-x86_64.AppImage
+    line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.1-x86_64.AppImage
   when: ansible_distribution == "Fedora"
 
 - name: edit user on rainlendar entry
