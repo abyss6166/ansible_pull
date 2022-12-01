@@ -40,6 +40,12 @@
     key: "/org/mate/desktop/interface/font-name"
     value: "'Sans 9'"
 
+- name: set titlebar font
+  become_user: "{{ user }}"
+  dconf:
+    key: "/org/mate/marco/general/titlebar-font"
+    value: "'Sans Bold 8'"
+
 - name: set theme
   become_user: "{{ user }}"
   dconf:

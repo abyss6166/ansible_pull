@@ -4,3 +4,5 @@
     url: https://github.com/dangeredwolf/ModernDeck/releases/download/v9.4.5/ModernDeck_x86_64.AppImage
     dest: /home/{{ user }}/Downloads
     mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"
