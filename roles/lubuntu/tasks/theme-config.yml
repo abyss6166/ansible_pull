@@ -25,6 +25,20 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: back up lxqt config file
+  tags: samba
+  copy:
+    src: /home/{{ user }}/.config/lxqt/lxqt.conf
+    dest: /home/{{ user }}/.config/lxqt/lxqt.conf.bak
+
+- name: install lxqt.conf file
+  tags: lxqt
+  copy:
+    src: files/lxqt.conf
+    dest: /home/{{ user }}/.config/lxqt/lxqt.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 
 # - name: download cairo-dock config
 #   tags: cairo-dock

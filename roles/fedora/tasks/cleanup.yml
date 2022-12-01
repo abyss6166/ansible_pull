@@ -1,0 +1,8 @@
+- name: remove install folders
+  file:
+    path: /home/{{ user }}/{{item}}
+    state: absent
+  with_items:
+    - "notepadqq"
+    - "purple-googlechat"
+    - "tasks.sh"
