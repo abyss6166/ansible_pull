@@ -5,6 +5,7 @@
     cmd: wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
   args:
     executable: /bin/bash
+    warn: false
 
 - name: add vscodium repository
   tags: vscodium
@@ -16,6 +17,7 @@
 - name: install vscodium
   tags: vscodium
   become: true
+  update_cache: yes
   apt:
     name:
       - codium
