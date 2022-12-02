@@ -21,7 +21,7 @@
   copy:
     src: /home/{{user}}/.config/openbox/rc.xml
     dest: /home/{{user}}/.config/openbox/rc.xml.bak
-  when: rc_exists.exists
+  when: rc_exists.stat.exists
 
 - name: install rc.xml file
   tags: openbox
