@@ -51,7 +51,7 @@
       - duf
       - ssh
     state: latest
-  when: flavor == "Lubuntu"
+  when: flavor.stdout == "Lubuntu"
 
 - name: install openh264
   tags: fedora,base,openh264

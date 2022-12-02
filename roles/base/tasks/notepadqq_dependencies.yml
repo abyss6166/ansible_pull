@@ -30,4 +30,4 @@
       - qttools5-dev
       - qttools5-dev-tools
     state: latest
-  when: ansible_distribution == "Debian" or flavor == "Lubuntu"
+  when: ansible_distribution == "Debian" or flavor.stdout == "Lubuntu"
