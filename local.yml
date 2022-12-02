@@ -27,6 +27,8 @@
       register: flavor
       args:
         executable: /bin/bash
+      debug:
+        msg={{flavor.stdout}}
 
 
 - hosts: localhost
