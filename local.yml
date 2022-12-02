@@ -18,7 +18,7 @@
       register: flavor
     - debug:
         # msg="{{ cat /var/log/installer/media-info | awk '{print $1}' }}"
-        flavor.stdout
+        msg= {{flavor.stdout}}
 
 
 - hosts: localhost
