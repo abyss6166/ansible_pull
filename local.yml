@@ -17,9 +17,9 @@
     - shell:
         cmd: cat /var/log/installer/media-info | awk '{print $1}'
       register: flavor
-    # - debug:
-    #     msg="{{ cat /var/log/installer/media-info | awk '{print $1}' }}"
-    #     msg= {{flavor.stdout}}
+    - debug:
+        # msg="{{ cat /var/log/installer/media-info | awk '{print $1}' }}"
+        msg= {{flavor.stdout}}
 
 
 - hosts: localhost
