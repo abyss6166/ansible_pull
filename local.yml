@@ -21,6 +21,13 @@
         # msg="{{ cat /var/log/installer/media-info | awk '{print $1}' }}"
         msg= {{flavor.stdout}}
 
+- name: tilix settings
+  shell:
+    cmd: cat /var/log/installer/media-info | awk '{print $1}'
+  register: flavor
+  args:
+    executable: /bin/bash
+
 
 - hosts: localhost
   connection: local
