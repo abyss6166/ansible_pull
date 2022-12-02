@@ -28,18 +28,18 @@
       register: flavor
       args:
         executable: /bin/bash
-      debug:
+    - debug:
         msg={{flavor.stdout}}
 
 
-  - name: get flavor
-    shell:
-      cmd: cat /var/log/installer/media-info | awk '{print $1}'
-    register: flavor
-    args:
-      executable: /bin/bash
-    debug:
-      msg={{flavor.stdout}}
+  # - name: get flavor
+  #   shell:
+  #     cmd: cat /var/log/installer/media-info | awk '{print $1}'
+  #   register: flavor
+  #   args:
+  #     executable: /bin/bash
+  #   debug:
+  #     msg={{flavor.stdout}}
 
 
 - hosts: localhost
