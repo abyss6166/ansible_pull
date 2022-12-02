@@ -11,14 +11,14 @@
         state: latest
 
   name: get flavor
-  vars:
-    flavor: "{{ media_info.stdout.split()|first }}"
+  # vars:
+  #   flavor: "{{ media_info.stdout.split()|first }}"
   tasks:
     - command: cat /var/log/installer/media-info | awk '{print $1}'
       register: flavor
-    - debug:
-        # msg="{{ cat /var/log/installer/media-info | awk '{print $1}' }}"
-        msg= {{flavor.stdout}}
+    # - debug:
+    #     msg="{{ cat /var/log/installer/media-info | awk '{print $1}' }}"
+    #     msg= {{flavor.stdout}}
 
 
 - hosts: localhost
