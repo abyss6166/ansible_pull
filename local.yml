@@ -59,4 +59,4 @@
     - role: debian
       when: ansible_distribution == "Debian"
     - role: lubuntu
-      when: flavor == "Lubuntu"
+      when: flavor.stdout == "Lubuntu"
