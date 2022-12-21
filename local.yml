@@ -25,11 +25,12 @@
   tags: base
   become: true
   roles:
-    - base
+    - role: base
+      when: ansible_distribution != "Void"
 
 - hosts: localhost
   connection: local
-  tags: fedora,debian,lubuntu
+  tags: fedora,debian,lubuntu,void
   become: true
   roles:
     - role: fedora
@@ -38,3 +39,5 @@
       when: ansible_distribution == "Debian"
     - role: lubuntu
       when: flavor.stdout == "Lubuntu"
+    - role: void
+      when: ansible_distribution == "Void"

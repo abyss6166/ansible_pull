@@ -1,0 +1,43 @@
+- name: install packages
+  tags: base
+  package:
+    name:
+      - xorg
+      - dbus
+      - lightdm
+      - lightdm-gtk3-greeter
+      - lightdm-gtk-greeter-settings
+      - i3
+      - i3status
+      - xterm
+      - dmenu
+      - lxappearance
+      - nano
+      - zsh
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - tilix
+      - htop
+      - exa
+      - ncdu
+      - bat
+      - onedrive
+      - samba
+      - smbclient
+      - cifs-utils
+      - duf
+      - firefox
+      - pcmanfm
+      - libreoffice
+      - notepadqq
+      - chromium
+      - vscode
+      - btop
+      - xdg-utils
+      - xdg-user-dirs
+      - picom
+      - unzip
+      - curl
+      - wget
+      - linux-headers
+    state: latest

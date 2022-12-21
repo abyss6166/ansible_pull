@@ -1,0 +1,64 @@
+- name: back up i3 config file
+  tags: samba
+  copy:
+    src: /.config/i3/config
+    dest: /.config/i3/config.bak
+
+- name: add lines to i3 config file
+  tags: i3
+  blockinfile:
+    path: /.config/i3/config
+    block: |
+      # switch between workspaces
+      bindsym $mod+Control+Left workspace prev
+      bindsym $mod+Control+Left workspace next
+
+      # picom
+      exec picom
+
+- name: add line to i3 config file
+  tags: i3
+  lineinfile:
+    path: /.config/i3/config
+    insertbefore: '#Font for window titles.*'
+    line: "set $mod Mod4"
+    state: present
+
+- name: edit i3 config
+  tags: i3
+  lineinfile:
+    path: /.config/i3/config
+    regexp: '^bindsym $mod+Return'
+    line: '# \1'
+    backrefs: yes
+    state: present
+
+- name: edit i3 config
+  tags: i3
+  lineinfile:
+    path: /.config/i3/config
+    insertafter: '# bindsym $mod+Return *'
+    line: "bindsym $mod+Return exec tilix"
+    state: present
+
+- name: xdg-user-dirs
+  tags: xdg
+  shell: xdg-user-dirs-update
+  args:
+    executable: /bin/bash
+
+# - name: edit i3 config
+#   tags: i3
+#   lineinfile:
+#     path: /.config/i3/config
+#     regexp: '^bindsym $mod+Return'
+#     line: "bindsym $mod+Return exec tilix"
+
+
+# - name: edit user on OneDriveGUI entry
+#   tags: onedrive
+#   lineinfile:
+#     path: /.config/i3/config
+#     regexp: '^Exec='
+#     line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.1-x86_64.AppImage
+#   when: ansible_distribution == "Fedora"

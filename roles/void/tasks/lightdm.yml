@@ -1,0 +1,33 @@
+- name: back up lightdm.conf file
+  tags: lightdm
+  become: true
+  copy:
+    src: /etc/lightdm/lightdm.conf
+    dest: /etc/lightdm/lightdm.conf.bak
+
+- name: edit lightdm.conf file
+  tags: lightdm
+  become: true
+  lineinfile:
+    path: /etc/lightdm/lightdm.conf
+    regexp: '^#display-setup-script='
+    line: 'display-setup-script=xrandr --output Virtual-1 --mode 1650x1050'
+
+- name: create lightdm link 
+  tags: lightdm
+  file:
+    src: /etc/sv/lightdm
+    dest: /var/service
+    owner: root
+    group: root
+    state: link
+
+- name: create dbus link 
+  tags: dbus
+  file:
+    src: /etc/sv/dbus
+    dest: /var/service
+    owner: root
+    group: root
+    state: link
+

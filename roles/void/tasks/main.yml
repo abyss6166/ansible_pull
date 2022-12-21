@@ -1,0 +1,12 @@
+# Void specific tasks
+- block:
+  - include_tasks: packages.yml
+  - include_tasks: ../fedora/tasks/nano.yml
+  - include_tasks: ../fedora/tasks/btop.yml
+  - include_tasks: ../fedora/tasks/oh-my-posh.yml
+  - include_tasks: ../fedora/tasks/tilix_config.yml
+  - include_tasks: zsh-alias.yml
+  - include_tasks: ../base/tasks/fonts.yml
+  - include_tasks: i3config.yml
+  - include_tasks: lightdm.yml
+  - include_tasks: samba.yml
