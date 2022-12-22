@@ -17,6 +17,8 @@
     src: files/config
     dest: /home/{{ user }}/.config/i3/config
     backup: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: check if picom config file exists
   tags: picom
@@ -29,6 +31,8 @@
   copy:
     src: /home/{{ user }}/.config/picom/picom.conf
     dest: /home/{{ user }}/.config/picom/picom.conf.bak
+    owner: "{{ user }}"
+    group: "{{ user }}"
   when: picomconfig.stat.exists
 
 - name: install picom config file
