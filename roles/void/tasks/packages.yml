@@ -40,4 +40,4 @@
       - curl
       - wget
       - linux-headers
-    state: latest
+  #  state: latest
