@@ -2,7 +2,7 @@
   tags: i3
   stat:
     path: /home/{{ user }}/.config/i3/config
-    register: i3config
+  register: i3config
 
 - name: back up i3 config file
   tags: i3
@@ -22,14 +22,14 @@
   tags: picom
   stat:
     path: /home/{{ user }}/.config/picom/picom.conf
-    register: picomconfig
+  register: picomconfig
 
 - name: back up picom.conf file
   tags: picom,i3
   copy:
     src: /home/{{ user }}/.config/picom/picom.conf
     dest: /home/{{ user }}/.config/picom/picom.conf.bak
-  when: picom.stat.exists
+  when: picomconfig.stat.exists
 
 - name: install picom config file
   tags: picom,i3
