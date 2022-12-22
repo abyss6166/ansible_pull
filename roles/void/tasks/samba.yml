@@ -21,8 +21,17 @@
       force directory mode = 0775
       write list = user
 
-- name: restart samba
-  tags: samba
-  shell: sv restart 
-  args:
-    executable: /bin/bash
+- name: create lightdm link 
+  tags: lightdm
+  file:
+    src: /etc/sv/smbd
+    dest: /var/service
+    owner: root
+    group: root
+    state: link
+
+# - name: restart samba
+#   tags: samba
+#   community.general.runit:
+#     name: 
+#     executable: /bin/bash
