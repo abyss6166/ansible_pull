@@ -4,7 +4,7 @@ terminal-title-style='small'
 theme-variant='dark'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-background-transparency-percent=11
+background-transparency-percent=30
 font='MesloLGS NF 10'
 foreground-color='#FFFFFFFFFFFF'
 use-system-font=false

@@ -1,45 +1,15 @@
 - name: back up i3 config file
-  tags: samba
+  tags: i3
   copy:
     src: /home/{{ user }}/.config/i3/config
     dest: /home/{{ user }}/.config/i3/config.bak
 
-- name: add lines to i3 config file
+- name: install i3 config file
   tags: i3
-  blockinfile:
-    path: /home/{{ user }}/.config/i3/config
-    block: |
-      # switch between workspaces
-      bindsym $mod+Control+Left workspace prev
-      bindsym $mod+Control+Left workspace next
+  copy:
+    src: files/config
+    dest: /home/{{ user }}/.config/i3/config
 
-      # picom
-      exec picom
-
-- name: add line to i3 config file
-  tags: i3
-  lineinfile:
-    path: /home/{{ user }}/.config/i3/config
-    insertbefore: '#Font for window titles.*'
-    line: "set $mod Mod4"
-    state: present
-
-- name: edit i3 config
-  tags: i3
-  lineinfile:
-    path: /home/{{ user }}/.config/i3/config
-    regexp: '^bindsym $mod+Return'
-    line: '# \1'
-    backrefs: yes
-    state: present
-
-- name: edit i3 config
-  tags: i3
-  lineinfile:
-    path: /home/{{ user }}/.config/i3/config
-    insertafter: '# bindsym $mod+Return *'
-    line: "bindsym $mod+Return exec tilix"
-    state: present
 
 - name: xdg-user-dirs
   tags: xdg
@@ -53,6 +23,44 @@
     dest: /usr/share/wallpapers
     owner: "{{ user }}"
     group: "{{ user }}"
+
+# - name: add lines to i3 config file
+#   tags: i3
+#   blockinfile:
+#     path: /home/{{ user }}/.config/i3/config
+#     block: |
+#       # switch between workspaces
+#       bindsym $mod+Control+Left workspace prev
+#       bindsym $mod+Control+Right workspace next
+
+#       # picom
+#       exec picom
+
+# - name: add line to i3 config file
+#   tags: i3
+#   lineinfile:
+#     path: /home/{{ user }}/.config/i3/config
+#     insertbefore: '# Font for window titles.*'
+#     line: "set $mod Mod4"
+#     state: present
+
+# - name: edit i3 config
+#   tags: i3
+#   lineinfile:
+#     path: /home/{{ user }}/.config/i3/config
+#     regexp: '^bindsym $mod+Return'
+#     line: '# \1'
+#     backrefs: yes
+#     state: present
+
+# - name: edit i3 config
+#   tags: i3
+#   lineinfile:
+#     path: /home/{{ user }}/.config/i3/config
+#     insertafter: '# bindsym $mod+Return *'
+#     line: "bindsym $mod+Return exec tilix"
+#     state: present
+
 
 # - name: edit i3 config
 #   tags: i3
