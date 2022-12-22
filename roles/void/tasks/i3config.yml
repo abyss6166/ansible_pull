@@ -10,6 +10,17 @@
     src: files/config
     dest: /home/{{ user }}/.config/i3/config
 
+- name: back up picom.conf file
+  tags: picom,i3
+  copy:
+    src: /home/{{ user }}/.config/picom/picom.conf
+    dest: /home/{{ user }}/.config/picom/picom.conf.bak
+
+- name: install picom config file
+  tags: picom,i3
+  copy:
+    src: files/picom.conf
+    dest: /home/{{ user }}/.config/picom/picom.conf
 
 - name: xdg-user-dirs
   tags: xdg
