@@ -43,4 +43,5 @@
       - linux-headers
       - dconf
       - dconf-editor
+      - xinit
   #  state: latest

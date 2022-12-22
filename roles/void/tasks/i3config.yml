@@ -51,7 +51,7 @@
 - name: wallpaper
   copy:
     src: files/i3wm-2560×1440.jpg
-    dest: /usr/share/wallpapers
+    dest: /usr/share/wallpapers/
     owner: "{{ user }}"
     group: "{{ user }}"
 
