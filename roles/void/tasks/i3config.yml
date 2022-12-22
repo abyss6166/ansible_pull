@@ -1,26 +1,35 @@
-- name: back up i3 config file
-  tags: i3
-  copy:
-    src: /home/{{ user }}/.config/i3/config
-    dest: /home/{{ user }}/.config/i3/config.bak
+# - name: check if i3 config file exists
+#   tags: i3
+#   stat:
+#     path: /home/{{ user }}/.config/i3/config
+#     register: i3config
+
+# - name: back up i3 config file
+#   tags: i3
+#   copy:
+#     src: /home/{{ user }}/.config/i3/config
+#     dest: /home/{{ user }}/.config/i3/config.bak
+#   when: i3config.stat.exists
 
 - name: install i3 config file
   tags: i3
   copy:
     src: files/config
     dest: /home/{{ user }}/.config/i3/config
+    backup: yes
 
-- name: back up picom.conf file
-  tags: picom,i3
-  copy:
-    src: /home/{{ user }}/.config/picom/picom.conf
-    dest: /home/{{ user }}/.config/picom/picom.conf.bak
+# - name: back up picom.conf file
+#   tags: picom,i3
+#   copy:
+#     src: /home/{{ user }}/.config/picom/picom.conf
+#     dest: /home/{{ user }}/.config/picom/picom.conf.bak
 
 - name: install picom config file
   tags: picom,i3
   copy:
     src: files/picom.conf
     dest: /home/{{ user }}/.config/picom/picom.conf
+    backup: yes
 
 - name: xdg-user-dirs
   tags: xdg
