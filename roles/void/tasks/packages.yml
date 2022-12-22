@@ -22,17 +22,10 @@
       - exa
       - ncdu
       - bat
-      - onedrive
-      - samba
-      - smbclient
-      - cifs-utils
       - duf
       - firefox
       - pcmanfm
-      - libreoffice
       - notepadqq
-      - chromium
-      - vscode
       - btop
       - xdg-utils
       - xdg-user-dirs
@@ -40,8 +33,15 @@
       - unzip
       - curl
       - wget
-      - linux-headers
+      # - linux-headers
       - dconf
       - dconf-editor
-      - xinit
+      # - xinit
+      # - onedrive
+      # - samba
+      # - smbclient
+      # - cifs-utils
+      # - libreoffice
+      # - chromium
+      # - vscode
   #  state: latest

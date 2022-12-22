@@ -44,7 +44,8 @@
 
 - name: xdg-user-dirs
   tags: xdg
-  shell: xdg-user-dirs-update
+  shell:
+    cmd: xdg-user-dirs-update
   args:
     executable: /bin/bash
 
