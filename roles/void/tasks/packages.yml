@@ -1,7 +1,8 @@
 - name: install packages
   tags: base
   community.general.xbps:
-    name:
+    name: '{{item}}'
+  loop:
       - xorg
       - dbus
       - lightdm
