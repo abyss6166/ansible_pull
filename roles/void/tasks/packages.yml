@@ -1,6 +1,6 @@
 - name: install packages
   tags: base
-  package:
+  xbps:
     name:
       - xorg
       - dbus
