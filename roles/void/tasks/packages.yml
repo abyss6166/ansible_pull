@@ -41,4 +41,6 @@
       - curl
       - wget
       - linux-headers
+      - dconf
+      - dconf-editor
   #  state: latest
