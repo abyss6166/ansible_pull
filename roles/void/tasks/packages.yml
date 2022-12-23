@@ -1,6 +1,5 @@
 - name: install packages
   tags: base
-  when: stage=1
   community.general.xbps:
     name: '{{item}}'
   loop:
@@ -46,6 +45,8 @@
       - libreoffice
       - chromium
       - vscode
+  when: stage=1
+
 
       # - xinit
       # - linux-headers
@@ -53,16 +54,16 @@
 
 - name: setup script
   tags: lightdm
-  when: stage=1
   copy:
     src: files/script.sh
     dest: /home/{{ user }}/
     owner: "{{ user }}"
     group: "{{ user }}"
+  when: stage=1
 
 - name: set setup script to executable
   tags: lightdm
-  when: stage=1
   file:
     path: /home/{{ user }}/script.sh
     mode: +x
+  when: stage=1

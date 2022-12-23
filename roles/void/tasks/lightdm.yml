@@ -9,26 +9,26 @@
 
 - name: create dbus link 
   tags: dbus
-  when: stage=1
   become: true
   shell: ln -s /etc/sv/dbus /var/service
+  when: stage=1
 
 - name: back up lightdm.conf file
   tags: lightdm
-  when: stage=1
   become: true
   copy:
     src: /etc/lightdm/lightdm.conf
     dest: /etc/lightdm/lightdm.conf.bak
+  when: stage=1
 
 - name: edit lightdm.conf file
   tags: lightdm
-  when: stage=1
   become: true
   lineinfile:
     path: /etc/lightdm/lightdm.conf
     regexp: '^#display-setup-script='
     line: 'display-setup-script=xrandr --output Virtual1 --mode 1920x1080'
+  when: stage=1
 
 # - name: create lightdm link 
 #   tags: lightdm
