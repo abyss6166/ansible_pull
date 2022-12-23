@@ -9,11 +9,13 @@
 
 - name: create dbus link 
   tags: dbus
+  when: stage=1
   become: true
   shell: ln -s /etc/sv/dbus /var/service
 
 - name: back up lightdm.conf file
   tags: lightdm
+  when: stage=1
   become: true
   copy:
     src: /etc/lightdm/lightdm.conf
@@ -21,6 +23,7 @@
 
 - name: edit lightdm.conf file
   tags: lightdm
+  when: stage=1
   become: true
   lineinfile:
     path: /etc/lightdm/lightdm.conf
