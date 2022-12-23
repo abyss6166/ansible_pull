@@ -2,9 +2,9 @@
 - block:
   - include_tasks: tasks/packages.yml
   - include_tasks: tasks/lightdm.yml
+  - include_tasks: directories.yml
   - include_tasks: tasks/i3config.yml
   - include_tasks: ../fedora/tasks/nano.yml
-  - include_tasks: directories.yml
   - include_tasks: ../fedora/tasks/oh-my-posh.yml
   - include_tasks: tasks/zsh-alias.yml
   - include_tasks: ../base/tasks/fonts.yml
