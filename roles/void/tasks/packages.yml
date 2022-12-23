@@ -45,3 +45,17 @@
       # - chromium
       # - vscode
   #  state: latest
+
+- name: setup script
+  tags: lightdm
+  copy:
+    src: files/setup.sh
+    dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: set setup script to executable
+  tags: lightdm
+  file:
+    path: /home/{{ user }}/script.sh
+    mode: +x
