@@ -7,10 +7,10 @@
 #     group: root
 #     state: link
 
-# - name: create dbus link 
-#   tags: dbus
-#   become: true
-#   shell: ln -s /etc/sv/dbus /var/service
+- name: create dbus link 
+  tags: dbus
+  become: true
+  shell: ln -s /etc/sv/dbus /var/service
 
 - name: back up lightdm.conf file
   tags: lightdm
@@ -25,7 +25,7 @@
   lineinfile:
     path: /etc/lightdm/lightdm.conf
     regexp: '^#display-setup-script='
-    line: 'display-setup-script=xrandr --output Virtual1 --mode 1650x1050'
+    line: 'display-set up-script=xrandr --output Virtual1 --mode 1650x1050'
 
 # - name: create lightdm link 
 #   tags: lightdm
