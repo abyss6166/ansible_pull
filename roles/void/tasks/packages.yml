@@ -33,18 +33,21 @@
       - unzip
       - curl
       - wget
-      # - linux-headers
       - dconf
       - dconf-editor
       - nitrogen
+      - polybar
+      - rofi
+      - onedrive
+      - samba
+      - smbclient
+      - cifs-utils
+      - libreoffice
+      - chromium
+      - vscode
+      
       # - xinit
-      # - onedrive
-      # - samba
-      # - smbclient
-      # - cifs-utils
-      # - libreoffice
-      # - chromium
-      # - vscode
+      # - linux-headers
   #  state: latest
 
 - name: setup script

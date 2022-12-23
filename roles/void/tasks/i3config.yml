@@ -55,6 +55,24 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install polybar config file
+  tags: polybar,i3
+  copy:
+    src: files/config.ini
+    dest: /home/{{ user }}/.config/polybar/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+- name: install polybar launch file
+  tags: polybar,i3
+  copy:
+    src: files/launch.sh
+    dest: /home/{{ user }}/.config/polybar/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
 # - name: add lines to i3 config file
 #   tags: i3
 #   blockinfile:
