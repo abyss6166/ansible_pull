@@ -21,7 +21,7 @@
       force directory mode = 0775
       write list = user
 
-- name: create lightdm link 
+- name: create samba link 
   tags: lightdm
   file:
     src: /etc/sv/smbd

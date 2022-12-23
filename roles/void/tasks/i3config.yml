@@ -44,10 +44,7 @@
 
 - name: xdg-user-dirs
   tags: xdg
-  shell:
-    cmd: xdg-user-dirs-update
-  args:
-    executable: /bin/bash
+  shell: xdg-user-dirs-update
 
 - name: wallpaper
   copy:
