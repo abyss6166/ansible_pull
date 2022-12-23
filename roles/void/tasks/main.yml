@@ -1,6 +1,7 @@
 # Void specific tasks
 - block:
   - include_tasks: tasks/packages.yml
+    when: stage is defined
   - include_tasks: tasks/lightdm.yml
   - include_tasks: directories.yml
   - include_tasks: tasks/i3config.yml

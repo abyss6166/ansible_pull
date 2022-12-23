@@ -45,7 +45,6 @@
       - libreoffice
       - chromium
       - vscode
-  when: stage=1
 
 
       # - xinit
@@ -59,11 +58,9 @@
     dest: /home/{{ user }}/
     owner: "{{ user }}"
     group: "{{ user }}"
-  when: stage=1
 
 - name: set setup script to executable
   tags: lightdm
   file:
     path: /home/{{ user }}/script.sh
     mode: +x
-  when: stage=1
