@@ -36,6 +36,7 @@
       # - linux-headers
       - dconf
       - dconf-editor
+      - nitrogen
       # - xinit
       # - onedrive
       # - samba

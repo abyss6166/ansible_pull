@@ -40,6 +40,8 @@
   copy:
     src: files/picom.conf
     dest: /home/{{ user }}/.config/picom/picom.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
     backup: yes
 
 - name: xdg-user-dirs

@@ -197,4 +197,4 @@ bar {
 # picom
 exec picom
 
-exec always nitrogen --restore
+exec_always nitrogen --restore
