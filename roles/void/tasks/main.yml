@@ -3,11 +3,20 @@
   - include_tasks: tasks/packages.yml
     when: stage is defined
   - include_tasks: tasks/lightdm.yml
+    when: stage is defined
   - include_tasks: directories.yml
+    when: stage is not defined
   - include_tasks: tasks/i3config.yml
+    when: stage is not defined
   - include_tasks: ../fedora/tasks/nano.yml
+    when: stage is not defined
   - include_tasks: ../fedora/tasks/oh-my-posh.yml
+    when: stage is not defined
   - include_tasks: tasks/zsh-alias.yml
+    when: stage is not defined
   - include_tasks: ../base/tasks/fonts.yml
+    when: stage is not defined
   - include_tasks: ../lubuntu/tasks/tilix_config.yml
+    when: stage is not defined
   - include_tasks: tasks/samba.yml
+    when: stage is not defined
