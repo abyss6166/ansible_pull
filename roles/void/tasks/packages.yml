@@ -49,7 +49,7 @@
 - name: setup script
   tags: lightdm
   copy:
-    src: files/setup.sh
+    src: files/script.sh
     dest: /home/{{ user }}/
     owner: "{{ user }}"
     group: "{{ user }}"
