@@ -19,7 +19,7 @@
       - dconf-cli
       - ssh
       - notepadqq
-      - chromium
+      - chromium-browser
       - nala
     state: latest
 
