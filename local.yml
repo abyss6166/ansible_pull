@@ -26,7 +26,7 @@
   become: true
   roles:
     - role: base
-      when: ansible_distribution != "Void" or ansible_distribution != "Ubuntu"
+      when: (ansible_distribution != "Void") or (ansible_distribution != "Ubuntu")
 
 - hosts: localhost
   connection: local
