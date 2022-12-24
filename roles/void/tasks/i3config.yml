@@ -73,6 +73,12 @@
     group: "{{ user }}"
     backup: yes
 
+- name: set polybar script to executable
+  tags: polybar
+  file:
+    path: /home/{{ user }}/.config/polybar/script.sh
+    mode: +x
+
 # - name: add lines to i3 config file
 #   tags: i3
 #   blockinfile:

@@ -45,6 +45,7 @@
       - libreoffice
       - chromium
       - vscode
+      - nerd-fonts
 
 
       # - xinit
