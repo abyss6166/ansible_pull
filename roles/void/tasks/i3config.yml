@@ -44,10 +44,6 @@
     group: "{{ user }}"
     backup: yes
 
-- name: xdg-user-dirs
-  tags: xdg
-  shell: xdg-user-dirs-update
-
 - name: wallpaper
   copy:
     src: files/i3wm-2560×1440.jpg
@@ -78,6 +74,19 @@
   file:
     path: /home/{{ user }}/.config/polybar/script.sh
     mode: +x
+
+- name: install quiterss config
+  tags: quiterss
+  copy:
+    src: ../files/quiterss.ini
+    dest: /home/{{ user }}/.config/quiterss/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+# - name: xdg-user-dirs
+#   tags: xdg
+#   shell: xdg-user-dirs-update
 
 # - name: add lines to i3 config file
 #   tags: i3

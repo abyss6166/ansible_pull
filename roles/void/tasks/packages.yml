@@ -46,7 +46,9 @@
       - chromium
       - vscode
       - nerd-fonts
-
+      - quiterss
+      - arc-theme
+      - arc-icon-theme
 
       # - xinit
       # - linux-headers
