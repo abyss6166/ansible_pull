@@ -1,0 +1,25 @@
+- name: install packages
+  tags: base
+  package:
+    name:
+      - zsh
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - tilix
+      - btop
+      - conky
+      - exa
+      - ncdu
+      - bat
+      - duf
+      - samba
+      - smbclient
+      - cifs-utils
+      - dconf-editor
+      - dconf-cli
+      - ssh
+      - notepadqq
+      - chromium
+      - nala
+    state: latest
+

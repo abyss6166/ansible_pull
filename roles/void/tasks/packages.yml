@@ -49,9 +49,9 @@
       - quiterss
       - arc-theme
       - arc-icon-theme
+      - linux-headers
 
       # - xinit
-      # - linux-headers
   #  state: latest
 
 - name: setup script

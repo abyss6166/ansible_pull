@@ -4,3 +4,4 @@ Ansible-pull configuration for Linux installs
   - Debian XFCE
   - Lubuntu
   - Void i3
+  - Ubuntu Gnome

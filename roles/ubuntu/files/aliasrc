@@ -30,7 +30,6 @@ alias ls='ls'
 alias ll='ls -l'
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
-#alias la='ls -lAFh --color=auto --group-directories-first --time-style=long-iso'   #long list,show almost all,show type,human readable
 alias la='exa --long --header -a -g --group-directories-first --time-style=long-iso --icons'
 alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
 alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
@@ -39,30 +38,28 @@ alias ldot='ls -ld .*'
 alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
-alias tree='exa --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
-alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
 
-alias grep='grep -in --color'
+alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 alias t='tail -f'
 
 # Command line head / tail shortcuts
-#alias -g H='| head'
-#alias -g T='| tail'
-#alias -g G='| grep'
-#alias -g L="| less"
-#alias -g M="| most"
-#alias -g LL="2>&1 | less"
-#alias -g CA="2>&1 | cat -A"
-#alias -g NE="2> /dev/null"
-#alias -g NUL="> /dev/null 2>&1"
-#alias -g P="2>&1| pygmentize -l pytb"
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du -d 1 -h'
-alias dush='du -sh *'
+alias duf='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
@@ -77,10 +74,11 @@ alias unexport='unset'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias vim='vim'
-alias vi='vim'
-# alias gds-start='sudo systemctl start openvpn-client@gds'
-# alias gds-stop='sudo systemctl stop openvpn-client@gds'
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias editgrub='sudo nano /boot/grub/grub.cfg'
+alias gp=gitpush
+alias gu=gitupdate
 gitpush() {
     git add .
     git commit -m "$*"
@@ -92,28 +90,24 @@ gitupdate() {
     ssh-add ~/.ssh/github
     ssh -T git@github.com
 }
-alias gp=gitpush
-alias gu=gitupdate
-alias lbrynet='/opt/LBRY/resources/static/daemon/lbrynet'
-alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
-
-alias c='clear'
-alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
-alias cd..='cd ..'
-alias ..='cd ..'
-alias chx='chmod +x'
-alias ipba='ip -br a'
-alias ipa='ip -c a'
-alias ~='cd ~'
-alias cat='bat'
-
-alias search='xbps-query -Rs'
-alias install='sudo xbps-install'
-alias upgrade='sudo xbps-install -Su'
-alias remove='sudo xbps-remove'
 
 mkcd () {
 	mkdir "$1"
 	cd "$1"
 }
-
+alias c='clear'
+alias dff='df -hT -x squashfs -x tmpfs -x devtmpfs'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias install='sudo nala install'
+alias search='nala search'
+alias chx='chmod +x'
+alias ipba='ip -br a'
+alias ipa='ip -c a'
+alias addusergroup='sudo usermod -aG'
+alias ctlstatus='systemctl status'
+alias ctlstart='systemctl start'
+alias ctlrestart='systemctl restart'
+alias nf='neofetch'
+alias upgrade='sudo nala upgrade'
+alias cat='bat'
