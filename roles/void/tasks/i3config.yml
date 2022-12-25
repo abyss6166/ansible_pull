@@ -84,6 +84,16 @@
     group: "{{ user }}"
     backup: yes
 
+- name: install rofi config file
+  tags: rofi,i3
+  copy:
+    src: files/config.rasi
+    dest: /home/{{ user }}/.config/rofi/config.rasi
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+
 # - name: xdg-user-dirs
 #   tags: xdg
 #   shell: xdg-user-dirs-update
