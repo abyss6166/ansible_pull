@@ -51,6 +51,7 @@ tiling_drag modifier titlebar
 # start a terminal
 #bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec tilix
+bindsym $mod+Shift+Return exec terminology
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -151,9 +152,48 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+# set $ws1 "1:term"
+# set $ws2 "2:web"
+# set $ws3 "3:rss"
+# set $ws4 "4:email"
+# set $ws5 "5:np"
+# set $ws6 "6:code"
+# set $ws7 "7"
+# set $ws8 "8"
+# set $ws9 "9"
+# set $ws10 "10"
+
+# # switch to workspace
+# bindsym $mod+1 workspace $ws1
+# bindsym $mod+2 workspace $ws2
+# bindsym $mod+3 workspace $ws3
+# bindsym $mod+4 workspace $ws4
+# bindsym $mod+5 workspace $ws5
+# bindsym $mod+6 workspace $ws6
+# bindsym $mod+7 workspace $ws7
+# bindsym $mod+8 workspace $ws8
+# bindsym $mod+9 workspace $ws9
+# bindsym $mod+0 workspace $ws10
+
+# # move focused container to workspace
+# bindsym $mod+Shift+1 move container to workspace $ws1
+# bindsym $mod+Shift+2 move container to workspace $ws2
+# bindsym $mod+Shift+3 move container to workspace $ws3
+# bindsym $mod+Shift+4 move container to workspace $ws4
+# bindsym $mod+Shift+5 move container to workspace $ws5
+# bindsym $mod+Shift+6 move container to workspace $ws6
+# bindsym $mod+Shift+7 move container to workspace $ws7
+# bindsym $mod+Shift+8 move container to workspace $ws8
+# bindsym $mod+Shift+9 move container to workspace $ws9
+# bindsym $mod+Shift+0 move container to workspace $ws10
+
 # switch between workspaces
 bindsym $mod+Control+Left workspace prev
 bindsym $mod+Control+Right workspace next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -181,6 +221,11 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
+        bindsym $mod+Left resize shrink width 1 px or 1 ppt
+        bindsym $mod+Down resize grow height 1 px or 1 ppt
+        bindsym $mod+Up resize shrink height 1 px or 1 ppt
+        bindsym $mod+Right resize grow width 1 px or 1 ppt
+
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -188,6 +233,15 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+workspace_auto_back_and_forth yes
+
+assign [class="firefox"] → $ws2
+#assign [class="tilix"] → $term
+assign [class="quiterss"] → $ws3
+assign [class="thunderbird"] → $ws4
+# assign [class="notepadqq"] → $ws5
+assign [class="code"] → $ws6
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -198,6 +252,52 @@ bindsym $mod+r mode "resize"
 # picom
 exec picom
 
-exec_always nitrogen --restore
+exec nitrogen --restore
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Create Log out, Reboot, Poweroff bindings
+# mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+#         bindsym $mod+r exec shutdown -r now
+#         bindsym $mod+l exit
+#         bindsym $mod+p exec shutdown -P
+
+#         # back to normal: Enter or Escape
+#         bindsym Return mode "default"
+#         bindsym Escape mode "default"
+# }
+
+# bindsym $mod+Shift+p mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+
+# shutdown / restart / suspend...
+# set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (CTRL+s) shutdown
+
+# mode "$mode_system" {
+#     bindsym l exec --no-startup-id $i3lockwall, mode "default"
+#     bindsym e exec --no-startup-id i3-msg exit, mode "default"
+#     bindsym s exec --no-startup-id $i3lockwall && suspend, mode "default"
+#     bindsym h exec --no-startup-id $i3lockwall && hibernate, mode "default"
+#     bindsym r exec --no-startup-id reboot, mode "default"
+#     bindsym Ctrl+s exec --no-startup-id poweroff -i, mode "default"
+
+#     # back to normal: Enter or Escape
+#     bindsym Return mode "default"
+#     bindsym Escape mode "default"
+# }
+
+# bindsym $mod+Control+BackSpace mode "$mode_system"
+
+#assign [class="Tilix"] 1
+assign [class="Firefox Web Browser"] 2
+assign [class="QuiteRSS"] 3
+assign [class="Thunderbird"] 4
+#assign [class="Notepadqq"] 5
+assign [class="Code"] 6
+#assign [class="Pcmanfm"] 7
+
+
+default_border pixel 0
+hide_edge_borders smart
+
+

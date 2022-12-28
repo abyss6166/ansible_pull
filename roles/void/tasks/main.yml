@@ -20,3 +20,5 @@
     when: stage is not defined
   - include_tasks: tasks/samba.yml
     when: stage is not defined
+  - include_tasks: discord.yml
+    when: stage is not defined

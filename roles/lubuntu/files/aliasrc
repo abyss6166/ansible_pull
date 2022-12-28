@@ -40,6 +40,9 @@ alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
+
+alias n='${=EDITOR}'
 
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -71,14 +74,15 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
 
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias editgrub='sudo nano /boot/grub/grub.cfg'
 alias gp=gitpush
 alias gu=gitupdate
+
 gitpush() {
     git add .
     git commit -m "$*"
@@ -92,15 +96,14 @@ gitupdate() {
 }
 
 mkcd () {
-	mkdir "$1"
+	mkdir -pv "$1"
 	cd "$1"
 }
+
 alias c='clear'
 alias dff='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
-alias install='sudo nala install'
-alias search='nala search'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
@@ -109,5 +112,9 @@ alias ctlstatus='systemctl status'
 alias ctlstart='systemctl start'
 alias ctlrestart='systemctl restart'
 alias nf='neofetch'
-alias upgrade='sudo nala upgrade'
+alias ~='cd ~'
 alias cat='bat'
+
+alias install='sudo nala install'
+alias search='nala search'
+alias upgrade='sudo nala upgrade'

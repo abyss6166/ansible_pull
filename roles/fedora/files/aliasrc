@@ -42,6 +42,9 @@ alias lrt='ls -1Fcrt'
 alias tree='exa --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
+
+alias n='${=EDITOR}'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -73,9 +76,9 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
 alias vim='vim'
 alias vi='vim'
 alias gds-start='sudo systemctl start openvpn-client@gds'
@@ -109,4 +112,8 @@ alias ipa='ip -c a'
 alias sshpi='ssh pi@10.0.0.32'
 alias ~='cd ~'
 alias cat='bat'
-alias bsnes='pi@10.0.0.32:/home/pi/games/bsnes/roms'
+
+mkcd () {
+	mkdir -pv "$1"
+	cd "$1"
+}

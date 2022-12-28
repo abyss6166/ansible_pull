@@ -50,6 +50,7 @@
       - arc-theme
       - arc-icon-theme
       - linux-headers
+      - terminology
 
       # - xinit
   #  state: latest

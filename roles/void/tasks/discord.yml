@@ -1,0 +1,16 @@
+- name: discord
+  tags: discord
+  unarchive:
+    src: https://discord.com/api/download?platform=linux&format=tar.gz
+    dest: /usr/share/discord
+    remote_src: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install discord shortcut
+  tags: discord,rofi
+  copy:
+    src: /usr/share/discord/Discord/discord.desktop
+    dest: /usr/share/applications
+    owner: "{{ user }}"
+    group: "{{ user }}"

@@ -43,6 +43,10 @@ alias tree='exa --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
+alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
+alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
+
+alias n='${=EDITOR}'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -74,13 +78,12 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
 
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
 alias vim='vim'
 alias vi='vim'
-# alias gds-start='sudo systemctl start openvpn-client@gds'
-# alias gds-stop='sudo systemctl stop openvpn-client@gds'
+
 gitpush() {
     git add .
     git commit -m "$*"
@@ -113,7 +116,7 @@ alias upgrade='sudo xbps-install -Su'
 alias remove='sudo xbps-remove'
 
 mkcd () {
-	mkdir "$1"
+	mkdir -pv "$1"
 	cd "$1"
 }
 
