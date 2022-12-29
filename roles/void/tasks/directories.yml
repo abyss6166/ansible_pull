@@ -15,4 +15,5 @@
       - ".config/i3"
       - ".config/picom"
       - ".config/rofi"
-      - ".config/quiterss"
+      - "git"
+      - ".config/QuiteRss"

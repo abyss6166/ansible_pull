@@ -120,3 +120,4 @@ mkcd () {
 	cd "$1"
 }
 
+alias zip='tar -zcvf'

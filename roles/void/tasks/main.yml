@@ -8,8 +8,6 @@
     when: stage is not defined
   - include_tasks: tasks/i3config.yml
     when: stage is not defined
-  - include_tasks: ../fedora/tasks/nano.yml
-    when: stage is not defined
   - include_tasks: ../fedora/tasks/oh-my-posh.yml
     when: stage is not defined
   - include_tasks: tasks/zsh-alias.yml
@@ -21,4 +19,6 @@
   - include_tasks: tasks/samba.yml
     when: stage is not defined
   - include_tasks: discord.yml
+    when: stage is not defined
+  - include_tasks: git.yml
     when: stage is not defined

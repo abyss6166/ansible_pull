@@ -109,7 +109,6 @@ alias upgrade='sudo dnf upgrade'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
-alias sshpi='ssh pi@10.0.0.32'
 alias ~='cd ~'
 alias cat='bat'
 
@@ -117,3 +116,5 @@ mkcd () {
 	mkdir -pv "$1"
 	cd "$1"
 }
+
+alias zip='tar -zcvf'

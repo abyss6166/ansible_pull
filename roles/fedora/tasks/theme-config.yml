@@ -42,3 +42,12 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install quiterss config
+  tags: quiterss
+  copy:
+    src: ../files/QuiteRss.ini
+    dest: /home/{{ user }}/.config/QuiteRss/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+

@@ -1,0 +1,24 @@
+- name: create nanorc directory
+  tags: nano
+  file:
+    path: /home/{{ user }}/nanorc
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: install nanorc files
+  tags: font,fonts
+  unarchive:
+    src: files/nanorc.tar.gz
+    dest: /home/{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: nano config file
+  tags: nano
+  copy:
+    src: files/nanorc
+    dest: /home/{{ user }}/.nanorc
+    owner: "{{ user }}"
+    group: "{{ user }}"

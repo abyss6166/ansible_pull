@@ -1,7 +1,0 @@
-- name: nano config file
-  tags: nano
-  copy:
-    src: files/nanorc
-    dest: /home/{{ user }}/.nanorc
-    owner: "{{ user }}"
-    group: "{{ user }}"

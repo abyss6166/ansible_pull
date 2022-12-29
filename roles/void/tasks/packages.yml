@@ -50,7 +50,9 @@
       - arc-theme
       - arc-icon-theme
       - linux-headers
-      - terminology
+      - pipewire
+      - pulseaudio
+      - gnupg
 
       # - xinit
   #  state: latest

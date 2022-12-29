@@ -116,3 +116,5 @@ alias ~='cd ~'
 alias install='sudo nala install'
 alias search='nala search'
 alias upgrade='sudo nala upgrade'
+
+alias zip='tar -zcvf'

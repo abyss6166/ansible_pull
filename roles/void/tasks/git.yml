@@ -1,0 +1,7 @@
+- name: download polybar scripts
+  tags: polybar
+  git:
+    repo: https://github.com/polybar/polybar-scripts.git
+    dest: /home/{{ user }}/git
+    clone: yes
+    update: yes
