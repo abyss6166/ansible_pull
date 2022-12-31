@@ -1,0 +1,22 @@
+- name: add hosts to /etc/hosts file
+  tags: hosts
+  blockinfile:
+    path: /etc/hosts
+    block: |
+      127.0.0.1 localhost
+      127.0.1.1 archlinuxvm
+
+- name: enable timesyncd
+  tags: timesyncd
+  service:
+    name: systemd-timesyncd
+    state: started
+    enabled: yes
+
+- name: edit pacman config file
+  tags: pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#ParallelDownloads'
+    line: 'ParallelDownloads = 5'
+    backrefs: yes

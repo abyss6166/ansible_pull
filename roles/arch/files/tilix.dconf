@@ -1,0 +1,20 @@
+[gexperts/Tilix]
+app-title='${appName}: ${sessionName} - ${sessionNumber}/${sessionCount}'
+prompt-on-close=true
+quake-specific-monitor=0
+sidebar-on-right=true
+terminal-title-style='none'
+theme-variant='dark'
+warn-vte-config-issue=false
+window-style='disable-csd-hide-toolbar'
+
+[gexperts/Tilix/keybindings]
+app-preferences='<Primary>p'
+
+[gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+background-transparency-percent=10
+font='MesloLGS NF 10'
+foreground-color='#FFFFFFFFFFFF'
+use-system-font=false
+use-theme-colors=false
+visible-name='Default'

@@ -1,0 +1,89 @@
+- name: install packages
+  tags: base
+  community.general.pacman:
+    name: '{{item}}'
+  loop:
+      # Desktop environment
+      - xorg
+      - lightdm
+      - lightdm-gtk-greeter
+      - lightdm-gtk-greeter-settings
+      - i3-wm
+      - i3status
+      - i3blocks
+      - picom
+      - polybar
+
+      # Base packages
+      - linux-headers
+      - dmenu
+      - rofi
+      - nano
+      - base-devel
+      - pacman-contrib
+      - intel-ucode
+
+      # Terminal/Shell
+      - zsh
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - tilix
+      - ttf-nerd-fonts-symbols-2048-em
+      - awesome-terminal-fonts
+
+      # Utilities
+      - htop
+      - exa
+      - ncdu
+      - bat
+      - duf
+      - btop
+
+      # Applications
+      - firefox
+      - pcmanfm
+      - notepadqq
+      - nitrogen
+      - libreoffice-still
+      - chromium
+      - code
+      - caja
+      - vim
+
+      # Services
+      - xdg-utils
+      - xdg-user-dirs
+      - unzip
+      - curl
+      - wget
+      - dconf
+      - dconf-editor
+      - samba
+      - smbclient
+      - cifs-utils
+      - pipewire
+      - pulseaudio
+      - onedrive
+      - gnupg
+
+      # Appearance
+      - lxappearance
+      - arc-theme
+      - arc-icon-theme
+
+
+  #  state: latest
+
+- name: setup script
+  tags: lightdm
+  copy:
+    src: files/script.sh
+    dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: set setup script to executable
+  tags: lightdm
+  file:
+    path: /home/{{ user }}/script.sh
+    mode: +x
