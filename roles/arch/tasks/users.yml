@@ -1,0 +1,21 @@
+- name: add user group
+  group:
+    name: "{{ user }}"
+    state: present
+
+- name: add user to system
+  user:
+    name: "{{ user }}"
+    groups: wheel,{{ user }}
+    append: yes
+    shell: /bin/bash
+    create_home: true
+    password: msh
+
+- name: allow wheel sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^# %wheel ALL=(ALL:ALL) ALL'
+    line: '%wheel ALL=(ALL) ALL'
+    validate: 'visudo -cf %s'

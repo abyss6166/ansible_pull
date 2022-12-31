@@ -20,3 +20,11 @@
     regexp: '^#ParallelDownloads'
     line: 'ParallelDownloads = 5'
     backrefs: yes
+
+- name: enable virtualbox
+  tags: virtualbox
+  service:
+    name: vboxservice
+    state: started
+    enabled: yes
+
