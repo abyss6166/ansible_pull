@@ -9,6 +9,13 @@
         update_cache: yes
         name: "*"
         state: latest
+      when: ansible_distribution != "Archlinux"
+    
+    - name: update Arch
+      tags: arch
+      pacman:
+        update_cache: yes
+        upgrade: yes
 
   name: get flavor
   tasks:
@@ -44,4 +51,4 @@
     - role: ubuntu
       when: ansible_distribution == "Ubuntu"
     - role: arch
-      when: ansible_distribution == "Arch"
+      when: ansible_distribution == "Archlinux"
