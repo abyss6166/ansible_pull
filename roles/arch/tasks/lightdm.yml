@@ -13,9 +13,9 @@
     regexp: '^#display-setup-script='
     line: 'display-setup-script=xrandr --output Virtual-1 --mode 1920x1080'
 
-- name: enable lightdm
-  tags: lightdm
-  service:
-    name: lightdm
-    state: started
-    enabled: yes
+# - name: enable lightdm
+#   tags: lightdm
+#   service:
+#     name: lightdm
+#     state: started
+#     enabled: yes
