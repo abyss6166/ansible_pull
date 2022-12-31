@@ -75,16 +75,16 @@
 
   #  state: latest
 
-- name: setup script
-  tags: lightdm
-  copy:
-    src: files/script.sh
-    dest: /home/{{ user }}/
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: setup script
+#   tags: lightdm
+#   copy:
+#     src: files/script.sh
+#     dest: /home/{{ user }}/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: set setup script to executable
-  tags: lightdm
-  file:
-    path: /home/{{ user }}/script.sh
-    mode: +x
+# - name: set setup script to executable
+#   tags: lightdm
+#   file:
+#     path: /home/{{ user }}/script.sh
+#     mode: +x
