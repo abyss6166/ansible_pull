@@ -64,12 +64,12 @@
       - cifs-utils
       - pipewire
       - pulseaudio
-      - onedrive
+      # - onedrive
       - gnupg
 
       # Appearance
       - lxappearance
-      - arc-theme
+      # - arc-theme
       - arc-icon-theme
 
 
