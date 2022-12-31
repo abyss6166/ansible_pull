@@ -115,6 +115,11 @@ alias install='sudo xbps-install'
 alias upgrade='sudo xbps-install -Su'
 alias remove='sudo xbps-remove'
 
+alias xs='xbps-query -Rs'
+alias xi='sudo xbps-install'
+alias xu='sudo xbps-install -Su'
+alias xr='sudo xbps-remove'
+
 mkcd () {
 	mkdir -pv "$1"
 	cd "$1"

@@ -1,7 +1,7 @@
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt autocd
 setopt correct
 # End of lines configured by zsh-newuser-install
@@ -26,4 +26,7 @@ compinit
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/slimfat.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/quick-term.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/iterm2.omp.json)"

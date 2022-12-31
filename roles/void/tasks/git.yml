@@ -5,3 +5,10 @@
     dest: /home/{{ user }}/git
     clone: yes
     update: yes
+
+- name: edit polybar script
+  tags: polybar
+  lineinfile:
+    path: /home/{{ user }}/git/polybar-scripts/polybar-scripts/updates-xbps/updates-xbps.sh
+    regexp: '^echo "# $updates"'
+    line: 'echo "$updates"'
