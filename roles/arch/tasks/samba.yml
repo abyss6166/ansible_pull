@@ -5,8 +5,8 @@
     dest: /etc/samba/smb.conf
     clone: yes
     update: yes
-    owner: root
-    group: root
+    # owner: root
+    # group: root
 
 - name: add samba share to config file
   tags: samba
