@@ -33,12 +33,12 @@
 #     line: '#map to guest = bad user'
 #     backrefs: yes
 
-- name: enable samba
-  tags: samba
-  service:
-    name: samba
-    state: reloaded
-    enabled: yes
+# - name: enable samba
+#   tags: samba
+#   service:
+#     name: samba
+#     state: reloaded
+#     enabled: yes
 
 - name: enable smb
   tags: samba
