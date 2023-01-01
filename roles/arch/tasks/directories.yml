@@ -15,5 +15,6 @@
       - ".config/rofi"
       - "git"
       - ".config/QuiteRss"
-      - ".ansible"
+      - ".ansible/tmp"
+      - ".cache/dconf"
 
