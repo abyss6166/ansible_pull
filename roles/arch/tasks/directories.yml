@@ -15,4 +15,5 @@
       - ".config/rofi"
       - "git"
       - ".config/QuiteRss"
+      - ".ansible"
 
