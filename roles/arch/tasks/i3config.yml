@@ -93,6 +93,28 @@
     group: "{{ user }}"
     backup: yes
 
+- name: download tilix config file
+  tags: tilix
+  copy:
+    src: files/tilix.dconf
+    dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+- name: download script file
+  copy:
+    src: files/script.sh
+    dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+- name: set script to executable
+  file:
+    path: /home/{{ user }}/script.sh
+    mode: +x
+
 
 # - name: xdg-user-dirs
 #   tags: xdg

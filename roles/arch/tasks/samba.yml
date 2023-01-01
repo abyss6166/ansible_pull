@@ -1,10 +1,10 @@
 - name: download samba config file
   tags: samba
-  git:
-    repo: https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD
+  get_url:
+    url: https://raw.githubusercontent.com/zentyal/samba/master/examples/smb.conf.default
     dest: /etc/samba/smb.conf
-    clone: yes
-    update: yes
+    # clone: yes
+    # update: yes
     # owner: root
     # group: root
 
