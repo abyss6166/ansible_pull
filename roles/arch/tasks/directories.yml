@@ -2,6 +2,7 @@
   tags: directories,theme,icons
   file:
 #    path: /home/{{ user }}/.local/share/{{item}}
+    become: "{{ user }}"
     path: /home/{{ user }}/{{item}}
     state: directory
     owner: "{{ user }}"
