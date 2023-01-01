@@ -72,7 +72,7 @@
 - name: set polybar script to executable
   tags: polybar
   file:
-    path: /home/{{ user }}/.config/polybar/script.sh
+    path: /home/{{ user }}/.config/polybar/launch.sh
     mode: +x
 
 - name: install quiterss config
