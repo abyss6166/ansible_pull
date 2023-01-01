@@ -10,7 +10,10 @@
     append: yes
     shell: /bin/bash
     create_home: true
-    password: msh
+    password: "{{user_pass}}"
+    ssh_key_file: .ssh/id_ed25519
+    ssh_key_comment: "arch linux"
+    ssh_key_type: ed25519
 
 - name: allow wheel sudo
   lineinfile:
