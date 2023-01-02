@@ -137,9 +137,9 @@ workspace 1 output $firstMonitor
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-#set $ws1 "1"
+set $ws1 "1"
 #set $ws1 "1:term"
-#set $ws2 "2"
+set $ws2 "2"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -191,6 +191,12 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
+# switch between workspaces
+bindsym $mod+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab workspace next
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -210,7 +216,12 @@ mode "resize" {
         bindsym Up resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or $mod+r
+        bindsym $mod+Left resize shrink width 1 px or 1 ppt
+        bindsym $mod+Down resize grow height 1 px or 1 ppt
+        bindsym $mod+Up resize shrink height 1 px or 1 ppt
+        bindsym $mod+Right resize grow width 1 px or 1 ppt
+
+       # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
