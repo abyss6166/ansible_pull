@@ -63,5 +63,5 @@
 - name: build and install yay
   command:
     chdir: /home/{{ user }}/git/yay
-    cmd: "makepkg -$fi --noconfirm"
+    cmd: "makepkg -sfi --noconfirm"
     creates: /usr/bin/yay
