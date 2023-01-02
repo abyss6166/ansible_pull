@@ -5,6 +5,21 @@
   args:
     executable: /bin/bash
 
+- name: create safe git directory
+  tags: git
+  shell:
+    cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
+  args:
+    executable: /bin/bash
+
+- name: create safe git directory
+  tags: git
+  shell:
+    cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
+  args:
+    executable: /bin/bash
+
+
 - name: download polybar scripts
   tags: polybar
   git:
