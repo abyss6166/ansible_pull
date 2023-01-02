@@ -52,10 +52,16 @@
     clone: yes
     update: yes
 
-- name: install yay
-  become_user: "{{ user }}"
-  shell:
-    cmd: makepkg -$i
-    chdir: /home/{{ user }}/git/yay/
-  args:
-    executable: /bin/bash
+# - name: install yay
+#   become_user: "{{ user }}"
+#   shell:
+#     cmd: makepkg -$i
+#     chdir: /home/{{ user }}/git/yay/
+#   args:
+#     executable: /bin/bash
+
+- name: build and install yay
+  command:
+    chdir: /home/{{ user }}/git/yay
+    cmd: "makepkg -$fi --noconfirm"
+    creates: /usr/bin/yay
