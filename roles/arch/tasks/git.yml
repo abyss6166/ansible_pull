@@ -9,7 +9,7 @@
   tags: polybar
   git:
     repo: https://github.com/polybar/polybar-scripts.git
-    dest: /home/{{ user }}/git
+    dest: /home/{{ user }}/git/
     clone: yes
     update: yes
 
@@ -25,7 +25,7 @@
   tags: yay
   git:
     repo: https://aur.archlinux.org/yay.git
-    dest: /home/{{ user }}/git
+    dest: /home/{{ user }}/git/
     clone: yes
     update: yes
 
@@ -33,6 +33,6 @@
   become_user: "{{ user }}"
   shell:
     cmd: makepkg -$i
-    chdir: /home/{{ user }}/git/yay
+    chdir: /home/{{ user }}/git/yay/
   args:
     executable: /bin/bash
