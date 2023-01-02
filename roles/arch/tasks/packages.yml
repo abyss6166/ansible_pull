@@ -48,6 +48,7 @@
 
       # Applications
       - firefox
+      - thunderbird
       - pcmanfm
       - notepadqq
       - nitrogen
