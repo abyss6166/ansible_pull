@@ -23,6 +23,7 @@
       - pacman-contrib
       - intel-ucode
       - virtualbox-guest-utils
+      - go
 
       # Terminal/Shell
       - zsh
