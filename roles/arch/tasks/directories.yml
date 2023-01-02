@@ -17,4 +17,6 @@
       - ".config/QuiteRss"
       - ".ansible/tmp"
       - ".cache/dconf"
-
+      - ".config/i3blocks"
+      - "git/polybar"
+      - "git/yay"
