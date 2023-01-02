@@ -19,6 +19,12 @@
   args:
     executable: /bin/bash
 
+- name: create safe git directory
+  tags: git
+  shell:
+    cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks
+  args:
+    executable: /bin/bash
 
 - name: download polybar scripts
   tags: polybar
