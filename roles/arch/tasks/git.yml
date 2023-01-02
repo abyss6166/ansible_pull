@@ -22,7 +22,7 @@
 - name: create safe git directory
   tags: git
   shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks
+    cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks/scripts
   args:
     executable: /bin/bash
 
@@ -39,7 +39,7 @@
   tags: i3blocks
   git:
     repo: https://github.com/vivien/i3blocks-contrib.git
-    dest: /home/{{ user }}/.config/i3blocks
+    dest: /home/{{ user }}/.config/i3blocks/scripts
     clone: yes
     update: yes
     # force: true
