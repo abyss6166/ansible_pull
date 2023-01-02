@@ -42,7 +42,7 @@
     dest: /home/{{ user }}/.config/i3blocks
     clone: yes
     update: yes
-    force: true
+    # force: true
 
 - name: download yay
   tags: yay
@@ -51,6 +51,16 @@
     dest: /home/{{ user }}/git/yay
     clone: yes
     update: yes
+
+- name: change folder permissions
+  tags: i3blocks
+  file:
+    path: /home/{{ user }}/.config/i3blocks
+    state: directory
+    recurse: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 
 
 # - name: install yay
