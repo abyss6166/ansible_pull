@@ -28,3 +28,20 @@
     state: started
     enabled: yes
 
+- name: back up poshtheme file
+  tags: poshtheme
+  copy:
+    src: /home/{{ user }}/.poshthemes/quick-term.omp.json
+    dest: /home/{{ user }}/.poshthemes/quick-term.omp.json.bak
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install poshtheme config file
+  tags: poshtheme
+  copy:
+    src: files/quick-term.omp.json
+    dest: /home/{{ user }}/.poshthemes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
