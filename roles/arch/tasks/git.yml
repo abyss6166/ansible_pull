@@ -12,6 +12,7 @@
     dest: /home/{{ user }}/git/
     clone: yes
     update: yes
+    force: true
 
 - name: download i3blocks-contrib scripts
   tags: i3blocks
