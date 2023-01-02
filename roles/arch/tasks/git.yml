@@ -9,7 +9,7 @@
   tags: polybar
   git:
     repo: https://github.com/polybar/polybar-scripts.git
-    dest: /home/{{ user }}/git/
+    dest: /home/{{ user }}/git/polybar
     clone: yes
     update: yes
     force: true
@@ -26,7 +26,7 @@
   tags: yay
   git:
     repo: https://aur.archlinux.org/yay.git
-    dest: /home/{{ user }}/git/
+    dest: /home/{{ user }}/git/yay
     clone: yes
     update: yes
 
