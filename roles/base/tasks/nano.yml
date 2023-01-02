@@ -10,7 +10,7 @@
 - name: install nanorc files
   tags: font,fonts
   unarchive:
-    src: /roles/base/files/nanorc.tar.gz
+    src: files/nanorc.tar.gz
     dest: /home/{{ user }}
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -18,7 +18,7 @@
 - name: nano config file
   tags: nano
   copy:
-    src: /roles/base/files/nanorc
+    src: files/nanorc
     dest: /home/{{ user }}/.nanorc
     owner: "{{ user }}"
     group: "{{ user }}"
