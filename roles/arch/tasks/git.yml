@@ -60,9 +60,9 @@
 #   args:
 #     executable: /bin/bash
 
-- name: build and install yay
-  become_user: "{{ user }}"
-  command:
-    chdir: /home/{{ user }}/git/yay
-    cmd: "makepkg -sfi --noconfirm"
-    creates: /usr/bin/yay
+# - name: build and install yay
+#   become_user: "{{ user }}"
+#   command:
+#     chdir: /home/{{ user }}/git/yay
+#     cmd: "makepkg -sfi --noconfirm"
+#     creates: /usr/bin/yay
