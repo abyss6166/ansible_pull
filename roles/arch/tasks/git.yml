@@ -52,6 +52,7 @@
     clone: yes
     update: yes
 
+
 # - name: install yay
 #   become_user: "{{ user }}"
 #   shell:
