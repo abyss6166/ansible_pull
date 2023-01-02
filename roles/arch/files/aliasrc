@@ -116,7 +116,7 @@ alias upgrade='sudo pacman -Syu'
 alias remove='sudo pacman -R'
 
 alias pi='sudo pacman -S'
-alias yi='sudo yay -S'
+alias yi='yay -S'
 alias ps='pacman -Ss'
 alias ys='yay'
 alias pys='yay -Ss'
