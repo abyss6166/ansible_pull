@@ -35,6 +35,15 @@
     update: yes
     force: true
 
+- name: change polybar scripts permissions
+  tags: polybar
+  file:
+    path: /home/{{ user }}/git/polybar
+    state: directory
+    recurse: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: download i3blocks-contrib scripts
   tags: i3blocks
   git:
