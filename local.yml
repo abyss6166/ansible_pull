@@ -16,6 +16,7 @@
       pacman:
         update_cache: yes
         upgrade: yes
+      when: ansible_distribution == "Archlinux"
 
   name: get flavor
   tasks:

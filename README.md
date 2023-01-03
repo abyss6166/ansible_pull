@@ -5,3 +5,4 @@ Ansible-pull configuration for Linux installs
   - Lubuntu
   - Void i3
   - Ubuntu Gnome
+  - Arch i3
