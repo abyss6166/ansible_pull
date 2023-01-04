@@ -55,11 +55,9 @@
 
 # - name: download yay
 #   tags: yay
-#   git:
-#     repo: https://aur.archlinux.org/yay.git
-#     dest: /home/{{ user }}/git/yay
-#     clone: yes
-#     update: yes
+#   aur:
+#     name: yay
+#     state: present
 
 - name: change folder permissions
   tags: i3blocks

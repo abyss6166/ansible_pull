@@ -21,7 +21,7 @@
 background = #24283b
 background-alt = #373B41
 foreground = #C5C8C6
-#primary = #F0C674
+;primary = #F0C674
 primary = #2ac3de
 secondary = #8ABEB7
 alert = #A54242
@@ -53,18 +53,17 @@ separator = |
 separator-foreground = ${colors.disabled}
 
 #Font-0 = monospace;2
-font-0 = "DejaVu Sans,DejaVu Sans Condensed:style=Condensed,Book:size=9;2"
-#font-0 = "Nimbus Sans Narrow:style=Regular:size=9;2"
-#font-0 = "NotoSans Nerd Font:style=Condensed,Regular:size=11;2"
-font-1 = "FontAwesome:style=Regular:size=10;2"
-#font-1 = "JetBrainsMono Nerd Font:size=10;2"
-font-2 = "Symbols Nerd Font:style=2048-em:size=10;2"
+#Font-0 = "Sans Regular:size=9;1"
+#font-0 = "Nimbus Sans Narrow:style=Regular:size=11;2"
+font-0 = "NotoSans Nerd Font:style=Condensed,Regular:size=11;2"
+font-1 = "JetBrainsMono Nerd Font:size=10;2"
+font-2 = siji:pixelsize=10;1
 
 label-active-font = 0
 
 modules-left = i3 xwindow
 ; modules-left = xworkspaces xwindow inbox-imap-pythongpg
-modules-right = filesystem pulseaudio memory cpu wlan eth date updates-pacman powermenu
+modules-right = filesystem pulseaudio memory cpu wlan eth date updates-pacman
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -85,7 +84,6 @@ type = internal/i3
 format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
-#label-active-font = 1
 
 label-mode-padding = 2
 label-mode-foreground = #000
@@ -93,7 +91,6 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-#label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.cyan}
 label-focused-underline= ${colors.primary}
@@ -117,7 +114,6 @@ label-urgent-padding = 2
 ;ws-icon-[0-9]+=<label>;<icon>
 #ws-icon-0 = 1;1:
 ws-icon-0 = 1;1:
-#ws-icon-0 = 1;1:
 ws-icon-1 = 2;2:
 ws-icon-2 = 3;3:
 ws-icon-3 = 4;4:
@@ -126,9 +122,9 @@ ws-icon-4 = 5;5:ﴬ
 ws-icon-5 = 6;6:
 ws-icon-6 = 7;7:
 ws-icon-7 = 8;8:ﭮ
-ws-icon-8 = 9;9:
-ws-icon-9 = 10;10:
-ws-icon-default = 
+#ws-icon-8 = 9;9:
+#ws-icon-9 = 10;10:
+ws-icon-default =  
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -250,20 +246,19 @@ label = %date%
 ;label-foreground = ${colors.primary}
 label-foreground = ${colors.cyan}
 
-[module/updates]
-type = custom/script
-interval = 120
-format-prefix = " "
-format-prefix-foreground = ${colors.orange}
-exec = xbps-install -un | wc -l
+# [module/updates]
+# type = custom/script
+# interval = 120
+# format-prefix = " "
+# format-prefix-foreground = ${colors.orange}
+# exec = xbps-install -un | wc -l
 
 
 [module/updates-pacman]
 type = custom/script
-exec = ~/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
-interval = 20
+exec = ~/polybar-scripts/updates-pacman.sh
 format-prefix = " "
-format-prefix-foreground = ${colors.orange}
+interval = 600
 
 [module/inbox-imap-pythongpg]
 type = custom/script
@@ -274,7 +269,6 @@ format-prefix = "  "
 [module/powermenu]
 type = custom/menu
 expand-right = true
-format-prefix-foreground = ${colors.orange}
 
 format-spacing = 1
 #format-underline = #BF616A
