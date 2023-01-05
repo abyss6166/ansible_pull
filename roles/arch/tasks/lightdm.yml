@@ -5,6 +5,13 @@
     src: /etc/lightdm/lightdm.conf
     dest: /etc/lightdm/lightdm.conf.bak
 
+- name: back up lightdm-gtk-greeter.conf file
+  tags: lightdm
+  become: true
+  copy:
+    src: /etc/lightdm/lightdm-gtk-greeter.conf
+    dest: /etc/lightdm/lightdm-gtk-greeter.conf.bak
+
 - name: edit lightdm.conf file
   tags: lightdm
   become: true
@@ -19,3 +26,28 @@
     name: lightdm
  #   state: started
     enabled: yes
+
+- name: create backgrounds directory
+  tags: lightdm
+  file:
+    path: /usr/share/backgrounds
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: copy login wallpaper
+  tags: lightdm
+  copy:
+    src: files/lightdm.png
+    dest: /usr/share/backgrounds
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: edit lightdm-gtk-greeter.conf file
+  tags: lightdm
+  become: true
+  lineinfile:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    regexp: '^#background='
+    line: 'background=/usr/share/backgrounds/lightdm.png'
+
