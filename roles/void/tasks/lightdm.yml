@@ -27,6 +27,37 @@
     regexp: '^#display-setup-script='
     line: 'display-setup-script=xrandr --output Virtual1 --mode 1920x1080'
 
+- name: back up lightdm-gtk-greeter.conf file
+  tags: lightdm
+  become: true
+  copy:
+    src: /etc/lightdm/lightdm-gtk-greeter.conf
+    dest: /etc/lightdm/lightdm-gtk-greeter.conf.bak
+
+- name: create backgrounds directory
+  tags: lightdm
+  file:
+    path: /usr/share/backgrounds
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: copy login wallpaper
+  tags: lightdm
+  copy:
+    src: files/lightdm.png
+    dest: /usr/share/backgrounds
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: edit lightdm-gtk-greeter.conf file
+  tags: lightdm
+  become: true
+  lineinfile:
+    path: /etc/lightdm/lightdm-gtk-greeter.conf
+    regexp: '^#background='
+    line: 'background=/usr/share/backgrounds/lightdm.png'
+
 # - name: create lightdm link 
 #   tags: lightdm
 #   file:
