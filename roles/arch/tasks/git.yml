@@ -66,7 +66,7 @@
 
 - name: edit pacman-updates script
   lineinfile:
-    dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman
+    dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
     state: present
     regexp: '^echo "# $updates'
     line: 'echo "$updates'
