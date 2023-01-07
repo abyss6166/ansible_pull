@@ -71,12 +71,28 @@
     regexp: '^echo "# $updates'
     line: 'echo "$updates'
 
+- name: download ansible-aur
+  tags: aur
+  git:
+    repo: https://github.com/pigmonkey/ansible-aur.git
+    dest: /home/{{ user }}/git/ansible-aur
+    clone: yes
+    update: yes
+    force: true
+
+- name: copy ansible-aur file
+  tags: aur
+  copy:
+    src: /home/{{ user }}/git/ansible-aur/aur
+    dest: /usr/share/ansible
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: download yay
   tags: yay
   aur:
     name: yay
-    state: present
+    user: mattarch
 
 # - name: download i3blocks-contrib scripts
 #   tags: i3blocks
