@@ -15,7 +15,7 @@
 - name: create safe git directory
   tags: git
   shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
+    cmd: git config --global --add safe.directory /home/{{ user }}/git/ansible-aur
   args:
     executable: /bin/bash
 
