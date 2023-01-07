@@ -2,6 +2,6 @@
   tags: onedrive
   copy:
     src: files/onedrive_config
-    dest: /home/{{ user }}/,config/onedrive/config
+    dest: /home/{{ user }}/.config/onedrive/config
     owner: "{{ user }}"
     group: "{{ user }}"
