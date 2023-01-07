@@ -12,3 +12,9 @@
     path: /home/{{ user }}/git/polybar-scripts/polybar-scripts/updates-xbps/updates-xbps.sh
     regexp: '^echo "# $updates"'
     line: 'echo "$updates"'
+
+- name: change xbps-updates script to executable
+  tags: polybar,xbps
+  file:
+    path: /home/{{ user }}/git/polybar-scripts/polybar-scripts/updates-xbps/updates-xbps.sh
+    mode: +x
