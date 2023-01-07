@@ -3,6 +3,7 @@
   community.general.xbps:
     name: '{{item}}'
   loop:
+      #GUI
       - xorg
       - dbus
       - lightdm
@@ -10,47 +11,53 @@
       - lightdm-gtk-greeter-settings
       - i3
       - i3status
-      - xterm
       - dmenu
       - lxappearance
-      - nano
+      - arc-theme
+      - arc-icon-theme
+      - picom
+      - nitrogen
+      - polybar
+      - rofi
+      
+      #Shell
       - zsh
       - zsh-syntax-highlighting
       - zsh-autosuggestions
       - tilix
+
+      #Utils
       - htop
       - exa
       - ncdu
       - bat
       - duf
+      - btop
+      - nano
+
+      #Applications
       - firefox
+      - thunderbird
       - pcmanfm
       - notepadqq
-      - btop
+      - libreoffice
+      - chromium
+      - vscode
+      - quiterss
+
       - xdg-utils
       - xdg-user-dirs
-      - picom
       - unzip
       - curl
       - wget
       - dconf
       - dconf-editor
-      - nitrogen
-      - polybar
-      - rofi
       - onedrive
       - samba
       - smbclient
       - cifs-utils
-      - libreoffice
-      - chromium
-      - vscode
       - nerd-fonts
-      - quiterss
-      - arc-theme
-      - arc-icon-theme
       - linux-headers
-      - pipewire
       - pulseaudio
       - gnupg
 

@@ -13,6 +13,7 @@
       - ".config/i3"
       - ".config/picom"
       - ".config/rofi"
+      - ".config/onedrive"
       - "git"
       - ".config/QuiteRss"
       - ".ansible/tmp"

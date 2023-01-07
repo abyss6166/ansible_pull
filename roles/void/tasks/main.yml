@@ -22,3 +22,5 @@
     when: stage is not defined
   - include_tasks: git.yml
     when: stage is not defined
+  - include_tasks: onedrive.yml
+    when: stage is not defined

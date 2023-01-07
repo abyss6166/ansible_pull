@@ -28,3 +28,11 @@
     mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: copy onedrive config
+  tags: onedrive
+  copy:
+    src: files/onedrive_config
+    dest: /home/{{ user }}/.config/onedrive/config
+    owner: "{{ user }}"
+    group: "{{ user }}"

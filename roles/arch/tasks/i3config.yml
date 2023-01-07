@@ -14,7 +14,7 @@
 - name: install i3 config file
   tags: i3
   copy:
-    src: files/config
+    src: files/config_poly
     dest: /home/{{ user }}/.config/i3/config
     backup: yes
     owner: "{{ user }}"
