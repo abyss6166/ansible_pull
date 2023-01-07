@@ -1,98 +1,98 @@
-- name: create safe git directory
-  tags: git
-  shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git
-  args:
-    executable: /bin/bash
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git
+#   args:
+#     executable: /bin/bash
 
-- name: create safe git directory
-  tags: git
-  shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
-  args:
-    executable: /bin/bash
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
+#   args:
+#     executable: /bin/bash
 
-- name: create safe git directory
-  tags: git
-  shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git/ansible-aur
-  args:
-    executable: /bin/bash
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git/ansible-aur
+#   args:
+#     executable: /bin/bash
 
-- name: create safe git directory
-  tags: git
-  shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks/scripts
-  args:
-    executable: /bin/bash
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks/scripts
+#   args:
+#     executable: /bin/bash
 
-- name: create git config info - 1
-  tags: git
-  shell:
-    cmd: git config --global user.email "abyss616@yahoo.com"
-  args:
-    executable: /bin/bash
+# - name: create git config info - 1
+#   tags: git
+#   shell:
+#     cmd: git config --global user.email "abyss616@yahoo.com"
+#   args:
+#     executable: /bin/bash
 
-- name: create git config info - 1
-  tags: git
-  shell:
-    cmd: git config --global user.name "Matt Horne"
-  args:
-    executable: /bin/bash
+# - name: create git config info - 1
+#   tags: git
+#   shell:
+#     cmd: git config --global user.name "Matt Horne"
+#   args:
+#     executable: /bin/bash
 
-- name: download polybar scripts
-  tags: polybar
-  git:
-    repo: https://github.com/polybar/polybar-scripts.git
-    dest: /home/{{ user }}/git/polybar
-    clone: yes
-    update: yes
-    force: true
+# - name: download polybar scripts
+#   tags: polybar
+#   git:
+#     repo: https://github.com/polybar/polybar-scripts.git
+#     dest: /home/{{ user }}/git/polybar
+#     clone: yes
+#     update: yes
+#     force: true
 
-- name: change polybar scripts permissions
-  tags: polybar
-  file:
-    path: /home/{{ user }}/git/polybar
-    state: directory
-    recurse: yes
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: change polybar scripts permissions
+#   tags: polybar
+#   file:
+#     path: /home/{{ user }}/git/polybar
+#     state: directory
+#     recurse: yes
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: change pacman-updates script to executable
-  tags: polybar,pacman
-  file:
-    path: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
-    mode: +x
+# - name: change pacman-updates script to executable
+#   tags: polybar,pacman
+#   file:
+#     path: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
+#     mode: +x
 
-- name: edit pacman-updates script
-  lineinfile:
-    dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
-    state: present
-    regexp: '^echo "# $updates'
-    line: 'echo "$updates'
+# - name: edit pacman-updates script
+#   lineinfile:
+#     dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
+#     state: present
+#     regexp: '^echo "# $updates'
+#     line: 'echo "$updates'
 
-- name: download ansible-aur
-  tags: aur
-  git:
-    repo: https://github.com/pigmonkey/ansible-aur.git
-    dest: /home/{{ user }}/git/ansible-aur
-    clone: yes
-    update: yes
-    force: true
+# - name: download ansible-aur
+#   tags: aur
+#   git:
+#     repo: https://github.com/pigmonkey/ansible-aur.git
+#     dest: /home/{{ user }}/git/ansible-aur
+#     clone: yes
+#     update: yes
+#     force: true
 
-- name: copy ansible-aur file
-  tags: aur
-  copy:
-    src: /home/{{ user }}/git/ansible-aur/aur
-    dest: /usr/share/ansible
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: copy ansible-aur file
+#   tags: aur
+#   copy:
+#     src: /home/{{ user }}/git/ansible-aur/aur
+#     dest: /usr/share/ansible
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-# - name: download yay
-#   tags: yay
-#   aur:
-#     name: yay
-#     user: mattarch
+- name: download yay
+  tags: yay
+  aur:
+    name: yay
+    user: mattarch
 
 # - name: download i3blocks-contrib scripts
 #   tags: i3blocks
