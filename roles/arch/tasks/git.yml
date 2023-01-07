@@ -88,11 +88,11 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: download yay
-  tags: yay
-  aur:
-    name: yay
-    user: mattarch
+# - name: download yay
+#   tags: yay
+#   aur:
+#     name: yay
+#     user: mattarch
 
 # - name: download i3blocks-contrib scripts
 #   tags: i3blocks
