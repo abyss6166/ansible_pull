@@ -58,31 +58,29 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: download i3blocks-contrib scripts
-  tags: i3blocks
-  git:
-    repo: https://github.com/vivien/i3blocks-contrib.git
-    dest: /home/{{ user }}/.config/i3blocks/scripts
-    clone: yes
-    update: yes
+# - name: download i3blocks-contrib scripts
+#   tags: i3blocks
+#   git:
+#     repo: https://github.com/vivien/i3blocks-contrib.git
+#     dest: /home/{{ user }}/.config/i3blocks/scripts
+#     clone: yes
+#     update: yes
     # force: true
 
-# - name: download yay
-#   tags: yay
-#   aur:
-#     name: yay
-#     state: present
+- name: download yay
+  tags: yay
+  aur:
+    name: yay
+    state: present
 
-- name: change folder permissions
-  tags: i3blocks
-  file:
-    path: /home/{{ user }}/.config/i3blocks
-    state: directory
-    recurse: yes
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
-
+# - name: change folder permissions
+#   tags: i3blocks
+#   file:
+#     path: /home/{{ user }}/.config/i3blocks
+#     state: directory
+#     recurse: yes
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
 # - name: install yay
 #   become_user: "{{ user }}"

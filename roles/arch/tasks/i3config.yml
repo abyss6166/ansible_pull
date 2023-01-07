@@ -124,6 +124,12 @@
     group: "{{ user }}"
     backup: yes
 
+- name: change pacman-updates script to executable
+  tags: polybar,pacman
+  file:
+    path: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
+    mode: +x
+
 
 # - name: xdg-user-dirs
 #   tags: xdg
