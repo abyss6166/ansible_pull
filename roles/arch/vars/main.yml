@@ -6,6 +6,6 @@
 #           3465313230663238640a376435646436613662613163396632316337396237353831653364313763
 #           3738
 
-userpass: msh
+# userpass: msh
 user: mattarch
-pwdhash: "{{ userpass | password_hash }}"
+# pwdhash: "{{ userpass | password_hash }}"
