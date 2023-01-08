@@ -102,18 +102,18 @@
     group: "{{ user }}"
     backup: yes
 
-- name: download script file
-  copy:
-    src: files/script.sh
-    dest: /home/{{ user }}/
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
+# - name: download script file
+#   copy:
+#     src: files/script.sh
+#     dest: /home/{{ user }}/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
 
-- name: set script to executable
-  file:
-    path: /home/{{ user }}/script.sh
-    mode: +x
+# - name: set script to executable
+#   file:
+#     path: /home/{{ user }}/script.sh
+#     mode: +x
 
 # - name: install i3blocks config file
 #   tags: i3blocks,i3
