@@ -102,6 +102,14 @@
     group: "{{ user }}"
     backup: yes
 
+- name: set wallpaper
+  tags: nitrogen
+  become_user: "{{ user }}"
+  command:
+    # chdir: /
+    cmd: "nitrogen /usr/share/wallpapers/arch.png"
+
+
 # - name: download script file
 #   copy:
 #     src: files/script.sh

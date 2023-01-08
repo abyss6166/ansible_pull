@@ -1,20 +1,21 @@
 ---
 
 - block:
-  - include_tasks: users.yml
-  - include_tasks: packages.yml
-  - include_tasks: lightdm.yml
-  - include_tasks: directories.yml
-  - include_tasks: i3config.yml
-  - include_tasks: ../debian/tasks/oh-my-posh.yml
-  - include_tasks: ../debian/tasks/zsh-alias.yml
-  - include_tasks: samba.yml
-  - include_tasks: ../base/tasks/nano.yml
-  - include_tasks: ../base/tasks/fonts.yml
-  - include_tasks: git.yml
-  - include_tasks: system.yml
-  - include_tasks: ../void/tasks/onedrive.yml
-  - include_tasks: tilix_config.yml
+  # - include_tasks: users.yml
+  # - include_tasks: packages.yml
+  # - include_tasks: lightdm.yml
+  # - include_tasks: directories.yml
+  # - include_tasks: i3config.yml
+  # - include_tasks: ../debian/tasks/oh-my-posh.yml
+  # - include_tasks: ../debian/tasks/zsh-alias.yml
+  # - include_tasks: samba.yml
+  # - include_tasks: ../base/tasks/nano.yml
+  # - include_tasks: ../base/tasks/fonts.yml
+  # - include_tasks: git.yml
+  # - include_tasks: system.yml
+  # - include_tasks: ../void/tasks/onedrive.yml
+  # - include_tasks: tilix_config.yml
+  - include_tasks: test.yml
 
 
  # - include_tasks: theme-config.yml
