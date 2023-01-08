@@ -12,12 +12,12 @@
   args:
     executable: /bin/bash
 
-# - name: create safe git directory
-#   tags: git
-#   shell:
-#     cmd: git config --global --add safe.directory /home/{{ user }}/git/ansible-aur
-#   args:
-#     executable: /bin/bash
+- name: create safe git directory
+  tags: git
+  shell:
+    cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
+  args:
+    executable: /bin/bash
 
 # - name: create safe git directory
 #   tags: git
