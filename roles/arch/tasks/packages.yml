@@ -59,6 +59,7 @@
       - vi
       - vim
       - discord
+      - geany
 
       # Services
       - xdg-utils
