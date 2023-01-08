@@ -81,3 +81,9 @@
   dconf:
     key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/visible-name"
     value: "'Default'"
+
+- name: Create home directories
+  become_user: "{{ user }}"
+  command:
+    chdir: /home/{{ user }}
+    cmd: "xdg-user-dirs-update"
