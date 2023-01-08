@@ -45,3 +45,8 @@
     group: "{{ user }}"
     backup: yes
 
+- name: Create home directories
+  become_user: "{{ user }}"
+  command:
+    chdir: /home/{{ user }}
+    cmd: "xdg-user-dirs-update"

@@ -12,10 +12,10 @@
   # - include_tasks: ../base/tasks/nano.yml
   # - include_tasks: ../base/tasks/fonts.yml
   # - include_tasks: git.yml
-  # - include_tasks: system.yml
+  - include_tasks: system.yml
   # - include_tasks: ../void/tasks/onedrive.yml
 
-   - include_tasks: ../fedora/tasks/tilix_config.yml
+   - include_tasks: tilix_config.yml
  # - include_tasks: theme-config.yml
   # - include_tasks: xfconf.yml
   # - include_tasks: autologin.yml

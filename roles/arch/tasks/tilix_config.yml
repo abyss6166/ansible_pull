@@ -1,0 +1,83 @@
+- name: sidebar on right
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/sidebar-on-right"
+    value: "true"
+
+- name: set terminal title style
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/terminal-title-style"
+    value: "'none'"
+
+- name: set theme
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/theme-variant"
+    value: "'dark'"
+
+- name: set window style
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/window-style"
+    value: "'disable-csd-hide-toolbar'"
+
+- name: set app-title
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/app-title"
+    value: "'${appName}: ${sessionName} - ${sessionNumber}/${sessionCount}'"
+
+- name: set keybinding
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/keybindings/app-preferences"
+    value: "'<Primary>p'"
+
+- name: set warn-vte
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/keybindings/warn-vte-config-issue"
+    value: "false"
+
+- name: set prompt-on-close
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/keybindings/prompt-on-close"
+    value: "true"
+
+- name: set background transparency
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/background-transparency-percent"
+    value: 20
+
+- name: set font
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/font"
+    value: "'MesloLGS NF 10'"
+
+- name: set foreground color
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/foreground-color"
+    value: "'#FFFFFFFFFFFF'"
+
+- name: set use system font
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-system-font"
+    value: "false"
+
+- name: set use theme colors
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/use-theme-colors"
+    value: "false"
+
+- name: set visible name
+  become_user: "{{ user }}"
+  dconf:
+    key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/visible-name"
+    value: "'Default'"
