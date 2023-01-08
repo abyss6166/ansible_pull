@@ -5,8 +5,8 @@
     name: "{{ user }}"
     state: present
 
-# - name: create password hash
-#   password_hash:
+- name: create password hash
+  password_hash: files/userpass
 
 - name: add user to system
   user:
@@ -15,7 +15,7 @@
     append: true
     shell: /bin/bash
     create_home: true
-    password: "{{ userpass | password_hash('sha256') }}"
+    password: "{{ userpass | password_hash('sha512') }}"
     generate_ssh_key: true
     ssh_key_file: /home/{{ user }}/.ssh/id_ed25519
     ssh_key_comment: "arch linux"
