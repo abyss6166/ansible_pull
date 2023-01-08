@@ -1,35 +1,25 @@
-- hosts: '*'
-  vars:
-    userpass: !vault |
-          $ANSIBLE_VAULT;1.1;AES256
-          30316330623861306263663931353134313832393034646665333735633362633261343566346262
-          3636363431623937333435666530313962373331616162360a373866356539336636636664326537
-          33333661616565396636353461383637613431336463306265643966653639616333313065396137
-          3465313230663238640a376435646436613662613163396632316337396237353831653364313763
-          3738
-  tasks:
-    - name: add user group
-      group:
-        name: "{{ user }}"
-        state: present
+- name: add user group
+  group:
+    name: "{{ user }}"
+    state: present
 
-    - name: add user to system
-      user:
-        name: "{{ user }}"
-        groups: wheel,{{ user }}
-        append: yes
-        shell: /bin/bash
-        create_home: true
-        password: "{{ userpass }}"
-        generate_ssh_key: yes
-        ssh_key_file: /home/{{ user }}/.ssh/id_ed25519
-        ssh_key_comment: "arch linux"
-        ssh_key_type: ed25519
+- name: add user to system
+  user:
+    name: "{{ user }}"
+    groups: wheel,{{ user }}
+    append: yes
+    shell: /bin/bash
+    create_home: true
+    password: "{{ userpass }}"
+    generate_ssh_key: yes
+    ssh_key_file: /home/{{ user }}/.ssh/id_ed25519
+    ssh_key_comment: "arch linux"
+    ssh_key_type: ed25519
 
-    - name: allow wheel sudo
-      lineinfile:
-        dest: /etc/sudoers
-        state: present
-        regexp: '^#%wheel ALL=(ALL:ALL) ALL'
-        line: '%wheel ALL=(ALL) ALL'
-        validate: 'visudo -cf %s'
+- name: allow wheel sudo
+  lineinfile:
+    dest: /etc/sudoers
+    state: present
+    regexp: '^#%wheel ALL=(ALL:ALL) ALL'
+    line: '%wheel ALL=(ALL) ALL'
+    validate: 'visudo -cf %s'
