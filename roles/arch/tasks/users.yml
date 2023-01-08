@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: '*'
   vars:
     userpass: !vault |
           $ANSIBLE_VAULT;1.1;AES256
