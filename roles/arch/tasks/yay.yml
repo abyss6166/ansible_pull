@@ -8,6 +8,6 @@
 
 - name: Build and install yay
   command:
-    chdir: "{{ srcdir }}/yay"
+    chdir: /home/{{ user }}/git/yay
     cmd: "makepkg -sfi --noconfirm"
     creates: /usr/bin/yay
