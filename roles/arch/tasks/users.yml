@@ -10,7 +10,7 @@
     append: yes
     shell: /bin/bash
     create_home: true
-    # password: "{{ user_pass }}"
+    password: "{{ userpass }}"
     generate_ssh_key: yes
     ssh_key_file: /home/{{ user }}/.ssh/id_ed25519
     ssh_key_comment: "arch linux"
