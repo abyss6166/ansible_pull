@@ -5,8 +5,8 @@
     name: "{{ user }}"
     state: present
 
-- name: create password hash
-  password_hash:
+# - name: create password hash
+#   password_hash:
 
 - name: add user to system
   user:
