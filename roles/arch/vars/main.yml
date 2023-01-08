@@ -7,3 +7,4 @@ userpass: !vault |
           3738
 
 user: mattarch
+pwdhash: "{{ userpass | password_hash }}"
