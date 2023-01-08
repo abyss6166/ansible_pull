@@ -3,7 +3,7 @@
   become_user: "{{ user }}"
   git:
     repo: https://aur.archlinux.org/yay-bin.git
-    dest: /home/{{ user }}/git/yay"
+    dest: /home/{{ user }}/git/yay
     update: true
 
 - name: Build and install yay
