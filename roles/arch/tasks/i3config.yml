@@ -51,6 +51,12 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: set wallpaper
+  tags: nitrogen
+  become_user: "{{ user }}"
+  command:
+    cmd: "nitrogen --set-auto --save /usr/share/wallpapers/arch.png"
+
 - name: install polybar config file
   tags: polybar,i3
   copy:
@@ -101,13 +107,6 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     backup: yes
-
-- name: set wallpaper
-  tags: nitrogen
-  become_user: "{{ user }}"
-  command:
-    # chdir: /
-    cmd: "nitrogen /usr/share/wallpapers/arch.png"
 
 
 # - name: download script file
