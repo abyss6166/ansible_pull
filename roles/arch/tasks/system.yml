@@ -60,3 +60,8 @@
   pacman:
     name: /home/{{ user }}/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
     state: present
+
+- name: remove qt5-webkit file
+  file:
+    name: /home/{{ user }}/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+    state: absent
