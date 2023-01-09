@@ -36,6 +36,7 @@
     name:
       - cairo-dock
       - duf
+      - discord
     state: latest
   when: ansible_distribution == "Fedora"
 
