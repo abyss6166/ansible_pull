@@ -68,8 +68,8 @@
   lineinfile:
     dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
     state: present
-    regexp: '^echo "# $updates'
-    line: 'echo "$updates'
+    regexp: '\Qecho "# $updates"'
+    line: 'echo "$updates"'
 
 - name: Clone yay
   become_user: "{{ user }}"
@@ -84,7 +84,7 @@
     chdir: /home/{{ user }}/git/yay
     cmd: "makepkg -sfi --noconfirm"
     creates: /usr/bin/yay
-    
+
 # - name: download ansible-aur
 #   tags: aur
 #   git:
