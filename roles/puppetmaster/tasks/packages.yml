@@ -15,27 +15,28 @@
   register: uname
 
 - name: install packages
-  package:
-    - puppetserver
-    - samba
-    - cifs-utils
-    - tilix
-    - htop
-    - bat
-    - ncdu
+  apt:
+    name:
+      - puppetserver
+      - samba
+      - cifs-utils
+      - tilix
+      - htop
+      - bat
+      - ncdu
 
-    # VirtualBox
-    - build-essential
-    - linux-headers-generic
-    - linux-headers-{{ uname.stdout }}
-    - dkms
-    - virtualbox-guest-x11
-    - virtualbox-guest-dkms
-    - virtualbox-guest-utils
+      # VirtualBox
+      - build-essential
+      - linux-headers-generic
+      - linux-headers-{{ uname.stdout }}
+      - dkms
+      - virtualbox-guest-x11
+      - virtualbox-guest-dkms
+      - virtualbox-guest-utils
 
-    # i3
-    - xorg
-    - i3
+      # i3
+      - xorg
+      - i3
 
     
 
