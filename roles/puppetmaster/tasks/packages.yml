@@ -24,6 +24,7 @@
       - htop
       - bat
       - ncdu
+      - python-psutil
 
       # VirtualBox
       - build-essential
