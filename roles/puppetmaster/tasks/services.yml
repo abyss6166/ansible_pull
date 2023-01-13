@@ -12,7 +12,7 @@
     dest: /etc/default/puppetserver
     state: present
     regexp: '^JAVA_ARGS="-Xms2g -Xmx2g'
-    line: 'JAVA_ARGS="-Xms512m -Xmx512m'
+    line: 'JAVA_ARGS="-Xms512m -Xmx512m -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"'
 
 # - name: restart puppet server
 #   become: true
