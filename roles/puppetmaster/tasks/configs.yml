@@ -21,6 +21,14 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: create i3 directory
+  file:
+    path: /home/{{ user }}/.config/i3/
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+
 - name: check if i3 config file exists
   tags: i3
   stat:
