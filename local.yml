@@ -28,6 +28,16 @@
     - debug:
         msg={{flavor.stdout}}
 
+  name: get hostname
+  tasks:
+    - shell:
+        cmd: hostname
+      register: hostname
+      args:
+        executable: /bin/bash
+    - debug:
+        msg={{hostname.stdout}}
+
 - hosts: localhost
   connection: local
   tags: base
@@ -58,6 +68,8 @@
       when: ansible_distribution == "Debian"
     - role: lubuntu
       when: flavor.stdout == "Lubuntu"
+    - role: puppetmaster
+      when: hostname.stdout == "ubuntuserver"
     - role: void
       when: ansible_distribution == "Void"
     - role: ubuntu

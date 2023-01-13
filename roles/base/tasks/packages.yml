@@ -13,7 +13,6 @@
       - ncdu
       - bat
       - onedrive
-      - python3-pip
       - samba
       - cifs-utils
     state: latest

@@ -1,0 +1,10 @@
+---
+
+- name: download package
+  apt:
+    deb: https://apt.puppet.com/puppet7-release-focal.deb
+
+- name: update repo
+  tags: always
+  package:
+    update_cache: yes

@@ -1,0 +1,87 @@
+## Base alias file
+#
+# # ex - archive extractor
+# # usage: ex <file>
+
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+mkcd () {
+	mkdir -pv "$1"
+	cd "$1"
+}
+
+gitpush () {
+    git add .
+    git commit -m "$*"
+    git pull
+    git push
+}
+
+export EDITOR=nano
+
+alias zip='tar -zcvf'
+alias gp='gitpush'
+
+alias alias='${=EDITOR} ~/.bash_aliases' # Quick access to the aliasrc config file
+alias i3config='${=EDITOR} ~/.config/i3/config'
+
+alias la='ls -lAFh --color=auto --group-directories-first --time-style=long-iso''
+
+alias n='${=EDITOR}'
+
+alias grep='grep -in --color'
+
+alias t='tail -f'
+
+alias dud='du -d 1 -h'
+alias dush='du -sh *'
+alias dua='sudo du -sh /* | sort -rh | head -15'
+
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
+
+alias vim='vim'
+alias vi='vim'
+
+alias c='clear'
+alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
+alias ..='cd ..'
+alias chx='chmod +x'
+alias ipba='ip -br a'
+alias ipa='ip -c a'
+alias ~='cd ~'
+alias cat='bat'
+
+
+alias search='apt search'
+alias install='sudo apt install'
+alias upgrade='sudo apt update && sudo apt upgrade'
+alias remove='sudo apt remove'
+alias as='apt search'
+alias ai='sudo apt install'
+
+sshcopy () {
+	ssh-copy-id -i ~/.ssh/id_rsa.pub "$1"
+}

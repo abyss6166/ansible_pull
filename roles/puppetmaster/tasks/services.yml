@@ -1,0 +1,19 @@
+---
+
+- name: enable and start puppet service
+  service:
+    name: puppetserver
+    state: started
+    enabled: yes
+
+- name: edit config file
+  lineinfile:
+    dest: /etc/default/puppet
+    state: present
+    regexp: '^JAVA_ARGS="-Xms2g -Xmx2g'
+    line: 'JAVA_ARGS="-Xms512m -Xmx512m'
+
+- name: restart puppet server
+  service:
+    name: puppetserver
+    state: restarted

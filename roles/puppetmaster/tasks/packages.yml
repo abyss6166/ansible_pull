@@ -1,0 +1,36 @@
+---
+- name: get kernel version
+  tasks:
+    - shell:
+        cmd: uname -r
+      register: uname
+      args:
+        executable: /bin/bash
+    - debug:
+        msg={{uname.stdout}}
+
+- name: install packages
+  package:
+    - puppetserver
+    - samba
+    - cifs-utils
+    - tilix
+    - htop
+    - bat
+    - ncdu
+
+    # VirtualBox
+    - build-essential
+    - linux-headers-generic
+    - linux-headers-{{ uname.stdout }}
+    - dkms
+    - virtualbox-guest-x11
+    - virtualbox-guest-dkms
+    - virtualbox-guest-utils
+
+    # i3
+    - xorg
+    - i3
+
+    
+

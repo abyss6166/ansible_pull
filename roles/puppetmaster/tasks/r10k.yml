@@ -1,0 +1,20 @@
+---
+
+- name: install r10k
+  gem:
+    name: r10k
+    state: latest
+
+- name: create r10k directory
+  file:
+    path: /etc/puppetlabs/r10k
+    state: directory
+    owner: 'root'
+    group: 'root'
+
+- name: copy r10k file
+  copy:
+    src: files/r10k.yaml
+    dest: /etc/puppetlabs/r10k/
+    owner: 'root'
+    group: 'root'
