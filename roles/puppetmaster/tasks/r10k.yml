@@ -3,7 +3,7 @@
   shell: ansible-galaxy collection install community.general
 
 - name: install r10k
-  gem:
+  community.general.gem:
     name: r10k
     state: latest
 
