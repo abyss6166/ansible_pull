@@ -75,6 +75,6 @@
     - role: void
       when: ansible_distribution == "Void"
     - role: ubuntu
-      when: ansible_distribution == "Ubuntu"
+      when: ansible_distribution == "Ubuntu" and hostname.stdout != "ubuntuserver"
     - role: arch
       when: ansible_distribution == "Archlinux"
