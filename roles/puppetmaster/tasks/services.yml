@@ -14,8 +14,8 @@
     regexp: '^JAVA_ARGS="-Xms2g -Xmx2g'
     line: 'JAVA_ARGS="-Xms512m -Xmx512m'
 
-- name: restart puppet server
-  become: true
-  service:
-    name: puppetserver
-    state: restarted
+# - name: restart puppet server
+#   become: true
+#   service:
+#     name: puppetserver
+#     state: restarted
