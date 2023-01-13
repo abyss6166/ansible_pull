@@ -1,13 +1,18 @@
 ---
-- name: get kernel version
-  tasks:
-    - shell:
-        cmd: uname -r
-      register: uname
-      args:
-        executable: /bin/bash
-    - debug:
-        msg={{uname.stdout}}
+# - name: get kernel version
+#   tasks:
+#     - shell:
+#         cmd: uname -r
+#       register: uname
+#       args:
+#         executable: /bin/bash
+#     - debug:
+#         msg={{uname.stdout}}
+
+- name: collect uname
+  tags: virtualbox
+  shell: uname -r
+  register: uname
 
 - name: install packages
   package:
