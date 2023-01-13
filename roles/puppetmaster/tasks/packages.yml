@@ -24,7 +24,7 @@
       - htop
       - bat
       - ncdu
-      - python-psutil
+      - python3-psutil
       - dconf-editor
       - dconf-cli
 
