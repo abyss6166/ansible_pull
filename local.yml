@@ -18,7 +18,7 @@
         upgrade: yes
       when: ansible_distribution == "Archlinux"
 
-  name: get flavor 
+- name: get flavor 
   tasks:
     - shell:
         cmd: cat /var/log/installer/media-info | awk '{print $1}'
@@ -28,7 +28,7 @@
     - debug:
         msg={{flavor.stdout}}
 
-  name: get hostname
+- name: get hostname
   tasks:
     - shell:
         cmd: hostname
