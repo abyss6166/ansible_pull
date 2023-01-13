@@ -9,7 +9,7 @@
 
 - name: edit config file
   lineinfile:
-    dest: /etc/default/puppet
+    dest: /etc/default/puppetserver
     state: present
     regexp: '^JAVA_ARGS="-Xms2g -Xmx2g'
     line: 'JAVA_ARGS="-Xms512m -Xmx512m'

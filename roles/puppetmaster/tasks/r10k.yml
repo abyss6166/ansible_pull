@@ -1,4 +1,6 @@
 ---
+- name: install gem
+  shell: ansible-galaxy collection install community.general
 
 - name: install r10k
   gem:
