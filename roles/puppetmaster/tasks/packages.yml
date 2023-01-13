@@ -25,6 +25,8 @@
       - bat
       - ncdu
       - python-psutil
+      - dconf
+      - dconf-cli
 
       # VirtualBox
       - build-essential
