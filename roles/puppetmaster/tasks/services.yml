@@ -15,6 +15,7 @@
     line: 'JAVA_ARGS="-Xms512m -Xmx512m'
 
 - name: restart puppet server
+  become: true
   service:
     name: puppetserver
     state: restarted
