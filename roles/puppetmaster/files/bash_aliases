@@ -79,8 +79,6 @@ alias search='apt search'
 alias install='sudo apt install'
 alias upgrade='sudo apt update && sudo apt upgrade'
 alias remove='sudo apt remove'
-alias as='apt search'
-alias ai='sudo apt install'
 
 sshcopy () {
 	ssh-copy-id -i ~/.ssh/id_rsa.pub "$1"
