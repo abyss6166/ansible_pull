@@ -1,74 +1,75 @@
 ---
 
-- name: alias file
-  copy:
-    src: files/bash_aliases
-    dest: /home/{{ user }}/.bash_aliases
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: alias file
+#   copy:
+#     src: files/bash_aliases
+#     dest: /home/{{ user }}/.bash_aliases
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: xinit file
-  copy:
-    src: files/xinitrc
-    dest: /home/{{ user }}/.xinitrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: xinit file
+#   copy:
+#     src: files/xinitrc
+#     dest: /home/{{ user }}/.xinitrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: bash_profile file
-  copy:
-    src: files/bash_profile
-    dest: /home/{{ user }}/.bash_profile
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: bash_profile file
+#   copy:
+#     src: files/bash_profile
+#     dest: /home/{{ user }}/.bash_profile
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: create i3 directory
-  file:
-    path: /home/{{ user }}/.config/i3
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: create i3 directory
+#   file:
+#     path: /home/{{ user }}/.config/i3
+#     state: directory
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: check if i3 config file exists
-  tags: i3
-  stat:
-    path: /home/{{ user }}/.config/i3/config
-  register: i3config
+# - name: check if i3 config file exists
+#   tags: i3
+#   stat:
+#     path: /home/{{ user }}/.config/i3/config
+#   register: i3config
 
-- name: back up i3 config file
-  tags: i3
-  copy:
-    src: /home/{{ user }}/.config/i3/config
-    dest: /home/{{ user }}/.config/i3/config.bak
-  when: i3config.stat.exists
+# - name: back up i3 config file
+#   tags: i3
+#   copy:
+#     src: /home/{{ user }}/.config/i3/config
+#     dest: /home/{{ user }}/.config/i3/config.bak
+#   when: i3config.stat.exists
 
-- name: i3 config file
-  copy:
-    src: files/config
-    dest: /home/{{ user }}/.config/i3
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: i3 config file
+#   copy:
+#     src: files/config
+#     dest: /home/{{ user }}/.config/i3
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: check if puppet config file exists
-  tags: puppet
-  stat:
-    path: /etc/puppetlabs/puppet/puppet.conf
-  register: puppetconfig
+# - name: check if puppet config file exists
+#   tags: puppet
+#   stat:
+#     path: /etc/puppetlabs/puppet/puppet.conf
+#   register: puppetconfig
 
-- name: back up puppet config file
-  tags: puppet
-  copy:
-    src: /etc/puppetlabs/puppet/puppet.conf
-    dest: /etc/puppetlabs/puppet/puppet.conf.bak
-  when: puppetconfig.stat.exists
+# - name: back up puppet config file
+#   tags: puppet
+#   copy:
+#     src: /etc/puppetlabs/puppet/puppet.conf
+#     dest: /etc/puppetlabs/puppet/puppet.conf.bak
+#   when: puppetconfig.stat.exists
 
-- name: puppet config file
-  copy:
-    src: files/puppet.conf
-    dest: /etc/puppetlabs/puppet
-    owner: 'root'
-    group: 'root'
+# - name: puppet config file
+#   copy:
+#     src: files/puppet.conf
+#     dest: /etc/puppetlabs/puppet
+#     owner: 'root'
+#     group: 'root'
 
 - name: edit i3status config file
+  become_user: root
   lineinfile:
     dest: /etc/i3status.conf
     state: present
@@ -76,6 +77,7 @@
     line: '#order += "ipv6"'
 
 - name: edit i3status config file
+  become_user: root
   lineinfile:
     dest: /etc/i3status.conf
     state: present
@@ -83,6 +85,7 @@
     line: '#order += "wireless _first_'
 
 - name: edit i3status config file
+  become_user: root
   lineinfile:
     dest: /etc/i3status.conf
     state: present
