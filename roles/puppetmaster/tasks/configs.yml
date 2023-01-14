@@ -73,21 +73,21 @@
   lineinfile:
     path: /etc/i3status.conf
     # state: present
-    regexp: '^order += "ipv6'
-    line: '#order += "ipv6"'
+    regexp: '^order += "ipv6"'
+    line: #order += "ipv6"
 
 - name: edit i3status config file
   become: true
   lineinfile:
     path: /etc/i3status.conf
     # state: present
-    regexp: '^order += "wireless'
-    line: '#order += "wireless _first_"'
+    regexp: '^order += "wireless"'
+    line: #order += "wireless _first_"
 
 - name: edit i3status config file
   become: true
   lineinfile:
     path: /etc/i3status.conf
     # state: present
-    regexp: '^order += "battery'
-    line: '#order += "battery all"'
+    regexp: '^order += "battery all"'
+    line: #order += "battery all"
