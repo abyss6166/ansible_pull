@@ -1,18 +1,18 @@
 ---
 
-- name: enable and start puppet service
-  become: true
-  service:
-    name: puppetserver
-    state: started
-    enabled: yes
-
 - name: edit config file
   lineinfile:
     dest: /etc/default/puppetserver
     state: present
     regexp: '^JAVA_ARGS="-Xms2g -Xmx2g'
     line: 'JAVA_ARGS="-Xms512m -Xmx512m -Djruby.logger.class=com.puppetlabs.jruby_utils.jruby.Slf4jLogger"'
+
+- name: enable and start puppet service
+  become: true
+  service:
+    name: puppetserver
+    state: started
+    enabled: yes
 
 # - name: restart puppet server
 #   become: true
