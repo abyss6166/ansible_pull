@@ -26,23 +26,12 @@ ex ()
 
 export EDITOR=nano
 
-alias ls='ls'
-alias ll='ls -l'
-# ls, the common ones I use a lot shortened for rapid fire usage
-alias l='ls -lFh'     #size,show type,human readable
 alias la='ls -lAFh --color=auto --group-directories-first --time-style=long-iso'
-alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias ll='ls -l'      #long list
-alias ldot='ls -ld .*'
-alias lS='ls -1FSsh'
-alias lart='ls -1Fcart'
-alias lrt='ls -1Fcrt'
 
-alias aliases='${=EDITOR} ~/.bash_aliases' # Quick access to the aliasrc config file
-alias i3config='${=EDITOR} ~/.config/i3/config'
+alias aliases='${EDITOR} ~/.bash_aliases'
+alias i3config='${EDITOR} ~/.config/i3/config'
 
-alias n='${=EDITOR}'
+alias n='${EDITOR}'
 
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -52,8 +41,6 @@ alias t='tail -f'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
@@ -66,8 +53,6 @@ alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
 
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias editgrub='sudo nano /boot/grub/grub.cfg'
 alias gp=gitpush
 alias gu=gitupdate
 
@@ -77,6 +62,7 @@ gitpush() {
     git pull
     git push
 }
+
 gitupdate() {
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/github
@@ -95,11 +81,9 @@ alias ..='cd ..'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
-alias addusergroup='sudo usermod -aG'
 alias ctlstatus='systemctl status'
 alias ctlstart='systemctl start'
 alias ctlrestart='systemctl restart'
-alias nf='neofetch'
 alias ~='cd ~'
 alias cat='bat'
 
