@@ -10,7 +10,7 @@
 - name: install fonts
   tags: font,fonts
   unarchive:
-    src: /base/files/fonts.tar.gz
+    src: files/fonts.tar.gz
     dest: /home/{{ user }}/.local/share/fonts
     owner: "{{ user }}"
     group: "{{ user }}"
