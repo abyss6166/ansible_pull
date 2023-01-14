@@ -5,7 +5,7 @@
   # - include_tasks: packages.yml
   # - include_tasks: services.yml
   # - include_tasks: ../arch/tasks/tilix_config.yml
-  - include_tasks: configs.yml
+  # - include_tasks: configs.yml
   # - include_tasks: r10k.yml
   - include_tasks: ../base/tasks/fonts.yml
 
