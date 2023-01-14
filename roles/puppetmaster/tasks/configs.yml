@@ -85,13 +85,15 @@
     # state: present
     # regexp: 'order += "wireless _first_"'
     # replace: '#order += "wireless _first_"'
-    regexp: '^order += "wireless _first_"'
-    replace: '#order += "wireless _first_"'
+    regexp: '(.*"wireless _first_".*)'
+    replace: '#\1'
 
 - name: edit i3status config file - battery
   become: true
   replace:
     path: /etc/i3status.conf
     # state: present
-    regexp: '^order += "battery all"'
-    replace: '#order += "battery all"'
+    # regexp: '^order += "battery all"'
+    # replace: '#order += "battery all"'
+    regexp: '(.*"battery all".*)'
+    replace: '#\1'
