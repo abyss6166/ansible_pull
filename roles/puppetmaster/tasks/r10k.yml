@@ -9,6 +9,7 @@
 #     state: latest
 
 - name: install r10k
+  become_user: root
   shell: /opt/puppetlabs/puppet/bin/gem install r10k
 
 - name: create r10k directory

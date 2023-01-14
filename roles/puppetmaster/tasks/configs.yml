@@ -68,3 +68,23 @@
     owner: 'root'
     group: 'root'
 
+- name: edit i3status config file
+  lineinfile:
+    dest: /etc/i3status.conf
+    state: present
+    regexp: '^order += "ipv6"'
+    line: '#order += "ipv6"'
+
+- name: edit i3status config file
+  lineinfile:
+    dest: /etc/i3status.conf
+    state: present
+    regexp: '^order += "wireless _first_'
+    line: '#order += "wireless _first_'
+
+- name: edit i3status config file
+  lineinfile:
+    dest: /etc/i3status.conf
+    state: present
+    regexp: '^order += "battery all"'
+    line: '#order += "battery all"'
