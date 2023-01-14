@@ -73,8 +73,10 @@
   replace:
     path: /etc/i3status.conf
     # state: present
-    regexp: '^order += "ipv6"'
-    replace: '#order += "ipv6"'
+    # regexp: '^order += "ipv6"'
+    regexp: '(.*"ipv6".*)'
+    # replace: '#order += "ipv6"'
+    replace: '#\1'
 
 - name: edit i3status config file - wireless
   become: true
