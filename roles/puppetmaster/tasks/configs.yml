@@ -83,7 +83,9 @@
   replace:
     path: /etc/i3status.conf
     # state: present
-    regexp: 'order += "wireless _first_"'
+    # regexp: 'order += "wireless _first_"'
+    # replace: '#order += "wireless _first_"'
+    regexp: '^order += "wireless _first_"'
     replace: '#order += "wireless _first_"'
 
 - name: edit i3status config file - battery
@@ -91,5 +93,5 @@
   replace:
     path: /etc/i3status.conf
     # state: present
-    regexp: 'order += "battery all"'
+    regexp: '^order += "battery all"'
     replace: '#order += "battery all"'
