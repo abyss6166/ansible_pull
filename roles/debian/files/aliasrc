@@ -80,8 +80,8 @@ alias mv='mv -iv'
 
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 alias editgrub='sudo nano /boot/grub/grub.cfg'
-alias gp=gitpush
-alias gu=gitupdate
+alias gp='gitpush'
+alias gu='gitupdate'
 gitpush() {
     git add .
     git commit -m "$*"

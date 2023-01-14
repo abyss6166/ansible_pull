@@ -1,8 +1,6 @@
-## Base alias file
 #
 # # ex - archive extractor
 # # usage: ex <file>
-
 ex ()
 {
   if [ -f $1 ] ; then
@@ -26,60 +24,99 @@ ex ()
   fi
 }
 
-mkcd () {
-	mkdir -pv "$1"
-	cd "$1"
-}
-
-gitpush () {
-    git add .
-    git commit -m "$*"
-    git pull
-    git push
-}
-
 export EDITOR=nano
 
-alias zip='tar -zcvf'
-alias gp='gitpush'
+alias ls='ls'
+alias ll='ls -l'
+# ls, the common ones I use a lot shortened for rapid fire usage
+alias l='ls -lFh'     #size,show type,human readable
+alias la='exa --long --header -a -g --group-directories-first --time-style=long-iso --icons'
+alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias ll='ls -l'      #long list
+alias ldot='ls -ld .*'
+alias lS='ls -1FSsh'
+alias lart='ls -1Fcart'
+alias lrt='ls -1Fcrt'
 
-alias alias='${=EDITOR} ~/.bash_aliases' # Quick access to the aliasrc config file
-alias i3config='${=EDITOR} ~/.config/i3/config'
-
-alias la='ls -lAFh --color=auto --group-directories-first --time-style=long-iso''
+alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
+alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 
 alias n='${=EDITOR}'
 
-alias grep='grep -in --color'
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 alias t='tail -f'
 
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
+
 alias dud='du -d 1 -h'
-alias dush='du -sh *'
+alias duf='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+
+alias h='history'
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
 
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
 
-alias vim='vim'
-alias vi='vim'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias editgrub='sudo nano /boot/grub/grub.cfg'
+alias gp=gitpush
+alias gu=gitupdate
+
+gitpush() {
+    git add .
+    git commit -m "$*"
+    git pull
+    git push
+}
+gitupdate() {
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/github
+    ssh -T git@github.com
+}
+
+mkcd () {
+	mkdir -pv "$1"
+	cd "$1"
+}
 
 alias c='clear'
-alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
+alias dff='df -hT -x squashfs -x tmpfs -x devtmpfs'
+alias cd..='cd ..'
 alias ..='cd ..'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
+alias addusergroup='sudo usermod -aG'
+alias ctlstatus='systemctl status'
+alias ctlstart='systemctl start'
+alias ctlrestart='systemctl restart'
+alias nf='neofetch'
 alias ~='cd ~'
 alias cat='bat'
 
+alias install='sudo nala install'
+alias search='nala search'
+alias upgrade='sudo nala upgrade'
 
-alias search='apt search'
-alias install='sudo apt install'
-alias upgrade='sudo apt update && sudo apt upgrade'
-alias remove='sudo apt remove'
-
-sshcopy () {
-	ssh-copy-id -i ~/.ssh/id_rsa.pub "$1"
-}
+alias zip='tar -zcvf'
