@@ -1,0 +1,24 @@
+---
+
+- name: install Zoom
+  dnf:
+    name:
+      - zoom
+  state: latest
+
+# - name: download AnyConnect
+#   tags: AnyConnect
+#   unarchive:
+#     src: files/
+#     dest: /home/{{ user }}/btop
+#     # remote_src: yes
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+
+# - name: install btop
+#   tags: btop
+#   shell:
+#     cmd: ./install.sh
+#     chdir: /home/{{ user }}/btop
+#   args:
+#     executable: /bin/bash

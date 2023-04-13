@@ -9,4 +9,9 @@
   - include_tasks: oh-my-posh.yml
   - include_tasks: tilix_config.yml
   - include_tasks: zsh-alias.yml
+  - include_tasks: moderndeck.yml
+  - include_tasks: rainlendar.yml
   - include_tasks: samba.yml
+  - include_tasks: work.yml
+    when: work is defined
+

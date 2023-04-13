@@ -15,6 +15,17 @@
       - onedrive
       - samba
       - cifs-utils
+      - "{{ firefox_package }}"
+      - thunderbird
+      - "{{ libreoffice_package }}"
+      - gnupg
+      - geany
+      - unzip
+      - bat
+      - smbclient
+      - dconf-editor
+      - "{{ chromium_package }}"
+      - "{{ ssh_package }}"
     state: latest
 
 - name: install debian specific packages
@@ -22,10 +33,8 @@
   apt:
     name:
       - plank
-      - dconf-editor
       - dconf-cli
       - python3-psutil
-      - smbclient
     state: latest
   when: ansible_distribution == "Debian"
 
@@ -36,6 +45,7 @@
       - cairo-dock
       - duf
       - discord
+      - copyq
     state: latest
   when: ansible_distribution == "Fedora"
 
@@ -43,13 +53,9 @@
   tags: lubuntu,base
   apt:
     name:
-      - dconf-editor
       - dconf-cli
-      - python3-psutil
-      - smbclient
       - cairo-dock
       - duf
-      - ssh
     state: latest
   when: flavor.stdout == "Lubuntu"
 
@@ -62,3 +68,72 @@
     enablerepo: fedora-cisco-openh264
     state: present
   when: ansible_distribution == "Fedora"
+
+- name: install Void and Arch packages
+  tags: void,arch
+  package:
+    name:
+      - arc-icon-theme
+      - curl
+      - dconf
+      - dconf-editor
+      - dmenu
+      - duf
+      - "{{ i3_package }}"
+      - i3lock
+      - i3status
+      - lightdm
+      - "{{ lightdm-gtk-greeter_package }}"
+      - lightdm-gtk-greeter-settings
+      - linux-headers
+      - lxappearance
+      - nano
+      - nitrogen
+      - notepadqq
+      - pcmanfm
+      - picom
+      - polybar
+      - pulseaudio
+      - rofi
+      - unzip
+      - wget
+      - xdg-user-dirs
+      - xdg-utils
+      - xorg
+  when: ansible_distribution in ["Archlinux", "Void"]
+
+- name: install Arch packages
+  tags: Arch
+  pacman:
+    name:
+      - alsa-utils
+      - awesome-terminal-fonts
+      - base-devel
+      - caja
+      - code
+      - discord
+      - go
+      - intel-ucode
+      - otf-font-awesome
+      - pacman-contrib
+      - pavucontrol
+      - pulseaudio-alsa
+      - python-psutil
+      - sysstat
+      - ttf-dejavu
+      - ttf-font-awesome
+      - ttf-nerd-fonts-symbols-2048-em
+      - vi
+      - vim
+      - virtualbox-guest-utils
+  when: ansible_distribution == "Archlinux"
+
+- name: install Void packages
+  tags: Void
+  community.general.xbps:
+    name:
+      - arc-theme
+      - dbus
+      - nerd-fonts
+      - quiterss
+  when: ansible_distribution == "Void"

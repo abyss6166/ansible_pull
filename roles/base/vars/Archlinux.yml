@@ -1,0 +1,5 @@
+lightdmgtkgreeter_package: lightdm-gtk-greeter
+i3_package: i3-wm
+libreoffice_package: libreoffice-still
+firefox_package: firefox
+chromium_package: chromium

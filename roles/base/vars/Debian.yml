@@ -1,0 +1,6 @@
+# lightdmgtkgreeter_package: lightdm-gtk-greeter
+# i3_package: i3-wm
+libreoffice_package: libreoffice
+firefox_package: firefox-esr
+chromium_package: chromium
+ssh_package: ssh

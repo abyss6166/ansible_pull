@@ -1,14 +1,14 @@
-- block:
+- include_vars: "{{ ansible_distribution }}.yml"
 
+- block:
   - include_tasks: tasks/packages.yml
-  - include_tasks: tasks/notepadqq_dependencies.yml
-  - include_tasks: tasks/pidgin_dependencies.yml
   - include_tasks: tasks/conky.yml
-  - include_tasks: tasks/google_chat.yml
   - include_tasks: tasks/fonts.yml
-  - include_tasks: tasks/notepadqq.yml
-  - include_tasks: tasks/rainlendar.yml
   - include_tasks: tasks/onedrivegui.yml
-  - include_tasks: tasks/moderndeck.yml
-  - include_tasks: tasks/sshd.yml
   - include_tasks: tasks/nano.yml
+
+  # - include_tasks: tasks/notepadqq_dependencies.yml
+  # - include_tasks: tasks/pidgin_dependencies.yml
+  # - include_tasks: tasks/google_chat.yml
+  # - include_tasks: tasks/notepadqq.yml
+  # - include_tasks: tasks/sshd.yml

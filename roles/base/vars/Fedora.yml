@@ -1,0 +1,4 @@
+libreoffice_package: libreoffice
+firefox_package: firefox
+chromium_package: chromium
+ssh_package: openssh
