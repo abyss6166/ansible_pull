@@ -22,3 +22,11 @@
     dest: /home/{{ user }}/.nanorc
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: vim config file
+  tags: vim
+  copy:
+    src: files/vimrc
+    dest: /home/{{ user }}/.vimrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
