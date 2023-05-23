@@ -22,7 +22,6 @@
       - geany
       - unzip
       - bat
-      - smbclient
       - dconf-editor
       - "{{ chromium_package }}"
       - "{{ ssh_package }}"
@@ -36,6 +35,7 @@
       - plank
       - dconf-cli
       - python3-psutil
+      - smbclient
     state: latest
   when: ansible_distribution == "Debian"
 
@@ -96,6 +96,7 @@
       - polybar
       - pulseaudio
       - rofi
+      - smbclient
       - unzip
       - wget
       - xdg-user-dirs

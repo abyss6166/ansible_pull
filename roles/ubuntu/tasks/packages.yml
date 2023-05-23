@@ -21,5 +21,6 @@
       - notepadqq
       - chromium-browser
       - nala
+      - smbclient
     state: latest
 
