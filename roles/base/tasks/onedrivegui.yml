@@ -29,6 +29,15 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: create directory
+  tags: directories,onedrive
+  file:
+    path: /home/{{ user }}/.config/onedrive/
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
 - name: copy onedrive config
   tags: onedrive
   copy:
@@ -36,4 +45,3 @@
     dest: /home/{{ user }}/.config/onedrive/config
     owner: "{{ user }}"
     group: "{{ user }}"
-    create: yes

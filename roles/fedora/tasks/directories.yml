@@ -1,3 +1,5 @@
+---
+
 - name: create directories
   tags: directories,gtk,css,theme,icons,cairo-dock
   file:
