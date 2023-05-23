@@ -36,3 +36,4 @@
     dest: /home/{{ user }}/.config/onedrive/config
     owner: "{{ user }}"
     group: "{{ user }}"
+    create: yes
