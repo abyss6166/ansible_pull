@@ -5,7 +5,7 @@
   - include_tasks: autostart.yml
   - include_tasks: theme-config.yml
   - include_tasks: mate_config.yml
-  - include_tasks: btop.yml
+  # - include_tasks: btop.yml
   - include_tasks: oh-my-posh.yml
   - include_tasks: tilix_config.yml
   - include_tasks: zsh-alias.yml

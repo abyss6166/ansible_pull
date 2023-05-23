@@ -26,6 +26,7 @@
       - dconf-editor
       - "{{ chromium_package }}"
       - "{{ ssh_package }}"
+      - btop
     state: latest
 
 - name: install debian specific packages

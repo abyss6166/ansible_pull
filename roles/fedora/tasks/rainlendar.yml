@@ -10,7 +10,7 @@
 - name: install rainlendar license
   tags: rainlendar
   copy:
-    src: files/license.r2lic
+    src: ../base/files/license.r2lic
     dest: /home/{{ user }}/rainlendar2
     owner: "{{ user }}"
     group: "{{ user }}"
