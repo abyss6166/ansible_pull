@@ -1,11 +1,9 @@
----
-
 - name: install work packages
   dnf:
     name:
       - zoom
       - openconnect
-  state: latest
+    state: latest
 
 - name: install Teams
   tags: moderndeck
