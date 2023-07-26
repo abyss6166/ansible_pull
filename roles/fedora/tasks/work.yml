@@ -17,4 +17,4 @@
   dnf:
     name:
       - /home/{{ user }}/Downloads/teams-1.5.00.23861-1.x86_64.rpm
-  state: present
+    state: present
