@@ -17,4 +17,4 @@
       - ".config/rofi"
       - "git"
       - ".config/QuiteRss"
-      = ".config/onedrive"
+      - ".config/onedrive"

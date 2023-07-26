@@ -2,12 +2,14 @@
 
 - block:
   - include_tasks: tasks/packages.yml
+  - include_tasks: tasks/geany.yml
   - include_tasks: tasks/conky.yml
   - include_tasks: tasks/fonts.yml
   - include_tasks: tasks/onedrivegui.yml
   - include_tasks: tasks/nano.yml
 
-  # - include_tasks: tasks/notepadqq_dependencies.yml
+    # - include_tasks: tasks/directories.yml
+# - include_tasks: tasks/notepadqq_dependencies.yml
   # - include_tasks: tasks/pidgin_dependencies.yml
   # - include_tasks: tasks/google_chat.yml
   # - include_tasks: tasks/notepadqq.yml

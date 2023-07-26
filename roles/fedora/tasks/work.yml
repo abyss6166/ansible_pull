@@ -1,24 +1,22 @@
 ---
 
-- name: install Zoom
+- name: install work packages
   dnf:
     name:
       - zoom
+      - openconnect
   state: latest
 
-# - name: download AnyConnect
-#   tags: AnyConnect
-#   unarchive:
-#     src: files/
-#     dest: /home/{{ user }}/btop
-#     # remote_src: yes
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
+- name: install Teams
+  tags: moderndeck
+  get_url:
+    url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm -o teams-1.5.00.23861-1.x86_64.rpm
+    dest: /home/{{ user }}/Downloads
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
-# - name: install btop
-#   tags: btop
-#   shell:
-#     cmd: ./install.sh
-#     chdir: /home/{{ user }}/btop
-#   args:
-#     executable: /bin/bash
+- name: install Teams
+  dnf:
+    name:
+      - /home/{{ user }}/Downloads/teams-1.5.00.23861-1.x86_64.rpm
+  state: present

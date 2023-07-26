@@ -6,7 +6,6 @@
       - zsh-syntax-highlighting
       - zsh-autosuggestions
       - tilix
-      - pidgin
       - htop
       - conky
       - exa
@@ -47,6 +46,9 @@
       - duf
       - discord
       - copyq
+      - deadbeef
+      - deadbeef-plugins
+      - audacious
     state: latest
   when: ansible_distribution == "Fedora"
 

@@ -1,0 +1,15 @@
+- name: create geany directory
+  tags: geany
+  file:
+    path: /home/{{ user }}/.config/geany
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: install geany files
+  unarchive:
+    src: files/geanyconfigs.tar.gz
+    dest: /home/{{ user }}/.config
+    owner: "{{ user }}"
+    group: "{{ user }}"

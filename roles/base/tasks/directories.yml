@@ -1,0 +1,12 @@
+---
+
+- name: create directories
+  tags: directories,geany
+  file:
+    path: /home/{{ user }}/{{item}}
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+  with_items:
+      - ".config/geany"

@@ -1,0 +1,7 @@
+- name: install Poddr
+  get_url:
+    url: https://github.com/Sn8z/Poddr/releases/download/2.0.0/Poddr-2.0.0.AppImage
+    dest: /home/{{ user }}/Downloads
+    mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"

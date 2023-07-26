@@ -1,7 +1,7 @@
 sync_dir = "~/OneDrive_Matt"
 skip_file = "~*|.~*|*.tmp|*.avs|*.fm|*.mp4"
 monitor_interval = "300"
-skip_dir = "|Pictures|Games|Work external|UGA|Zoom|Break In|Coker|FM|ODS|old ods|School Pictures 2017|"
+skip_dir = "|Pictures|Games|Work external|FB avisynth scrips|"
 log_dir = "/var/log/onedrive/"
 drive_id = ""
 upload_only = "false"

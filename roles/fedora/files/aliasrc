@@ -81,19 +81,20 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias vim='vim'
 alias vi='vim'
-alias gds-start='sudo systemctl start openvpn-client@gds'
-alias gds-stop='sudo systemctl stop openvpn-client@gds'
+
 gitpush() {
     git add .
     git commit -m "$*"
     git pull
     git push
 }
+
 gitupdate() {
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/github
     ssh -T git@github.com
 }
+
 alias gp=gitpush
 alias gu=gitupdate
 alias lbrynet='/opt/LBRY/resources/static/daemon/lbrynet'
@@ -103,18 +104,37 @@ alias c='clear'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
-alias install='sudo dnf install'
-alias search='dnf search'
-alias upgrade='sudo dnf upgrade'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
 alias ~='cd ~'
 alias cat='bat'
 
+alias install='sudo dnf install'
+alias search='dnf search'
+alias upgrade='sudo dnf upgrade'
+alias di='sudo dnf install'
+alias ds='dnf search'
+alias info='dnf info'
+
 mkcd () {
 	mkdir -pv "$1"
 	cd "$1"
 }
+
+alias sshrh8='ssh msh@192.168.122.98'
+alias sshrh9='ssh msh@192.168.122.4'
+alias sshrl8='ssh msh@192.168.122.45'
+alias sshrl9='ssh msh@192.168.122.56'
+alias sshus22='ssh msh@192.168.122.44'
+alias sshus20='ssh msh@192.168.122.22'
+alias sshrh7='ssh msh@192.168.122.57'
+alias sshal8='ssh msh@192.168.122.122'
+alias sshrh82='ssh msh@192.168.122.83'
+
+shz() {
+  ssh z-mh47577@"$1"
+}
+
 
 alias zip='tar -zcvf'
