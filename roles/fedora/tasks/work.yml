@@ -38,15 +38,14 @@
   command: 
     cmd: usermod -aG libvirt {{ user }}
 
-- name: install Teams
-  get_url:
-    url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm
-    dest: /home/{{ user }}/Downloads
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: download Teams
+  # get_url:
+  #   url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm
+  #   dest: /home/{{ user }}/Downloads
+  #   owner: "{{ user }}"
+  #   group: "{{ user }}"
 
 - name: install Teams
   dnf:
-    name:
-      - /home/{{ user }}/Downloads/teams-1.5.00.23861-1.x86_64.rpm
+    name: 'https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm'
     state: present
