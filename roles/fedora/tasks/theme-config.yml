@@ -42,6 +42,14 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: download dock icons
+  tags: cairo-dock
+  copy:
+    src: files/Carlosjj-Mozilla-Thunderbird.ico
+    dest: /home/{{ user }}/.icons
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: install quiterss config
   tags: quiterss
   copy:
