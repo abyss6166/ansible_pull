@@ -1,42 +1,42 @@
-- name: get Zoom key
-  get_url:
-    url: https://zoom.us/linux/download/pubkey?version=5-12-6
-    dest: /home/{{ user }}/Downloads/package-signing-key.pub
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: get Zoom key
+#   get_url:
+#     url: https://zoom.us/linux/download/pubkey?version=5-12-6
+#     dest: /home/{{ user }}/Downloads/package-signing-key.pub
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: add Zoom repository
-  tags: Zoom
-  shell:
-    cmd: "rpm --import package-signing-key.pub"
-  args:
-    executable: /bin/bash
-    chdir: /home/{{ user }}/Downloads
+# - name: add Zoom repository
+#   tags: Zoom
+#   shell:
+#     cmd: "rpm --import package-signing-key.pub"
+#   args:
+#     executable: /bin/bash
+#     chdir: /home/{{ user }}/Downloads
 
-- name: get Zoom
-  get_url:
-    url: https://zoom.us/client/5.15.5.5603/zoom_x86_64.rpm
-    dest: /home/{{ user }}/Downloads
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: get Zoom
+#   get_url:
+#     url: https://zoom.us/client/5.15.5.5603/zoom_x86_64.rpm
+#     dest: /home/{{ user }}/Downloads
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
-- name: install Zoom
-  dnf:
-    name:
-      - /home/{{ user }}/Downloads/zoom_x86_64.rpm
-    state: present
+# - name: install Zoom
+#   dnf:
+#     name:
+#       - /home/{{ user }}/Downloads/zoom_x86_64.rpm
+#     state: present
 
-- name: install work packages
-  dnf:
-    name:
-      # - zoom
-      - openconnect
-      - '@virtualization'
-    state: latest
+# - name: install work packages
+#   dnf:
+#     name:
+#       # - zoom
+#       - openconnect
+#       - '@virtualization'
+#     state: latest
 
-- name: add libvirt group
-  command: 
-    cmd: usermod -aG libvirt {{ user }}
+# - name: add libvirt group
+#   command: 
+#     cmd: usermod -aG libvirt {{ user }}
 
 # - name: download Teams
   # get_url:
