@@ -8,9 +8,10 @@
 - name: add Zoom repository
   tags: Zoom
   shell:
-    cmd: "/home/{{ user }}/Downloads/rpm --import package-signing-key.pub"
+    cmd: "rpm --import package-signing-key.pub"
   args:
     executable: /bin/bash
+    chdir: /home/{{ user }}/Downloads
 
 - name: install work packages
   dnf:
