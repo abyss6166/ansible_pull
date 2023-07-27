@@ -36,7 +36,7 @@
 
 - name: add libvirt group
   command: 
-    cmd: usermod -aG libvirt $(whoami)
+    cmd: usermod -aG libvirt {{ user }}
 
 - name: install Teams
   get_url:
