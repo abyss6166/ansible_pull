@@ -1,3 +1,17 @@
+- name: get Zoom key
+  get_url:
+    url: https://zoom.us/linux/download/pubkey?version=5-12-6
+    dest: /home/{{ user }}/Downloads/package-signing-key.pub
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: add Zoom repository
+  tags: Zoom
+  shell:
+    cmd: rpm --import package-signing-key.pub
+  args:
+    executable: /bin/bash
+
 - name: install work packages
   dnf:
     name:
@@ -6,9 +20,8 @@
     state: latest
 
 - name: install Teams
-  tags: moderndeck
   get_url:
-    url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm -o teams-1.5.00.23861-1.x86_64.rpm
+    url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm
     dest: /home/{{ user }}/Downloads
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -18,3 +31,6 @@
     name:
       - /home/{{ user }}/Downloads/teams-1.5.00.23861-1.x86_64.rpm
     state: present
+
+
+
