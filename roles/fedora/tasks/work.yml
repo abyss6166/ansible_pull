@@ -13,10 +13,23 @@
     executable: /bin/bash
     chdir: /home/{{ user }}/Downloads
 
+- name: get Zoom
+  get_url:
+    url: https://zoom.us/client/5.15.5.5603/zoom_x86_64.rpm
+    dest: /home/{{ user }}/Downloads
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install Zoom
+  dnf:
+    name:
+      - /home/{{ user }}/Downloads/zoom_x86_64.rpm
+    state: present
+
 - name: install work packages
   dnf:
     name:
-      - zoom
+      # - zoom
       - openconnect
       - '@virtualization'
     state: latest
