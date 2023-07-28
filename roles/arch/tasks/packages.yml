@@ -61,6 +61,9 @@
       - vim
       - discord
       - geany
+      - ark
+      - nomacs
+      - dolphin
 
       # Services
       - xdg-utils
@@ -73,18 +76,19 @@
       - samba
       - smbclient
       - cifs-utils
-      # - pipewire
       - pulseaudio
       - pulseaudio-alsa
       - pavucontrol
       - alsa-utils
-      # - onedrive
       - gnupg
+      # - pipewire
+      # - onedrive
 
       # Appearance
       - lxappearance
-      # - arc-theme
       - arc-icon-theme
+      - breeze-icons
+      # - arc-theme
 
 
   #  state: latest

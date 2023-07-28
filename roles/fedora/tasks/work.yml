@@ -29,8 +29,6 @@
 - name: install work packages
   dnf:
     name:
-      # - zoom
-      - openconnect
       - '@virtualization'
     state: latest
 
@@ -38,12 +36,19 @@
   command: 
     cmd: usermod -aG libvirt {{ user }}
 
-- name: download Teams
-  get_url:
-    url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm
+- name: unzip AnyConnect
+  unarchive:
+    src: files/anyconnect-linux64-4.10.05111-predeploy-k9.tar.gz
     dest: /home/{{ user }}/Downloads
     owner: "{{ user }}"
     group: "{{ user }}"
+
+# - name: download Teams
+#   get_url:
+#     url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm
+#     dest: /home/{{ user }}/Downloads
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
 - name: install Teams
   dnf:
