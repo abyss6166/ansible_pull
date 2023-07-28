@@ -48,7 +48,7 @@
     - {{ rpmfusion_nonfree_gpg_key  }}
   when: ansible_distribution == 'Fedora'
 
- - name: System | Repositories | Add RPM Fusion GPG keys
+- name: System | Repositories | Add RPM Fusion GPG keys
   tags: system,repository,rpmfusion
   ansible.builtin.rpm_key:
     key: "{{ items }}"
