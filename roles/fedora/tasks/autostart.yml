@@ -9,9 +9,9 @@
 - name: edit user on OneDriveGUI entry
   tags: onedrive
   lineinfile:
-    path: /home/{{ user }}/.config/autostart/OneDriveGUI-1.0.1-x86_64.AppImage.desktop
+    path: /home/{{ user }}/.config/autostart/OneDriveGUI-1.0.2-x86_64.AppImage.desktop
     regexp: '^Exec='
-    line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.1-x86_64.AppImage
+    line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.2-x86_64.AppImage
   when: ansible_distribution == "Fedora"
 
 - name: edit user on rainlendar entry
