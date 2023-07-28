@@ -44,8 +44,8 @@
     key: "{{ items }}"
     state: present
   with_items:
-    - {{ rpmfusion_free_gpg_key }}
-    - {{ rpmfusion_nonfree_gpg_key  }}
+    - "{{ rpmfusion_free_gpg_key }}"
+    - "{{ rpmfusion_nonfree_gpg_key }}"
   when: ansible_distribution == 'Fedora'
 
 - name: System | Repositories | Add RPM Fusion GPG keys
@@ -54,8 +54,8 @@
     key: "{{ items }}"
     state: present
   with_items:
-    - {{ rpmfusion_free_repository  }}
-    - {{ rpmfusion_nonfree_repository }}
+    - "{{ rpmfusion_free_repository  }}"
+    - "{{ rpmfusion_nonfree_repository }}"
   when: ansible_distribution == 'Fedora'
      
 - name: install fedora specific packages
