@@ -38,31 +38,6 @@
     state: latest
   when: ansible_distribution == "Debian"
 
-- name: Get Fedora Version
-  command: "rpm -E %fedora"
-  register: fedora_version
-  when: ansible_distribution == 'Fedora'
-
-# - name: System | Repositories | Add RPM Fusion GPG keys
-#   tags: system,repository,rpmfusion
-#   ansible.builtin.rpm_key:
-#     key: "{{ items }}"
-#     state: present
-#   with_items:
-#     - "{{ rpmfusion_free_gpg_key }}"
-#     - "{{ rpmfusion_nonfree_gpg_key }}"
-#   when: ansible_distribution == 'Fedora'
-
-# - name: System | Repositories | Add RPM Fusion GPG keys
-#   tags: system,repository,rpmfusion
-#   ansible.builtin.rpm_key:
-#     key: "{{ items }}"
-#     state: present
-#   with_items:
-#     - "{{ rpmfusion_free_repository  }}"
-#     - "{{ rpmfusion_nonfree_repository }}"
-#   when: ansible_distribution == 'Fedora'
-
 - name: Install RPM Fusion Free
   dnf:
     name: "https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ fedora_version.stdout }}.noarch.rpm"
@@ -86,6 +61,7 @@
       - deadbeef
       - deadbeef-plugins
       - audacious
+      - nomacs
     state: latest
   when: ansible_distribution == "Fedora"
 
