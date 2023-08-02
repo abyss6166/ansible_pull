@@ -14,6 +14,6 @@
     path: /home/{{ user }}/{{item}}
     state: absent
   with_items:
-    - "notepadqq"
-    - "purple-googlechat"
+    # - "notepadqq"
+    # - "purple-googlechat"
     - "tasks.sh"
