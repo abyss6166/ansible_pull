@@ -19,5 +19,6 @@
   become: true
   package:
     update_cache: yes
-    name: nala-legacy
+    # name: nala-legacy
+    name: nala
     state: latest
