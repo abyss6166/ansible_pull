@@ -35,6 +35,7 @@
       - dconf-cli
       - python3-psutil
       - smbclient
+      - vim
     state: latest
   when: ansible_distribution == "Debian"
 
