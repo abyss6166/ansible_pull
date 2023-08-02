@@ -12,7 +12,7 @@
 #    chdir: /home/{{ user }}
   args:
     executable: /bin/bash
-    warn: false
+    # warn: false
 
 - name: install nala
   tags: nala
