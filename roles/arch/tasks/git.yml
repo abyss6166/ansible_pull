@@ -33,7 +33,7 @@
   args:
     executable: /bin/bash
 
-- name: create git config info - 1
+- name: create git config info - 2
   tags: git
   shell:
     cmd: git config --global user.name "Matt Horne"

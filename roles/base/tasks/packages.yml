@@ -31,11 +31,12 @@
   tags: debian,base
   apt:
     name:
-      - plank
+      - cairo-dock
       - dconf-cli
       - python3-psutil
       - smbclient
       - vim
+      - spice-vdagent #QEMU/KVM
     state: latest
   when: ansible_distribution == "Debian"
 

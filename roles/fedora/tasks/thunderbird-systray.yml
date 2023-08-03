@@ -1,0 +1,8 @@
+- name: add Mozilla add-on repo
+  command: dnf config-manager --add-repo https://download.opensuse.org/repositories/home:/Ximi1970:/Mozilla:/Add-ons/Fedora_38/home:Ximi1970:Mozilla:Add-ons.repo
+
+- name: install Thunderbird systray
+  dnf:
+    name:
+      - systray-x-minimal    
+    state: present
