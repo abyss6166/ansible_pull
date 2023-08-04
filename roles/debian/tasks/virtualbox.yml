@@ -11,12 +11,20 @@
       - dkms
       - linux-headers-{{ uname_result.stdout }}
 
+- name: pull VirtualBox Guest Additions install file
+  tags: virtualbox
+  copy:
+    src: files/VBoxLinuxAdditions.run
+    dest: /home/{{ user }}/
+    owner: root
+    group: root
+
 - name: install VirtualBox Guest Additions
   tags: virtualbox
   become: true
   shell:
     cmd: sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
-    chdir: /media/cdrom0
+    chdir: /home/{{ user }}/
   args:
     executable: /bin/bash
   ignore_errors: true
