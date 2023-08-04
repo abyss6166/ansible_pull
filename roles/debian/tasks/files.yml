@@ -2,7 +2,7 @@
   tags: xfce
   copy:
     src: files/XFCE_X022_FHD_NoLogo.png
-    dest: /home/{{ user }}/Pictures
+    dest: /usr/share/backgrounds/xfce
     owner: "{{ user }}"
     group: "{{ user }}"
 
@@ -17,6 +17,17 @@
   unarchive:
     src: files/Gnome-icons.tar.gz
     dest: /usr/share/icons
+
+- name: unzip cairo-dock settings
+  tags: cairo-dock
+  unarchive:
+    src: files/cairo-dock.7z
+    dest: /home/{{ user }}/.config/
+
+# - name: download Writer icon
+#   copy:
+#     src: files/LibreOffice_Writer.png
+#     dest: /home/{{ user }}/.config/cairo-dock/current_theme/icons
 
 - name: download settings script
   tags: settings
@@ -38,7 +49,7 @@
 
 - name: add to application autostart
   copy:
-    src: files/plank.desktop
+    src: files/cairo-dock.desktop
     dest: /home/{{ user }}/.config/autostart
     owner: "{{ user }}"
     group: "{{ user }}"

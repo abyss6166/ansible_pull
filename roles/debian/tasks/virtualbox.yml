@@ -9,6 +9,8 @@
     name:
       - build-essential
       - dkms
+      - gcc
+      - make
       - linux-headers-{{ uname_result.stdout }}
 
 - name: pull VirtualBox Guest Additions install file
