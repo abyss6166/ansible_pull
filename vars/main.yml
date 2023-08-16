@@ -8,3 +8,9 @@
 
 user: matt
 # pwdhash: "{{ userpass | password_hash }}"
+lightdmgtkgreeter_package: lightdm-gtk3-greeter
+i3_package: i3
+libreoffice_package: libreoffice
+firefox_package: firefox
+chromium_package: chromium
+ssh_package: ssh
