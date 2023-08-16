@@ -6,8 +6,8 @@
     when: stage is defined
   - include_tasks: directories.yml
     when: stage is not defined
-  - include_tasks: tasks/i3config.yml
-    when: stage is not defined
+  # - include_tasks: tasks/i3config.yml
+  #   when: stage is not defined
   - include_tasks: ../fedora/tasks/oh-my-posh.yml
     when: stage is not defined
   - include_tasks: tasks/zsh-alias.yml
@@ -20,7 +20,7 @@
     when: stage is not defined
   - include_tasks: discord.yml
     when: stage is not defined
-  - include_tasks: git.yml
-    when: stage is not defined
+  # - include_tasks: git.yml
+  #   when: stage is not defined
   - include_tasks: onedrive.yml
     when: stage is not defined

@@ -4,21 +4,23 @@
     name: '{{item}}'
   loop:
       #GUI
-      - xorg
-      - dbus
-      - lightdm
-      - lightdm-gtk3-greeter
-      - lightdm-gtk-greeter-settings
-      - i3
-      - i3status
-      - dmenu
-      - lxappearance
       - arc-theme
       - arc-icon-theme
-      - picom
-      - nitrogen
-      - polybar
-      - rofi
+      - dbus
+      - kde5
+      - kde-baseapps
+      - lightdm
+      - "{{ lightdm-gtk-greeter_package }}"
+      - lightdm-gtk-greeter-settings
+      - xorg
+      # - i3
+      # - i3status
+      # - dmenu
+      # - lxappearance
+      # - picom
+      # - nitrogen
+      # - polybar
+      # - rofi
       
       #Shell
       - zsh
@@ -36,17 +38,18 @@
       - nano
 
       #Applications
-      - firefox
-      - thunderbird
-      - pcmanfm
-      - notepadqq
-      - libreoffice
+      # - firefox
+      # - thunderbird
+      # - pcmanfm
+      # - notepadqq
+      # - libreoffice
       - chromium
       - vscode
       - quiterss
+      - geany
 
-      - xdg-utils
-      - xdg-user-dirs
+      # - xdg-utils
+      # - xdg-user-dirs
       - unzip
       - curl
       - wget
@@ -60,6 +63,7 @@
       - linux-headers
       - pulseaudio
       - gnupg
+      - linux-headers
 
       # - xinit
   #  state: latest
