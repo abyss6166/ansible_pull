@@ -7,10 +7,10 @@
 #     group: root
 #     state: link
 
-- name: create dbus link 
-  tags: dbus
-  become: true
-  shell: ln -s /etc/sv/dbus /var/service
+# - name: create dbus link 
+#   tags: dbus
+#   become: true
+#   shell: ln -s /etc/sv/dbus /var/service
 
 - name: back up lightdm.conf file
   tags: lightdm
