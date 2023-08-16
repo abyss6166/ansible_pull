@@ -10,7 +10,7 @@
       - kde5
       - kde-baseapps
       - lightdm
-      - "{{ lightdm-gtk-greeter_package }}"
+      - "{{ lightdmgtkgreeter_package }}"
       - lightdm-gtk-greeter-settings
       - xorg
       # - i3
@@ -36,6 +36,7 @@
       - duf
       - btop
       - nano
+      - vim
 
       #Applications
       # - firefox
