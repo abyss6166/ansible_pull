@@ -8,7 +8,7 @@
       - arc-icon-theme
       - dbus
       - kde5
-      - kde-baseapps
+      - kde5-baseapps
       - lightdm
       - "{{ lightdmgtkgreeter_package }}"
       - lightdm-gtk-greeter-settings
