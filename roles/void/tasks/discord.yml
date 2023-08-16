@@ -1,3 +1,11 @@
+- name: create discord directory
+  tags: discord
+  file:
+    path: /usr/share/discord
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: discord
   tags: discord
   unarchive:
