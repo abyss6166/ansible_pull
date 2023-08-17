@@ -31,6 +31,7 @@
 - block:
   - include_tasks: tasks/packages.yml
   - include_tasks: directories.yml
+  - include_tasks: services.yml
   - include_tasks: ../fedora/tasks/oh-my-posh.yml
   - include_tasks: tasks/zsh-alias.yml
   - include_tasks: ../base/tasks/fonts.yml
