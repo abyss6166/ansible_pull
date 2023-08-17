@@ -1,0 +1,36 @@
+set bg=dark
+
+" Highlights searches
+set hlsearch
+
+" Searches incrementally
+set incsearch
+
+" Set tab size
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" Convert tab stops to spaces
+set expandtab
+set autoindent
+set fileformat=unix
+
+" Syntax highlighting
+syntax on
+
+" Line numbers
+" set number relativenumber
+set number
+
+" Autocomplete
+set wildmode=longest,list,full
+
+" Replace all - alias S
+nnoremap S :%s//g<Left><Left>
+
+" New tab - alias control-t
+nnoremap <silent> <C-T> :tabnew<CR>
+
+" Paste with system clipboard - alias control-i
+nnoremap <S-Insert> <C-i>
