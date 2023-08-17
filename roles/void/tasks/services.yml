@@ -3,7 +3,7 @@
   become: true
   shell: ln -s /etc/sv/dbus /var/service
 
-- name: create dbus link 
+- name: create sddm link 
   tags: sddm
   become: true
   shell: ln -s /etc/sv/sddm /var/service

@@ -65,6 +65,7 @@
       - pulseaudio
       - gnupg
       - linux-headers
+      - python3-psutil
 
       # - xinit
   #  state: latest
