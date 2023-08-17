@@ -39,12 +39,11 @@
       - vim
 
       #Applications
-      # - firefox
-      # - thunderbird
-      # - pcmanfm
-      # - notepadqq
-      # - libreoffice
-      - chromium
+      - "{{ firefox_package }}"
+      - thunderbird
+      - "{{ libreoffice_package }}"
+      - "{{ chromium_package }}"
+      - "{{ ssh_package }}"
       - vscode
       - quiterss
       - geany
