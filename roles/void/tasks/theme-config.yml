@@ -1,0 +1,19 @@
+- name: apply wallpaper
+  shell:
+    cmd: plasma-apply-wallpaperimage /usr/share/wallpapers/wallpaper.png
+  args:
+    executable: /bin/bash
+
+- name: apply theme
+  shell:
+    cmd: plasma-apply-lookandfeel BreezeDark
+  args:
+    executable: /bin/bash
+
+- name: create xdg-user-dirs-update 
+  become_user: "{{ user }}"
+  shell: 
+    cmd: xdg-user-dirs-update
+  args:
+    executable: /bin/bash
+    chdir: /home/{{ user }}

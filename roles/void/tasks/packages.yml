@@ -9,9 +9,9 @@
       - dbus
       - kde5
       - kde5-baseapps
-      - lightdm
-      - "{{ lightdmgtkgreeter_package }}"
-      - lightdm-gtk-greeter-settings
+      # - lightdm
+      # - "{{ lightdmgtkgreeter_package }}"
+      # - lightdm-gtk-greeter-settings
       - xorg
       # - i3
       # - i3status
@@ -49,8 +49,8 @@
       - quiterss
       - geany
 
-      # - xdg-utils
-      # - xdg-user-dirs
+      - xdg-utils
+      - xdg-user-dirs
       - unzip
       - curl
       - wget

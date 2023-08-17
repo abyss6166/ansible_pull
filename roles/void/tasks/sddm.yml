@@ -1,0 +1,15 @@
+- name: copy login wallpaper
+  tags: sddm
+  copy:
+    src: files/sddm.png
+    dest: /usr/share/wallpapers
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: edit sddm conf file
+  tags: sddm
+  become: true
+  lineinfile:
+    path: /usr/share/sddm/themes/breeze/theme.conf
+    regexp: '^background='
+    line: 'background=/usr/share/wallpapers/sddm.png'
