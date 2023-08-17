@@ -47,6 +47,7 @@
       - vscode
       - quiterss
       - geany
+      - conky
 
       - xdg-utils
       - xdg-user-dirs
