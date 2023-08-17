@@ -1,3 +1,10 @@
+- name: copy wallpaper
+  copy:
+    src: files/wallpaper.png
+    dest: /usr/share/wallpapers
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: apply wallpaper
   shell:
     cmd: plasma-apply-wallpaperimage /usr/share/wallpapers/wallpaper.png
