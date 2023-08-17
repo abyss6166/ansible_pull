@@ -43,7 +43,7 @@
       - thunderbird
       - "{{ libreoffice_package }}"
       - "{{ chromium_package }}"
-      - "{{ ssh_package }}"
+      # - "{{ ssh_package }}"
       - vscode
       - quiterss
       - geany
