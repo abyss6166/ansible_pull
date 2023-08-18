@@ -60,7 +60,7 @@
       - samba
       - smbclient
       - cifs-utils
-      - nerd-fonts
+      # - nerd-fonts
       - linux-headers
       - pulseaudio
       - gnupg
