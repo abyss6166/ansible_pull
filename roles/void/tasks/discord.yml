@@ -15,14 +15,6 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: install discord shortcut
-  tags: discord
-  copy:
-    src: /usr/share/discord/Discord/discord.desktop
-    dest: /usr/share/applications
-    owner: root
-    group: root
-
 - name: edit discord desktop file -1
   tags: discord
   become: true
@@ -38,3 +30,12 @@
     path: /usr/share/discord/Discord/discord.desktop
     regexp: '^Icon='
     line: 'Icon=/usr/share/discord/Discord/discord.png'
+
+- name: install discord shortcut
+  tags: discord
+  copy:
+    src: /usr/share/discord/Discord/discord.desktop
+    dest: /usr/share/applications
+    owner: root
+    group: root
+

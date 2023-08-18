@@ -17,10 +17,3 @@
 #   args:
 #     executable: /bin/bash
 
-- name: create xdg-user-dirs-update 
-  become_user: "{{ user }}"
-  shell: 
-    cmd: xdg-user-dirs-update
-  args:
-    executable: /bin/bash
-    chdir: /home/{{ user }}

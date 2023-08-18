@@ -18,3 +18,11 @@
       # - "git"
       - ".config/QuiteRss"
       - ".config/onedrive"
+
+- name: create user dirs 
+  become_user: "{{ user }}"
+  shell: 
+    cmd: xdg-user-dirs-update
+  args:
+    executable: /bin/bash
+    chdir: /home/{{ user }}
