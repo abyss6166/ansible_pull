@@ -1,0 +1,15 @@
+- name: copy virtualbox desktop file
+  copy:
+    src: files/vboxclient.desktop
+    dest: /home/{{ user }}/.config/autostart/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: add virtualbox to visudo
+  lineinfile:
+    path: /etc/sudoers
+    insertafter: EOF
+    line: matt ALL=NOPASSWD:/usr/bin/VBoxClient-all
+    state: present
+    validate: /usr/sbin/visudo -cf %s

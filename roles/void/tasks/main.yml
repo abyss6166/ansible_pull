@@ -44,3 +44,4 @@
   - include_tasks: onedrive.yml
   - include_tasks: theme-config.yml
   - include_tasks: ../fedora/tasks/tilix_config.yml
+  - include_tasks: virtualbox.yml
