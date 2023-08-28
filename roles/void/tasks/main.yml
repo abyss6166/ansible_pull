@@ -31,7 +31,7 @@
 - block:
   - include_tasks: packages.yml
   - include_tasks: directories.yml
-  # - include_tasks: services.yml
+  - include_tasks: services.yml
   - include_tasks: ../base/tasks/geany.yml
   - include_tasks: ../base/tasks/conky.yml
   - include_tasks: ../base/tasks/fonts.yml
