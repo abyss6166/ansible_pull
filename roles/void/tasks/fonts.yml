@@ -1,0 +1,11 @@
+- name: install Meslo fonts
+  tags: font,fonts
+  unarchive:
+    src: files/Meslo.zip
+    dest: /home/{{ user }}/.local/share/fonts
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: reload font cache
+  tags: font
+  shell: fc-cache -f -v > /dev/null
