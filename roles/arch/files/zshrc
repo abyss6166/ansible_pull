@@ -8,12 +8,14 @@ setopt correct
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/{{ user }}/.zshrc'
 
-EDITOR=nano
+EDITOR=vim
 
 bindkey '^ ' autosuggest-accept
 bindkey  '^[[H'   beginning-of-line
 bindkey  '^[[F'   end-of-line
 bindkey  '^[[3~'  delete-char
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 autoload -Uz compinit
 compinit
