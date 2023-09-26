@@ -8,7 +8,7 @@
       - tilix
       - htop
       - conky
-      - exa
+      # - exa
       - ncdu
       - bat
       - onedrive

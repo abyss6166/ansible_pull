@@ -36,12 +36,18 @@
   command: 
     cmd: usermod -aG libvirt {{ user }}
 
-- name: unzip AnyConnect
-  unarchive:
-    src: files/anyconnect-linux64-4.10.05111-predeploy-k9.tar.gz
+- name: Copy AnyConnect
+  copy:
+    src: files/cisco-anyconnect-vpn-4.10.07073-1.x86_64.rpm
     dest: /home/{{ user }}/Downloads
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: install AnyConnect
+  dnf:
+    name:
+      - /home/{{ user }}/Downloads/cisco-anyconnect-vpn-4.10.07073-1.x86_64.rpm
+    state: present
 
 # - name: download Teams
 #   get_url:

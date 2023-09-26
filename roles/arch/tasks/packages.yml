@@ -41,7 +41,7 @@
 
       # Utilities
       - htop
-      - exa
+      - eza
       - ncdu
       - bat
       - duf
