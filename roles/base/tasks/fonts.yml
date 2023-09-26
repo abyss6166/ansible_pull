@@ -15,6 +15,14 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install fonts - Inconsolata
+  tags: font,fonts
+  unarchive:
+    src: files/Inconsolata.zip
+    dest: /home/{{ user }}/.local/share/fonts
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: reload font cache
   tags: font
   shell: fc-cache -f -v > /dev/null
