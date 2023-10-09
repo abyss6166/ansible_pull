@@ -48,7 +48,8 @@
     name:
       - /home/{{ user }}/Downloads/cisco-anyconnect-vpn-4.10.07073-1.x86_64.rpm
     state: present
-
+    disable_gpg_check: true
+    
 # - name: download Teams
 #   get_url:
 #     url: https://web.archive.org/web/20221130115736if_/https://packages.microsoft.com/yumrepos/ms-teams/teams-1.5.00.23861-1.x86_64.rpm
