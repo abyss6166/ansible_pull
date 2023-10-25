@@ -30,3 +30,11 @@
     dest: /home/{{ user }}/.vimrc
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: tmux config file
+  tags: tmux
+  copy:
+    src: files/tmux.conf
+    dest: /home/{{ user }}/.tmux.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
