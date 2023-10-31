@@ -34,3 +34,9 @@ nnoremap <silent> <C-T> :tabnew<CR>
 
 " Paste with system clipboard - alias control-i
 nnoremap <S-Insert> <C-i>
+
+" Switch to next buffer - alias control-n
+nnoremap <silent> <C-N> :bn<CR>
+
+" Switch to previous buffer - alias control-p
+nnoremap <silent> <C-P> :bp<CR>
