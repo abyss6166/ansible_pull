@@ -24,7 +24,7 @@ ex ()
   fi
 }
 
-export EDITOR=nano
+export EDITOR=vim
 
 alias ls='ls'
 alias ll='ls -l'
@@ -46,7 +46,7 @@ alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config 
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
 
-alias n='${=EDITOR}'
+alias v='${=EDITOR}'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '

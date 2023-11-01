@@ -24,7 +24,7 @@ ex ()
   fi
 }
 
-export EDITOR=nano
+export EDITOR=vim
 
 alias ls='ls'
 alias ll='ls -l'
@@ -44,7 +44,7 @@ alias tree='exa --tree'
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 
-alias n='${=EDITOR}'
+alias v='${=EDITOR}'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
