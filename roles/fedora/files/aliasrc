@@ -45,6 +45,7 @@ alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 
 alias v='${=EDITOR}'
+alias vo='vim -O'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '

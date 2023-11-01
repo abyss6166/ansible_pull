@@ -47,6 +47,7 @@ alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
 
 alias v='${=EDITOR}'
+alias vo='vim -O'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -81,8 +82,6 @@ alias unexport='unset'
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias vim='vim'
-alias vi='vim'
 
 gitpush() {
     git add .
