@@ -67,6 +67,8 @@
   roles:
     - role: fedora
       when: ansible_distribution == "Fedora"
+    - role: cbpp
+      when: hostname.stdout == "cbpp"
     - role: debian
       when: ansible_distribution == "Debian"
     - role: lubuntu
