@@ -1,0 +1,62 @@
+- name: copy desktop background
+  copy:
+    src: files/joy-theme_1920x1080.svg
+    dest: /usr/share/backgrounds/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install conky config
+  tags: theme
+  copy:
+    src: files/conkyrc
+    dest: /home/ {{ user }} /.conkyrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install gmrun config
+  copy:
+    src: files/gmrunrc
+    dest: /home/ {{ user }} /.gmrunrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install autostart config
+  copy:
+    src: files/autostart
+    dest: /home/ {{ user }} /.config/openbox/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install menu config
+  copy:
+    src: files/menu.xml
+    dest: /home/ {{ user }} /.config/openbox/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install rc config
+  copy:
+    src: files/rc.xml
+    dest: /home/ {{ user }} /.config/openbox/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: unzip cairo-dock settings
+  tags: cairo-dock
+  unarchive:
+    src: files/cairo-dock.tar.gz
+    dest: /home/{{ user }}/.config/
+
+# - name: download Writer icon
+#   copy:
+#     src: files/LibreOffice_Writer.png
+#     dest: /home/{{ user }}/.config/cairo-dock/current_theme/icons
+
+- name: download tilix settings script
+  tags: tilix,settings
+  copy:
+    src: files/tilix.sh
+    dest: /home/{{ user }}
+    mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"
