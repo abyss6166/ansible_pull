@@ -9,35 +9,35 @@
   tags: theme
   copy:
     src: files/conkyrc
-    dest: /home/ {{ user }} /.conkyrc
+    dest: /home/{{ user }}/.conkyrc
     owner: "{{ user }}"
     group: "{{ user }}"
 
 - name: install gmrun config
   copy:
     src: files/gmrunrc
-    dest: /home/ {{ user }} /.gmrunrc
+    dest: /home/{{ user }}/.gmrunrc
     owner: "{{ user }}"
     group: "{{ user }}"
 
 - name: install autostart config
   copy:
     src: files/autostart
-    dest: /home/ {{ user }} /.config/openbox/
+    dest: /home/{{ user }}/.config/openbox/
     owner: "{{ user }}"
     group: "{{ user }}"
 
 - name: install menu config
   copy:
     src: files/menu.xml
-    dest: /home/ {{ user }} /.config/openbox/
+    dest: /home/{{ user }}/.config/openbox/
     owner: "{{ user }}"
     group: "{{ user }}"
 
 - name: install rc config
   copy:
     src: files/rc.xml
-    dest: /home/ {{ user }} /.config/openbox/
+    dest: /home/{{ user }}/.config/openbox/
     owner: "{{ user }}"
     group: "{{ user }}"
 
