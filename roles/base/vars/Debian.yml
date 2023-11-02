@@ -4,3 +4,4 @@ libreoffice_package: libreoffice
 firefox_package: firefox-esr
 chromium_package: chromium
 ssh_package: ssh
+user: matt

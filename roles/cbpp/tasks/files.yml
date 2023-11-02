@@ -4,6 +4,7 @@
     dest: /usr/share/backgrounds/
     owner: "{{ user }}"
     group: "{{ user }}"
+    backup: yes
 
 - name: install conky config
   tags: theme
@@ -12,6 +13,7 @@
     dest: /home/{{ user }}/.conkyrc
     owner: "{{ user }}"
     group: "{{ user }}"
+    backup: yes
 
 - name: install gmrun config
   copy:
@@ -19,6 +21,7 @@
     dest: /home/{{ user }}/.gmrunrc
     owner: "{{ user }}"
     group: "{{ user }}"
+    backup: yes
 
 - name: install autostart config
   copy:
@@ -26,6 +29,7 @@
     dest: /home/{{ user }}/.config/openbox/
     owner: "{{ user }}"
     group: "{{ user }}"
+    backup: yes
 
 - name: install menu config
   copy:
@@ -33,6 +37,7 @@
     dest: /home/{{ user }}/.config/openbox/
     owner: "{{ user }}"
     group: "{{ user }}"
+    backup: yes
 
 - name: install rc config
   copy:
@@ -40,6 +45,15 @@
     dest: /home/{{ user }}/.config/openbox/
     owner: "{{ user }}"
     group: "{{ user }}"
+    backup: yes
+
+- name: install sources.list
+  copy:
+    src: files/sources.list
+    dest: /etc/apt/
+    owner: "root"
+    group: "root"
+    backup: yes
 
 - name: unzip cairo-dock settings
   tags: cairo-dock
