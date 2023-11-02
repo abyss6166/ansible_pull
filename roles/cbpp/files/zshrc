@@ -28,4 +28,11 @@ compinit
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/gruvbox.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/negligible.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/night-owl.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/peru.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/powerlevel10k_classic.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/stelbent.minimal.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/wopian.omp.json)"
