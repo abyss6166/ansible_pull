@@ -27,9 +27,14 @@
         <execute>geany</execute>
       </action>
     </item>
-    <item label="Media Player">
+    <item label="E-Mail">
       <action name="Execute">
-        <execute>vlc</execute>
+        <execute>thunderbird</execute>
+      </action>
+    </item>
+    <item label="Teams">
+      <action name="Execute">
+        <execute>teams</execute>
       </action>
     </item>
     <separator />

@@ -25,6 +25,7 @@
       - "{{ chromium_package }}"
       - "{{ ssh_package }}"
       - btop
+      - copyq
     state: latest
 
 - name: install debian specific packages

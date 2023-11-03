@@ -1,7 +1,7 @@
 ShowDotFiles = 1
 TabTimeout = 0
 
-Terminal = x-terminal-emulator
+Terminal = tilix
 TermExec = ${Terminal} -e
 AlwaysInTerm = ssh telnet ftp lynx mc vi vim cat top sudo man info
 

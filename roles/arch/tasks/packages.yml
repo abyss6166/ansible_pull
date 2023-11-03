@@ -46,6 +46,7 @@
       - bat
       - duf
       - btop
+      - copyq
 
       # Applications
       - firefox

@@ -359,9 +359,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Terminal</name>
+          <name>Thunderbird</name>
         </startupnotify>
-        <command>x-terminal-emulator</command>
+        <command>thunderbird</command>
       </action>
     </keybind>
     <keybind key="W-Return">
@@ -377,9 +377,9 @@
       <action name="Execute">
         <startupnotify>
           <enabled>true</enabled>
-          <name>Web Browser</name>
+          <name>Firefox</name>
         </startupnotify>
-        <command>x-www-browser</command>
+        <command>/opt/firefox/firefox</command>
       </action>
     </keybind>
     <keybind key="W-l">
