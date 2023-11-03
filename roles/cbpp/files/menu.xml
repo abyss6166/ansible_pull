@@ -56,7 +56,7 @@
       </item>
       <item label="Terminal">
         <action name="Execute">
-          <execute>tilix</execute>
+          <execute>terminator -u</execute>
         </action>
       </item>
       <item label="Thunar File Manager">
@@ -137,6 +137,11 @@
       <item label="Filezilla">
         <action name="Execute">
           <execute>filezilla</execute>
+        </action>
+      </item>
+      <item label="Cisco AnyConnect Client">
+        <action name="Execute">
+          <execute>/opt/cisco/anyconnect/bin/vpnui</execute>
         </action>
       </item>
       <item label="Transmission BitTorrent Client">
