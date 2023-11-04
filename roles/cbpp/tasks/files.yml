@@ -47,6 +47,14 @@
     group: "{{ user }}"
     backup: yes
 
+- name: install tint2 config
+  copy:
+    src: files/tint2rc
+    dest: /home/{{ user }}/.config/tint2/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
 - name: install sources.list
   copy:
     src: files/sources.list
@@ -74,3 +82,12 @@
     mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: install peru theme
+  copy:
+    src: files/peru.omp.json
+    dest: /home/{{ user }}/.poshthemes/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+

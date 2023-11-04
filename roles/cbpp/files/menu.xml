@@ -7,27 +7,27 @@
       </action>
     </item>
     <separator />
-    <item label="Terminal">
+    <item label="Tilix">
       <action name="Execute">
         <execute>tilix</execute>
       </action>
     </item>
-    <item label="Web Browser">
+    <item label="Firefox">
       <action name="Execute">
-        <execute>x-www-browser</execute>
+        <execute>/opt/firefox/firefox</execute>
       </action>
     </item>
-    <item label="File Manager">
+    <item label="Thunar">
       <action name="Execute">
         <execute>thunar</execute>
       </action>
     </item>
-    <item label="Text Editor">
+    <item label="Geany">
       <action name="Execute">
         <execute>geany</execute>
       </action>
     </item>
-    <item label="E-Mail">
+    <item label="Thunderbird">
       <action name="Execute">
         <execute>thunderbird</execute>
       </action>
@@ -129,11 +129,6 @@
       <item label="Volume Control">
         <action name="Execute">
           <execute>mate-volume-control</execute>
-        </action>
-      </item>
-      <item label="Xfburn">
-        <action name="Execute">
-          <execute>xfburn</execute>
         </action>
       </item>
     </menu>
