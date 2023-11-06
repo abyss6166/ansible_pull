@@ -1,15 +1,16 @@
 - block:
   - include_tasks: ../debian/tasks/directories.yml
-  # - include_tasks: ../debian/tasks/duf.yml
   - include_tasks: ../debian/tasks/nala.yml
   - include_tasks: ../debian/tasks/oh-my-posh.yml
   - include_tasks: ../debian/tasks/zsh-alias.yml
   - include_tasks: files.yml
   - include_tasks: ../debian/tasks/tilix_config.yml
-  - include_tasks: ../debian/tasks/virtualbox.yml
   - include_tasks: ../debian/tasks/eza.yml
+  - include_tasks: ../debian/tasks/virtualbox.yml
+    when: ansible_virtualization_type == 'virtualbox'
   - include_tasks: ../debian/tasks/cleanup.yml
 
   # - include_tasks: btop.yml
   # - include_tasks: samba.yml
   # - include_tasks: sudoers.yml
+  # - include_tasks: ../debian/tasks/duf.yml
