@@ -55,6 +55,14 @@
     group: "{{ user }}"
     backup: yes
 
+- name: install lxdm config - autologin
+  copy:
+    src: files/cbpp.lxdm.conf
+    dest: /etc/lxdm/
+    owner: "root"
+    group: "root"
+    backup: yes
+
 - name: install sources.list
   copy:
     src: files/sources.list
