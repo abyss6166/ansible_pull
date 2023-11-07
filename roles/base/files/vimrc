@@ -42,6 +42,10 @@ nnoremap <silent> <C-T> :tabnew<CR>
 " Fast saving of a buffer
 nmap <leader>w :w!<cr>
 
+" Save and quit
+nmap <C-s> :w<CR>
+nmap <C-q> :q<CR>
+
 " Paste with system clipboard - alias control-i
 nnoremap <S-Insert> <C-i>
 
