@@ -17,6 +17,11 @@
         <execute>/opt/firefox/firefox</execute>
       </action>
     </item>
+    <item label="Mercury">
+      <action name="Execute">
+        <execute>mercury-browser</execute>
+      </action>
+    </item>
     <item label="Thunar">
       <action name="Execute">
         <execute>thunar</execute>
