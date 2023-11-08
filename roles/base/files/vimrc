@@ -46,6 +46,10 @@ nmap <leader>w :w!<cr>
 nmap <C-s> :w<CR>
 nmap <C-q> :q<CR>
 
+" Cycle tabs
+nnoremap <C-Up> gT
+nnoremap <C-Down> gt
+
 " Toggle line numbers
 nmap <leader>] :set number!<CR>                                                                                        
 
