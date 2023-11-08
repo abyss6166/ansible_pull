@@ -42,6 +42,10 @@ alias lrt='ls -1Fcrt'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
+alias zrc='${=EDITOR} ~/.zshrc'
+alias arc='${=EDITOR} ~/aliasrc'
+alias vimrc='${=EDITOR} ~/.vimrc'
+alias vrc='${=EDITOR} ~/.vimrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'

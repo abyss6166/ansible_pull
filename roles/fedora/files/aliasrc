@@ -43,6 +43,10 @@ alias tree='exa --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
+alias zrc='${=EDITOR} ~/.zshrc'
+alias arc='${=EDITOR} ~/aliasrc'
+alias vimrc='${=EDITOR} ~/.vimrc'
+alias vrc='${=EDITOR} ~/.vimrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
@@ -53,22 +57,22 @@ alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias t='tail -f'
 
 # Command line head / tail shortcuts
-#alias -g H='| head'
-#alias -g T='| tail'
-#alias -g G='| grep'
-#alias -g L="| less"
-#alias -g M="| most"
-#alias -g LL="2>&1 | less"
-#alias -g CA="2>&1 | cat -A"
-#alias -g NE="2> /dev/null"
-#alias -g NUL="> /dev/null 2>&1"
-#alias -g P="2>&1| pygmentize -l pytb"
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+# alias fd='find . -type d -name'
+# alias ff='find . -type f -name'
 
 alias h='history'
 alias hgrep="fc -El 0 | grep"
@@ -80,8 +84,6 @@ alias unexport='unset'
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias vim='vim'
-alias vi='vim'
 
 gitpush() {
     git add .
@@ -98,10 +100,9 @@ gitupdate() {
 
 alias gp=gitpush
 alias gu=gitupdate
-alias lbrynet='/opt/LBRY/resources/static/daemon/lbrynet'
 alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
 
-alias c='clear'
+alias c='bat'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'

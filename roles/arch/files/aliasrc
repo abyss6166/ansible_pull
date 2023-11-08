@@ -47,7 +47,10 @@ alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
 alias ab='${=EDITOR} ~/aliasbase'
 alias arc='${=EDITOR} ~/aliasarch'
+alias zrc='${=EDITOR} ~/.zshrc'
 alias vimrc='${=EDITOR} ~/.vimrc'
+alias vrc='${=EDITOR} ~/.vimrc'
+
 alias v='${=EDITOR}'
 alias vo='vim -O'
 

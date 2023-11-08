@@ -45,6 +45,10 @@ alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
+alias zrc='${=EDITOR} ~/.zshrc'
+alias arc='${=EDITOR} ~/aliasrc'
+alias vimrc='${=EDITOR} ~/.vimrc'
+alias vrc='${=EDITOR} ~/.vimrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
@@ -55,16 +59,16 @@ alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 alias t='tail -f'
 
 # Command line head / tail shortcuts
-#alias -g H='| head'
-#alias -g T='| tail'
-#alias -g G='| grep'
-#alias -g L="| less"
-#alias -g M="| most"
-#alias -g LL="2>&1 | less"
-#alias -g CA="2>&1 | cat -A"
-#alias -g NE="2> /dev/null"
-#alias -g NUL="> /dev/null 2>&1"
-#alias -g P="2>&1| pygmentize -l pytb"
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g P="2>&1| pygmentize -l pytb"
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
@@ -82,8 +86,6 @@ alias unexport='unset'
 alias rm='rm -iv'
 alias cp='cp -iv'
 alias mv='mv -iv'
-alias vim='vim'
-alias vi='vim'
 
 gitpush() {
     git add .
@@ -98,7 +100,6 @@ gitupdate() {
 }
 alias gp=gitpush
 alias gu=gitupdate
-alias lbrynet='/opt/LBRY/resources/static/daemon/lbrynet'
 alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
 
 alias c='clear'
