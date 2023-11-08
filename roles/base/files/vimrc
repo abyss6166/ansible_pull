@@ -46,6 +46,9 @@ nmap <leader>w :w!<cr>
 nmap <C-s> :w<CR>
 nmap <C-q> :q<CR>
 
+" Toggle line numbers
+nmap <leader>] :set number!<CR>                                                                                        
+
 " Paste with system clipboard - alias control-i
 nnoremap <S-Insert> <C-i>
 
@@ -74,3 +77,4 @@ hi cursorline cterm=none term=none
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
 highlight CursorLine guibg=#303000 ctermbg=234
+
