@@ -43,9 +43,9 @@ alias tree='exa --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
+alias vimrc='${=EDITOR} ~/.vimrc'
 alias zrc='${=EDITOR} ~/.zshrc'
 alias arc='${=EDITOR} ~/aliasrc'
-alias vimrc='${=EDITOR} ~/.vimrc'
 alias vrc='${=EDITOR} ~/.vimrc'
 
 alias v='${=EDITOR}'
@@ -68,6 +68,7 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
+alias -g F='| fzf > selected'
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'

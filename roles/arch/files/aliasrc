@@ -45,10 +45,10 @@ alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
 alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
+alias vimrc='${=EDITOR} ~/.vimrc'
 alias ab='${=EDITOR} ~/aliasbase'
 alias arc='${=EDITOR} ~/aliasarch'
 alias zrc='${=EDITOR} ~/.zshrc'
-alias vimrc='${=EDITOR} ~/.vimrc'
 alias vrc='${=EDITOR} ~/.vimrc'
 
 alias v='${=EDITOR}'
@@ -71,6 +71,7 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
+alias -g F='| fzf > selected'
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
@@ -141,7 +142,7 @@ mkcd () {
 }
 
 sshcopy () {
-  ssh-copy-id -i ~/.ssh/id_ed25519.pub "$1"
+  ssh-copy-id -i ~/.ssh/id_ed25519.pub mattarch@"$1"
 }
 
 alias zip='tar -zcvf'
