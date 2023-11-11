@@ -26,6 +26,8 @@
       - "{{ ssh_package }}"
       - btop
       - copyq
+      - fd-find
+      - fzf
     state: latest
 
 - name: install debian specific packages

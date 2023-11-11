@@ -24,6 +24,8 @@ ex ()
   fi
 }
 
+alias zip='tar -zcvf'
+
 export EDITOR=vim
 
 alias ls='ls'
@@ -47,10 +49,12 @@ alias vimrc='${=EDITOR} ~/.vimrc'
 alias zrc='${=EDITOR} ~/.zshrc'
 alias arc='${=EDITOR} ~/aliasrc'
 alias vrc='${=EDITOR} ~/.vimrc'
+alias src='source ~/aliasrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
 alias vp='vim -p'
+alias vf='vim -O $(fzf -m)'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -75,6 +79,7 @@ alias dush='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
 # alias fd='find . -type d -name'
 # alias ff='find . -type f -name'
+alias fdl='fd -l'
 
 alias h='history'
 alias h0='history 0'
@@ -144,5 +149,3 @@ shz() {
   ssh z-mh47577@"$1"
 }
 
-
-alias zip='tar -zcvf'

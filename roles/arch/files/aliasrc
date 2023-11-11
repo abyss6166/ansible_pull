@@ -24,6 +24,8 @@ ex ()
   fi
 }
 
+alias zip='tar -zcvf'
+
 export EDITOR=vim
 
 alias ls='ls'
@@ -50,10 +52,13 @@ alias ab='${=EDITOR} ~/aliasbase'
 alias arc='${=EDITOR} ~/aliasarch'
 alias zrc='${=EDITOR} ~/.zshrc'
 alias vrc='${=EDITOR} ~/.vimrc'
+alias i3c='${=EDITOR} ~/.config/i3/config'
+alias pb='${=EDITOR} ~/.config/polybar/config.ini'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
 alias vp='vim -p'
+alias vf='vim -O $(fzf -m)'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -76,8 +81,8 @@ alias -g F='| fzf > selected'
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+
+alias fdl='fd -l'
 
 alias h='history'
 alias h0='history 0'
@@ -145,4 +150,3 @@ sshcopy () {
   ssh-copy-id -i ~/.ssh/id_ed25519.pub mattarch@"$1"
 }
 
-alias zip='tar -zcvf'

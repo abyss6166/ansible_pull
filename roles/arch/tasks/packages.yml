@@ -47,6 +47,8 @@
       - duf
       - btop
       - copyq
+      - fd
+      - fzf
 
       # Applications
       - firefox

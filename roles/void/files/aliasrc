@@ -42,17 +42,17 @@ alias lrt='ls -1Fcrt'
 alias tree='exa --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
-alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
-alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
+alias vimrc='${=EDITOR} ~/.vimrc'
 alias zrc='${=EDITOR} ~/.zshrc'
 alias arc='${=EDITOR} ~/aliasrc'
-alias vimrc='${=EDITOR} ~/.vimrc'
 alias vrc='${=EDITOR} ~/.vimrc'
+alias src='source ~/aliasrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
 alias vp='vim -p'
+alias vf='vim -O $(fzf -m)'
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '

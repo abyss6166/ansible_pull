@@ -9,18 +9,7 @@
       - dbus
       - kde5
       - kde5-baseapps
-      # - lightdm
-      # - "{{ lightdmgtkgreeter_package }}"
-      # - lightdm-gtk-greeter-settings
       - xorg
-      # - i3
-      # - i3status
-      # - dmenu
-      # - lxappearance
-      # - picom
-      # - nitrogen
-      # - polybar
-      # - rofi
       
       #Shell
       - zsh
@@ -37,6 +26,8 @@
       - btop
       - nano
       - vim
+      - fd
+      - fzf
 
       #Applications
       - "{{ firefox_package }}"

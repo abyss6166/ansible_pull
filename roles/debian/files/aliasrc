@@ -46,6 +46,7 @@ alias zrc='${=EDITOR} ~/.zshrc'
 alias arc='${=EDITOR} ~/aliasrc'
 alias vimrc='${=EDITOR} ~/.vimrc'
 alias vrc='${=EDITOR} ~/.vimrc'
+alias src='source ~/aliasrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
@@ -71,8 +72,9 @@ alias -g P="2>&1| pygmentize -l pytb"
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+
+alias fd='fdfind'
+alias fdl='fdfind -l'
 
 alias h='history'
 alias h0='history 0'

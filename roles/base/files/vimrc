@@ -1,4 +1,5 @@
 set bg=dark
+set termguicolors
 
 " Highlights searches
 set hlsearch
@@ -46,6 +47,9 @@ nmap <leader>w :w!<cr>
 nmap <C-s> :w<CR>
 nmap <C-q> :q<CR>
 
+" Fast save and quit
+nmap <leader>q :wq<CR>
+
 " Cycle tabs
 nnoremap <C-Up> gT
 nnoremap <C-Down> gt
@@ -61,6 +65,9 @@ nnoremap <silent> <C-N> :bn<CR>
 
 " Switch to previous buffer - alias control-p
 nnoremap <silent> <C-P> :bp<CR>
+
+" Fast deleting of a buffer
+nmap <leader>d :bd<CR>
 
 " Use ctrl-arrow to select active split
 nmap <silent> <C-S-up> :wincmd k<CR>
