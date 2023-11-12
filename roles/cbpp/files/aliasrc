@@ -91,9 +91,7 @@ alias dua='sudo du -sh /* | sort -rh | head -15'
 alias fd='fdfind'
 alias fdl='fdfind -l'
 
-alias h='history'
-alias h0='history 0'
-alias h0g='history 0 | grep'
+alias h='history 0'
 alias hg='history 0 | grep'
 
 alias hgrep="fc -El 0 | grep"
@@ -126,17 +124,19 @@ mkcd () {
 	mkdir "$1"
 	cd "$1"
 }
-alias c='clear'
+alias c='bat'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
 alias addusergroup='sudo usermod -aG'
 alias ctlstatus='systemctl status'
-alias ctlstart='systemctl start'
-alias ctlrestart='systemctl restart'
+alias ctlstart='sudo systemctl start'
+alias ctlrestart='sudo systemctl restart'
 alias nf='neofetch'
 alias cat='batcat'
 alias ~='cd ~'
