@@ -41,7 +41,7 @@ alias ldot='ls -ld .*'
 alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
-alias tree='exa --tree'
+alias tree='eza --tree'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
@@ -57,6 +57,7 @@ alias vp='vim -p'
 alias vfo='vim -O $(fzf -m)'
 alias vf='vim $(fzf -m)'
 
+# vff - fuzzy open in vim
 vff() {
   local files
 
@@ -68,6 +69,41 @@ vff() {
      print -l $files[1]
   fi  
 }                                                                                                                                                                                                                                                                                                                                                                            
+
+# fda - including hidden directories
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m --preview 'eza --tree {} | head -50') && cd "$dir"
+}
+
+# cf - fuzzy cd from anywhere
+# ex: cf word1 word2 ... (even part of a file name)
+# zsh autoload function
+cf() {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+alias fzff="fdfind --type f --color=never --hidden | fzf --preview 'batcat --color=always --line-range :50 {}'"
+alias fzfd="fdfind --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
 
 alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
@@ -85,18 +121,15 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
-alias -g F='| fzf > selected'
+alias -g F='| fzf'
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
-# alias fd='find . -type d -name'
-# alias ff='find . -type f -name'
+
 alias fdl='fd -l'
 
 alias h='history'
-alias h0='history 0'
-alias h0g='history 0 | grep'
 alias hg='history 0 | grep'
 
 alias hgrep="fc -El 0 | grep"
@@ -124,6 +157,8 @@ gitupdate() {
 
 alias gp=gitpush
 alias gu=gitupdate
+alias gs='git status'
+
 alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
 
 alias c='bat'

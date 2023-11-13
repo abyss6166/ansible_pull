@@ -28,6 +28,7 @@
       - copyq
       - fd-find
       - fzf
+      - ripgrep
     state: latest
 
 - name: install debian specific packages
