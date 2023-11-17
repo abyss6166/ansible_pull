@@ -42,6 +42,8 @@ alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 alias tree='eza --tree'
+alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
+alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
@@ -50,6 +52,7 @@ alias arc='${=EDITOR} ~/aliasrc'
 alias vimrc='${=EDITOR} ~/.vimrc'
 alias vrc='${=EDITOR} ~/.vimrc'
 alias src='source ~/aliasrc'
+alias zsrc='source ~/.zshrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'

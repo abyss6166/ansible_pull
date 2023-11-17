@@ -1,5 +1,10 @@
 set bg=dark
+" colorscheme iceberg
+" colorscheme two-firewatch.vim
+colorscheme solarized8_high
 set termguicolors
+
+" set mouse=a
 
 " Highlights searches
 set hlsearch
@@ -47,7 +52,7 @@ nmap <leader>w :w!<cr>
 nmap <C-s> :w<CR>
 nmap <C-q> :q<CR>
 
-" Fast save and quit
+" Quick save and quit
 nmap <leader>q :wq<CR>
 
 " Cycle tabs
@@ -61,13 +66,16 @@ nmap <leader>] :set number!<CR>
 nnoremap <S-Insert> <C-i>
 
 " Switch to next buffer - alias control-n
-nnoremap <silent> <C-N> :bn<CR>
+nnoremap <silent> <C-]> :bn<CR>
 
 " Switch to previous buffer - alias control-p
-nnoremap <silent> <C-P> :bp<CR>
+nnoremap <silent> <C-[> :bp<CR>
 
 " Fast deleting of a buffer
 nmap <leader>d :bd<CR>
+
+"Add line to bottom
+nmap <leader>o GGo
 
 " Use ctrl-arrow to select active split
 nmap <silent> <C-S-up> :wincmd k<CR>

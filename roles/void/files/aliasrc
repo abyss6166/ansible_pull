@@ -40,6 +40,8 @@ alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 alias tree='exa --tree'
+alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
+alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
@@ -70,7 +72,7 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
-alias -g F='| fzf > selected'
+alias -g F='| fzf'
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
@@ -78,9 +80,7 @@ alias dua='sudo du -sh /* | sort -rh | head -15'
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 
-alias h='history'
-alias h0='history 0'
-alias h0g='history 0 | grep'
+alias h='history 0'
 alias hg='history 0 | grep'
 
 alias hgrep="fc -El 0 | grep"
@@ -108,7 +108,8 @@ alias gp=gitpush
 alias gu=gitupdate
 alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
 
-alias c='clear'
+alias c='bat'
+alias cat='bat'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -116,7 +117,6 @@ alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
 alias ~='cd ~'
-alias cat='bat'
 
 alias search='xbps-query -Rs'
 alias install='sudo xbps-install'

@@ -31,6 +31,27 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: create vim theme directory
+  tags: vim
+  file:
+    path: /home/{{ user }}/.vim/colors
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: copy vim theme files
+  tags: vim
+  file:
+    src: files/{{ item }}
+    dest: /home/{{ user }}/.vim/colors/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+  with_items:
+    - solarized8_high.vim
+    - iceberg.vim
+    - two-firewatch.vim
+
 - name: tmux config file
   tags: tmux
   copy:

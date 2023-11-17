@@ -39,6 +39,8 @@ alias ldot='ls -ld .*'
 alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
+alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
+alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
@@ -47,6 +49,7 @@ alias arc='${=EDITOR} ~/aliasrc'
 alias vimrc='${=EDITOR} ~/.vimrc'
 alias vrc='${=EDITOR} ~/.vimrc'
 alias src='source ~/aliasrc'
+alias zsrc='source ~/.zshrc'
 
 alias v='${=EDITOR}'
 alias vo='vim -O'
@@ -68,6 +71,7 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
+alias -g F='| fzf'
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'
@@ -76,9 +80,10 @@ alias dua='sudo du -sh /* | sort -rh | head -15'
 alias fd='fdfind'
 alias fdl='fdfind -l'
 
-alias h='history'
-alias h0='history 0'
-alias h0g='history 0 | grep'
+alias fzff="fdfind --type f --color=never --hidden | fzf --preview 'batcat --color=always --line-range :50 {}'"
+alias fzfd="fdfind --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
+
+alias h='history 0'
 alias hg='history 0 | grep'
 
 alias hgrep="fc -El 0 | grep"
@@ -111,7 +116,9 @@ mkcd () {
 	mkdir "$1"
 	cd "$1"
 }
-alias c='clear'
+
+alias c='batcat'
+alias cat='batcat'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -123,7 +130,6 @@ alias ctlstatus='systemctl status'
 alias ctlstart='systemctl start'
 alias ctlrestart='systemctl restart'
 alias nf='neofetch'
-alias cat='batcat'
 alias ~='cd ~'
 
 alias install='sudo nala install'

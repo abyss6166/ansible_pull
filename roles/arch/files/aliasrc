@@ -41,7 +41,9 @@ alias ldot='ls -ld .*'
 alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
-alias tree='exa --tree'
+alias tree='eza --tree'
+alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
+alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
@@ -76,7 +78,7 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 alias -g P="2>&1| pygmentize -l pytb"
-alias -g F='| fzf > selected'
+alias -g F='| fzf'
 
 alias dud='du -d 1 -h'
 alias dush='du -sh *'

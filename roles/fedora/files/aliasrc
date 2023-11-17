@@ -42,6 +42,8 @@ alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 alias tree='eza --tree'
+alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
+alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
 alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
 alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
@@ -162,6 +164,7 @@ alias gs='git status'
 alias update-grub='sudo grub2-mkconfig -o /boot/grub2/grub.cfg'
 
 alias c='bat'
+alias cat='bat'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -171,7 +174,6 @@ alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'
 alias ~='cd ~'
-alias cat='bat'
 
 alias install='sudo dnf install'
 alias search='dnf search'
