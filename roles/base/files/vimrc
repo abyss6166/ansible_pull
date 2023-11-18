@@ -1,8 +1,26 @@
+call plug#begin()                                                                                                                                                                     
+Plug 'pearofducks/ansible-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'ryanoasis/vim-devicons'
+Plug 'PhilRunninger/nerdtree-visual-selection'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'jiangmiao/auto-pairs'
+Plug 'miyakogi/conoline.vim'
+call plug#end()
+
+let g:airline_theme='solarized'
+let g:airline_theme='cobalt2'
+let g:conoline_auto_enable = 1
+
 set bg=dark
 " colorscheme iceberg
 " colorscheme two-firewatch.vim
 colorscheme solarized8_high
 set termguicolors
+set encoding=UTF-8
 
 " set mouse=a
 
@@ -61,6 +79,12 @@ nnoremap <C-Down> gt
 
 " Toggle line numbers
 nmap <leader>] :set number!<CR>                                                                                        
+
+" Open FZF
+nmap <C-f> :FZF<CR>
+
+" Open NERDTree
+nmap <C-n> :NERDTreeToggle<CR>
 
 " Paste with system clipboard - alias control-i
 nnoremap <S-Insert> <C-i>
