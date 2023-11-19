@@ -249,6 +249,15 @@ smart_gaps on
 gaps inner 5
 gaps outer 5
 
+bindsym $mod+F1 exec tilix;workspace 1;focus
+bindsym $mod+F2 exec firefox;workspace 2;focus
+bindsym $mod+F3 exec quiterss;workspace 3
+bindsym $mod+F4 exec thunderbird;workspace 4;focus                                                                                      
+bindsym $mod+F5 exec geany;workspace 5
+bindsym $mod+F6 exec code;workspace 6
+bindsym $mod+F7 exec caja;workspace 7;focus
+bindsym $mod+F8 exec discord;workspace 8
+
 set $Locker i3lock && sleep 1
 set $shutdown shutdown
 

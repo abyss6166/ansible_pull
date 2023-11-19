@@ -45,19 +45,21 @@ alias tree='eza --tree'
 alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
 alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
-alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
-alias i3config='${=EDITOR} ~/.config/i3/config' # Quick access to the i3 config file
-alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
-alias polybar='${=EDITOR} ~/.config/polybar/config.ini'  # Quick access to polybar config file
-alias vimrc='${=EDITOR} ~/.vimrc'
-alias ab='${=EDITOR} ~/aliasbase'
-alias arc='${=EDITOR} ~/aliasarch'
-alias zrc='${=EDITOR} ~/.zshrc'
-alias vrc='${=EDITOR} ~/.vimrc'
-alias i3c='${=EDITOR} ~/.config/i3/config'
-alias pb='${=EDITOR} ~/.config/polybar/config.ini'
+alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias i3config='vim ~/.config/i3/config' # Quick access to the i3 config file
+alias aliasrc='vim ~/aliasrc' # Quick access to the aliasrc config file
+alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
+alias vimrc='vim ~/.vimrc'
+alias ab='vim ~/aliasbase'
+alias arc='vim ~/aliasarch'
+alias zrc='vim ~/.zshrc'
+alias vrc='vim ~/.vimrc'
+alias i3c='vim ~/.config/i3/config'
+alias pb='vim ~/.config/polybar/config.ini'
+alias src='source ~/aliasrc'
+alias zsrc='source ~/.zshrc'
 
-alias v='${=EDITOR}'
+alias v='vim'
 alias vo='vim -O'
 alias vp='vim -p'
 alias vf='vim -O $(fzf -m)'
@@ -121,6 +123,8 @@ alias c='clear'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'

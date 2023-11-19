@@ -9,6 +9,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'miyakogi/conoline.vim'
+Plug 'machakann/vim-highlightedyank'
+Plug 'thaerkh/vim-indentguides' 
+
 call plug#end()
 
 let g:airline_theme='solarized'
@@ -49,6 +52,10 @@ set number
 
 " Autocomplete
 set wildmode=longest,list,full
+
+" VimPlug
+nmap <leader>u :PlugUpdate<CR>
+nmap <leader>i :PlugInstall<CR>
 
 " Replace all - alias S
 nnoremap S :%s//g<Left><Left>

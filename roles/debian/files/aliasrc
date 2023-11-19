@@ -42,16 +42,16 @@ alias lrt='ls -1Fcrt'
 alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
 alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
 
-alias zshrc='${=EDITOR} ~/.zshrc' # Quick access to the ~/.zshrc file
-alias aliasrc='${=EDITOR} ~/aliasrc' # Quick access to the aliasrc config file
-alias zrc='${=EDITOR} ~/.zshrc'
-alias arc='${=EDITOR} ~/aliasrc'
-alias vimrc='${=EDITOR} ~/.vimrc'
-alias vrc='${=EDITOR} ~/.vimrc'
+alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias aliasrc='vim ~/aliasrc' # Quick access to the aliasrc config file
+alias zrc='vim ~/.zshrc'
+alias arc='vim ~/aliasrc'
+alias vimrc='vim ~/.vimrc'
+alias vrc='vim ~/.vimrc'
 alias src='source ~/aliasrc'
 alias zsrc='source ~/.zshrc'
 
-alias v='${=EDITOR}'
+alias v='vim'
 alias vo='vim -O'
 alias vp='vim -p'
 
@@ -122,6 +122,8 @@ alias cat='batcat'
 alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
 alias cd..='cd ..'
 alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias chx='chmod +x'
 alias ipba='ip -br a'
 alias ipa='ip -c a'

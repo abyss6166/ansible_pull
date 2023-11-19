@@ -31,14 +31,27 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: create vim theme directory
+- name: create vim directories
   tags: vim
   file:
-    path: /home/{{ user }}/.vim/colors
+    path: /home/{{ user }}/.vim/{{ item }}
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0755
+  with_items:
+    - colors
+    - plugged
+    - autoload
+
+- name: copy vim-plug file
+  tags: vim
+  get_url:
+    url: https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    dest: /home/{{ user }}/.vim/autoload/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 
 - name: copy vim theme files
   tags: vim

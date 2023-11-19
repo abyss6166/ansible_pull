@@ -29,7 +29,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 #eval "$(oh-my-posh init zsh --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
-eval "$(oh-my-posh init zsh --config ~/.poshthemes/quick-term.omp.json)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/quick-term.omp.json)"
+eval "$(oh-my-posh init zsh --config ~/.poshthemes/wopian.omp.json)" 
 
 export FZF_DEFAULT_COMMAND='fd --type f --color=never --hidden'
 export FZF_DEFAULT_OPTS="--color=bg+:#343d46,gutter:-1,pointer:#ff3c3c,info:#0dbc79,hl:#0dbc79,hl+:#23d18b --height 60% --border sharp --prompt ':: ' --preview 'bat --color=always --line-range :50 {}'"
