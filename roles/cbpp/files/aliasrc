@@ -194,3 +194,6 @@ alias upgrade='sudo nala upgrade'
 alias ai='sudo nala install'
 alias as='nala search'
 
+sshcopy () {
+  ssh-copy-id -i ~/.ssh/id_ed25519.pub z-mh47577@"$1"
+}

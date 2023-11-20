@@ -112,6 +112,7 @@ alias grep='grep -in --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
 alias t='tail -f'
+alias curl='curl -LIv'
 
 # Command line head / tail shortcuts
 alias -g H='| head'
@@ -200,5 +201,9 @@ alias sshrh82='ssh msh@192.168.122.83'
 
 shz() {
   ssh z-mh47577@"$1"
+}
+
+sshcopy () {
+  ssh-copy-id -i ~/.ssh/id_ed25519.pub z-mh47577@"$1"
 }
 
