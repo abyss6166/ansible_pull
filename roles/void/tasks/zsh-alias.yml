@@ -18,6 +18,15 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install slimfat theme
+  copy:
+    src: files/slimfat.omp.json
+    dest: /home/{{ user }}/.poshthemes/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+
 # - name: source .zshrc and aliasrc files
 #   tags: alias,zsh
 #   shell: bash -c 'source /home/{{ user }}/aliasrc 2> /dev/null && source /home/{{ user }}/.zshrc 2> /dev/null'

@@ -39,7 +39,7 @@
 - name: install poshtheme config file
   tags: poshtheme
   copy:
-    src: files/quick-term.omp.json
+    src: files/wopian.omp.json
     dest: /home/{{ user }}/.poshthemes
     owner: "{{ user }}"
     group: "{{ user }}"
