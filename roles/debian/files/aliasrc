@@ -55,6 +55,61 @@ alias v='vim'
 alias vo='vim -O'
 alias vp='vim -p'
 
+# vff - fuzzy open in vim
+vff() {
+  local files
+
+  files=(${(f)"$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"})
+
+  if [[ -n $files ]]
+  then
+     vim -- $files
+     print -l $files[1]
+  fi  
+}                                                                                                                                                                                                                                                                                                                                                                            
+
+# fda - including hidden directories
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m --preview 'eza --tree {} | head -50') && cd "$dir"
+}
+
+# cf - fuzzy cd from anywhere
+# ex: cf word1 word2 ... (even part of a file name)
+# zsh autoload function
+cf() {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
+
+alias fzff="fdfind --type f --color=never --hidden | fzf --preview 'batcat --color=always --line-range :50 {}'"
+alias fzfd="fdfind --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
+
 alias grep='grep --color'
 alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
 
@@ -79,9 +134,6 @@ alias dua='sudo du -sh /* | sort -rh | head -15'
 
 alias fd='fdfind'
 alias fdl='fdfind -l'
-
-alias fzff="fdfind --type f --color=never --hidden | fzf --preview 'batcat --color=always --line-range :50 {}'"
-alias fzfd="fdfind --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
 
 alias h='history 0'
 alias hg='history 0 | grep'
