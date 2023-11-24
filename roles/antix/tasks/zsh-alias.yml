@@ -3,14 +3,9 @@
   get_url:
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     dest: /home/{{ user }}
+    mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
-
-- name: set oh-my-zsh script to executable
-  tags: oh-my-zsh
-  file:
-    path: /home/{{ user }}/install.sh
-    mode: +x
 
 # - name: Install oh-my-zsh
 #   become_user: "{{ user }}"
