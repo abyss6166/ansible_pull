@@ -47,7 +47,7 @@
 - name: copy p10k config
   tags: zsh
   copy:
-    src: files/p10k
+    src: files/p10k.zsh
     dest: /home/{{ user }}/.p10k.zsh
     owner: "{{ user }}"
     group: "{{ user }}"
