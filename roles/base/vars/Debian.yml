@@ -1,4 +1,4 @@
-libreoffice_package: libreoffice
+libreoffice_package: libreoffice-core
 firefox_package: firefox-esr
 chromium_package: chromium
 ssh_package: ssh
