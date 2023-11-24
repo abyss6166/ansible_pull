@@ -1,7 +1,7 @@
 - name: Download oh-my-zsh
   tags: zsh
   get_url:
-    src: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
     dest: /home/{{ user }}
     owner: "{{ user }}"
     group: "{{ user }}"
