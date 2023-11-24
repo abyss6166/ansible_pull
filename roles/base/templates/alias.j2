@@ -70,11 +70,11 @@ alias dud='du -d 1 -h'
 alias dush='du -sh *'
 alias dua='sudo du -sh /* | sort -rh | head -15'
 
-alias fd='{{ fd }}'
-alias fdl='{{ fd }} -l'
-alias fde='{{ fd }} -e'
-alias fdf='{{ fd }} -t f'
-alias fdd='{{ fd }} -t d'
+alias fd='{{ fd_package }}'
+alias fdl='{{ fd_package }} -l'
+alias fde='{{ fd_package }} -e'
+alias fdf='{{ fd_package }} -t f'
+alias fdd='{{ fd_package }} -t d'
 
 alias h='history 0'
 alias hg='history 0 | grep'
@@ -157,8 +157,8 @@ vff() {
   fi
 }
 
-alias fzff="{{ fd }} --type f --color=never --hidden | fzf --preview '{{ bat }} --color=always --line-range :50 {}'"
-alias fzfd="{{ fd }} --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
+alias fzff="{{ fd_package }} --type f --color=never --hidden | fzf --preview '{{ bat }} --color=always --line-range :50 {}'"
+alias fzfd="{{ fd_package }} --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
 
 # fda - including hidden directories
 fcd() {
