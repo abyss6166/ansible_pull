@@ -3,7 +3,7 @@
 - name: generate aliasrc file from template
   tags: aliasrc
   template:
-    src: "{{ alias_template }}"
+    src: "{{ alias }}"
     dest: /home/{{ user }}/aliasrc
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -12,7 +12,7 @@
 - name: generate zshrc file from template
   tags: zshrc
   template:
-    src: "{{ zshrc_template }}"
+    src: "{{ zshrc }}"
     dest: /home/{{ user }}/.zshrc
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -21,7 +21,7 @@
 - name: generate vimrc file from template
   tags: vimrc
   template:
-    src: "{{ vimrc_template }}"
+    src: "{{ vimrc }}"
     dest: /home/{{ user }}/.vimrc
     owner: "{{ user }}"
     group: "{{ user }}"
