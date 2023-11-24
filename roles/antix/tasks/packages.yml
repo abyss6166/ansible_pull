@@ -2,6 +2,7 @@
 
 - name: install eza and nala
   apt:
+    update_cache: yes
     name:
       - nala
       - eza
