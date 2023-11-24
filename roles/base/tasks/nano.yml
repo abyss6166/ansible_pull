@@ -55,7 +55,7 @@
 
 - name: copy vim theme files
   tags: vim
-  file:
+  copy:
     src: files/{{ item }}
     dest: /home/{{ user }}/.vim/colors/
     owner: "{{ user }}"
