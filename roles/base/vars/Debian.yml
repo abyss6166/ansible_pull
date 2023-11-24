@@ -3,7 +3,7 @@ firefox_package: firefox-esr
 chromium_package: chromium
 ssh_package: ssh
 user: matt
-fd: fdfind
+fd_package: fdfind
 init_status: systemctl status
 init_start: systemctl start
 init_restart: systemctl restart
