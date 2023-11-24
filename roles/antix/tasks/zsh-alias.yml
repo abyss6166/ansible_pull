@@ -9,7 +9,7 @@
 - name: Install oh-my-zsh
   become_user: "{{ user }}"
   shell:
-    cmd: ./isntall.sh
+    cmd: ./install.sh
     chdir: /home/{{ user }}
   args:
     executable: /bin/bash
