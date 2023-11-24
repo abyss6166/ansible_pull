@@ -24,7 +24,7 @@
       - "{{ ssh_package }}"
       - btop
       - copyq
-      - {{ fd_package }}
+      - "{{ fd_package }}"
       - fzf
       - ripgrep
       - duf
