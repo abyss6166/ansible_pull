@@ -40,9 +40,9 @@
     group: "{{ user }}"
     mode: 0755
   with_items:
-    - colors
-    - plugged
-    - autoload
+    - "colors"
+    - "plugged"
+    - "autoload"
 
 - name: copy vim-plug file
   tags: vim
@@ -61,10 +61,10 @@
     owner: "{{ user }}"
     group: "{{ user }}"
   with_items:
-    - solarized8_high.vim
-    - iceberg.vim
-    - two-firewatch.vim
-    - gotham.vim
+    - "solarized8_high.vim"
+    - "iceberg.vim"
+    - "two-firewatch.vim"
+    - "gotham.vim"
 
 - name: tmux config file
   tags: tmux
