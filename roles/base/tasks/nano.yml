@@ -64,6 +64,7 @@
     - solarized8_high.vim
     - iceberg.vim
     - two-firewatch.vim
+    - gotham.vim
 
 - name: tmux config file
   tags: tmux

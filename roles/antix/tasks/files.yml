@@ -1,0 +1,52 @@
+---
+
+- name: install jwm configs
+  copy:
+    src: files/{{ item }}
+    dest: /home/{{ user }}/.jwm/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+  with_items:
+    - menu
+    - startup
+    - theme
+    - tray
+
+- name: install jwmrc config
+  copy:
+    src: files/jwmrc
+    dest: /home/{{ user }}/.jwmrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+- name: edit vimrc file - theme
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^colorscheme'
+    line: "colorscheme onedark"
+
+- name: edit vimrc file - airline
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^let g:airline_theme'
+    line: "let g:airline_theme='light'"
+
+- name: install vim themes
+  copy:
+    src: files/onedark-autoload.vim
+    dest: /home/{{ user }}/.vim/autoload/onedark.vim
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install vim themes
+  copy:
+    src: files/onedark-colors.vim
+    dest: /home/{{ user }}/.vim/colors/onedark.vim
+    owner: "{{ user }}"
+    group: "{{ user }}"

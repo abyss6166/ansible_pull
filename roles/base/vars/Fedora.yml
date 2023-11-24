@@ -2,3 +2,21 @@ libreoffice_package: libreoffice
 firefox_package: firefox
 chromium_package: chromium
 ssh_package: openssh
+user: matt
+fd: fd
+init_status: systemctl status
+init_start: systemctl start
+init_restart: systemctl restart
+bat: bat
+pkgmgr_install: dnf install
+pkgmgr_search: dnf search
+pkgmgr_upgrade: dnf upgrade
+pkgmgr_remove: dnf remove
+pkgmgr_info: dnf info
+pkgmgr_install_short: di
+pkgmgr_search_short: ds
+pkgmgr_upgrade_short: du
+pkgmgr_remove_short: dr
+airline_theme: cobalt2
+vim_theme: iceberg
+omp_theme: peru

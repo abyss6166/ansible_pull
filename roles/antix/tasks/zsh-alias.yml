@@ -1,0 +1,51 @@
+- name: Download oh-my-zsh
+  tags: zsh
+  get_url:
+    src: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /home/{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: Install oh-my-zsh
+  become_user: "{{ user }}"
+  shell:
+    cmd: ./isntall.sh
+    chdir: /home/{{ user }}
+  args:
+    executable: /bin/bash
+
+- name: create safe git directory
+  tags: git
+  shell:
+    cmd: git config --global --add safe.directory /home/{{ user }}/.oh-my-zsh/custom/themes/powerlevel10k
+  args:
+    executable: /bin/bash
+
+- name: download powerlevel10k theme
+  tags: zsh
+  git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: /home/{{ user }}/.oh-my-zsh/custom/themes/powerlevel10k/
+    clone: yes
+    update: yes
+    force: true
+
+- name: copy zsh config
+  tags: zsh
+  copy:
+    src: files/zshrc
+    dest: /home/{{ user }}/.zshrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: copy p10k config
+  tags: zsh
+  copy:
+    src: files/p10k
+    dest: /home/{{ user }}/.p10k.zsh
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: change shell
+  tags: zsh,shell
+  shell: usermod --shell /bin/zsh {{ user }}

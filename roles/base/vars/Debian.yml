@@ -1,7 +1,22 @@
-# lightdmgtkgreeter_package: lightdm-gtk-greeter
-# i3_package: i3-wm
 libreoffice_package: libreoffice
 firefox_package: firefox-esr
 chromium_package: chromium
 ssh_package: ssh
 user: matt
+fd: fdfind
+init_status: systemctl status
+init_start: systemctl start
+init_restart: systemctl restart
+bat: batcat
+pkgmgr_install: nala install
+pkgmgr_search: nala search
+pkgmgr_upgrade: nala upgrade
+pkgmgr_remove: nala remove
+pkgmgr_info: nala show
+pkgmgr_install_short: ai
+pkgmgr_search_short: as
+pkgmgr_upgrade_short: au
+pkgmgr_remove_short: ar
+airline_theme: solarized
+vim_theme: solarized8_high
+omp_theme: peru

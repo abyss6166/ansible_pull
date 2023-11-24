@@ -1,0 +1,10 @@
+---
+
+- name: install fzf keybindings
+  copy:
+    src: files/key-bindings.zsh
+    dest: /usr/share/fzf/
+    owner: "root"
+    group: "root"
+    backup: yes
+

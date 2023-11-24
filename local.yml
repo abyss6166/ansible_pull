@@ -29,16 +29,16 @@
     - debug:
         msg={{flavor.stdout}}
 
-- name: get hostname
-  hosts: localhost
-  tasks:
-    - shell:
-        cmd: hostname
-      register: hostname
-      args:
-        executable: /bin/bash
-    - debug:
-        msg={{hostname.stdout}}
+# - name: get hostname
+#   hosts: localhost
+#   tasks:
+#     - shell:
+#         cmd: hostname
+#       register: hostname
+#       args:
+#         executable: /bin/bash
+#     - debug:
+#         msg={{hostname.stdout}}
 
 - hosts: localhost
   connection: local
@@ -46,7 +46,7 @@
   become: true
   roles:
     - role: base
-      when: hostname.stdout != "cbpp"
+      # when: hostname.stdout != "cbpp"
       # when: not (ansible_distribution != "Void" or ansible_distribution != "Ubuntu")
 
 - hosts: localhost
@@ -57,16 +57,18 @@
     - role: fedora
       when: ansible_distribution == "Fedora"
     - role: cbpp
-      when: hostname.stdout == "cbpp"
+      when: ansible_hostname == "cbpp"
+    - role: antix
+      when: ansible_hostname == "antix"
     - role: debian
-      when: ansible_distribution == "Debian" and hostname.stdout != "cbpp"
+      when: ansible_distribution == "Debian" and ansible_hostname != "cbpp" and ansible_hostname != "antix"
     - role: lubuntu
       when: flavor.stdout == "Lubuntu"
     - role: puppetmaster
-      when: hostname.stdout == "ubuntuserver"
+      when: ansible_hostname == "ubuntuserver"
     - role: void
       when: ansible_distribution == "Void"
     - role: ubuntu
-      when: ansible_distribution == "Ubuntu" and hostname.stdout != "ubuntuserver"
+      when: ansible_distribution == "Ubuntu" and ansible_hostname != "ubuntuserver"
     - role: arch
       when: ansible_distribution == "Archlinux"

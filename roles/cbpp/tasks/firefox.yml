@@ -1,0 +1,10 @@
+---
+
+- name: download Firefox archive
+  tags: firefox
+  unarchive:
+    src: https://download.mozilla.org/?product=firefox-latest-ssl&os=linux64&lang=en-US
+    dest: /opt/
+    remote_src: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"

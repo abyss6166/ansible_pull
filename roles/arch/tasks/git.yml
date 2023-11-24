@@ -19,13 +19,6 @@
   args:
     executable: /bin/bash
 
-# - name: create safe git directory
-#   tags: git
-#   shell:
-#     cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks/scripts
-#   args:
-#     executable: /bin/bash
-
 - name: create git config info - 1
   tags: git
   shell:
@@ -140,3 +133,11 @@
 #     chdir: /home/{{ user }}/git/yay
 #     cmd: "makepkg -sfi --noconfirm"
 #     creates: /usr/bin/yay
+
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks/scripts
+#   args:
+#     executable: /bin/bash
+

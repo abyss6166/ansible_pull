@@ -29,7 +29,6 @@ alias zip='tar -zcvf'
 export EDITOR=vim
 
 alias ls='ls'
-alias ll='ls -l'
 # ls, the common ones I use a lot shortened for rapid fire usage
 alias l='ls -lFh'     #size,show type,human readable
 #alias la='ls -lAFh --color=auto --group-directories-first --time-style=long-iso'   #long list,show almost all,show type,human readable

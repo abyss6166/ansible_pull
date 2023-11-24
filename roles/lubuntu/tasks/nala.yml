@@ -9,7 +9,6 @@
   become: true
   shell:
     cmd: wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
-#    chdir: /home/{{ user }}
   args:
     executable: /bin/bash
     warn: false

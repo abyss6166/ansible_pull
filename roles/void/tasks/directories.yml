@@ -1,21 +1,14 @@
 - name: create directories
   tags: directories,theme,icons
   file:
-#    path: /home/{{ user }}/.local/share/{{item}}
     path: /home/{{ user }}/{{item}}
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0755
   with_items:
-#      - ".local/share/themes"
-#      - ".local/share/icons"
       - ".poshthemes"
       - ".config"
-      # - ".config/i3"
-      # - ".config/picom"
-      # - ".config/rofi"
-      # - "git"
       - ".config/QuiteRss"
       - ".config/onedrive"
 

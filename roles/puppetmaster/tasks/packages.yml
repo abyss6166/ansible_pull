@@ -1,14 +1,4 @@
 ---
-# - name: get kernel version
-#   tasks:
-#     - shell:
-#         cmd: uname -r
-#       register: uname
-#       args:
-#         executable: /bin/bash
-#     - debug:
-#         msg={{uname.stdout}}
-
 - name: collect uname
   tags: virtualbox
   shell: uname -r
@@ -18,14 +8,7 @@
   apt:
     name:
       - puppetserver
-      - samba
-      - cifs-utils
-      - tilix
-      - htop
-      - bat
-      - ncdu
       - python3-psutil
-      - dconf-editor
       - dconf-cli
 
       # VirtualBox

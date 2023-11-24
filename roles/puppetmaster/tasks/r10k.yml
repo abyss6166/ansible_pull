@@ -1,13 +1,4 @@
 ---
-# - name: install gem
-#   shell: ansible-galaxy collection install community.general
-
-# - name: install r10k
-#   become: true
-#   gem:
-#     name: r10k
-#     state: latest
-
 - name: install r10k
   become_user: root
   shell: /opt/puppetlabs/puppet/bin/gem install r10k

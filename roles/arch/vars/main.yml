@@ -7,5 +7,5 @@
 #           3738
 
 userpass: msh
-user: mattarch
+user: matt
 # pwdhash: "{{ userpass | password_hash }}"

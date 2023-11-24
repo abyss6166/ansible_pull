@@ -1,0 +1,12 @@
+<JWM>
+
+<!-- Applications used in conjunction with JWM -->
+<StartupCommand> 
+#Check localization of Zzz File Manager:
+if [ ! -f ~/.config/zzzfm/zzzfm_already_localized ]; then zzzfmlocalize ; fi
+
+xrandr --output Virtual1 --mode 1920x1080
+
+</StartupCommand>
+</JWM>
+

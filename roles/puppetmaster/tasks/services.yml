@@ -13,9 +13,3 @@
     name: puppetserver
     state: started
     enabled: yes
-
-# - name: restart puppet server
-#   become: true
-#   service:
-#     name: puppetserver
-#     state: restarted

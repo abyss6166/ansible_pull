@@ -1,0 +1,17 @@
+---
+
+- name: install debian specific packages
+  tags: debian,base
+  apt:
+    name:
+      - cairo-dock
+      - dconf-cli
+      - python3-psutil
+    state: latest
+
+- name: install spice
+  apt:
+    name:
+      - spice-vdagent #QEMU/KVM
+    state: latest
+  when: ansible_virtualization_type == 'qemu'

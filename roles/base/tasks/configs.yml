@@ -1,0 +1,28 @@
+---
+
+- name: generate aliasrc file from template
+  tags: aliasrc
+  template:
+    src: "{{ alias_template }}"
+	dest: /home/{{ user }}/aliasrc
+	owner: "{{ user }}"
+	group: "{{ user }}"
+	mode: 0644
+
+- name: generate zshrc file from template
+  tags: zshrc
+  template:
+    src: "{{ zshrc_template }}"
+	dest: /home/{{ user }}/.zshrc
+	owner: "{{ user }}"
+	group: "{{ user }}"
+	mode: 0644
+
+- name: generate vimrc file from template
+  tags: vimrc
+  template:
+    src: "{{ vimrc_template }}"
+	dest: /home/{{ user }}/.vimrc
+	owner: "{{ user }}"
+	group: "{{ user }}"
+	mode: 0644

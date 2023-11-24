@@ -191,5 +191,6 @@ alias search='nala search'
 alias upgrade='sudo nala upgrade'
 alias ai='sudo nala install'
 alias as='nala search'
+alias au='sudo nala upgrade'
 
 alias zip='tar -zcvf'

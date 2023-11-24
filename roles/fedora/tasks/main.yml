@@ -1,5 +1,6 @@
 # Fedora specific tasks
 - block:
+  - include_tasks: packages.yml
   - include_tasks: directories.yml
   - include_tasks: vscodium.yml
   - include_tasks: autostart.yml

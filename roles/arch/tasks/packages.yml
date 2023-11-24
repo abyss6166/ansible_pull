@@ -29,41 +29,19 @@
       - python-psutil
 
       # Terminal/Shell
-      - zsh
-      - zsh-syntax-highlighting
-      - zsh-autosuggestions
-      - tilix
       - ttf-nerd-fonts-symbols-2048-em
       - awesome-terminal-fonts
       - ttf-dejavu
       - otf-font-awesome
       - ttf-font-awesome
-
-      # Utilities
-      - htop
-      - eza
-      - ncdu
-      - bat
-      - duf
-      - btop
-      - copyq
-      - fd
-      - fzf
+      - ttf-jetbrains-mono-nerd
 
       # Applications
-      - firefox
-      - thunderbird
       - pcmanfm
-      - notepadqq
       - nitrogen
-      - libreoffice-still
-      - chromium
       - code
       - caja
-      - vi
-      - vim
       - discord
-      - geany
       - ark
       - nomacs
       - dolphin
@@ -75,37 +53,14 @@
       - curl
       - wget
       - dconf
-      - dconf-editor
-      - samba
-      - smbclient
-      - cifs-utils
       - pulseaudio
       - pulseaudio-alsa
       - pavucontrol
       - alsa-utils
-      - gnupg
-      # - pipewire
-      # - onedrive
 
       # Appearance
       - lxappearance
       - arc-icon-theme
       - breeze-icons
       # - arc-theme
-
-
-  #  state: latest
-
-# - name: setup script
-#   tags: lightdm
-#   copy:
-#     src: files/script.sh
-#     dest: /home/{{ user }}/
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-
-# - name: set setup script to executable
-#   tags: lightdm
-#   file:
-#     path: /home/{{ user }}/script.sh
-#     mode: +x
+  # state: latest

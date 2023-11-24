@@ -5,6 +5,45 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: back up vimrc file
+  tags: vimrc
+  become: true
+  copy:
+    src: /home/{{ user }}/.vimrc
+    dest: /home/{{ user }}/.vimrc.bak
+
+- name: edit vimrc file - lightline1
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^let g:airline_theme'
+    line: "let g:lightline = {'colorscheme': 'one',}"
+
+- name: edit vimrc file - lightline2
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    insertafter: "let g:lightline = {'colorscheme': 'one',}"
+    line: 'set laststatus=2'
+
+- name: edit vimrc file - airline1
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^Plug 'vim-airline/vim-airline'
+    line: '" Plug 'vim-airline/vim-airline'
+
+- name: edit vimrc file - airline2
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^Plug 'vim-airline/vim-airline-themes'
+    line: '" Plug 'vim-airline/vim-airline-themes'
+
 # - name: apply wallpaper
 #   shell:
 #     cmd: plasma-apply-wallpaperimage /usr/share/wallpapers/wallpaper.png

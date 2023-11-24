@@ -1,7 +1,6 @@
 - name: create directories
   tags: directories,theme,icons
   file:
-    # become: "{{ user }}"
     path: /home/{{ user }}/{{item}}
     state: directory
     owner: "{{ user }}"

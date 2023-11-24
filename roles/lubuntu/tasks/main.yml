@@ -1,16 +1,12 @@
 - block:
-  # - include_tasks: sudoers.yml
+  - include_tasks: packages.yml
   - include_tasks: directories.yml
-  # - include_tasks: duf.yml
   - include_tasks: nala.yml
   - include_tasks: ../debian/tasks/oh-my-posh.yml
   - include_tasks: ../debian/tasks/zsh-alias.yml
   - include_tasks: ../debian/tasks/eza.yml
-  # - include_tasks: ../debian/tasks/btop.yml
   - include_tasks: theme-config.yml
-  # - include_tasks: xfconf.yml
   - include_tasks: tilix_config.yml
-  # - include_tasks: autologin.yml
   - include_tasks: ../debian/tasks/samba.yml
   - include_tasks: vscodium.yml
   - include_tasks: ../debian/tasks/cleanup.yml

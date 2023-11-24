@@ -1,0 +1,51 @@
+- name: collect uname
+  tags: virtualbox
+  shell: uname -r
+  register: uname_result
+
+- name: install packages for VirtualBox
+  tags: virtualbox
+  apt:
+    name:
+      - build-essential
+      - dkms
+      - gcc
+      - make
+      - linux-headers-{{ uname_result.stdout }}
+
+- name: Download VirtualBox Guest Additions install file
+  tags: virtualbox
+  get_url:
+    src: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
+    dest: /tmp
+    owner: root
+    group: root
+
+- name: mount VirtualBox iso
+  become: true
+  shell:
+    cmd: mount -o loop,ro VBoxGuestAdditions_{{ vbox_version }}.iso /mnt
+  args:
+    executable: /bin/bash
+
+- name: install VirtualBox Guest Additions
+  tags: virtualbox
+  become: true
+  shell:
+    cmd: sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
+    chdir: /mnt/
+  args:
+    executable: /bin/bash
+  ignore_errors: true
+
+- name: Unmount VirtualBox iso
+  become: true
+  shell:
+    cmd: umount /mnt
+  args:
+    executable: /bin/bash
+
+- name: remove VirtualBox iso
+  file:
+    path: /tmp/VBoxGuestAdditions_{{ vbox_version }}.iso
+    state: absent

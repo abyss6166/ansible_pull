@@ -1,0 +1,10 @@
+---
+
+- name: install Lubuntu specific packages
+  tags: lubuntu,base
+  apt:
+    name:
+      - dconf-cli
+      - cairo-dock
+    state: latest
+

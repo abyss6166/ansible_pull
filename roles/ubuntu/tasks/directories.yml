@@ -1,7 +1,6 @@
 - name: create directories
   tags: directories,theme,icons
   file:
-#    path: /home/{{ user }}/.local/share/{{item}}
     path: /home/{{ user }}/{{item}}
     state: directory
     owner: "{{ user }}"

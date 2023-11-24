@@ -1,0 +1,8 @@
+---
+
+- name: install eza and nala
+  apt:
+    name:
+      - nala
+      - eza
+    state: latest
