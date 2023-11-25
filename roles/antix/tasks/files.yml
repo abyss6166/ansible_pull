@@ -1,12 +1,12 @@
 ---
 
-- name: install sources.list
-  copy:
-    src: files/sources.list
-    dest: /etc/apt/
-    owner: "root"
-    group: "root"
-    backup: yes
+# - name: install sources.list
+#   copy:
+#     src: files/sources.list
+#     dest: /etc/apt/
+#     owner: "root"
+#     group: "root"
+#     backup: yes
 
 - name: install jwm configs
   copy:

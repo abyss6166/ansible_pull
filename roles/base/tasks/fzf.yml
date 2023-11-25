@@ -8,3 +8,10 @@
     group: "root"
     backup: yes
 
+- name: download fzf completions
+  get_url:
+    url: https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
+    dest: /usr/share/fzf/
+    owner: "root"
+    group: "root"
+    backup: yes
