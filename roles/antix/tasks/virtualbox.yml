@@ -13,13 +13,13 @@
 #       - make
 #       - linux-headers-{{ uname_result.stdout }}
 
-# - name: Download VirtualBox Guest Additions install file
-#   tags: virtualbox
-#   get_url:
-#     url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
-#     dest: /tmp
-#     owner: root
-#     group: root
+- name: Download VirtualBox Guest Additions install file
+  tags: virtualbox
+  get_url:
+    url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
+    dest: /tmp
+    owner: root
+    group: root
 
 - name: create directory
   tags: directory
