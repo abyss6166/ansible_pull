@@ -18,7 +18,7 @@
     cmd: wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
   args:
     executable: /bin/bash
-  when: gierens.stat.exists
+  when: gierens.stat.exists == false
 
 - name: add eza repo
   shell:
