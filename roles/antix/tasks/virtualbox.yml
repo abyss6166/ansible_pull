@@ -21,10 +21,19 @@
 #     owner: root
 #     group: root
 
+- name: create directory
+  tags: directory
+  file:
+    path: /mnt/iso
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
 - name: mount VirtualBox iso
   become: true
   shell:
-    cmd: mount -o loop VBoxGuestAdditions_{{ vbox_version }}.iso /mnt
+    cmd: mount -o loop VBoxGuestAdditions_{{ vbox_version }}.iso /mnt/iso
   args:
     executable: /bin/bash
 
@@ -41,7 +50,7 @@
 - name: Unmount VirtualBox iso
   become: true
   shell:
-    cmd: umount /mnt
+    cmd: umount /mnt/iso
   args:
     executable: /bin/bash
 
