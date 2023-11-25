@@ -42,7 +42,7 @@
   tags: virtualbox
   become: true
   shell:
-    cmd: sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
+    cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
     chdir: /mnt/iso
   args:
     executable: /bin/bash
