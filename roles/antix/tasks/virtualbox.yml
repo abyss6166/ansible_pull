@@ -16,7 +16,7 @@
 - name: Download VirtualBox Guest Additions install file
   tags: virtualbox
   get_url:
-    src: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
+    url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
     dest: /tmp
     owner: root
     group: root
