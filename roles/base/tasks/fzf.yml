@@ -10,7 +10,7 @@
 
 - name: download fzf completions
   get_url:
-    url: https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
+    url: https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh
     dest: /usr/share/fzf/
     owner: "root"
     group: "root"
