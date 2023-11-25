@@ -2,21 +2,21 @@
   connection: local
   become: true
 
-  pre_tasks:
-    - name: update repo and upgrade
-      tags: always
-      package:
-        update_cache: yes
-        name: "*"
-        state: latest
-      when: ansible_distribution != "Archlinux"
+  # pre_tasks:
+  #   - name: update repo and upgrade
+  #     tags: always
+  #     package:
+  #       update_cache: yes
+  #       name: "*"
+  #       state: latest
+  #     when: ansible_distribution != "Archlinux"
     
-    - name: update Arch
-      tags: arch
-      pacman:
-        update_cache: yes
-        upgrade: yes
-      when: ansible_distribution == "Archlinux"
+  #   - name: update Arch
+  #     tags: arch
+  #     pacman:
+  #       update_cache: yes
+  #       upgrade: yes
+  #     when: ansible_distribution == "Archlinux"
 
 - name: get flavor
   hosts: localhost
