@@ -26,3 +26,12 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     mode: 0644
+
+- name: install neofetch config
+  copy:
+    src: files/neofetchconfig.conf
+    dest: /home/{{ user }}/.config/neofetch/config.conf
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
