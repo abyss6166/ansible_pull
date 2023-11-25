@@ -6,4 +6,6 @@
     name:
       - nala
       - dconf-cli
+      - virtualbox-guest-utils 
+      - virtualbox-guest-x11
     state: latest

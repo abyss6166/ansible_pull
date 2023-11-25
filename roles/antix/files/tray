@@ -10,7 +10,7 @@
    <TrayButton label="" icon="/usr/share/icons/papirus-antix/48x48/devices/drive-removable-media-usb.png" popup="Unplug Removable Device">exec: unplugdrive.sh</TrayButton>
    <TrayButton label="" icon="/usr/share/icons/papirus-antix/48x48/apps/file-manager.png" popup="File Manager">exec: desktop-defaults-run -fm</TrayButton>
    <TrayButton label="" icon="/usr/share/icons/papirus-antix/48x48/apps/web-browser.png" popup="Web Browser">exec: desktop-defaults-run -b</TrayButton>
-   <TrayButton label="" icon="/usr/share/icons/papirus-antix/48x48/apps/terminal.png" popup="Terminal">exec: desktop-defaults-run -t</TrayButton>
+   <TrayButton label="" icon="/usr/share/icons/papirus-antix/48x48/apps/terminal.png" popup="Terminal">exec: tilix</TrayButton>
 
    <!-- Additional TaskList attribute: maxwidth -->
    <TaskList maxwidth="125"/>

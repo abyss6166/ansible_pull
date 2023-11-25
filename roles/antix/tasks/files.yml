@@ -72,7 +72,7 @@
   lineinfile:
     path: /home/{{ user }}/.fehbg
     regexp: '^feh'
-    line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/pylons.jpg"
+    line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/pylons.jpg'"
 
 - name: edit desktop-session
   lineinfile:
