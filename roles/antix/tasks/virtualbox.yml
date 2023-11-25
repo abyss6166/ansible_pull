@@ -69,6 +69,7 @@
     command: sudo sh /tmp/VBoxLinuxAdditions.run --nox11 > /dev/null
     responses: 
       'Do you wish to continue? [yes/no]': 'yes'
+    echo: yes
   ignore_errors: true
 
 # - hosts: "{{ hosts }}"
@@ -89,19 +90,19 @@
 #       echo: yes
 
 
-- name: Unmount VirtualBox iso
-  become: true
-  shell:
-    cmd: umount /mnt/iso
-  args:
-    executable: /bin/bash
+# - name: Unmount VirtualBox iso
+#   become: true
+#   shell:
+#     cmd: umount /mnt/iso
+#   args:
+#     executable: /bin/bash
 
-- name: remove VirtualBox iso
-  file:
-    path: /tmp/VBoxGuestAdditions_{{ vbox_version }}.iso
-    state: absent
+# - name: remove VirtualBox iso
+#   file:
+#     path: /tmp/VBoxGuestAdditions_{{ vbox_version }}.iso
+#     state: absent
 
-- name: remove VirtualBox guest file
-  file:
-    path: /tmp/VBoxLinuxAdditions.run
-    state: absent
+# - name: remove VirtualBox guest file
+#   file:
+#     path: /tmp/VBoxLinuxAdditions.run
+#     state: absent
