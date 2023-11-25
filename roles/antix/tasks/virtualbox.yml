@@ -3,15 +3,15 @@
   shell: uname -r
   register: uname_result
 
-# - name: install packages for VirtualBox
-#   tags: virtualbox
-#   apt:
-#     name:
-#       - build-essential
-#       - dkms
-#       - gcc
-#       - make
-#       - linux-headers-{{ uname_result.stdout }}
+- name: install packages for VirtualBox
+  tags: virtualbox
+  apt:
+    name:
+      - build-essential
+      - dkms
+      - gcc
+      - make
+      - linux-headers-{{ uname_result.stdout }}
 
 - name: Download VirtualBox Guest Additions install file
   tags: virtualbox
@@ -64,7 +64,12 @@
   args:
     executable: /bin/bash
 
-# - name: remove VirtualBox iso
-#   file:
-#     path: /tmp/VBoxGuestAdditions_{{ vbox_version }}.iso
-#     state: absent
+- name: remove VirtualBox iso
+  file:
+    path: /tmp/VBoxGuestAdditions_{{ vbox_version }}.iso
+    state: absent
+
+- name: remove VirtualBox guest file
+  file:
+    path: /tmp/VBoxLinuxAdditions.run
+    state: absent

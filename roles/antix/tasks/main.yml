@@ -1,12 +1,12 @@
 - block:
-  # - include_tasks: ../debian/tasks/directories.yml
-  # - include_tasks: files.yml
-  # - include_tasks: ../debian/tasks/eza.yml
-  # - include_tasks: packages.yml
-  # - include_tasks: firefox.yml
-  # - include_tasks: ../debian/tasks/oh-my-posh.yml
-  # - include_tasks: zsh-alias.yml
-  # - include_tasks: tilix_config.yml
+  - include_tasks: ../debian/tasks/directories.yml
+  - include_tasks: files.yml
+  - include_tasks: ../debian/tasks/eza.yml
+  - include_tasks: packages.yml
+  - include_tasks: firefox.yml
+  - include_tasks: ../debian/tasks/oh-my-posh.yml
+  - include_tasks: zsh-alias.yml
+  - include_tasks: tilix_config.yml
   - include_tasks: virtualbox.yml
     when: ansible_virtualization_type == 'virtualbox'
   - include_tasks: ../debian/tasks/cleanup.yml
