@@ -67,9 +67,9 @@
   become: true
   expect:
     command: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
-      chdir: /tmp
     args:
       executable: /bin/bash
+      chdir: /tmp
     responses: 
       'Do you wish to continue? [yes/no]': 'yes'
   ignore_errors: true
