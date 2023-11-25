@@ -68,7 +68,7 @@
   expect:
     command: sudo sh /tmp/VBoxLinuxAdditions.run --nox11 > /dev/null
     responses:
-    (.*)Do you want to continue?(.*): "yes"
+      '^Do': "Yes"
   ignore_errors: true
 
 # - hosts: "{{ hosts }}"
