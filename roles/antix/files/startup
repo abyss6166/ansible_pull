@@ -6,6 +6,7 @@
 if [ ! -f ~/.config/zzzfm/zzzfm_already_localized ]; then zzzfmlocalize ; fi
 
 xrandr --output Virtual1 --mode 1920x1080
+VBoxClient --clipboard
 
 </StartupCommand>
 </JWM>
