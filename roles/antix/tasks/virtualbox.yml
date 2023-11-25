@@ -42,6 +42,7 @@
   copy:
     src: /mnt/iso/VBoxLinuxAdditions.run
     dest: /tmp/
+    mode: +x
     owner: root
     group: root
     mode: 0644
