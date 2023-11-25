@@ -67,7 +67,7 @@
   become: true
   expect:
     command: sudo sh /tmp/VBoxLinuxAdditions.run --nox11 > /dev/null
-    responses: 'Do you wish to continue? [yes/no]': "yes"
+    responses: "yes"
     echo: yes
   ignore_errors: true
 
