@@ -34,6 +34,7 @@
   become: true
   shell:
     cmd: mount -o loop VBoxGuestAdditions_{{ vbox_version }}.iso /mnt/iso
+    chdir: /tmp/
   args:
     executable: /bin/bash
 
