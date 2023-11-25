@@ -59,15 +59,6 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: download tilix settings script
-  tags: tilix,settings
-  copy:
-    src: files/tilix.sh
-    dest: /home/{{ user }}
-    mode: +x
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
 - name: edit fehbg
   lineinfile:
     path: /home/{{ user }}/.fehbg
@@ -78,4 +69,20 @@
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop
     line: "zzz-jwm"
+
+- name: install menu icon
+  copy:
+    src: files/menu-bar.png
+    dest: /usr/share/icons/
+    owner: root
+    group: root
+
+# - name: download tilix settings script
+#   tags: tilix,settings
+#   copy:
+#     src: files/tilix.sh
+#     dest: /home/{{ user }}
+#     mode: +x
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 

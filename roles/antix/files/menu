@@ -2,7 +2,7 @@
     <Program label="App Select" icon="/usr/share/icons/papirus-antix/48x48/apps/gnome-searchtool.png">/usr/local/bin/app-select</Program>
     <Program label="Terminal" icon="/usr/share/icons/papirus-antix/48x48/apps/terminal.png">tilix</Program>
     <Program label="File Manager" icon="/usr/share/icons/papirus-antix/48x48/apps/file-manager.png">desktop-defaults-run -fm</Program>
-    <Program label="Web Browser" icon="/usr/share/icons/papirus-antix/48x48/apps/web-browser.png">desktop-defaults-run -b</Program>
+    <Program label="Web Browser" icon="/usr/share/icons/papirus-antix/48x48/apps/web-browser.png">/opt/firefox/firefox</Program>
     <Program label="Editor" icon="/usr/share/icons/papirus-antix/48x48/apps/text-editor.png">desktop-defaults-run -te</Program>
     <Separator/>
     <Menu label="Personal" icon="/usr/share/icons/papirus-antix/48x48/apps/preferences-desktop-user.png">
