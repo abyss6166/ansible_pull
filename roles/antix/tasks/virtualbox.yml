@@ -47,15 +47,51 @@
     group: root
     mode: 0644
 
+- name: set guest additions script to executable
+  file:
+    path: /tmp/VBoxLinuxAdditions.run
+    mode: +x
+
+# - name: install VirtualBox Guest Additions
+#   tags: virtualbox
+#   become: true
+#   shell:
+#     cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
+#     chdir: /tmp
+#   args:
+#     executable: /bin/bash
+#   ignore_errors: true
+
 - name: install VirtualBox Guest Additions
   tags: virtualbox
   become: true
-  shell:
-    cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
-    chdir: /tmp
-  args:
-    executable: /bin/bash
+  expect:
+    shell:
+      cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
+      chdir: /tmp
+    args:
+      executable: /bin/bash
+    responses: 
+      'Do you wish to continue? [yes/no]': 'yes'
   ignore_errors: true
+
+# - hosts: "{{ hosts }}"
+#   tasks:
+#   - name: mysql_secure_installation Command Test
+#     expect:
+#       command: mysql_secure_installation
+#       responses:
+#         'Enter current password for root (enter for none):': "\n"
+#         'Set root password? [Y/n]:': 'y'
+#         'New password:': '123456'
+#         'Re-enter new password:': '123456'
+#         'Remove anonymous users? [Y/n]:': 'y'
+#         'Disallow root login remotely? [Y/n]:': 'y'
+#         'Remove test database and access to it? [Y/n]:': 'y'
+#         'Reload privilege tables now? [Y/n]:': 'y'
+
+#       echo: yes
+
 
 - name: Unmount VirtualBox iso
   become: true

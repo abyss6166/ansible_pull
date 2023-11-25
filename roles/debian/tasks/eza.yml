@@ -1,5 +1,10 @@
 ---
 
+- name: check if gpg file exists
+  stat:
+    path: /etc/apt/keyrings/gierens.gpg
+  register: gierens
+
 - name: create directory
   file:
     path: /etc/apt/keyrings
@@ -13,6 +18,7 @@
     cmd: wget -qO- https://raw.githubusercontent.com/eza-community/eza/main/deb.asc | sudo gpg --dearmor -o /etc/apt/keyrings/gierens.gpg
   args:
     executable: /bin/bash
+  when: gierens.stat.exists
 
 - name: add eza repo
   shell:
