@@ -66,10 +66,7 @@
   tags: virtualbox
   become: true
   expect:
-    command: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
-    args:
-      executable: /bin/bash
-      chdir: /tmp
+    command: sudo sh /tmp/VBoxLinuxAdditions.run --nox11 > /dev/null
     responses: 
       'Do you wish to continue? [yes/no]': 'yes'
   ignore_errors: true
