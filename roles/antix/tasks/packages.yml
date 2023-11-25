@@ -5,4 +5,5 @@
     update_cache: yes
     name:
       - nala
+      - dconf-cli
     state: latest
