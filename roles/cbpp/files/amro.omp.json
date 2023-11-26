@@ -1,0 +1,132 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#45F1C2",
+          "style": "plain",
+          "template": "\uf306 {{ .UserName }} on",
+          "type": "session"
+        },
+        {
+          "foreground": "#0CA0D8",
+          "properties": {
+            "folder_separator_icon": "/",
+            "style": "full"
+          },
+          "style": "plain",
+          "template": " \uf07b {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "foreground": "#14A5AE",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "plain",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+      },
+          {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#68a063",
+          "properties": {
+            "display_mode": "files",
+            "fetch_package_manager": true,
+            "fetch_version": true,
+            "npm_icon": "/npm",
+            "yarn_icon": "/yarn"
+          },
+          "style": "plain",
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "type": "node"
+        },
+        {
+          "foreground": "#4063D8",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          },
+          "style": "plain",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "crystal"
+        },
+        {
+          "foreground": "#DE3F24",
+          "properties": {
+            "display_mode": "files",
+            "fetch_version": true
+          },
+          "style": "plain",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "ruby"
+        },
+        {
+          "properties":{
+             "always_enabled": true
+        },
+          "foreground": "#ff0000",
+          "template": "{{ if gt .Code 0 }}<#ff0000>\uf00d</>{{ else }}<#23d18b>\uf42e</>{{ end }} " ,
+          "style": "powerline",
+          "type": "exit"
+        },
+       {
+          "foreground": "#bab02a",
+          "properties": {
+            "threshold": 10
+          },
+          "style": "plain",
+          "template": "\uf252 {{ .FormattedMs }}",
+          "type": "executiontime"
+        },
+        {
+          "foreground": "#FED142",
+          "properties": {
+            "display_mode": "context",
+            "fetch_virtual_env": false
+          },
+          "style": "plain",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}",
+          "type": "python"
+        },
+        {
+          "foreground": "#00C5C7",
+          "style": "plain",
+          "template": " {{ .CurrentDate | date .Format }} \uf017 ",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+
+    {
+      "alignment": "left",                                                                                                                                                                                                                     
+      "newline": true,
+      "segments": [
+        {   
+          "foreground": "lightGreen",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}red{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "powerline",
+          "template": "\u279c ",
+          "type": "exit"
+        }
+      ],  
+"type": "prompt"
+    }
+  ],
+  "version": 2
+}

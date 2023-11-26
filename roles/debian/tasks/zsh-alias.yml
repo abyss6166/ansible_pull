@@ -14,13 +14,13 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-#- name: zsh config file - 2
-#  tags: zsh
-#  copy:
-#    src: files/p10k.zsh
-#    dest: /home/{{ user }}/.p10k.zsh
-#    owner: "{{ user }}"
-#    group: "{{ user }}"
+- name: zsh config file - 2
+ tags: zsh
+ copy:
+   src: files/p10k.zsh
+   dest: /home/{{ user }}/.p10k.zsh
+   owner: "{{ user }}"
+   group: "{{ user }}"
 
 - name: alias file
   tags: alias
@@ -29,6 +29,10 @@
     dest: /home/{{ user }}
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: change shell
+  tags: zsh,shell
+  shell: usermod --shell /bin/zsh {{ user }}
 
 # - name: source .zshrc file
 #   tags: alias,zsh
@@ -39,6 +43,3 @@
 #   tags: alias,zsh
 #   shell: bash -c 'source /home/{{ user }}/aliasrc 2> /dev/null'
 
-- name: change shell
-  tags: zsh,shell
-  shell: usermod --shell /bin/zsh {{ user }}

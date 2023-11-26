@@ -19,7 +19,7 @@ pkgmgr_upgrade_short: au
 pkgmgr_remove_short: ar
 airline_theme: solarized
 vim_theme: solarized8_high
-omp_theme: peru
+omp_theme: amro
 alias_template_file: alias.j2
 zshrc_template_file: zshrc.j2
 vimrc_template_file: vimrc.j2
