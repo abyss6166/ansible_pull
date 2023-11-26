@@ -53,3 +53,41 @@
     dest: /home/{{ user }}/.config/autostart
     owner: "{{ user }}"
     group: "{{ user }}"
+
+- name: edit vimrc file - theme
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^colorscheme'
+    line: "colorscheme edge"
+
+- name: edit vimrc file - airline
+  tags: vimrc
+  become: true
+  lineinfile:
+    path: /home/{{ user }}/.vimrc
+    regexp: '^let g:airline_theme'
+    line: "let g:airline_theme='edge'"
+
+- name: install vim themes - 1
+  copy:
+    src: files/edge-autoload.vim
+    dest: /home/{{ user }}/.vim/autoload/edge.vim
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install vim themes - 2
+  copy:
+    src: files/edge-colors.vim
+    dest: /home/{{ user }}/.vim/colors/edge.vim
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install airline theme
+  copy:
+    src: files/edge-airline.vim
+    dest: /home/{{ user }}/.vim/plugged/vim-airline-themes/autoload/airline/themes/edge.vim
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
