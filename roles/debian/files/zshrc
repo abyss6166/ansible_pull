@@ -132,6 +132,8 @@ export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --line-range :50 {}'"
 export FZF_ALT_C_COMMAND='fdfind --type d . --color=never --hidden'
 export FZF_ALT_C_OPTS="--preview 'eza --tree {} | head -50'"
 
+export FZF_CTRLR_OPTS="--color=bg+:#343d46,gutter:-1,pointer:#ff3c3c,info:#0dbc79,hl:#0dbc79,hl+:#23d18b --height 80% --border sharp --prompt ':: '"
+
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
