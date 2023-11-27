@@ -3,7 +3,7 @@ firefox_package: firefox
 chromium_package: chromium
 ssh_package: openssh
 user: matt
-fd: fd
+fd_package: fd
 init_status: sv status
 init_start: sv up
 init_restart: sv restart
