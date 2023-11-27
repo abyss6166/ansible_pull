@@ -1,19 +1,19 @@
-- name: zsh config file
-  tags: zsh
-  copy:
-    src: files/zshrc
-    dest: /home/{{ user }}/.zshrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: zsh config file
+#   tags: zsh
+#   copy:
+#     src: files/zshrc
+#     dest: /home/{{ user }}/.zshrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
 - name: change shell
   tags: zsh,shell
   shell: usermod --shell /bin/zsh {{ user }}
 
-- name: alias file
-  tags: alias
-  copy:
-    src: files/aliasrc
-    dest: /home/{{ user }}
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: alias file
+#   tags: alias
+#   copy:
+#     src: files/aliasrc
+#     dest: /home/{{ user }}
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
