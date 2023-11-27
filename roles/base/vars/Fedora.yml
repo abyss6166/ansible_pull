@@ -3,7 +3,7 @@ firefox_package: firefox
 chromium_package: chromium
 ssh_package: openssh
 user: matt
-fd_package: fd
+fd_package: fd-find
 init_status: systemctl status
 init_start: systemctl start
 init_restart: systemctl restart
