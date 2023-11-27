@@ -1,6 +1,7 @@
 - include_vars: "{{ ansible_distribution }}.yml"
 
 - block:
+  - include_tasks: directories.yml
   - include_tasks: tasks/packages.yml
   - include_tasks: configs.yml
   - include_tasks: tasks/geany.yml
