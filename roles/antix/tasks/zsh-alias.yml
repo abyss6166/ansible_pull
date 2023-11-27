@@ -22,7 +22,7 @@
     chdir: /home/{{ user }}
   args:
     executable: /bin/bash
-  when: omz.stat.exists
+  when: omz.stat.exists == false
 
 - name: create safe git directory
   tags: git
