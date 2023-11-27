@@ -19,7 +19,7 @@ pkgmgr_upgrade_short: du
 pkgmgr_remove_short: dr
 airline_theme: cobalt2
 vim_theme: iceberg
-omp_theme: peru
+omp_theme: powerlevel10k_rainbow
 alias_template_file: alias.j2
 zshrc_template_file: zshrc.j2
 vimrc_template_file: vimrc.j2
