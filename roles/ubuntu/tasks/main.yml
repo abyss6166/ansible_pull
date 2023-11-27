@@ -11,3 +11,4 @@
   - include_tasks: ../lubuntu/tasks/vscodium.yml
   - include_tasks: ../debian/tasks/cleanup.yml
   - include_tasks: ../base/tasks/fonts.yml
+  - include_tasks: ../debian/tasks/fastfetch.yml

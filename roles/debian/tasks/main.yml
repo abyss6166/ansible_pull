@@ -3,9 +3,9 @@
   - include_tasks: directories.yml
   - include_tasks: duf.yml
   - include_tasks: nala.yml
-  # - include_tasks: oh-my-posh.yml
   - include_tasks: ../antix/tasks/zsh-alias.yml
   - include_tasks: files.yml
+  - include_tasks: fastfetch.yml
   - include_tasks: xfconf.yml
   - include_tasks: tilix_config.yml
   - include_tasks: autologin.yml
@@ -16,3 +16,4 @@
   # - include_tasks: btop.yml
   # - include_tasks: samba.yml
   # - include_tasks: sudoers.yml
+  # - include_tasks: oh-my-posh.yml

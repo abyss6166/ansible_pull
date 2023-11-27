@@ -1,0 +1,7 @@
+---
+
+- name: download fastfetch
+  tags: fastfetch
+  become: true
+  apt:
+    deb: https://github.com/fastfetch-cli/fastfetch/releases/download/2.2.3/fastfetch-2.2.3-Linux.deb

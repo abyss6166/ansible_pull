@@ -45,6 +45,7 @@
       - ark
       - nomacs
       - dolphin
+      - fastfetch
 
       # Services
       - xdg-utils
