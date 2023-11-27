@@ -6,13 +6,6 @@
     path: /home/{{ user }}/.oh-my-zsh
   register: omz
 
-- name: back up i3 config file
-  tags: i3
-  copy:
-    src: /home/{{ user }}/.config/i3/config
-    dest: /home/{{ user }}/.config/i3/config.bak
-  when: i3config.stat.exists
-
 - name: Download oh-my-zsh
   tags: zsh
   get_url:

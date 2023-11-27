@@ -15,8 +15,8 @@
     group: "{{ user }}"
 
 - name: zsh config file - 2
- tags: zsh
- copy:
+  tags: zsh
+  copy:
    src: files/p10k.zsh
    dest: /home/{{ user }}/.p10k.zsh
    owner: "{{ user }}"
