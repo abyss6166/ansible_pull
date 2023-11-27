@@ -29,7 +29,7 @@
       - ripgrep
       - duf
       - vim
-      - smbclient
+      # - smbclient
       - neofetch
     state: latest
 
