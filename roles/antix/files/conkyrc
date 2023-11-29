@@ -43,10 +43,15 @@ conky.config = {
 		draw_outline = false,
 		show_graph_scale = false,
     	show_graph_range = false,
-    	own_window_argb_visual = true,
-    	own_window_transparent = true,
-    	-- own_window_argb_value = 191,
-    	own_window_type = 'desktop', -- options are: normal/override/dock/desktop/panel
+--   	own_window_argb_visual = true,
+--  	own_window_transparent = true,
+--  	-- own_window_argb_value = 191,
+--  	own_window_type = 'desktop', -- options are: normal/override/dock/desktop/panel
+        own_window = true,
+        own_window_transparent = true,
+        own_window_hints = undecorated,below,sticky,skip_taskbar,
+        own_window_type = 'desktop',
+
 	-- Text
 
 		-- text
@@ -87,6 +92,8 @@ ${color3}Kernel: ${alignr}${color}${kernel}
 #${color3}Distro: ${alignr}${color}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4"" $5'}}
 ${color3}Distro: ${alignr}${color}${execi 6000 awk -F'=|"' '/PRETTY/{print $3}' /etc/os-release}
 ${color3}Uptime: ${alignr}${color}${uptime}
+${color3}Desktop${alignr}${color}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
+${color3}Resolution:${alignr}${color}${execi 60 xdpyinfo | sed -n -r "s/^\s*dimensions:.*\s([0-9]+x[0-9]+).*/\1/p"}
 
 #------------+
 #TEMPS
@@ -138,12 +145,12 @@ ${top_mem name 4} ${alignr}${top_mem mem 4}
 #NETWORK
 #------------+
 ${font}${color1}NETWORK ${hr 2}
-${voffset 5}${font}${color3}${addr enp0s31f6}${alignr}${font}${color}${if_existing /sys/class/net/enp0s31f6/operstate up}ONLINE${else}OFFLINE${endif}
+${voffset 5}${font}${color3}${addr eth0}${alignr}${font}${color}${if_existing /sys/class/net/eth0/operstate up}ONLINE${else}OFFLINE${endif}
 ${font}${color}
-${color3}Down: ${color}${downspeed enp0s31f6}/s  ${color3}${alignr} Total: ${color}${totaldown enp0s31f6}
-${color4}${downspeedgraph enp0s31f6}${color}
-${color3}Up: ${color}${upspeed enp0s31f6}/s      ${color3}${alignr} Total: ${color}${totalup enp0s31f6}
-${color4}${upspeedgraph enp0s31f6}${color}
+${color3}Down: ${color}${downspeed eth0}/s  ${color3}${alignr} Total: ${color}${totaldown eth0}
+${color4}${downspeedgraph eth0}${color}
+${color3}Up: ${color}${upspeed eth0}/s      ${color3}${alignr} Total: ${color}${totalup eth0}
+${color4}${upspeedgraph eth0}${color}
 
 ${font}${color1}HARD DRIVE ${hr 2}
 ${color}Disk: ${fs_used /} of ${fs_size /} used
