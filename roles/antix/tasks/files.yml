@@ -105,6 +105,7 @@
 - name: edit desktop-session
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop
+    regexp: '^*'
     line: "icewm"
 
 - name: install conky config file
