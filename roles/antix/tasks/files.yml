@@ -82,14 +82,14 @@
     regexp: '^let g:airline_theme'
     line: "let g:airline_theme='light'"
 
-- name: install vim themes
+- name: install vim themes - 1
   copy:
     src: files/onedark-autoload.vim
     dest: /home/{{ user }}/.vim/autoload/onedark.vim
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: install vim themes
+- name: install vim themes - 2
   copy:
     src: files/onedark-colors.vim
     dest: /home/{{ user }}/.vim/colors/onedark.vim
