@@ -62,7 +62,7 @@
 - name: install modified icewm theme file
   copy:
     src: files/default.theme
-    dest: /usr/share/icewm/themes/Araita-Dark/default.theme
+    dest: /usr/share/icewm/themes/Araita-Dark+/default.theme
     owner: "root"
     group: "root"
 
