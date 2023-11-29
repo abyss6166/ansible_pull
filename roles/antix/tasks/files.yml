@@ -110,7 +110,7 @@
 - name: install conky config file
   tags: conky
   copy:
-    src: files/conky.conf
+    src: files/conkyrc
     dest: /home/{{ user }}/.conkyrc
     backup: yes
     owner: "{{ user }}"
