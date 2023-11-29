@@ -96,17 +96,17 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: edit fehbg
-  lineinfile:
-    path: /home/{{ user }}/.fehbg
-    regexp: '^feh'
-    line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/debian.jpg'"
-
 - name: edit desktop-session
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop
     regexp: '^*'
     line: "icewm"
+
+- name: edit fehbg
+  lineinfile:
+    path: /home/{{ user }}/.fehbg
+    regexp: '^feh'
+    line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/debian.jpg'"
 
 - name: install conky config file
   tags: conky
