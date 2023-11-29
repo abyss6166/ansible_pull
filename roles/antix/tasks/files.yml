@@ -8,10 +8,31 @@
 #     group: "root"
 #     backup: yes
 
-- name: install jwm configs
+# - name: install jwm configs
+#   copy:
+#     src: files/{{ item }}
+#     dest: /home/{{ user }}/.jwm/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
+#   with_items:
+#     - menu
+#     - startup
+#     - theme
+#     - tray
+
+# - name: install jwmrc config
+#   copy:
+#     src: files/jwmrc
+#     dest: /home/{{ user }}/.jwmrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
+
+- name: install icewm configs
   copy:
     src: files/{{ item }}
-    dest: /home/{{ user }}/.jwm/
+    dest: /home/{{ user }}/.icewm/
     owner: "{{ user }}"
     group: "{{ user }}"
     backup: yes
@@ -19,15 +40,31 @@
     - menu
     - startup
     - theme
-    - tray
+    - preference
+    - prefoverride
+    - toolbar
 
-- name: install jwmrc config
+- name: install wallpaper
   copy:
-    src: files/jwmrc
-    dest: /home/{{ user }}/.jwmrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
+    src: files/debian.jpg
+    dest: /usr/share/wallpaper/debian.jpg
+    owner: "root"
+    group: "root"
+
+- name: install Araita-Dark theme
+  tags: theme
+  unarchive:
+    src: files/Araita-Dark.tar.gz
+    dest: /usr/share/icewm/themes/
+    owner: "root"
+    group: "root"
+
+- name: install modified icewm theme file
+  copy:
+    src: files/default.theme
+    dest: /usr/share/icewm/themes/Araita-Dark/default.theme
+    owner: "root"
+    group: "root"
 
 - name: edit vimrc file - theme
   tags: vimrc
@@ -63,19 +100,28 @@
   lineinfile:
     path: /home/{{ user }}/.fehbg
     regexp: '^feh'
-    line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/pylons.jpg'"
+    line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/debian.jpg'"
 
 - name: edit desktop-session
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop
-    line: "zzz-jwm"
+    line: "icewm"
 
-- name: install menu icon
+- name: install conky config file
+  tags: conky
   copy:
-    src: files/menu-bar.png
-    dest: /usr/share/icons/
-    owner: root
-    group: root
+    src: files/conky.conf
+    dest: /home/{{ user }}/.conkyrc
+    backup: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+# - name: install menu icon
+#   copy:
+#     src: files/menu-bar.png
+#     dest: /usr/share/icons/
+#     owner: root
+#     group: root
 
 # - name: download tilix settings script
 #   tags: tilix,settings
