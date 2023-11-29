@@ -1,0 +1,16 @@
+# This is a default toolbar definition file for IceWM
+#
+# Place your personal variant in $HOME/.icewm directory.
+
+### Commonly used applications
+prog "Web Browser" /usr/share/icons/hicolor/48x48/apps/firefox-esr.png /opt/firefox/firefox
+prog "Thunderbird" hicolor/32x32/apps/thunderbird.png thunderbird 
+prog "File Manager" /usr/share/icons/papirus-antix/48x48/apps/file-manager.png desktop-defaults-run -fm
+prog "Geany" hicolor/32x32/apps/geany.png geany 
+prog "Tilix" /usr/share/icons/numix-square-antix/48x48/apps/terminal.png tilix
+prog "IceWM Toolbar Icon Manager" /usr/share/icons/papirus-antix/48x48/categories/icewm_editor.png /usr/local/bin/icewm-toolbar-icon-manager
+prog "skippy-xd" /usr/share/icons/papirus-antix/48x48/actions/dialog-rows-and-columns.png skippy-xd
+separator
+separator
+separator
+separator
