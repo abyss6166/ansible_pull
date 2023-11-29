@@ -43,6 +43,7 @@
     - preferences
     - prefoverride
     - toolbar
+    - keys
 
 - name: install wallpaper
   copy:
