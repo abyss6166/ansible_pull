@@ -1,6 +1,6 @@
 ---
 
-- name: install eza and nala
+- name: install antix packages
   apt:
     update_cache: yes
     name:
@@ -8,4 +8,5 @@
       - dconf-cli
       - virtualbox-guest-utils 
       - virtualbox-guest-x11
+      - oxygen-icon-theme
     state: latest

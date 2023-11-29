@@ -46,6 +46,7 @@
       - nomacs
       - dolphin
       - fastfetch
+      - xsel
 
       # Services
       - xdg-utils
