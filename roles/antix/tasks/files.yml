@@ -96,6 +96,13 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install compton config
+  copy:
+    src: files/compton.conf
+    dest: /home/{{ user }}/.config/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 - name: edit desktop-session
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop

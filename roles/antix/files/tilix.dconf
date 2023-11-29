@@ -1,6 +1,6 @@
 [/]
 sidebar-on-right=true
-terminal-title-style='small'
+terminal-title-style='none'
 theme-variant='dark'
 
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
@@ -9,3 +9,4 @@ font='Inconsolata Nerd Font 11'
 foreground-color='#FFFFFFFFFFFF'
 use-system-font=false
 use-theme-colors=false
+warn-vte-config-issue=false

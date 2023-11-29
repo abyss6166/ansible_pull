@@ -9,4 +9,5 @@
       - virtualbox-guest-utils 
       - virtualbox-guest-x11
       - oxygen-icon-theme
+      - compton
     state: latest
