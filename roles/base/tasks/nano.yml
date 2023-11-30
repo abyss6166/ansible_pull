@@ -23,14 +23,6 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: vim config file
-  tags: vim
-  copy:
-    src: files/vimrc
-    dest: /home/{{ user }}/.vimrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
 - name: create vim directories
   tags: vim
   file:
@@ -51,7 +43,6 @@
     dest: /home/{{ user }}/.vim/autoload/
     owner: "{{ user }}"
     group: "{{ user }}"
-
 
 - name: copy vim theme files
   tags: vim
