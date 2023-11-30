@@ -7,7 +7,7 @@ prog "LibreOffice Writer" "/usr/share/icons/hicolor/48x48/apps/libreoffice-write
 prog "LibreOffice Calc" "/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png" libreoffice --calc 
 prog "Thunderbird" hicolor/32x32/apps/thunderbird.png thunderbird 
 prog "Web Browser" /usr/share/icons/hicolor/48x48/apps/firefox-esr.png /opt/firefox/firefox
-prog "File Manager" /usr/share/icons/Enlightenment-X/apps/64/system-file-manager.png desktop-defaults-run -fm
+prog "File Manager" /usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png desktop-defaults-run -fm
 prog "Geany" hicolor/32x32/apps/geany.png geany 
 prog "Tilix" hicolor/scalable/apps/com.gexperts.Tilix.svg tilix
 prog "VSCodium" "/usr/share/pixmaps/vscodium.png" /usr/share/codium/codium --unity-launch 
