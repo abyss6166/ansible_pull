@@ -239,13 +239,13 @@ TaskBarShowClock=1 # 0/1
 # TaskBarShowAPMStatus=0 # 0/1
 
 #  Enable TaskBarShowAPMStatus if a battery is present
-TaskBarShowAPMAuto=1 # 0/1
+TaskBarShowAPMAuto=0 # 0/1
 
 #  Show battery status on task bar in time-format
-# TaskBarShowAPMTime=1 # 0/1
+TaskBarShowAPMTime=0 # 0/1
 
 #  Show battery status in graph mode
-# TaskBarShowAPMGraph=1 # 0/1
+TaskBarShowAPMGraph=0 # 0/1
 
 #  Show mailbox status on task bar
 TaskBarShowMailboxStatus=0 # 0/1
@@ -311,7 +311,7 @@ CPUStatusShowAcpiTemp=1 # 0/1
 CPUStatusShowCpuFreq=0 # 0/1
 
 #  Show memory usage status on task bar (Linux only)
-TaskBarShowMEMStatus=1 # 0/1
+TaskBarShowMEMStatus=0 # 0/1
 
 #  Show network status on task bar
 TaskBarShowNetStatus=0 # 0/1

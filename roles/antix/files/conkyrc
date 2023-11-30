@@ -50,7 +50,7 @@ conky.config = {
         own_window = true,
         own_window_transparent = true,
         own_window_hints = undecorated,below,sticky,skip_taskbar,
-        own_window_type = 'desktop',
+        own_window_type = 'override',
 
 	-- Text
 
@@ -86,8 +86,9 @@ conky.config = {
 -- text 
 
 conky.text = [[
-${font MesloLGS NF Regular:size=30}${color1}${alignc}${time %I:%M}
-${voffset -36}${font}${color3}Date: ${alignr}${color}${time %a, %d %B %Y}
+#${font MesloLGS NF Regular:size=30}${color1}${alignc}${time %I:%M}
+${font Terminus (TTF):style=bold:size=30}${color1}${alignc}${time %I:%M}
+${voffset -20}${font}${color3}Date: ${alignr}${color}${time %a, %d %B %Y}
 ${color3}Kernel: ${alignr}${color}${kernel}
 #${color3}Distro: ${alignr}${color}${execi 6000 lsb_release -d | grep 'Descr'|awk {'print $2 " " $3" " $4"" $5'}}
 ${color3}Distro: ${alignr}${color}${execi 6000 awk -F'=|"' '/PRETTY/{print $3}' /etc/os-release}
