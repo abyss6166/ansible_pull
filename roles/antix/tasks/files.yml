@@ -107,7 +107,7 @@
 - name: edit desktop-session
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop
-    regexp: '^*'
+    regexp: '(.*?)'
     line: "icewm"
 
 - name: edit fehbg
