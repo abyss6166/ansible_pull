@@ -2,7 +2,7 @@
   - include_tasks: ../debian/tasks/directories.yml
   - include_tasks: ../debian/tasks/nala.yml
   - include_tasks: ../debian/tasks/oh-my-posh.yml
-  - include_tasks: ../debian/tasks/zsh-alias.yml
+  # - include_tasks: ../debian/tasks/zsh-alias.yml
   - include_tasks: firefox.yml
   - include_tasks: files.yml
   - include_tasks: ../debian/tasks/fastfetch.yml
