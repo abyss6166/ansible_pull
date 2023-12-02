@@ -10,4 +10,5 @@
       - virtualbox-guest-x11
       - oxygen-icon-theme
       - compton
+      - copyq-plugins
     state: latest
