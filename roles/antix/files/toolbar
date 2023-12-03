@@ -7,10 +7,12 @@ prog "LibreOffice Writer" "/usr/share/icons/hicolor/48x48/apps/libreoffice-write
 prog "LibreOffice Calc" "/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png" libreoffice --calc 
 prog "Thunderbird" hicolor/32x32/apps/thunderbird.png thunderbird 
 prog "Web Browser" /usr/share/icons/hicolor/48x48/apps/firefox-esr.png /opt/firefox/firefox
-prog "File Manager" /usr/share/icons/Adwaita/48x48/legacy/system-file-manager.png desktop-defaults-run -fm
+prog "File Manager" /usr/share/pixmaps/zzzfm-48-folder-blue.png desktop-defaults-run -fm
 prog "Geany" hicolor/32x32/apps/geany.png geany 
 prog "Tilix" hicolor/scalable/apps/com.gexperts.Tilix.svg tilix
+prog "Cisco Anyconnect Secure Mobility Client " /usr/share/icons/papirus-antix/24x24/apps/cisco-anyconnect.png /opt/cisco/anyconnect/bin/vpnui
 prog "VSCodium" "/usr/share/pixmaps/vscodium.png" /usr/share/codium/codium --unity-launch 
+prog "Teams" "/home/matt/.local/share/icons/Microsoft_Office_Teams.svg" /home/matt/Downloads/teams-for-linux-1.3.23.AppImage
 prog "IceWM Toolbar Icon Manager" /usr/share/icons/papirus-antix/48x48/categories/icewm_editor.png /usr/local/bin/icewm-toolbar-icon-manager
 prog "skippy-xd" /usr/share/icons/papirus-antix/48x48/actions/dialog-rows-and-columns.png skippy-xd
 separator

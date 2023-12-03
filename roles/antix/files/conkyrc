@@ -112,6 +112,7 @@ ${if_match ${cpu cpu0} >= 75}${color9}${endif}${cpu cpu0}${color1}%
 #CPU CORES
 #------------+
 ${voffset 2}${color3} 1${goto 45}$color${cpu cpu1}%${goto 85}${color4}${cpubar cpu1 13, 60}${goto 170}${color3} 2${goto 195}$color${cpu cpu2}%${goto 235}${color4}${cpubar cpu2 13, 60}
+${voffset 2}${color3} 3${goto 45}$color${cpu cpu3}%${goto 85}${color4}${cpubar cpu3 13, 60}${goto 170}${color3} 4${goto 195}$color${cpu cpu4}%${goto 235}${color4}${cpubar cpu4 13, 60}
 #------------+
 #PROCESSES
 #------------+
@@ -127,8 +128,13 @@ ${color3}Processes: ${color}${processes}${alignr}${color3}Running:$color ${runni
 #MEMORY
 #------------+
 ${font}${color1}MEMORY ${hr 2}
+${font}${color1}RAM
 ${voffset 5}${font}${color3}Used: ${color}${mem} ($memperc%)${color3}${alignr}Free: ${color}${memeasyfree}
 ${color4}${membar}
+${font}${color1}Swap
+${voffset 5}${font}${color3}Used: ${color}${swap} ($swapperc%)${color3}${alignr}Free: ${color}${swapmax}
+${color4}${swapbar}
+
 ${voffset 5}${color3}Name${alignr}MEM%
 ${color4}${top_mem name 1} ${alignr}${top_mem mem 1}${color}
 ${top_mem name 2} ${alignr}${top_mem mem 2}
@@ -141,9 +147,9 @@ ${font}${color1}NETWORK ${hr 2}
 ${voffset 5}${font}${color3}${addr eth0}${alignr}${font}${color}${if_existing /sys/class/net/eth0/operstate up}ONLINE${else}OFFLINE${endif}
 ${font}${color}
 ${color3}Down: ${color}${downspeed eth0}/s  ${color3}${alignr} Total: ${color}${totaldown eth0}
-${color4}${downspeedgraph eth0}${color}
+${color4}${downspeedgraph "eth0"}${color}
 ${color3}Up: ${color}${upspeed eth0}/s      ${color3}${alignr} Total: ${color}${totalup eth0}
-${color4}${upspeedgraph eth0}${color}
+${color4}${upspeedgraph "eth0"}${color}
 
 ${font}${color1}HARD DRIVE ${hr 2}
 ${color}Disk: ${fs_used /} of ${fs_size /} used

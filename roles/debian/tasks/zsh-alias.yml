@@ -22,13 +22,13 @@
    owner: "{{ user }}"
    group: "{{ user }}"
 
-- name: alias file
-  tags: alias
-  copy:
-    src: files/aliasrc
-    dest: /home/{{ user }}
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: alias file
+#   tags: alias
+#   copy:
+#     src: files/aliasrc
+#     dest: /home/{{ user }}
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
 - name: change shell
   tags: zsh,shell

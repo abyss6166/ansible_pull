@@ -1,0 +1,5 @@
+---
+
+- name: change shell
+  tags: zsh,shell
+  shell: usermod --shell /bin/zsh {{ user }}

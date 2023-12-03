@@ -3,5 +3,8 @@
 if [ ! -f ~/.config/zzzfm/zzzfm_already_localized ]; then zzzfmlocalize ; fi
 
 compton -b
-xrandr --output Virtual-1 --mode 1920x1080
+xrandr --output Virtual1 --mode 2560x1323
+VBoxClient --clipboard
 copyq
+nitrogen --restore
+conkywonky
