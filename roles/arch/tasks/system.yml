@@ -66,44 +66,14 @@
     name: /home/{{ user }}/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
     state: absent
 
-- name: back up vimrc file
-  tags: vimrc
-  become: true
+- name: install vim config file
+  tags: vim
   copy:
-    src: /home/{{ user }}/.vimrc
-    dest: /home/{{ user }}/.vimrc.bak
-
-- name: edit vimrc file - lightline1
-  tags: vimrc
-  become: true
-  lineinfile:
-    path: /home/{{ user }}/.vimrc
-    regexp: '^let g:airline_theme'
-    line: "let g:lightline = {'colorscheme': 'powerline',}"
-
-- name: edit vimrc file - lightline2
-  tags: vimrc
-  become: true
-  lineinfile:
-    path: /home/{{ user }}/.vimrc
-    insertafter: "let g:lightline = {'colorscheme': 'powerline',}"
-    line: 'set laststatus=2'
-
-- name: edit vimrc file - airline1
-  tags: vimrc
-  become: true
-  lineinfile:
-    path: /home/{{ user }}/.vimrc
-    regexp: '^Plug 'vim-airline/vim-airline'
-    line: '" Plug 'vim-airline/vim-airline'
-
-- name: edit vimrc file - airline2
-  tags: vimrc
-  become: true
-  lineinfile:
-    path: /home/{{ user }}/.vimrc
-    regexp: '^Plug 'vim-airline/vim-airline-themes'
-    line: '" Plug 'vim-airline/vim-airline-themes'
+    src: files/vimrc
+    dest: /home/{{ user }}/.vimrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
 
 - name: add extra Arch aliases - package manager
   blockinfile:
@@ -126,3 +96,43 @@
       alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
       alias i3c='vim ~/.config/i3/config'
       alias pb='vim ~/.config/polybar/config.ini'
+
+# - name: back up vimrc file
+#   tags: vimrc
+#   become: true
+#   copy:
+#     src: /home/{{ user }}/.vimrc
+#     dest: /home/{{ user }}/.vimrc.bak
+
+# - name: edit vimrc file - lightline1
+#   tags: vimrc
+#   become: true
+#   lineinfile:
+#     path: /home/{{ user }}/.vimrc
+#     regexp: '^let g:airline_theme'
+#     line: "let g:lightline = {'colorscheme': 'powerline',}"
+
+# - name: edit vimrc file - lightline2
+#   tags: vimrc
+#   become: true
+#   lineinfile:
+#     path: /home/{{ user }}/.vimrc
+#     insertafter: "let g:lightline = {'colorscheme': 'powerline',}"
+#     line: 'set laststatus=2'
+
+# - name: edit vimrc file - airline1
+#   tags: vimrc
+#   become: true
+#   lineinfile:
+#     path: /home/{{ user }}/.vimrc
+#     regexp: '^Plug 'vim-airline/vim-airline'
+#     line: '" Plug 'vim-airline/vim-airline'
+
+# - name: edit vimrc file - airline2
+#   tags: vimrc
+#   become: true
+#   lineinfile:
+#     path: /home/{{ user }}/.vimrc
+#     regexp: '^Plug 'vim-airline/vim-airline-themes'
+#     line: '" Plug 'vim-airline/vim-airline-themes'
+
