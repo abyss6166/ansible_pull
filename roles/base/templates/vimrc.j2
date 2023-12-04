@@ -89,7 +89,7 @@ nmap <leader>q :wq<CR>
 nnoremap <C-Up> gT
 nnoremap <C-Down> gt
 
-" Toggle line numbers
+" Toggle line numbers and indent guides
 nmap <leader>] :set number! <bar> :IndentGuidesToggle<CR>
 
 " Open FZF
@@ -98,13 +98,13 @@ nmap <C-f> :FZF<CR>
 " Open NERDTree
 nmap <C-n> :NERDTreeToggle<CR>
 
-" Paste with system clipboard - alias control-i
+" Paste with system clipboard
 nnoremap <S-Insert> <C-i>
 
-" Switch to next buffer - alias control-n
+" Switch to next buffer
 nnoremap <silent> <C-]> :bn<CR>
 
-" Switch to previous buffer - alias control-p
+" Switch to previous buffer
 nnoremap <silent> <C-[> :bp<CR>
 
 " Fast deleting of a buffer
