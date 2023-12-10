@@ -9,8 +9,8 @@
   - include_tasks: ../debian/tasks/oh-my-posh.yml
   - include_tasks: zsh.yml
   - include_tasks: samba.yml
-  - include_tasks: ../base/tasks/nano.yml
-  - include_tasks: ../base/tasks/fonts.yml
+  # - include_tasks: ../base/tasks/nano.yml
+  # - include_tasks: ../base/tasks/fonts.yml
   - include_tasks: git.yml
   - include_tasks: system.yml
   - include_tasks: ../base/tasks/onedrivegui.yml
