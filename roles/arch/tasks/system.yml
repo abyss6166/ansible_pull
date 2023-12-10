@@ -47,9 +47,10 @@
 
 - name: Create home directories
   become_user: "{{ user }}"
-  command:
-    chdir: /home/{{ user }}
+  shell:
     cmd: "xdg-user-dirs-update"
+    chdir: /home/{{ user }}
+    executable: /bin/bash
 
 - name: download qt5-webkit
   get_url:
