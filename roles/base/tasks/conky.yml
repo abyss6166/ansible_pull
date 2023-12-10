@@ -1,11 +1,12 @@
-- name: back up existing conky config file
-  tags: conky
-  command: mv /etc/conky/conky.conf /etc/conky/conky.conf.bak
+# - name: back up existing conky config file
+#   tags: conky
+#   command: mv /etc/conky/conky.conf /etc/conky/conky.conf.bak
 
 - name: download new conky config file
   tags: conky
   copy:
     src: files/conky.conf
     dest: /etc/conky/conky.conf
+    backup: yes
     owner: root
     group: root
