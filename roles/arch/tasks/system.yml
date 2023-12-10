@@ -4,7 +4,7 @@
     path: /etc/hosts
     block: |
       127.0.0.1 localhost
-      127.0.1.1 archlinuxvm
+      127.0.1.1 arch
 
 - name: enable timesyncd
   tags: timesyncd
