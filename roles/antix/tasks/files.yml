@@ -104,6 +104,16 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install conkywonky
+  tags: conky
+  copy:
+    src: files/conkywonky
+    dest: /usr/bin/
+    backup: yes
+    mode: +x
+    owner: "root"
+    group: "root"
+
 - name: install gtk3 config file
   tags: gtk
   copy:
