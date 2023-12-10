@@ -45,13 +45,26 @@
     group: "{{ user }}"
     backup: yes
 
-- name: Create home directories
+# - name: Create home directories
+#   become_user: "{{ user }}"
+#   shell:
+#     cmd: xdg-user-dirs-update
+#   args:
+#     chdir: /home/{{ user }}
+#     executable: /bin/bash
+
+- name: copy script
+  copy:
+    src: files/script.sh
+    dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: +x
+    backup: yes
+
+- name: run script
   become_user: "{{ user }}"
-  shell:
-    cmd: xdg-user-dirs-update
-  args:
-    chdir: /home/{{ user }}
-    executable: /bin/bash
+  shell: /home/{{ user }}/script.sh
 
 - name: download qt5-webkit
   get_url:
