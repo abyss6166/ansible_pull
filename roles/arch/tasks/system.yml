@@ -48,7 +48,7 @@
 - name: Create home directories
   become_user: "{{ user }}"
   shell:
-    cmd: "xdg-user-dirs-update"
+    cmd: xdg-user-dirs-update
     chdir: /home/{{ user }}
     executable: /bin/bash
 
