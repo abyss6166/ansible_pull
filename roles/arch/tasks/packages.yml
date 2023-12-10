@@ -43,7 +43,7 @@
       - caja
       - discord
       - ark
-      - nomacs
+      # - nomacs  #not in Arch repos
       - dolphin
       - fastfetch
       - xsel
