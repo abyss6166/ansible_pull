@@ -6,5 +6,6 @@ compton -b
 xrandr --output Virtual1 --mode 2560x1323
 VBoxClient --clipboard
 copyq
+/home/matt/Downloads/OneDriveGUI-1.0.2-x86_64.AppImage
 nitrogen --restore
 conkywonky

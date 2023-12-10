@@ -12,4 +12,5 @@
       - compton
       - copyq-plugins
       - dnsutils
+      - nitrogen
     state: latest

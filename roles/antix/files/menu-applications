@@ -1,0 +1,190 @@
+
+menu "antiX" "/usr/share/icons/papirus-antix/48x48/apps/distributor-logo-antix.png" { 
+prog "Add Menu Item" "/usr/share/pixmaps/add-menu-item.png" add-desktop
+prog "Android Device USB Connect" "/usr/share/icons/oxygen/base/48x48/devices/smartphone.png" /usr/local/bin/android-device-usb-connect.sh
+prog "antiX Updater" "/usr/share/icons/papirus-antix/48x48/apps/x-system-software-sources.png" /usr/local/bin/yad-updater
+prog "antiX User Manager" "/usr/share/pixmaps/user-manager.png" su-to-root -X -c antix-user
+prog "antiX WiFi Switch" "/usr/share/icons/papirus-antix/48x48/apps/connman.png" /usr/local/bin/antix-wifi-switch
+prog "antiX-workspace-manager" "/usr/share/icons/papirus-antix/48x48/apps/cs-workspaces.png" /usr/local/bin/antiX-workspace-manager
+prog "Backlight Brightness" "/usr/share/pixmaps/backlight-brightness.png" x-terminal-emulator -e backlight-brightness --pause
+prog "Chroot Rescue Scan" "/usr/share/icons/papirus-antix/48x48/apps/rescuetime.png" x-terminal-emulator -e sudo chroot-rescue-scan --pause
+prog "CLI APT-based Package Manager" "/usr/share/icons/Adwaita/48x48/legacy/system-software-install.png" x-terminal-emulator -e sudo /usr/local/bin/cli-aptiX --pause
+prog "Command Line Control Centre" "/usr/share/pixmaps/command-line-control-centre.png" x-terminal-emulator -f -e antiX-cli-cc
+prog "Configure Persistence" "/usr/share/icons/papirus-antix/48x48/apps/persist-config.png" su-to-root -X -c persist-config
+prog "Date and Time" "/usr/share/icons/Adwaita/48x48/devices/multimedia-player-apple-ipod-touch-symbolic.symbolic.png" /usr/local/bin/set_time-and_date.sh
+prog "Edit antiX startup File" "/usr/share/icons/papirus-antix/48x48/apps/cs-workspaces.png" /usr/local/bin/edit_antix_startup_file
+prog "Format USB" "/usr/share/pixmaps/formatusb.png" su-to-root -X -c "formatusb"
+prog "IceWM Manager" "/usr/share/icons/papirus-antix/48x48/apps/icewmcc.png" /usr/local/bin/icewm-manager-gui
+prog "IceWM Remember Settings" "/usr/share/icons/oxygen/base/48x48/apps/preferences-system-windows-move.png" /usr/local/bin/icewm-remember-settings
+prog "IceWM Toolbar Icon Manager" "/usr/share/pixmaps/icewm_editor.png" /usr/local/bin/icewm-toolbar-icon-manager
+prog "ISO Snapshot" "/usr/share/pixmaps/iso-snapshot.png" su-to-root -X -c iso-snapshot
+prog "Live-USB Kernel Updater" "/usr/share/pixmaps/live-usb-kernel-updater.png" x-terminal-emulator -e sudo /usr/local/bin/live-kernel-updater --pause
+prog "Live USB Maker" "/usr/share/pixmaps/live-usb-maker.png" su-to-root -X -c live-usb-maker-gui-antix
+prog "Login Manager" "/usr/share/icons/oxygen/base/48x48/devices/computer.png" su-to-root -X -c /usr/local/bin/login-config-antix
+prog "Personal Menu Editor" "/usr/share/pixmaps/icewm_peditor.png" /usr/local/bin/icewm-quick-personal-menu-manager
+prog "Program Remover" "/usr/share/pixmaps/debian-logo.png" /usr/local/bin/yad-autoremove
+prog "Remaster" "/usr/share/icons/papirus-antix/48x48/apps/remastersys.png" su-to-root -X -c live-remaster
+prog "Remove Menu Item" "/usr/share/pixmaps/remove-menu-item.png" remove-desktop
+prog "Save Persistence Changes" "/usr/share/icons/papirus-antix/48x48/apps/palimpsest.png" su-to-root -X -c persist-save
+prog "Set up Persistence" "/usr/share/icons/papirus-antix/48x48/apps/persist-makefs.png" su-to-root -X -c persist-makefs
+prog "User Language" "/usr/share/icons/oxygen/base/48x48/apps/preferences-desktop-locale.png" locale-antix
+prog "yad-color" "/usr/share/icons/papirus-antix/48x48/apps/gcolor2.png" yad-color
+}
+separator
+menu "Accessories" "/usr/share/icons/oxygen/base/48x48/categories/applications-accessories.png" { 
+prog "Archive Manager" "/usr/share/icons/papirus-antix/48x48/apps/file-roller.png" file-roller 
+prog "Calculator" "/usr/share/icons/hicolor/48x48/apps/galculator.png" galculator
+prog "Calcurse" "/usr/share/icons/papirus-antix/48x48/apps/ximian-evolution-calendar.png" desktop-defaults-run -t calcurse
+prog "CherryTree" "/usr/share/icons/hicolor/scalable/apps/cherrytree.svg" cherrytree 
+prog "ClipIt" "/usr/share/icons/hicolor/scalable/apps/clipit-trayicon.svg" clipit
+prog "compton" "/usr/share/icons/hicolor/48x48/apps/compton.png" compton
+prog "CopyQ" "/usr/share/icons/hicolor/48x48/apps/copyq.png" copyq --start-server show
+prog "Firejail Configuration Wizard" "/usr/share/pixmaps/firejail-ui.png" firejail-ui
+prog "Leafpad" "/usr/share/icons/hicolor/scalable/apps/leafpad.svg" leafpad 
+prog "Midnight Commander editor" "/usr/share/icons/hicolor/64x64/apps/MidnightCommander.png" desktop-defaults-run -t mcedit
+prog "nitrogen" "/usr/share/icons/hicolor/48x48/apps/nitrogen.png" nitrogen
+prog "Other Desktops" "/usr/share/icons/oxygen/base/48x48/places/user-desktop.png" /usr/local/lib/desktop-session/desktop-session-menu-window ignore-settings
+prog "Rxvt Color Unicode Terminal" "/usr/share/icons/Adwaita/48x48/legacy/utilities-terminal.png" urxvt
+prog "Searchmonkey" "/usr/share/icons/hicolor/48x48/apps/searchmonkey.png" searchmonkey
+prog "Toggle Visual Effects with the xcompmgr composer" "/usr/share/icons/papirus-antix/48x48/apps/desktop-effects.png" simple_compositor_toggle
+prog "Xfburn" "/usr/share/icons/papirus-antix/48x48/devices/media-cdrom.png" xfburn
+prog "zzzFM File Search" "/usr/share/pixmaps/zzzfm-find.png" zzzfm --find-files 
+}
+menu "Games" "/usr/share/icons/oxygen/base/48x48/categories/applications-games.png" { 
+prog "DOSBox" "/usr/share/icons/hicolor/48x48/apps/dosbox.png" dosbox
+prog "Mahjongg" "/usr/share/icons/hicolor/scalable/apps/org.gnome.Mahjongg.svg" gnome-mahjongg
+}
+menu "Graphics" "/usr/share/icons/oxygen/base/48x48/categories/applications-graphics.png" { 
+prog "Document Scanner" "/usr/share/icons/oxygen/base/48x48/devices/scanner.png" simple-scan
+prog "Gtkam Digital Camera Browser" "/usr/share/pixmaps/gtkam-camera.png" gtkam
+prog "LibreOffice Draw" "/usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png" libreoffice --draw 
+prog "Mirage" "/usr/share/pixmaps/mirage.png" mirage 
+prog "mtPaint Graphic Editor" "/usr/share/pixmaps/mtpaint.png" mtpaint 
+prog "Screenshot" "/usr/share/icons/papirus-antix/48x48/apps/gnome-screenshot.png" antixscreenshot.sh
+}
+menu "Internet" "/usr/share/icons/oxygen/base/48x48/categories/preferences-system-network.png" { 
+menu "Cisco AnyConnect Secure Mobility Client" "/usr/share/icons/oxygen/base/48x48/places/folder.png" { 
+prog "Cisco Anyconnect Secure Mobility Client" "/usr/share/icons/hicolor/48x48/apps/cisco-anyconnect.png" /opt/cisco/anyconnect/bin/vpnui
+}
+prog "antiX Cloud" "/usr/share/icons/papirus-antix/48x48/places/folder-red-meocloud.png" antix-cloud
+prog "Ceni" "/usr/share/icons/hicolor/48x48/apps/ceni.png" desktop-defaults-run -t su-to-root -c /usr/sbin/Ceni
+prog "Chromium Web Browser" "/usr/share/icons/hicolor/48x48/apps/chromium.png" /usr/bin/chromium 
+prog "Claws Mail" "/usr/share/icons/hicolor/48x48/apps/claws-mail.png" claws-mail 
+prog "Connectshares" "/usr/share/pixmaps/connectshares.png" connectshares
+prog "Connectshares Configuration" "/usr/share/pixmaps/connectshares-config.png" connectshares-config
+prog "Connman UI Setup" "/usr/share/icons/oxygen/base/48x48/categories/preferences-system-network.png" cmst
+prog "Dillo" "/usr/share/pixmaps/dillo.png" dillo 
+prog "Disconnectshares" "/usr/share/pixmaps/disconnectshares.png" disconnectshares
+prog "Droopy" "/usr/share/pixmaps/droopy.png" droopy.sh
+prog "Firefox ESR" "/usr/share/icons/hicolor/48x48/apps/firefox-esr.png" /usr/lib/firefox-esr/firefox-esr 
+prog "gFTP" "/usr/share/icons/hicolor/48x48/apps/gftp.png" gftp-gtk 
+prog "GNOME PPP" "/usr/share/icons/hicolor/48x48/apps/gnome-ppp.png" gnome-ppp
+prog "HexChat" "/usr/share/icons/hicolor/48x48/apps/io.github.Hexchat.png" hexchat --existing 
+prog "Links 2" "/usr/share/pixmaps/links2.xpm" xlinks2
+prog "Microsoft Teams - Preview" "/usr/share/pixmaps/teams.png" teams 
+prog "Sakis3G" "/usr/share/icons/papirus-antix/48x48/apps/modem-manager-gui.png" desktop-defaults-run -t sakis3g --interactive
+prog "Search Bar" "/usr/share/icons/papirus-antix/48x48/apps/eye-icon.png" search-bar
+prog "Shared Folders" "/usr/share/icons/papirus-antix/48x48/apps/yast-samba-client.png" antix_my_network_neighborhood
+prog "Thunderbird" "/usr/share/icons/hicolor/48x48/apps/thunderbird.png" /usr/bin/thunderbird 
+prog "Transmission" "/usr/share/icons/hicolor/scalable/apps/transmission.svg" transmission-gtk 
+prog "UFW Firewall" "/usr/share/icons/papirus-antix/48x48/apps/preferences-system-firewall.png" antix_firewall_toggle
+prog "WPA Gui" "/usr/share/icons/hicolor/scalable/apps/wpa_gui.svg" /usr/sbin/wpa_gui
+}
+menu "Multimedia" "/usr/share/icons/oxygen/base/48x48/categories/applications-multimedia.png" { 
+prog "Alsamixer" "/usr/share/pixmaps/alsamixer-equalizer.png" x-terminal-emulator -e alsamixer
+prog "Alsamixer Equalizer" "/usr/share/pixmaps/alsamixer-equalizer.png" x-terminal-emulator -e alsamixer -D equalizer
+prog "Asunder CD Ripper" "/usr/share/icons/hicolor/128x128/apps/asunder.png" asunder 
+prog "Celluloid" "/usr/share/icons/hicolor/scalable/apps/io.github.celluloid_player.Celluloid.svg" celluloid 
+prog "Enable/Disable PipeWire audio server" "/usr/share/icons/papirus-antix/48x48/apps/gnome-audio.png" toggle_pipewire
+prog "GUVCView" "/usr/share/icons/papirus-antix/48x48/apps/guvcview.png" guvcview
+prog "mpv Media Player" "/usr/share/icons/hicolor/scalable/apps/mpv.svg" mpv --player-operation-mode=pseudo-gui -- 
+prog "Poor Man's Radio Player" "/usr/share/icons/papirus-antix/48x48/apps/library-internet-radio.png" x-terminal-emulator -e pmrp
+prog "PulseAudio Volume Control" "/usr/share/icons/oxygen/base/48x48/apps/multimedia-volume-control.png" pavucontrol
+prog "SMTube" "/usr/share/icons/hicolor/48x48/apps/smtube.png" smtube
+prog "Sound Card Chooser" "/usr/share/icons/papirus-antix/48x48/apps/soundcard.png" alsa-set-default-card
+prog "Streamtuner2" "/usr/share/pixmaps/streamtuner2.png" streamtuner2
+prog "WinFF" "/usr/share/icons/hicolor/48x48/apps/winff.png" winff 
+prog "XMMS" "/usr/share/icons/xmms.png" xmms
+prog "Youtube video player" "/usr/share/icons/papirus-antix/24x24/apps/youtube-dl-gui_48x48.png" x-terminal-emulator -e /usr/bin/ytfzf
+}
+menu "Office" "/usr/share/icons/oxygen/base/48x48/categories/applications-office.png" { 
+prog "Betterbird" "/opt/betterbird/betterbird/chrome/icons/default/default256.png" /opt/betterbird/betterbird/betterbird
+prog "LibreOffice" "/usr/share/icons/hicolor/48x48/apps/libreoffice-startcenter.png" libreoffice 
+prog "LibreOffice Calc" "/usr/share/icons/hicolor/48x48/apps/libreoffice-calc.png" libreoffice --calc 
+prog "LibreOffice Draw" "/usr/share/icons/hicolor/48x48/apps/libreoffice-draw.png" libreoffice --draw 
+prog "LibreOffice Impress" "/usr/share/icons/hicolor/48x48/apps/libreoffice-impress.png" libreoffice --impress 
+prog "LibreOffice Math" "/usr/share/icons/hicolor/48x48/apps/libreoffice-math.png" libreoffice --math 
+prog "LibreOffice Writer" "/usr/share/icons/hicolor/48x48/apps/libreoffice-writer.png" libreoffice --writer 
+prog "Obsidian" "/home/matt/obsidian/obsidian.png" /home/matt/obsidian/obsidian.AppImage 
+prog "qpdfview" "/usr/share/icons/hicolor/scalable/apps/qpdfview.svg" qpdfview --unique 
+}
+menu "Preferences" "/usr/share/icons/oxygen/base/48x48/categories/preferences-desktop.png" { 
+prog "Adblock" "/usr/share/pixmaps/advert-block.png" su-to-root -X -c block-advert.sh
+prog "Add Key" "/usr/share/icons/Adwaita/48x48/legacy/preferences-desktop-keyboard-shortcuts.png" add-key
+prog "Add Menu Item" "/usr/share/pixmaps/add-menu-item.png" add-desktop
+prog "ADSL/PPPOE Configuration" "/usr/share/pixmaps/pppoeconf.xpm" x-terminal-emulator -e /usr/sbin/pppoeconf
+prog "Advanced Network Configuration" "/usr/share/icons/oxygen/base/48x48/categories/preferences-system-network.png" nm-connection-editor
+prog "Alternatives Configurator" "/usr/share/icons/hicolor/48x48/apps/galternatives.png" gksu /usr/bin/galternatives
+prog "ARandR" "/usr/share/icons/Adwaita/48x48/devices/video-single-display-symbolic.symbolic.png" arandr
+prog "Bluetooth Manager" "/usr/share/icons/hicolor/48x48/status/blueman.png" blueman-manager
+prog "Configure Automount" "/usr/share/pixmaps/mountbox.png" automount-config
+prog "Connman UI Setup" "/usr/share/icons/oxygen/base/48x48/categories/preferences-system-network.png" cmst
+prog "Customize Look and Feel" "/usr/share/icons/oxygen/base/48x48/apps/preferences-desktop-theme.png" lxappearance
+prog "Mouse Configuration" "/usr/share/icons/oxygen/base/48x48/devices/input-mouse.png" ds-mouse
+prog "Onboard Settings" "/usr/share/icons/hicolor/scalable/apps/onboard.svg" onboard-settings
+prog "Print Settings" "/usr/share/icons/oxygen/base/48x48/devices/printer.png" system-config-printer
+prog "PulseAudio Volume Control" "/usr/share/icons/oxygen/base/48x48/apps/multimedia-volume-control.png" pavucontrol
+prog "Qt5 Settings" "/usr/share/icons/papirus-antix/48x48/apps/ubuntu-qtcreator.png" qt5ct
+prog "Remove Menu Item" "/usr/share/pixmaps/remove-menu-item.png" remove-desktop
+prog "Screenlight" "/usr/share/pixmaps/screenlight.png" screenlight-menu.sh
+prog "Set Font Size DPI" "/usr/share/icons/papirus-antix/48x48/apps/applications-fonts.png" gksu set-dpi
+prog "Synaptic Package Manager" "/usr/share/icons/hicolor/48x48/apps/synaptic.png" su-to-root -X -c /usr/sbin/synaptic
+prog "System Keyboard" "/usr/share/icons/system-keyboard-qt.png" su-to-root -X -c system-keyboard-qt
+prog "User Language" "/usr/share/icons/oxygen/base/48x48/apps/preferences-desktop-locale.png" locale-antix
+prog "Wallpaper" "/usr/share/icons/oxygen/base/48x48/apps/preferences-desktop-wallpaper.png" /usr/local/bin/wallpaper
+}
+menu "Programming" "/usr/share/icons/oxygen/base/48x48/categories/applications-development.png" { 
+prog "Geany" "/usr/share/icons/hicolor/48x48/apps/geany.png" geany 
+prog "Vim.tiny" "/usr/share/icons/papirus-antix/48x48/apps/nvim-qt.png" urxvt -e vim 
+prog "VSCodium" "/usr/share/pixmaps/vscodium.png" /usr/share/codium/codium --unity-launch 
+}
+menu "System" "/usr/share/icons/oxygen/base/48x48/categories/preferences-system.png" { 
+prog "App Select" "/usr/share/icons/papirus-antix/48x48/apps/gnome-searchtool.png" /usr/local/bin/app-select
+prog "Boot Repair" "/usr/share/pixmaps/bootrepair.png" su-to-root -X -c bootrepair
+prog "btop++" "/usr/share/icons/hicolor/48x48/apps/btop.png" desktop-defaults-run -t btop
+prog "Cairo-Dock" "/usr/share/pixmaps/cairo-dock.svg" cairo-dock
+prog "Cairo-Dock (Fallback Mode)" "/usr/share/pixmaps/cairo-dock.svg" cairo-dock -A
+prog "Choose Startup Services" "/usr/share/icons/papirus-antix/48x48/apps/choose-startup-services.png" rc-conf-wrapper.sh
+prog "conky" "/usr/share/icons/hicolor/scalable/apps/conky-logomark-violet.svg" conky --daemonize --pause=1
+prog "Control Centre" "/usr/share/icons/papirus-antix/48x48/apps/command-line-control-centre.png" antixcc.sh
+prog "dconf Editor" "/usr/share/icons/hicolor/scalable/apps/ca.desrt.dconf-editor.svg" dconf-editor
+prog "Deb Installer" "/usr/share/icons/hicolor/48x48/apps/deb-installer.png" deb-installer 
+prog "Disk Manager" "/usr/share/icons/hicolor/scalable/apps/disk-manager.svg" su-to-root -X -c disk-manager
+prog "Firetools" "/usr/share/pixmaps/firetools.png" firetools
+prog "GParted" "/usr/share/icons/hicolor/48x48/apps/gparted.png" gksu /usr/sbin/gparted 
+prog "Grsync" "/usr/share/pixmaps/grsync.png" /usr/bin/grsync -i 
+prog "Htop" "/usr/share/icons/hicolor/scalable/apps/htop.svg" desktop-defaults-run -t htop
+prog "kitty" "/usr/share/icons/hicolor/scalable/apps/kitty.svg" kitty
+prog "luckyBackup" "/usr/share/pixmaps/luckybackup.png" /usr/bin/luckybackup
+prog "luckyBackup as Super User" "/usr/share/pixmaps/luckybackup.png" su-to-root -X -c /usr/bin/luckybackup
+prog "Midnight Commander" "/usr/share/icons/hicolor/64x64/apps/MidnightCommander.png" desktop-defaults-run -t mc
+prog "Mountbox" "/usr/share/pixmaps/mountbox.png" /usr/local/bin/mountbox.sh
+prog "Network Assistant" "/usr/share/pixmaps/network-assistant.png" su-to-root -X -c network-assistant
+prog "Nvidia Driver Installer" "/usr/share/icons/papirus-antix/48x48/apps/nvidia.png" x-terminal-emulator -e sudo /usr/local/bin/ddm-mx -i nvidia
+prog "Package Installer" "/usr/share/pixmaps/packageinstaller.png" su-to-root -X -c packageinstaller
+prog "PC Information" "/usr/share/icons/papirus-antix/48x48/apps/info_blue.png" inxi-gui
+prog "Repo Manager" "/usr/share/icons/hicolor/48x48/apps/repo-manager.png" su-to-root -X -c repo-manager
+prog "Root Terminal" "/usr/share/pixmaps/gksu-root-terminal.png" gksu /usr/bin/x-terminal-emulator
+prog "ROX Filer" "/usr/share/pixmaps/rox-filer.png" /usr/bin/rox-filer
+prog "ROX Filer as root" "/usr/share/icons/papirus-antix/48x48/apps/rox-filer-root.png" su-to-root -X -c rox-filer
+prog "ROXTerm" "/usr/share/icons/hicolor/scalable/apps/roxterm.svg" roxterm
+prog "Task Manager" "/usr/share/icons/oxygen/base/48x48/apps/utilities-system-monitor.png" lxtask
+prog "Tilix" "/usr/share/icons/hicolor/scalable/apps/com.gexperts.Tilix.svg" tilix
+prog "Trash" "/usr/share/icons/papirus-antix/48x48/status/user-trash.png" zzzfm ~/.local/share/Trash/files/
+prog "zzzFM" "/usr/share/pixmaps/zzzfm.png" zzzfm 
+}
+menu "Universal Access" "/usr/share/icons/oxygen/base/48x48/apps/preferences-desktop-accessibility.png" { 
+prog "Magnus" "/usr/share/icons/papirus-antix/48x48/actions/zoom-best-fit.png" magnus
+prog "Onboard" "/usr/share/icons/hicolor/scalable/apps/onboard.svg" onboard
+}
+

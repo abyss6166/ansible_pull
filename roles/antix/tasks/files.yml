@@ -1,34 +1,5 @@
 ---
 
-# - name: install sources.list
-#   copy:
-#     src: files/sources.list
-#     dest: /etc/apt/
-#     owner: "root"
-#     group: "root"
-#     backup: yes
-
-# - name: install jwm configs
-#   copy:
-#     src: files/{{ item }}
-#     dest: /home/{{ user }}/.jwm/
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-#   with_items:
-#     - menu
-#     - startup
-#     - theme
-#     - tray
-
-# - name: install jwmrc config
-#   copy:
-#     src: files/jwmrc
-#     dest: /home/{{ user }}/.jwmrc
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-
 - name: install icewm configs
   copy:
     src: files/{{ item }}
@@ -44,6 +15,14 @@
     - prefoverride
     - toolbar
     - keys
+
+- name: install icewm menu-applications
+  copy:
+    src: files/menu-applications
+    dest: /usr/share/desktop-menu/.icewm/
+    owner: "root"
+    group: "{{ user }}"
+    backup: yes
 
 - name: install wallpaper
   copy:
@@ -125,6 +104,38 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
+- name: install gtk3 config file
+  tags: gtk
+  copy:
+    src: files/settings.ini
+    dest: /home/{{ user }}/.config/gtk-3.0/s
+    backup: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: download Teams AppImage
+  get_url: 
+    src: https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.3.23/teams-for-linux-1.3.23.AppImage
+    dest: /home/{{ user }}/Downloads/
+    mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: extract anyconnect archive
+  unarchive:
+    src: files/anyconnect-linux64-4.10.07073.tar.gz
+    dest: /home/{{ user }}/Downloads/anyconnect/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install firefox.desktop file
+  copy:
+    src: files/firefox.desktop
+    dest: /usr/share/applications/firefox.desktop
+    owner: "root"
+    group: "root"
+
+
 # - name: install menu icon
 #   copy:
 #     src: files/menu-bar.png
@@ -140,4 +151,33 @@
 #     mode: +x
 #     owner: "{{ user }}"
 #     group: "{{ user }}"
+
+# - name: install sources.list
+#   copy:
+#     src: files/sources.list
+#     dest: /etc/apt/
+#     owner: "root"
+#     group: "root"
+#     backup: yes
+
+# - name: install jwm configs
+#   copy:
+#     src: files/{{ item }}
+#     dest: /home/{{ user }}/.jwm/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
+#   with_items:
+#     - menu
+#     - startup
+#     - theme
+#     - tray
+
+# - name: install jwmrc config
+#   copy:
+#     src: files/jwmrc
+#     dest: /home/{{ user }}/.jwmrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
 
