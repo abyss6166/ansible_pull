@@ -9,7 +9,7 @@
   - include_tasks: tasks/geany.yml
   - include_tasks: tasks/conky.yml
   - include_tasks: tasks/fonts.yml
-  - include_tasks: tasks/onedrivegui.yml
+  # - include_tasks: tasks/onedrivegui.yml   ## Can't use with Arch
   - include_tasks: tasks/nano.yml
   - include_tasks: fzf.yml
 

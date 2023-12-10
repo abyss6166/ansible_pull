@@ -13,6 +13,7 @@
   - include_tasks: ../base/tasks/fonts.yml
   - include_tasks: git.yml
   - include_tasks: system.yml
+  - include_tasks: ../base/tasks/onedrivegui.yml
   - include_tasks: ../void/tasks/onedrive.yml
   - include_tasks: tilix_config.yml
 
