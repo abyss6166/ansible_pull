@@ -61,7 +61,7 @@
   lineinfile:
     dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
     state: present
-    regexp: '\Qecho "# $updates"'
+    regexp: 'echo "# $updates"'
     line: 'echo "$updates"'
 
 - name: Clone yay
