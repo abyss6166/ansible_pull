@@ -11,4 +11,5 @@
       - oxygen-icon-theme
       - compton
       - copyq-plugins
+      - dnsutils
     state: latest
