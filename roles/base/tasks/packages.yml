@@ -10,7 +10,7 @@
       - conky
       - ncdu
       - bat
-      - onedrive
+      # - onedrive  ## Not available on Arch
       - samba
       - cifs-utils
       - "{{ firefox_package }}"

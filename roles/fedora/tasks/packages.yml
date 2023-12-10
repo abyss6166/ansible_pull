@@ -24,6 +24,7 @@
       - deadbeef-plugins
       - audacious
       - nomacs
+      - onedrive
     state: latest
   when: ansible_distribution == "Fedora"
 

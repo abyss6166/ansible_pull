@@ -13,4 +13,5 @@
       - copyq-plugins
       - dnsutils
       - nitrogen
+      - onedrive
     state: latest
