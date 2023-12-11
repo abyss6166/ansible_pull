@@ -26,3 +26,11 @@
     regexp: '^#%wheel ALL=(ALL:ALL) ALL'
     line: '%wheel ALL=(ALL) ALL'
     validate: 'visudo -cf %s'
+
+- name: Create home directories
+  become_user: "{{ user }}"
+  shell:
+    cmd: xdg-user-dirs-update
+  args:
+    chdir: /home/{{ user }}
+    executable: /bin/bash
