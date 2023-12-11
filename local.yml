@@ -47,7 +47,7 @@
   roles:
     - role: base
       # when: hostname.stdout != "cbpp"
-      # when: not (ansible_distribution != "Void" or ansible_distribution != "Ubuntu")
+      when: ansible_distribution != "Archlinux")
 
 - hosts: localhost
   connection: local
