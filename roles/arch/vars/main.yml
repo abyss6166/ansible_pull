@@ -1,11 +1,29 @@
-# userpass: !vault |
-#           $ANSIBLE_VAULT;1.1;AES256
-#           30316330623861306263663931353134313832393034646665333735633362633261343566346262
-#           3636363431623937333435666530313962373331616162360a373866356539336636636664326537
-#           33333661616565396636353461383637613431336463306265643966653639616333313065396137
-#           3465313230663238640a376435646436613662613163396632316337396237353831653364313763
-#           3738
-
+lightdmgtkgreeter_package: lightdm-gtk-greeter
+i3_package: i3-wm
+libreoffice_package: libreoffice-still
+firefox_package: firefox
+chromium_package: chromium
+ssh_package: openssh
 userpass: msh
 user: matt
-# pwdhash: "{{ userpass | password_hash }}"
+fd_package: fd
+init_status: systemctl status
+init_start: systemctl start
+init_restart: systemctl restart
+bat: bat
+pkgmgr_install: pacman -S
+pkgmgr_search: pacman -Ss
+pkgmgr_upgrade: pacman -Syu
+pkgmgr_remove: pacman -R
+pkgmgr_info: 
+pkgmgr_install_short: pi
+pkgmgr_search_short: ps
+pkgmgr_upgrade_short: pu
+pkgmgr_remove_short: pr
+airline_theme: 
+vim_theme: two-firewatch
+omp_theme: wopian
+alias_template_file: alias.j2
+zshrc_template_file: zshrc.j2
+vimrc_template_file: vimrc.j2
+fetch: fastfetch --load-config examples/10.jsonc
