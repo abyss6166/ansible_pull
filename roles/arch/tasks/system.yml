@@ -94,7 +94,7 @@
   blockinfile:
     path: /home/{{ user }}/aliasrc
     insertbefore: "alias v='vim'"
-    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
+    marker: "## BEGIN ANSIBLE MANAGED BLOCK"
     block: |
       alias i3config='vim ~/.config/i3/config' # Quick access to the i3 config file
       alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
@@ -112,6 +112,18 @@
       alias yps='yay -Ss'
       alias yr='yay -R' 
       alias yu='yay -Sua'
+
+- name: remove Ansible comment lines
+  lineinfile:
+    line: "{{ item}}"
+    state: absent
+  with_items:
+    - "# BEGIN ANSIBLE MANAGED BLOCK"
+    - "# END ANSIBLE MANAGED BLOCK"
+    - "## BEGIN ANSIBLE MANAGED BLOCK"
+    - "## END ANSIBLE MANAGED BLOCK"
+
+
 
 # - name: set wallpaper
 #   tags: nitrogen
