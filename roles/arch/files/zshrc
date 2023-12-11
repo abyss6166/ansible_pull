@@ -1,3 +1,5 @@
+fastfetch --load-config examples/10.jsonc
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=100000

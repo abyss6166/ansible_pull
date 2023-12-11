@@ -5,6 +5,8 @@
     url: https://github.com/obsidianmd/obsidian-releases/releases/download/v{{ obsidian }}/Obsidian-{{ obsidian }}.AppImage
     dest: /home/{{ user }}/Downloads
     mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"
 
 - name: copy Obsidian desktop file
   copy:
@@ -13,4 +15,11 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     backup: yes
+
+- name: copy Obsidian desktop file
+  copy:
+    src: files/obsidian-icon.png
+    dest: /usr/share/icons/
+    owner: "{{ user }}"
+    group: "{{ user }}"
 

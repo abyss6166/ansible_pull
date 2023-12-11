@@ -59,6 +59,7 @@
       - go
       - sysstat
       - python-psutil
+      - fuse2
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols
