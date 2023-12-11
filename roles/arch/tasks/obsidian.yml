@@ -2,7 +2,7 @@
 
 - name: download obsidian
   get_url:
-    src: https://github.com/obsidianmd/obsidian-releases/releases/download/v{{ obsidian }}/Obsidian-{{ obsidian }}.AppImage
+    url: https://github.com/obsidianmd/obsidian-releases/releases/download/v{{ obsidian }}/Obsidian-{{ obsidian }}.AppImage
     dest: /home/{{ user }}/Downloads
     mode: +x
 
