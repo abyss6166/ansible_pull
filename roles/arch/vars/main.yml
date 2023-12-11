@@ -27,3 +27,4 @@ alias_template_file: alias.j2
 zshrc_template_file: zshrc.j2
 vimrc_template_file: vimrc.j2
 fetch: fastfetch --load-config examples/10.jsonc
+obsidian: 1.4.16

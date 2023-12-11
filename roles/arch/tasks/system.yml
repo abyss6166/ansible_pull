@@ -54,16 +54,6 @@
     group: "{{ user }}"
     backup: yes
 
-
-# - name: Create home directories
-#   become_user: "{{ user }}"
-#   shell:
-#     cmd: xdg-user-dirs-update
-#   args:
-#     chdir: /home/{{ user }}
-#     executable: /bin/bash
-
-
 - name: download qt5-webkit
   get_url:
     url: https://archive.archlinux.org/packages/q/qt5-webkit/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
@@ -93,7 +83,7 @@
 - name: add extra Arch aliases - configs
   blockinfile:
     path: /home/{{ user }}/aliasrc
-    insertbefore: "alias v='vim'"
+    insertafter: "alias zsrc='source ~/.zshrc'"
     marker: "## BEGIN ANSIBLE MANAGED BLOCK"
     block: |
       alias i3config='vim ~/.config/i3/config' # Quick access to the i3 config file

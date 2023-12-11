@@ -1,0 +1,16 @@
+---
+
+- name: download obsidian
+  get_url:
+    src: https://github.com/obsidianmd/obsidian-releases/releases/download/v{{ obsidian }}/Obsidian-{{ obsidian }}.AppImage
+    dest: /home/{{ user }}/Downloads
+    mode: +x
+
+- name: copy Obsidian desktop file
+  copy:
+    src: files/obsidian.desktop
+    dest: /home/{{ user }}/.local/share/applications/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
