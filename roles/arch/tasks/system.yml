@@ -94,6 +94,7 @@
   blockinfile:
     path: /home/{{ user }}/aliasrc
     insertbefore: "alias v='vim'"
+    marker: "<!-- {mark} ANSIBLE MANAGED BLOCK -->"
     block: |
       alias i3config='vim ~/.config/i3/config' # Quick access to the i3 config file
       alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
