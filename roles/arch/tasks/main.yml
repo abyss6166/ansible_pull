@@ -9,7 +9,7 @@
   - include_tasks: i3config.yml
   - include_tasks: ../debian/tasks/oh-my-posh.yml
   - include_tasks: zsh.yml
-  - include_tasks: samba.yml
+  # - include_tasks: samba.yml
   # - include_tasks: ../base/tasks/nano.yml
   # - include_tasks: ../base/tasks/geany.yml
   # - include_tasks: ../base/tasks/conky.yml
