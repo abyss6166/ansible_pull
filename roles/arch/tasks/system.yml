@@ -45,6 +45,16 @@
     group: "{{ user }}"
     backup: yes
 
+- name: install new zsh file
+  tags: poshtheme
+  copy:
+    src: files/zshrc
+    dest: /home/{{ user }}/.zshrc
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+
 # - name: Create home directories
 #   become_user: "{{ user }}"
 #   shell:

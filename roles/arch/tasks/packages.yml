@@ -79,6 +79,7 @@
       - dolphin
       - fastfetch
       - xsel
+      - eza
 
       # Services
       - xdg-utils
