@@ -1,0 +1,205 @@
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xJf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+alias zip='tar -zcvf'
+
+export EDITOR=vim
+
+alias la='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons'
+alias tree='eza --tree'
+alias las='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=size'
+alias lat='eza --long --header -a -g --group-directories-first --time-style=long-iso --icons --reverse --sort=modified'
+
+alias zshrc='vim ~/.zshrc' # Quick access to the ~/.zshrc file
+alias aliasrc='vim ~/aliasrc' # Quick access to the aliasrc config file
+alias vimrc='vim ~/.vimrc'
+alias zrc='vim ~/.zshrc'
+alias arc='vim ~/aliasrc'
+alias vrc='vim ~/.vimrc'
+alias src='source ~/aliasrc'
+alias zsrc='source ~/.zshrc'
+
+alias v='vim'
+alias vo='vim -O'
+alias vp='vim -p'
+alias vfo='vim -O $(fzf -m)'
+alias vf='vim $(fzf -m)'
+
+alias grep='grep --color'
+alias sgrep='grep -R -n -H -C 5 --exclude-dir={.git,.svn,CVS} '
+
+alias t='tail -f'
+alias curl='curl -LIv'
+
+alias rs='rsync -v'
+alias rsa='rsync -avz'
+
+# Command line head / tail shortcuts
+alias -g H='| head'
+alias -g T='| tail'
+alias -g G='| grep -in --color'
+alias -g L="| less"
+alias -g M="| most"
+alias -g LL="2>&1 | less"
+alias -g CA="2>&1 | cat -A"
+alias -g NE="2> /dev/null"
+alias -g NUL="> /dev/null 2>&1"
+alias -g F='| fzf'
+
+alias dud='du -d 1 -h'
+alias dush='du -sh *'
+alias dua='sudo du -sh /* | sort -rh | head -15'
+
+alias fd='{{ fd_package }}'
+alias fdl='{{ fd_package }} -l'
+alias fde='{{ fd_package }} -e'
+alias fdf='{{ fd_package }} -t f'
+alias fdd='{{ fd_package }} -t d'
+
+alias h='history 0'
+alias hg='history 0 | grep'
+
+alias hgrep="fc -El 0 | grep"
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+alias unexport='unset'
+
+alias rm='rm -iv'
+alias cp='cp -iv'
+alias mv='mv -iv'
+
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias editgrub='sudo vim /boot/grub/grub.cfg'
+
+alias gp='gitpush'
+alias gu='gitupdate'
+alias gs='git status'
+
+gitpush() {
+    git add .
+    git commit -m "$*"
+    git pull
+    git push
+}
+
+mkcd () {
+	mkdir -pv "$1"
+	cd "$1"
+}
+alias df='df -hT -x squashfs -x tmpfs -x devtmpfs'
+alias free='free -h'
+alias ~='cd ~'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias chx='chmod +x'
+alias ipba='ip -br a'
+alias ipa='ip -c a'
+alias scss='{{ init_status}}'
+alias scst='{{ init_start }}'
+alias scre='{{ init_restart }}'
+alias ff='fastfetch'
+alias nf='neofetch'
+alias c='{{ bat }}'
+alias cat='{{ bat }}'
+alias fr='fc-cache -f -v > /dev/null'
+
+alias install='sudo {{ pkgmgr_install }}'
+alias search='{{ pkgmgr_search }}'
+alias upgrade='sudo {{ pkgmgr_upgrade }}'
+alias remove='sudo {{ pkgmgr_remove }}'
+alias info='{{ pkgmgr_info }}'
+alias {{ pkgmgr_install_short }}='sudo {{ pkgmgr_install }}'
+alias {{ pkgmgr_search_short }}='{{ pkgmgr_search }}'
+alias {{ pkgmgr_upgrade_short }}='sudo {{ pkgmgr_upgrade }}'
+alias {{ pkgmgr_remove_short }}='sudo {{ pkgmgr_remove }}'
+
+shz() {
+  ssh z-mh47577@"$1"
+}
+
+sshcopy() {
+  ssh-copy-id -i ~/.ssh/id_rsa.pub z-mh47577@"$1"
+}
+
+alias curl='curl -LIv'
+
+vff() {
+  local files
+
+  files=(${(f)"$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1 -m)"})
+
+  if [[ -n $files ]]
+  then
+     vim -- $files
+     print -l $files[1]
+  fi
+}
+
+alias fzff="{{ fd_package }} --type f --color=never --hidden | fzf --preview '{{ bat }} --color=always --line-range :50 {}'"
+alias fzfd="{{ fd_package }} --type d . --color=never --hidden | fzf --preview 'eza --tree {} | head -50'"
+
+# fda - including hidden directories
+fcd() {
+  local dir
+  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m --preview 'eza --tree {} | head -75') && cd "$dir"
+}
+
+# cf - fuzzy cd from anywhere
+# ex: cf word1 word2 ... (even part of a file name)
+# zsh autoload function
+cf() {
+  local file
+
+  file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+  if [[ -n $file ]]
+  then
+     if [[ -d $file ]]
+     then
+        cd -- $file
+     else
+        cd -- ${file:h}
+     fi
+  fi
+}
+
+# cdf - cd into the directory of the selected file
+cdf() {
+   local file
+   local dir
+   file=$(fzf +m -q "$1") && dir=$(dirname "$file") && cd "$dir"
+}
+
+# using ripgrep combined with preview
+# find-in-file - usage: fif <searchTerm>
+fif() {
+  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
+  rg --hidden --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --hidden --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
+}
