@@ -1,8 +1,8 @@
 - include_vars: "{{ ansible_distribution }}.yml"
 
 - block:
-  # - include_tasks: ../arch/tasks/users.yml
-  #   when: ansible_distribution == "Archlinux"
+  - include_tasks: ../arch/tasks/users.yml
+    when: ansible_distribution == "Archlinux"
   - include_tasks: directories.yml
   - include_tasks: tasks/packages.yml
   - include_tasks: configs.yml
