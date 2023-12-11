@@ -40,13 +40,13 @@
 #     - debug:
 #         msg={{hostname.stdout}}
 
-- hosts: localhost
-  connection: local
-  tags: fedora,debian,lubuntu,void,arch
-  become: true
-  roles:
-    - role: arch
-      when: ansible_distribution == "Archlinux"
+# - hosts: localhost
+#   connection: local
+#   tags: fedora,debian,lubuntu,void,arch
+#   become: true
+#   roles:
+#     - role: arch
+#       when: ansible_distribution == "Archlinux"
 
 - hosts: localhost
   connection: local
@@ -78,5 +78,5 @@
       when: ansible_distribution == "Void"
     - role: ubuntu
       when: ansible_distribution == "Ubuntu" and ansible_hostname != "ubuntuserver"
-    # - role: arch
-    #   when: ansible_distribution == "Archlinux"
+    - role: arch
+      when: ansible_distribution == "Archlinux"
