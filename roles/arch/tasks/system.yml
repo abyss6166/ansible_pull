@@ -115,8 +115,9 @@
 
 - name: remove Ansible comment lines
   lineinfile:
-    line: "{{ item}}"
+    line: "{{ item }}"
     state: absent
+    path: /home/{{ user }}/aliasrc
   with_items:
     - "# BEGIN ANSIBLE MANAGED BLOCK"
     - "# END ANSIBLE MANAGED BLOCK"
