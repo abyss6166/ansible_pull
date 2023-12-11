@@ -90,6 +90,16 @@
     group: "{{ user }}"
     backup: yes
 
+- name: add extra Arch aliases - configs
+  blockinfile:
+    path: /home/{{ user }}/aliasrc
+    insertafter: "alias zsrc='source ~/.zshrc'"
+    block: |
+      alias i3config='vim ~/.config/i3/config' # Quick access to the i3 config file
+      alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
+      alias i3c='vim ~/.config/i3/config'
+      alias pb='vim ~/.config/polybar/config.ini'
+
 - name: add extra Arch aliases - package manager
   blockinfile:
     path: /home/{{ user }}/aliasrc
@@ -101,16 +111,6 @@
       alias yps='yay -Ss'
       alias yr='yay -R' 
       alias yu='yay -Sua'
-
-- name: add extra Arch aliases - configs
-  blockinfile:
-    path: /home/{{ user }}/aliasrc
-    insertafter: "alias zsrc='source ~/.zshrc'"
-    block: |
-      alias i3config='vim ~/.config/i3/config' # Quick access to the i3 config file
-      alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
-      alias i3c='vim ~/.config/i3/config'
-      alias pb='vim ~/.config/polybar/config.ini'
 
 # - name: set wallpaper
 #   tags: nitrogen
