@@ -53,6 +53,7 @@
     chdir: /home/{{ user }}
     executable: /bin/bash
 
+
 # - name: copy script
 #   copy:
 #     src: files/script.sh
@@ -113,6 +114,13 @@
       alias polybar='vim ~/.config/polybar/config.ini'  # Quick access to polybar config file
       alias i3c='vim ~/.config/i3/config'
       alias pb='vim ~/.config/polybar/config.ini'
+
+- name: set wallpaper
+  tags: nitrogen
+  become_user: "{{ user }}"
+  command:
+    cmd: "nitrogen --set-auto --save /usr/share/wallpapers/arch.png"
+
 
 # - name: back up vimrc file
 #   tags: vimrc
