@@ -21,3 +21,4 @@
       - "git/polybar"
       - "git/yay"
       - ".config/neofetch"
+      - ".config/geany"

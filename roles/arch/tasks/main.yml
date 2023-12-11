@@ -4,17 +4,17 @@
   - include_tasks: users.yml
   - include_tasks: packages.yml
   - include_tasks: directories.yml
-  - include_tasks: ../base/tasks/configs.yml
+  # - include_tasks: ../base/tasks/configs.yml
   - include_tasks: lightdm.yml
   - include_tasks: i3config.yml
   - include_tasks: ../debian/tasks/oh-my-posh.yml
   - include_tasks: zsh.yml
   - include_tasks: samba.yml
-  - include_tasks: ../base/tasks/nano.yml
-  - include_tasks: ../base/tasks/geany.yml
-  - include_tasks: ../base/tasks/conky.yml
-  - include_tasks: ../base/tasks/fonts.yml
-  - include_tasks: ../base/tasks/fzf.yml
+  # - include_tasks: ../base/tasks/nano.yml
+  # - include_tasks: ../base/tasks/geany.yml
+  # - include_tasks: ../base/tasks/conky.yml
+  # - include_tasks: ../base/tasks/fonts.yml
+  # - include_tasks: ../base/tasks/fzf.yml
   - include_tasks: git.yml
   - include_tasks: system.yml
   - include_tasks: ../base/tasks/onedrivegui.yml
