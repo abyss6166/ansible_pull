@@ -56,7 +56,7 @@
   become_user: "{{ user }}"
   dconf:
     key: "/com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d/font"
-    value: "'MesloLGS NF 10'"
+    value: "'JetBrainsMono Nerd Font Regular 10'"
 
 - name: set foreground color
   become_user: "{{ user }}"

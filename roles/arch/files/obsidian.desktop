@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Obsidian
-Exec=/home/{{ user }}/Downloads/Obsidian-1.4.16.AppImage %u
+Exec=/home/matt/Downloads/Obsidian-1.4.16.AppImage %u
 Terminal=false
 Type=Application
 Icon=/usr/share/icons/obsidian-icon.png

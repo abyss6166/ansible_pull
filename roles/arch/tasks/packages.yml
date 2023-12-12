@@ -81,6 +81,7 @@
       - fastfetch
       - xsel
       - eza
+      - nemo
 
       # Services
       - xdg-utils
@@ -98,5 +99,6 @@
       - lxappearance
       - arc-icon-theme
       - breeze-icons
+      - obsidian-icon-theme
       # - arc-theme
   # state: latest
