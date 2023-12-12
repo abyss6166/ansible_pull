@@ -45,14 +45,14 @@
     group: "{{ user }}"
     backup: yes
 
-- name: install new zsh file
-  tags: poshtheme
-  copy:
-    src: files/zshrc
-    dest: /home/{{ user }}/.zshrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
+# - name: install new zsh file
+#   tags: poshtheme
+#   copy:
+#     src: files/zshrc
+#     dest: /home/{{ user }}/.zshrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
 
 - name: download qt5-webkit
   get_url:

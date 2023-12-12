@@ -29,7 +29,6 @@
       - ripgrep
       - duf
       - vim
-      - vi
       # - smbclient
       - neofetch
       - rsync

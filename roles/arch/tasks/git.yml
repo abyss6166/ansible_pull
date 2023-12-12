@@ -58,6 +58,7 @@
     mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
+    ansible_become_pass: "{{ userpass }}"
 
 - name: edit pacman-updates script
   lineinfile:
@@ -71,14 +72,14 @@
     dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
     state: present
     regexp: '^obj = "'
-    line: 'obj = imaplib.IMAP4_SSL('imap.gmail.com', 993)'
+    line: "'obj = imaplib.IMAP4_SSL('imap.gmail.com', 993)'"
 
 - name: edit inbox-imap script-2
   lineinfile:
     dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
     state: present
     regexp: '^obj.login'
-    line: 'obj.login('msh1921@jagmail.southalabama.edu', password)'
+    line: "'obj.login('msh1921@jagmail.southalabama.edu', password)'"
 
 - name: Clone yay
   become_user: "{{ user }}"

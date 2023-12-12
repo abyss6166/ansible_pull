@@ -95,6 +95,7 @@ ${color3}Distro: ${alignr}${color}${execi 6000 awk -F'=|"' '/PRETTY/{print $3}' 
 ${color3}Uptime: ${alignr}${color}${uptime}
 ${color3}Desktop: ${alignr}${color}${exec disp=${DISPLAY#:}; disp=${disp%.[0-9]}; cat $HOME/.desktop-session/desktop-code.$disp 2>/dev/null}
 ${color3}Resolution: ${alignr}${color}${execi 60 xdpyinfo | sed -n -r "s/^\s*dimensions:.*\s([0-9]+x[0-9]+).*/\1/p"}
+${color3}Init: ${alignr}${color}${execi 60 detect-init.sh}
 
 #------------+
 #CPU
