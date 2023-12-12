@@ -75,7 +75,7 @@
   lineinfile:
     dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
     state: present
-    regexp: '^obj = "'
+    regexp: "'^obj = imaplib.IMAP4_SSL('imap.mail.com', 993)"
     line: "'obj = imaplib.IMAP4_SSL('imap.gmail.com', 993)'"
 
 - name: edit inbox-imap script-2
@@ -86,20 +86,22 @@
     line: "'obj.login('msh1921@jagmail.southalabama.edu', password)'"
 
 - name: Clone yay
-  # become_user: "{{ user }}"
-  # become_method: su
+  become_user: "{{ user }}"
+  become_method: su
   git:
     repo: https://aur.archlinux.org/yay-bin.git
     dest: /home/{{ user }}/git/yay
     update: true
 
 - name: Build and install yay
-  # become_user: "{{ user }}"
-  # become_method: su
+  become_user: "{{ user }}"
+  become_method: su
   command:
     chdir: /home/{{ user }}/git/yay
     cmd: "makepkg -sfi --noconfirm"
     creates: /usr/bin/yay
+  responses:
+    (?i)password: "msh"
 
 # - name: download ansible-aur
 #   tags: aur
