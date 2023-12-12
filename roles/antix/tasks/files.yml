@@ -31,6 +31,12 @@
     owner: "root"
     group: "root"
 
+- name: set wallpaper
+  tags: nitrogen
+  become_user: "{{ user }}"
+  command:
+    cmd: "nitrogen --set-auto --save /usr/share/wallpapers/arch.png"
+
 - name: install Araita-Dark theme
   tags: theme
   unarchive:
@@ -86,7 +92,7 @@
 - name: edit desktop-session
   lineinfile:
     path: /home/{{ user }}/.desktop-session/default-desktop
-    regexp: '(.*?)'
+    regexp: 'zzz-icewm'
     line: "icewm"
 
 - name: edit fehbg
