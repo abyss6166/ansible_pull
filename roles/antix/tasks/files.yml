@@ -35,7 +35,7 @@
   tags: nitrogen
   become_user: "{{ user }}"
   command:
-    cmd: "nitrogen --set-auto --save /usr/share/wallpapers/debian.jpg"
+    cmd: "nitrogen --set-auto --save /usr/share/wallpaper/debian.jpg"
 
 - name: install Araita-Dark theme
   tags: theme
