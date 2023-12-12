@@ -86,16 +86,16 @@
     line: "'obj.login('msh1921@jagmail.southalabama.edu', password)'"
 
 - name: Clone yay
-  become_user: "{{ user }}"
-  become_method: su
+  # become_user: "{{ user }}"
+  # become_method: su
   git:
     repo: https://aur.archlinux.org/yay-bin.git
     dest: /home/{{ user }}/git/yay
     update: true
 
 - name: Build and install yay
-  become_user: "{{ user }}"
-  become_method: su
+  # become_user: "{{ user }}"
+  # become_method: su
   command:
     chdir: /home/{{ user }}/git/yay
     cmd: "makepkg -sfi --noconfirm"
