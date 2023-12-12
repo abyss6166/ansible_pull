@@ -131,21 +131,21 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: create anyconnect download directory
-  file:
-    path: /home/{{ user }}/Downloads/anyconnect/
-    state: directory
-    owner: root
-    group: root
-    mode: 0775
+# - name: create anyconnect download directory
+#   file:
+#     path: /home/{{ user }}/Downloads/anyconnect/
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: 0775
 
 - name: extract anyconnect archive
   unarchive:
     src: files/anyconnect-linux64-4.10.07073.tar.gz
-    dest: /home/{{ user }}/Downloads/anyconnect/
+    dest: /home/{{ user }}/Downloads
     owner: "{{ user }}"
     group: "{{ user }}"
-    creates: yes
+    # creates: yes
 
 - name: install firefox.desktop file
   copy:
