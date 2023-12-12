@@ -58,7 +58,8 @@
     mode: +x
     owner: "{{ user }}"
     group: "{{ user }}"
-  ansible_become_pass: "{{ userpass }}"
+  become_user: "{{ user }}"
+  become_pass: "{{ userpass }}"
 
 - name: edit pacman-updates script
   lineinfile:
