@@ -137,7 +137,7 @@
     dest: /home/{{ user }}/Downloads/anyconnect/
     owner: "{{ user }}"
     group: "{{ user }}"
-    create: yes
+    creates: yes
 
 - name: install firefox.desktop file
   copy:
