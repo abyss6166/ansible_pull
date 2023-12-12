@@ -56,10 +56,10 @@
   file:
     path: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
     mode: +x
-    owner: "{{ user }}"
-    group: "{{ user }}"
-  become_user: "{{ user }}"
-  become_pass: "{{ userpass }}"
+  #   owner: "{{ user }}"
+  #   group: "{{ user }}"
+  # become_user: "{{ user }}"
+  # become_pass: "{{ userpass }}"
 
 - name: edit pacman-updates script
   lineinfile:
