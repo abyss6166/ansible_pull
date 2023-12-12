@@ -118,7 +118,7 @@
   tags: gtk
   copy:
     src: files/settings.ini
-    dest: /home/{{ user }}/.config/gtk-3.0/s
+    dest: /home/{{ user }}/.config/gtk-3.0/
     backup: yes
     owner: "{{ user }}"
     group: "{{ user }}"
