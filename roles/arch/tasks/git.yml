@@ -1,23 +1,34 @@
 - name: create safe git directory
   tags: git
   shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git
+    cmd: git config --global --add safe.directory /home/{{ user }}/{{ item }}
   args:
     executable: /bin/bash
+  with_items:
+    - git
+    - git/polybar
+    - git/yay
 
-- name: create safe git directory
-  tags: git
-  shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
-  args:
-    executable: /bin/bash
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git
+#   args:
+#     executable: /bin/bash
 
-- name: create safe git directory
-  tags: git
-  shell:
-    cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
-  args:
-    executable: /bin/bash
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
+#   args:
+#     executable: /bin/bash
+
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
+#   args:
+#     executable: /bin/bash
 
 - name: create git config info - 1
   tags: git

@@ -160,6 +160,13 @@
     owner: "root"
     group: "root"
 
+- name: install Teams icon
+  copy:
+    src: files/Microsoft_Office_Teams.svg
+    dest: /.local/share/icons/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
 
 # - name: install menu icon
 #   copy:
