@@ -106,7 +106,7 @@
 
 - name: Build and install yay
   become_user: "{{ user }}"
-  # become_method: su
+  become_method: su
   expect:
     command:
       chdir: /home/{{ user }}/git/yay
