@@ -71,6 +71,24 @@
     name: /home/{{ user }}/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
     state: absent
 
+- name: Run the equivalent of "pacman -Rdd", force remove package icu
+  pacman:
+    name: icu
+    state: absent
+    force: true
+
+- name: download icu-73
+  get_url:
+    url: https://archive.archlinux.org/packages/i/icu/icu-73.2.2-x86_64.pkg.tar.zst
+    dest: /home/{{ user }}
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: install icu-73
+  pacman:
+    name: /home/{{ user }}/icu-73.2.2-x86_64.pkg.tar.zst
+    state: present
+
 - name: install vim config file
   tags: vim
   copy:
