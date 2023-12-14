@@ -1,6 +1,6 @@
 sync_dir = "~/OneDrive_Matt"
 monitor_interval = "300"
-skip_file = "~*|.~*|*.tmp|*.avs|*.fm|*.mp4|*.mkv|*.deb|.mozilla.tar.gz|QuiteRss.tar.gz"
+skip_file = "~*|.~*|*.tmp|*.avs|*.fm|*.mp4|*.mkv|*.deb|*.wv|.mozilla.tar.gz|QuiteRss.tar.gz"
 skip_dir = "|Pictures|Games|Work external|UGA|Zoom||UGA/git|bfree|Coker|Linux|NHL04"
 log_dir = "/var/log/onedrive/"
 drive_id = ""
