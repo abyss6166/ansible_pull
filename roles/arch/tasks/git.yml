@@ -126,6 +126,9 @@
     cmd: "makepkg -sfi --noconfirm"
     creates: /usr/bin/yay
 
+# Install package foo
+- yay: name=fluent-gtk-theme state=present
+
 # - name: Install aur packages
 #   aur:
 #     name: fluent-gtk-theme
@@ -135,14 +138,14 @@
 #     extra_args: --mflags --skipinteg
 #   become: true
 
-- name: Install package from AUR using a Pacman compatible AUR helper
-  pacman:
-    name: 
-      - fluent-gtk-theme
-      - nomacs
-    state: present
-  executable: yay
-  extra_args: --builddir /var/cache/yay
+# - name: Install package from AUR using a Pacman compatible AUR helper
+#   pacman:
+#     name: 
+#       - fluent-gtk-theme
+#       - nomacs
+#     state: present
+#   executable: yay
+#   extra_args: --builddir /var/cache/yay
 
 # - name: download ansible-aur
 #   tags: aur
