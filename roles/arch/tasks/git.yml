@@ -127,7 +127,8 @@
     creates: /usr/bin/yay
 
 # Install package foo
-- yay: name=fluent-gtk-theme state=present
+- name: install aur package
+  yay: name=fluent-gtk-theme state=present
 
 # - name: Install aur packages
 #   aur:
