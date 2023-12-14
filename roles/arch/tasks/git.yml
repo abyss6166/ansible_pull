@@ -140,9 +140,9 @@
     name: 
       - fluent-gtk-theme
       - nomacs
-    state: present
-    executable: yay
-    extra_args: --builddir /var/cache/yay
+  state: present
+  executable: yay
+  extra_args: --builddir /var/cache/yay
 
 # - name: download ansible-aur
 #   tags: aur
