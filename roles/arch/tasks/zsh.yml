@@ -3,3 +3,17 @@
 - name: change shell
   tags: zsh,shell
   shell: usermod --shell /bin/zsh {{ user }}
+
+- name: edit zsh file - 1
+  tags: zsh
+  lineinfile:
+    path: /home/{{ user }}/.zshrc
+    regexp: '^source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null'
+    line: 'source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null'
+
+- name: edit zsh file - 2
+  tags: zsh
+  lineinfile:
+    path: /home/{{ user }}/.zshrc
+    regexp: '^source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null'
+    line: 'source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null'
