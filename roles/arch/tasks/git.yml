@@ -128,7 +128,9 @@
 
 - name: Install package from AUR using a Pacman compatible AUR helper
   pacman:
-    name: fluent-gtk-theme
+    name: 
+      - fluent-gtk-theme
+      - nomacs
     state: present
     executable: yay
     extra_args: --builddir /var/cache/yay
