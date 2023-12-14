@@ -104,9 +104,9 @@
     dest: /home/{{ user }}/git/yay
     update: true
 
-- name: install pexpect
-  pip:
-    name: pexpect
+# - name: install pexpect
+#   pip:
+#     name: pexpect
 
 - name: Build and install yay
   become_user: "{{ user }}"
