@@ -115,6 +115,13 @@
     responses:
       (?i)password: "msh"
 
+- name: Install package from AUR using a Pacman compatible AUR helper
+  pacman:
+    name: fluent-gtk-theme
+    state: present
+    executable: yay
+    extra_args: --builddir /var/cache/yay
+
 # - name: download ansible-aur
 #   tags: aur
 #   git:
