@@ -61,6 +61,7 @@
       - python-psutil
       - fuse2
       - python-pip
+      - python-pexpect
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols
