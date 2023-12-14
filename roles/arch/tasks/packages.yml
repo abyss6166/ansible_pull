@@ -60,6 +60,7 @@
       - sysstat
       - python-psutil
       - fuse2
+      - python-pip
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols

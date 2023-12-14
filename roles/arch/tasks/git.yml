@@ -104,12 +104,6 @@
     dest: /home/{{ user }}/git/yay
     update: true
 
-- name: install python-pip
-  pacman:
-    name: 
-      - python-pip
-  state: latest
-
 - name: install pexpect
   pip:
     name: pexpect
