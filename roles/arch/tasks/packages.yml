@@ -71,6 +71,8 @@
       - otf-font-awesome
       - ttf-font-awesome
       - ttf-jetbrains-mono-nerd
+      - ttf-iosevkaterm-nerd
+      - ttc-iosevka-ss08
 
       # Applications
       - pcmanfm
