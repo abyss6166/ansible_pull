@@ -14,4 +14,5 @@
       - dnsutils
       - nitrogen
       - onedrive
+      - fonts-terminus
     state: latest
