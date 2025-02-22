@@ -54,37 +54,37 @@
 #     group: "{{ user }}"
 #     backup: yes
 
-- name: Run the equivalent of "pacman -Rdd", force remove package icu
-  pacman:
-    name: icu
-    state: absent
-    force: true
+# - name: Run the equivalent of "pacman -Rdd", force remove package icu
+#   pacman:
+#     name: icu
+#     state: absent
+#     force: true
 
-- name: download qt5-webkit and icu-73
-  get_url:
-    url: https://archive.archlinux.org/packages/{{ item }}
-    dest: /home/{{ user }}
-    owner: "{{ user }}"
-    group: "{{ user }}"
-  with_items:
-    - q/qt5-webkit/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
-    - i/icu/icu-73.2-2-x86_64.pkg.tar.zst
+# - name: download qt5-webkit and icu-73
+#   get_url:
+#     url: https://archive.archlinux.org/packages/{{ item }}
+#     dest: /home/{{ user }}
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#   with_items:
+#     - q/qt5-webkit/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+#     - i/icu/icu-73.2-2-x86_64.pkg.tar.zst
 
-- name: install qt5-webkit and icu-73
-  pacman:
-    name: /home/{{ user }}/{{ item }}
-    state: present
-  with_items:
-    - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
-    - icu-73.2-2-x86_64.pkg.tar.zst
+# - name: install qt5-webkit and icu-73
+#   pacman:
+#     name: /home/{{ user }}/{{ item }}
+#     state: present
+#   with_items:
+#     - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+#     - icu-73.2-2-x86_64.pkg.tar.zst
 
-- name: remove qt5-webkit and icu-73 files
-  file:
-    name: /home/{{ user }}/{{ item }}
-    state: absent
-  with_items:
-    - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
-    - icu-73.2-2-x86_64.pkg.tar.zst
+# - name: remove qt5-webkit and icu-73 files
+#   file:
+#     name: /home/{{ user }}/{{ item }}
+#     state: absent
+#   with_items:
+#     - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+#     - icu-73.2-2-x86_64.pkg.tar.zst
 
 - name: install vim config file
   tags: vim
