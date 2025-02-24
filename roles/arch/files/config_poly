@@ -231,8 +231,11 @@ workspace_auto_back_and_forth yes
 
 exec picom
 exec nitrogen --restore
+exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id VBoxClient --clipboard
+exec_always --no-startup-id numlockx on
+bindsym F11 exec tilix --quake
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -284,7 +287,8 @@ smart_gaps on
 bindsym $mod+F2 exec firefox;workspace 2;focus
 bindsym $mod+F3 exec quiterss;workspace 3
 bindsym $mod+F4 exec thunderbird;workspace 4;focus
-bindsym $mod+F5 exec notepadqq;workspace 5
+bindsym $mod+F5 exec geany;workspace 5
 bindsym $mod+F6 exec code;workspace 6
-bindsym $mod+F7 exec caja;workspace 7;focus
+bindsym $mod+F7 exec nemo;workspace 7;focus
 bindsym $mod+F8 exec discord;workspace 8
+bindsym $mod+F9 exec obsidian;workspace 9

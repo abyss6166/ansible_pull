@@ -54,8 +54,8 @@
 - name: install polybar config file
   tags: polybar,i3
   copy:
-    src: files/config.ini
-    dest: /home/{{ user }}/.config/polybar/
+    src: files/config-color.ini
+    dest: /home/{{ user }}/.config/polybar/config.ini
     owner: "{{ user }}"
     group: "{{ user }}"
     backup: yes
@@ -63,8 +63,8 @@
 - name: install polybar launch file
   tags: polybar,i3
   copy:
-    src: files/launch.sh
-    dest: /home/{{ user }}/.config/polybar/
+    src: files/launch-newpolybar.sh
+    dest: /home/{{ user }}/.config/polybar/launch.sh
     owner: "{{ user }}"
     group: "{{ user }}"
     backup: yes

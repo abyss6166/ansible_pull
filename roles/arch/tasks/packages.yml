@@ -64,6 +64,7 @@
       - python-pexpect
       - inetutils
       - numlockx
+      - python-passlib
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols
