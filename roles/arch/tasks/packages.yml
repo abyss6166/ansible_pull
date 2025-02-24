@@ -63,6 +63,7 @@
       - python-pip
       - python-pexpect
       - inetutils
+      - numlockx
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols
@@ -72,6 +73,7 @@
       - ttf-font-awesome
       - ttf-jetbrains-mono-nerd
       - ttf-iosevkaterm-nerd
+      - ttf-iosevka-nerd
       - ttc-iosevka-ss08
 
       # Applications

@@ -22,3 +22,4 @@
       - "git/yay"
       - ".config/neofetch"
       - ".config/geany"
+      - ".config/gtk-3.0"

@@ -13,12 +13,28 @@
     state: started
     enabled: yes
 
-- name: edit pacman config file
+- name: edit pacman config file - 1
   tags: pacman
   lineinfile:
     path: /etc/pacman.conf
     regexp: '^#ParallelDownloads'
     line: 'ParallelDownloads = 5'
+    backrefs: yes
+
+- name: edit pacman config file - 2
+  tags: pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#Color'
+    line: 'Color'
+    backrefs: yes
+
+- name: edit pacman config file - 3
+  tags: pacman
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: '^#ILoveCandy'
+    line: 'ILoveCandy'
     backrefs: yes
 
 - name: enable virtualbox
@@ -45,46 +61,14 @@
     group: "{{ user }}"
     backup: yes
 
-# - name: install new zsh file
-#   tags: poshtheme
-#   copy:
-#     src: files/zshrc
-#     dest: /home/{{ user }}/.zshrc
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-
-# - name: Run the equivalent of "pacman -Rdd", force remove package icu
-#   pacman:
-#     name: icu
-#     state: absent
-#     force: true
-
-# - name: download qt5-webkit and icu-73
-#   get_url:
-#     url: https://archive.archlinux.org/packages/{{ item }}
-#     dest: /home/{{ user }}
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#   with_items:
-#     - q/qt5-webkit/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
-#     - i/icu/icu-73.2-2-x86_64.pkg.tar.zst
-
-# - name: install qt5-webkit and icu-73
-#   pacman:
-#     name: /home/{{ user }}/{{ item }}
-#     state: present
-#   with_items:
-#     - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
-#     - icu-73.2-2-x86_64.pkg.tar.zst
-
-# - name: remove qt5-webkit and icu-73 files
-#   file:
-#     name: /home/{{ user }}/{{ item }}
-#     state: absent
-#   with_items:
-#     - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
-#     - icu-73.2-2-x86_64.pkg.tar.zst
+- name: install gtk config file
+  tags: gtk
+  copy:
+    src: files/gtksettings.ini
+    dest: /home/{{ user }}/.config/gtk-3.0/settings.ini
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
 
 - name: install vim config file
   tags: vim
@@ -173,6 +157,46 @@
 #     state: absent
 
 
+# - name: install new zsh file
+#   tags: poshtheme
+#   copy:
+#     src: files/zshrc
+#     dest: /home/{{ user }}/.zshrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
+
+# - name: Run the equivalent of "pacman -Rdd", force remove package icu
+#   pacman:
+#     name: icu
+#     state: absent
+#     force: true
+
+# - name: download qt5-webkit and icu-73
+#   get_url:
+#     url: https://archive.archlinux.org/packages/{{ item }}
+#     dest: /home/{{ user }}
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#   with_items:
+#     - q/qt5-webkit/qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+#     - i/icu/icu-73.2-2-x86_64.pkg.tar.zst
+
+# - name: install qt5-webkit and icu-73
+#   pacman:
+#     name: /home/{{ user }}/{{ item }}
+#     state: present
+#   with_items:
+#     - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+#     - icu-73.2-2-x86_64.pkg.tar.zst
+
+# - name: remove qt5-webkit and icu-73 files
+#   file:
+#     name: /home/{{ user }}/{{ item }}
+#     state: absent
+#   with_items:
+#     - qt5-webkit-5.212.0alpha4-18-x86_64.pkg.tar.zst
+#     - icu-73.2-2-x86_64.pkg.tar.zst
 
 
 

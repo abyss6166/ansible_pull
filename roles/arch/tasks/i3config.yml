@@ -75,14 +75,14 @@
     path: /home/{{ user }}/.config/polybar/launch.sh
     mode: +x
 
-- name: install quiterss config
-  tags: quiterss
-  copy:
-    src: ../files/QuiteRss.ini
-    dest: /home/{{ user }}/.config/QuiteRss/
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
+# - name: install quiterss config
+#   tags: quiterss
+#   copy:
+#     src: ../files/QuiteRss.ini
+#     dest: /home/{{ user }}/.config/QuiteRss/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
 
 - name: install rofi config file
   tags: rofi,i3
@@ -98,6 +98,15 @@
   copy:
     src: files/tilix.dconf
     dest: /home/{{ user }}/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
+- name: install Xresources file
+  tags: Xresources
+  copy:
+    src: files/Xresources
+    dest: /home/{{ user }}/.XResources
     owner: "{{ user }}"
     group: "{{ user }}"
     backup: yes
