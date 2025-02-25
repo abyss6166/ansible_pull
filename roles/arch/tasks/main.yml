@@ -21,5 +21,6 @@
   - include_tasks: ../void/tasks/onedrive.yml
   - include_tasks: tilix_config.yml
   - include_tasks: obsidian.yml
+  - include_tasks: onedrive.yml
 
   # - include_tasks: autologin.yml

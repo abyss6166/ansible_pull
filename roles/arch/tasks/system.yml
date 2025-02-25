@@ -113,6 +113,14 @@
     - "## BEGIN ANSIBLE MANAGED BLOCK"
     - "## END ANSIBLE MANAGED BLOCK"
 
+- name: copy OneDrive desktop file
+  copy:
+    src: files/OneDriveGUI.desktop
+    dest: /home/{{ user }}/.local/share/applications/
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    backup: yes
+
 
 
 # - name: set wallpaper

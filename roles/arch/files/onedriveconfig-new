@@ -1,0 +1,6 @@
+sync_dir = "~/OneDrive_Matt"
+monitor_log_frequency = "5"
+monitor_fullscan_frequency = "10"
+skip_file = "~*|.~*|*.tmp|*.avs|*.fm|*.mp4|*.mkv|*.deb|*.wv|QuiteRss.tar.gz|*.m4a|*.opus|*.lwi|*.avi|*.mpg|*.flac"
+skip_dir = "Pictures|Games|Work external|Zoom|bfree|Coker|Linux|UGA\git|UGA/git|Documents/Zoom|Hockey|Nichols|UGA/Pictures|pictures|*Pictures*|*Games*|*FB avisynth scrips*"
+

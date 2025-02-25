@@ -1,0 +1,25 @@
+- name: download OneDriveGUI
+  tags: onedrive
+  get_url:
+    url: https://github.com/bpozdena/OneDriveGUI/releases/download/v1.1.1a/OneDriveGUI-1.1.1-x86_64.AppImage
+    dest: /home/{{ user }}/Downloads/
+    mode: +x
+    owner: "{{ user }}"
+    group: "{{ user }}"
+
+- name: create directory
+  tags: directories,onedrive
+  file:
+    path: /home/{{ user }}/.config/onedrive/
+    state: directory
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: 0755
+
+- name: copy onedrive config
+  tags: onedrive
+  copy:
+    src: files/onedriveconfig-new
+    dest: /home/{{ user }}/.config/onedrive/config
+    owner: "{{ user }}"
+    group: "{{ user }}"
