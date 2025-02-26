@@ -65,6 +65,7 @@
       - inetutils
       - numlockx
       - python-passlib
+      - git-delta
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols

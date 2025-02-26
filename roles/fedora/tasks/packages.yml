@@ -25,6 +25,8 @@
       - audacious
       - nomacs
       - onedrive
+      - git-delta
+      - fastfetch
     state: latest
   when: ansible_distribution == "Fedora"
 
