@@ -9,7 +9,7 @@
   with_items:
       - ".poshthemes"
       - ".config"
-      - ".config/QuiteRss"
+      # - ".config/QuiteRss"
       - ".config/onedrive"
 
 - name: create user dirs 
