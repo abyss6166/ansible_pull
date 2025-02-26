@@ -16,6 +16,7 @@
   - include_tasks: thunderbird-systray.yml
   - include_tasks: ../arch/tasks/obsidian.yml
   - include_tasks: appimagelauncher.yml
+  - include_tasks: betterbird.yml
   - include_tasks: work.yml
     # when: work is defined
 
