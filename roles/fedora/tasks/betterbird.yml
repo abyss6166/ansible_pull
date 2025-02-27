@@ -2,7 +2,7 @@
   tags: betterbird
   copy:
     src: files/install-betterbird.sh
-    dest: /home/ {{ user }}
+    dest: /home/{{ user }}
     owner: "{{ user }}"
     group: "{{ user }}"
 
