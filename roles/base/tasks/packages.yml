@@ -30,7 +30,7 @@
       - duf
       - vim
       # - smbclient
-      - neofetch
+      # - neofetch
       - rsync
     state: latest
 
