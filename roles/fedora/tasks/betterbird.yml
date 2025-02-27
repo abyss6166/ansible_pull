@@ -6,7 +6,7 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: set polybar script to executable
+- name: set betterbird script to executable
   tags: betterbird
   file:
     path: /home/{{ user }}/install-betterbird.sh

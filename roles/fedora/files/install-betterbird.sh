@@ -50,17 +50,17 @@ downloadUpdate() {
   echoLog "Downloaded archive."
 }
 
-checkHash() {
-  local hash=$(sha256sum "$tmpFile" | awk '{print $1}')
-  wget -q -O "$tmpDir/sha256.txt" "$shaFile"
-  local update=$(grep $hash $tmpDir/sha256.txt | awk '{print $2}')
-  if [ "$update" == "" ]; then
-    echoLog "Hash $hash not found in $shaFile."
-    exit 1
-  else
-    echoLog "Hash check OK, hash matched ${update:1}."
-  fi
-}
+# checkHash() {
+#   local hash=$(sha256sum "$tmpFile" | awk '{print $1}')
+#   wget -q -O "$tmpDir/sha256.txt" "$shaFile"
+#   local update=$(grep $hash $tmpDir/sha256.txt | awk '{print $2}')
+#   if [ "$update" == "" ]; then
+#     echoLog "Hash $hash not found in $shaFile."
+#     exit 1
+#   else
+#     echoLog "Hash check OK, hash matched ${update:1}."
+#   fi
+# }
 
 backup() {
   echoLog "Checking if existing Betterbird installation needs to be backed up..."
