@@ -26,13 +26,13 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: download dock icons
-  tags: cairo-dock
-  copy:
-    src: files/notepadqq.svg
-    dest: /home/{{ user }}/.icons
-    owner: "{{ user }}"
-    group: "{{ user }}"
+# - name: download dock icons
+#   tags: cairo-dock
+#   copy:
+#     src: files/notepadqq.svg
+#     dest: /home/{{ user }}/.icons
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 
 - name: download dock icons
   tags: cairo-dock
@@ -50,12 +50,12 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-- name: install quiterss config
-  tags: quiterss
-  copy:
-    src: ../files/QuiteRss.ini
-    dest: /home/{{ user }}/.config/QuiteRss/
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
+# - name: install quiterss config
+#   tags: quiterss
+#   copy:
+#     src: ../files/QuiteRss.ini
+#     dest: /home/{{ user }}/.config/QuiteRss/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
 
