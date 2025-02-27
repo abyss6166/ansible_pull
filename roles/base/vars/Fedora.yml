@@ -1,5 +1,5 @@
-libreoffice_package: libreoffice
 firefox_package: firefox
+libreoffice_package: libreoffice
 chromium_package: chromium
 ssh_package: openssh
 user: matt
