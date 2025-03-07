@@ -1,6 +1,6 @@
 - name: copy wallpaper
   copy:
-    src: files/wallpaper.png
+    src: files/wallpaper3.png
     dest: /usr/share/wallpapers
     owner: "{{ user }}"
     group: "{{ user }}"
