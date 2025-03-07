@@ -3,3 +3,4 @@ libreoffice_package: libreoffice
 firefox_package: firefox
 ssh_package: ssh
 user: matt
+copyq: copyq

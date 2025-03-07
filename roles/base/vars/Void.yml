@@ -20,6 +20,7 @@ pkgmgr_remove_short: xr
 airline_theme: wombat
 vim_theme: gotham
 omp_theme: slimfat
+copyq: CopyQ
 alias_template_file: alias.j2
 zshrc_template_file: zshrc.j2
 vimrc_template_file: vimrc.j2

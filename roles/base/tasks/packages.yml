@@ -23,7 +23,7 @@
       - "{{ chromium_package }}"
       - "{{ ssh_package }}"
       - btop
-      - copyq
+      - "{{ copyq }}"
       - "{{ fd_package }}"
       - fzf
       - ripgrep

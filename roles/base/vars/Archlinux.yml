@@ -24,6 +24,7 @@ airline_theme:
 vim_theme: two-firewatch
 omp_theme: wopian
 fetch: fastfetch --load-config examples/10.jsonc
+copyq: copyq
 alias_template_file: alias.j2
 zshrc_template_file: zshrc.j2
 vimrc_template_file: vimrc.j2
