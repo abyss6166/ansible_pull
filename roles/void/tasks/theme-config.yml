@@ -33,7 +33,7 @@
   become: true
   lineinfile:
     path: /home/{{ user }}/.vimrc
-    regexp: '^Plug 'vim-airline/vim-airline'
+    regexp: '^Plug 'vim-airline/vim-airline''
     state: absent
 
 - name: edit vimrc file - airline2
@@ -41,7 +41,7 @@
   become: true
   lineinfile:
     path: /home/{{ user }}/.vimrc
-    regexp: '^Plug 'vim-airline/vim-airline-themes'
+    regexp: '^Plug 'vim-airline/vim-airline-themes''
     state: absent
 
 # - name: apply wallpaper
