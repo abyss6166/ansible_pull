@@ -1,0 +1,26 @@
+libreoffice_package: libreoffice
+firefox_package: firefox
+chromium_package: chromium
+ssh_package: openssh
+user: matt
+fd_package: fd
+init_status: sv status
+init_start: sv up
+init_restart: sv restart
+bat: bat
+pkgmgr_install: xbps-install
+pkgmgr_search: xbps-query -Rs
+pkgmgr_upgrade: xbps-install -Su
+pkgmgr_remove: xbps-remove
+pkgmgr_info: n/a
+pkgmgr_install_short: xi
+pkgmgr_search_short: xs
+pkgmgr_upgrade_short: xu
+pkgmgr_remove_short: xr
+airline_theme: wombat
+vim_theme: gotham
+omp_theme: slimfat
+fetch: fastfetch --load-config examples/10.jsonc
+alias_template_file: alias.j2
+zshrc_template_file: zshrc.j2
+vimrc_template_file: vimrc.j2

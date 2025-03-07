@@ -3,6 +3,35 @@
   community.general.xbps:
     name: '{{item}}'
   loop:
+      - zsh
+      - zsh-syntax-highlighting
+      - zsh-autosuggestions
+      - tilix
+      - htop
+      - conky
+      - ncdu
+      - bat
+      # - onedrive  ## Not available on Arch
+      - samba
+      - cifs-utils
+      - "{{ firefox_package }}"
+      - thunderbird
+      - "{{ libreoffice_package }}"
+      - gnupg
+      - geany
+      - unzip
+      - dconf-editor
+      - "{{ chromium_package }}"
+      - "{{ ssh_package }}"
+      - btop
+      - copyq
+      - "{{ fd_package }}"
+      - fzf
+      - ripgrep
+      - duf
+      - vim
+      - rsync
+
       #GUI
       - arc-theme
       - arc-icon-theme
@@ -11,6 +40,7 @@
       - kde5-baseapps
       - xorg
       - nano
+      - vim
 
       #Applications
       - vscode
@@ -23,7 +53,4 @@
       - linux-headers
       - pulseaudio
       - python3-psutil
-
-      # - xinit
-      # - quiterss
   #  state: latest
