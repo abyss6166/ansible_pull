@@ -1,0 +1,9 @@
+---
+
+- name: Create home directories
+  become_user: "{{ user }}"
+  shell:
+    cmd: xdg-user-dirs-update
+  args:
+    chdir: /home/{{ user }}
+    executable: /bin/bash
