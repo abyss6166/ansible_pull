@@ -7,7 +7,7 @@
   - include_tasks: ../base/tasks/geany.yml
   - include_tasks: ../base/tasks/conky.yml
   - include_tasks: ../base/tasks/fonts.yml
-  - include_tasks: fonts.yml
+  # - include_tasks: fonts.yml
   - include_tasks: ../base/tasks/onedrivegui.yml
   - include_tasks: ../base/tasks/nano.yml
   - include_tasks: ../fedora/tasks/oh-my-posh.yml
