@@ -10,8 +10,6 @@
       - kde5
       - kde5-baseapps
       - xorg
-      - nano
-      - vim
 
       #Applications
       - vscode
@@ -24,4 +22,9 @@
       - linux-headers
       - pulseaudio
       - python3-psutil
+      - nano
+      - vim
+      - eza
+      - virtualbox-ose
+      - virtualbox-ose-guest
   #  state: latest

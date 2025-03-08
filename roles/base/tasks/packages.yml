@@ -29,8 +29,8 @@
       - ripgrep
       - duf
       - vim
-      # - smbclient
-      # - neofetch
+      # - eza
+      - fastfetch
       - rsync
     state: latest
 

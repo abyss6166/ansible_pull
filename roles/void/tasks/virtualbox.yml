@@ -13,3 +13,13 @@
     line: matt ALL=NOPASSWD:/usr/bin/VBoxClient-all
     state: present
     validate: /usr/sbin/visudo -cf %s
+
+- name: create virtualbox link
+  tags: vbox
+  become: true
+  shell: ln -s /etc/sv/vboxservice /var/service/
+
+- name: start virtualbox services
+  tags: vbox
+  become: true
+  shell: VBoxClient --clipboard --vmsvga
