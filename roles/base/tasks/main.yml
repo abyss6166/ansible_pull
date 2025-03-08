@@ -5,8 +5,8 @@
     when: ansible_distribution == "Archlinux"
   - include_tasks: ../arch/tasks/users.yml
     when: ansible_distribution == "Archlinux"
-  # - include_tasks: ../void/tasks/packages.yml
-  #   when: ansible_distribution == "Void"
+  - include_tasks: ../void/tasks/packages.yml
+    when: ansible_distribution == "Void"
   - include_tasks: ../void/tasks/users.yml
     when: ansible_distribution == "Void"
   - include_tasks: directories.yml
