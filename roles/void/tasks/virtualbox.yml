@@ -22,4 +22,9 @@
 - name: start virtualbox services
   tags: vbox
   become: true
-  shell: VBoxClient --clipboard --vmsvga
+  shell: VBoxClient --clipboard
+
+- name: start virtualbox services
+  tags: vbox
+  become: true
+  shell: VBoxClient --vmsvga
