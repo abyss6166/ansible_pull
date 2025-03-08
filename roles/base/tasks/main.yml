@@ -11,7 +11,7 @@
     when: ansible_distribution == "Void"
   - include_tasks: directories.yml
   - include_tasks: tasks/packages.yml
-    when: ansible_distribution != "Void"
+    # when: ansible_distribution != "Void"
   - include_tasks: configs.yml
   - include_tasks: tasks/geany.yml
   - include_tasks: tasks/conky.yml
