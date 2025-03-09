@@ -1,7 +1,14 @@
-- name: install Meslo fonts
-  tags: font,fonts
-  unarchive:
-    src: files/Meslo.zip
+# - name: install Meslo fonts
+#   tags: font,fonts
+#   unarchive:
+#     src: files/Meslo.zip
+#     dest: /home/{{ user }}/.local/share/fonts
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+
+- name: copy 3270 font
+  copy:
+    src: files/3270NerdFont-Regular.ttf
     dest: /home/{{ user }}/.local/share/fonts
     owner: "{{ user }}"
     group: "{{ user }}"

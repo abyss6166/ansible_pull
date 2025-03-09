@@ -19,12 +19,12 @@
   become: true
   shell: ln -s /etc/sv/vboxservice /var/service/
 
-- name: start virtualbox services
+- name: start virtualbox service - clipboard
   tags: vbox
   become: true
   shell: VBoxClient --clipboard
 
-- name: start virtualbox services
+- name: start virtualbox service - vmsvga
   tags: vbox
   become: true
   shell: VBoxClient --vmsvga

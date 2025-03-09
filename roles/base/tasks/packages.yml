@@ -32,5 +32,6 @@
       # - eza
       - fastfetch
       - rsync
+      - syncthing
     state: latest
 

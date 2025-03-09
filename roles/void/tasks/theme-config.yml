@@ -44,6 +44,14 @@
     regexp: "^Plug 'vim-airline/vim-airline-themes'"
     state: absent
 
+- name: copy new conky config
+  copy:
+    src: files/conky.conf
+    dest: /etc/conky
+    owner: "root"
+    group: "root"
+
+
 # - name: apply wallpaper
 #   shell:
 #     cmd: plasma-apply-wallpaperimage /usr/share/wallpapers/wallpaper.png
