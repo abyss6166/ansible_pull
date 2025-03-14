@@ -66,6 +66,7 @@
       - numlockx
       - python-passlib
       - git-delta
+      - plocate
 
       # Terminal/Shell
       - ttf-nerd-fonts-symbols
