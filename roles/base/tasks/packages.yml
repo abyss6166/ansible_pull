@@ -30,7 +30,7 @@
       - duf
       - vim
       # - eza
-      - fastfetch
+      # - fastfetch
       - rsync
       - syncthing
     state: latest
