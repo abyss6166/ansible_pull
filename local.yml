@@ -67,7 +67,7 @@
     - role: cbpp
       when: ansible_hostname == "cbpp"
     - role: antix
-      when: ansible_hostname == "antix"
+      when: ansible_hostname == "antix1"
     - role: debian
       when: ansible_distribution == "Debian" and ansible_hostname != "cbpp" and ansible_hostname != "antix1"
     - role: lubuntu
