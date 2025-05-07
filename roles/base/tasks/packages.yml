@@ -32,10 +32,6 @@
       # - eza
       # - fastfetch
       - rsync
-<<<<<<< HEAD
       - syncthing
-=======
-      - flameshot
->>>>>>> 9e38e70 (adding dunst and flameshot to arch&base packages)
     state: latest
 
