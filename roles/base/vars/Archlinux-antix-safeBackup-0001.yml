@@ -1,0 +1,29 @@
+lightdmgtkgreeter_package: lightdm-gtk-greeter
+i3_package: i3-wm
+libreoffice_package: libreoffice-still
+firefox_package: firefox
+chromium_package: chromium
+ssh_package: openssh
+userpass: msh
+user: matt
+fd_package: fd
+init_status: systemctl status
+init_start: systemctl start
+init_restart: systemctl restart
+bat: bat
+pkgmgr_install: pacman -S
+pkgmgr_search: pacman -Ss
+pkgmgr_upgrade: pacman -Syu
+pkgmgr_remove: pacman -R
+pkgmgr_info: 
+pkgmgr_install_short: pi
+pkgmgr_search_short: ps
+pkgmgr_upgrade_short: pu
+pkgmgr_remove_short: pr
+airline_theme: 
+vim_theme: two-firewatch
+omp_theme: wopian
+alias_template_file: alias.j2
+zshrc_template_file: zshrc.j2
+vimrc_template_file: vimrc.j2
+fetch: fastfetch --load-config examples/10.jsonc

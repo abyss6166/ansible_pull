@@ -92,6 +92,7 @@
       - xsel
       - eza
       - nemo
+      - dunst
 
       # Services
       - xdg-utils
