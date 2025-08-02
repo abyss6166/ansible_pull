@@ -69,7 +69,7 @@
     - role: antix
       when: ansible_hostname == "antix1"
     - role: debian
-      when: ansible_distribution == "Debian" and ansible_hostname != "cbpp" and ansible_hostname != "antix1"
+      when: ansible_distribution == "Debian" and ansible_hostname != "cbpp" and ansible_hostname != "antix"
     - role: lubuntu
       when: flavor.stdout == "Lubuntu"
     - role: puppetmaster
