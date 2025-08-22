@@ -1,68 +1,68 @@
 ---
 
-- name: collect uname
-  tags: virtualbox
-  shell: uname -r
-  register: uname_result
+# - name: collect uname
+#   tags: virtualbox
+#   shell: uname -r
+#   register: uname_result
 
-- name: install packages for VirtualBox
-  tags: virtualbox
-  apt:
-    name:
-      - build-essential
-      - dkms
-      - gcc
-      - make
-      - linux-headers-{{ uname_result.stdout }}
-      - virtualbox-guest-utils 
-      - virtualbox-guest-x11
+# - name: install packages for VirtualBox
+#   tags: virtualbox
+#   apt:
+#     name:
+#       - build-essential
+#       - dkms
+#       - gcc
+#       - make
+#       - linux-headers-{{ uname_result.stdout }}
+#       - virtualbox-guest-utils 
+#       - virtualbox-guest-x11
 
-- name: Download VirtualBox Guest Additions install file
-  tags: virtualbox
-  get_url:
-    url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
-    dest: /tmp
-    owner: root
-    group: root
+# - name: Download VirtualBox Guest Additions install file
+#   tags: virtualbox
+#   get_url:
+#     url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
+#     dest: /tmp
+#     owner: root
+#     group: root
 
-- name: create directory
-  tags: directory
-  file:
-    path: /mnt/iso
-    state: directory
-    owner: root
-    group: root
-    mode: 0775
+# - name: create directory
+#   tags: directory
+#   file:
+#     path: /mnt/iso
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: 0775
 
-- name: mount VirtualBox iso
-  become: true
-  shell:
-    cmd: mount -o loop VBoxGuestAdditions_{{ vbox_version }}.iso /mnt/iso
-    chdir: /tmp/
-  args:
-    executable: /bin/bash
+# - name: mount VirtualBox iso
+#   become: true
+#   shell:
+#     cmd: mount -o loop VBoxGuestAdditions_{{ vbox_version }}.iso /mnt/iso
+#     chdir: /tmp/
+#   args:
+#     executable: /bin/bash
 
-- name: copy guest additions file
-  copy:
-    src: /mnt/iso/VBoxLinuxAdditions.run
-    dest: /tmp/
-    mode: +x
-    owner: root
-    group: root
+# - name: copy guest additions file
+#   copy:
+#     src: /mnt/iso/VBoxLinuxAdditions.run
+#     dest: /tmp/
+#     mode: +x
+#     owner: root
+#     group: root
 
-- name: set guest additions script to executable
-  file:
-    path: /tmp/VBoxLinuxAdditions.run
-    mode: +x
+# - name: set guest additions script to executable
+#   file:
+#     path: /tmp/VBoxLinuxAdditions.run
+#     mode: +x
 
-- name: install VirtualBox Guest Additions
-  tags: virtualbox
-  become: true
-  expect:
-    command: sudo sh /tmp/VBoxLinuxAdditions.run --nox11 > /dev/null
-    responses:
-      '^Do': "Yes"
-  ignore_errors: true
+# - name: install VirtualBox Guest Additions
+#   tags: virtualbox
+#   become: true
+#   expect:
+#     command: sudo sh /tmp/VBoxLinuxAdditions.run --nox11 > /dev/null
+#     responses:
+#       '^Do': "Yes"
+#   ignore_errors: true
 
 # - name: install VirtualBox Guest Additions
 #   tags: virtualbox
@@ -123,7 +123,7 @@
       tags: virtualbox
 
     - name: check if already installed
-      command: lsmod | grep -q vboxguest
+      command: lsmod | grep vboxguest
       register: vbox_loaded
       failed_when: false
       changed_when: false
