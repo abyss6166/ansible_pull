@@ -91,3 +91,97 @@
 #   file:
 #     path: /tmp/VBoxLinuxAdditions.run
 #     state: absent
+
+##### Claude version #####
+# Simplified VirtualBox Guest Additions for Ubuntu/Debian
+- name: install virtualbox guest additions
+  vars:
+    vbox_iso_url: "http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso"
+    mount_point: "/mnt/vbox-iso"
+
+  block:
+    - name: get kernel version
+      command: uname -r
+      register: kernel_ver
+      changed_when: false
+      tags: virtualbox
+
+    - name: install dependencies
+      apt:
+        name:
+          - build-essential
+          - dkms
+          - "linux-headers-{{ kernel_ver.stdout }}"
+          - gcc
+          - make
+          - perl
+          - bzip2
+        state: present
+        update_cache: true
+        cache_valid_time: 3600
+      become: true
+      tags: virtualbox
+
+    - name: check if already installed
+      command: lsmod | grep -q vboxguest
+      register: vbox_loaded
+      failed_when: false
+      changed_when: false
+      tags: virtualbox
+
+    - name: install guest additions from iso
+      block:
+        - name: download guest additions iso
+          get_url:
+            url: "{{ vbox_iso_url }}"
+            dest: "/tmp/VBoxGuestAdditions.iso"
+            mode: '0644'
+          become: true
+
+        - name: create mount point
+          file:
+            path: "{{ mount_point }}"
+            state: directory
+            mode: '0755'
+          become: true
+
+        - name: mount iso
+          mount:
+            path: "{{ mount_point }}"
+            src: "/tmp/VBoxGuestAdditions.iso"
+            fstype: iso9660
+            opts: loop,ro
+            state: mounted
+          become: true
+
+        - name: run installer
+          command: "sh {{ mount_point }}/VBoxLinuxAdditions.run --nox11"
+          become: true
+          register: install_output
+          failed_when:
+            - install_output.rc != 0
+            - "'successfully installed' not in install_output.stdout"
+
+        - name: show results
+          debug:
+            msg: "Guest Additions installed: {{ install_output.stdout_lines[-1] | default('Installation completed') }}"
+
+      when: vbox_loaded.rc != 0
+      tags: virtualbox
+
+  always:
+    - name: cleanup
+      mount:
+        path: "{{ mount_point }}"
+        state: unmounted
+      become: true
+      ignore_errors: true
+      tags: virtualbox
+
+    - name: remove mount point
+      file:
+        path: "{{ mount_point }}"
+        state: absent
+      become: true
+      ignore_errors: true
+      tags: virtualbox
