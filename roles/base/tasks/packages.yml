@@ -38,6 +38,7 @@
 
       partial_availability:
         - eza
+      when: ansible_distribution == "Debian"
         - fastfetch
         - onedrive  ## Not available on Arch
         - zoxide
