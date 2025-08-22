@@ -87,7 +87,7 @@
         - partial_package_result is defined
         - partial_package_result.failed | default(false)
         
-  rescue:
-    - name: handle package installation failure
-      debug:
-        msg: "Package installation failed. Check package names for your distribution."
+  # rescue:
+  #   - name: handle package installation failure
+  #     debug:
+  #       msg: "Package installation failed. Check package names for your distribution."
