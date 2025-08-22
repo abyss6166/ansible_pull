@@ -65,8 +65,9 @@
         - zoxide
 
   package:
-    name: "{{ package_groups.partial_availability }}"
+    name: "{{ item }}"
     state: present
+  loop: "{{ package_groups.partial_availability }}"
   ignore_errors: true
   register: partial_package_result
 
