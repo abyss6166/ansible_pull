@@ -1,3 +1,5 @@
+---
+
 - name: download gtk.css file
   tags: gtk,css
   copy:
@@ -26,14 +28,6 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-# - name: download dock icons
-#   tags: cairo-dock
-#   copy:
-#     src: files/notepadqq.svg
-#     dest: /home/{{ user }}/.icons
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-
 - name: download dock icons
   tags: cairo-dock
   copy:
@@ -58,4 +52,12 @@
 #     owner: "{{ user }}"
 #     group: "{{ user }}"
 #     backup: yes
+
+# - name: download dock icons
+#   tags: cairo-dock
+#   copy:
+#     src: files/notepadqq.svg
+#     dest: /home/{{ user }}/.icons
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
 

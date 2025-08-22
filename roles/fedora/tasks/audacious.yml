@@ -1,11 +1,4 @@
-- name: create audacious directory
-  tags: geany
-  file:
-    path: /home/{{ user }}/.config/audacious
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0755
+---
 
 - name: install audacious files
   unarchive:
