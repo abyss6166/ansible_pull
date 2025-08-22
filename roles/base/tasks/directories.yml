@@ -3,11 +3,45 @@
 - name: create directories
   tags: directories,geany
   file:
-    path: /home/{{ user }}/{{item}}
+    path: /home/{{ user }}/{{ item }}
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
-    mode: 0755
+    mode: '0755'
   with_items:
       - ".config/geany"
-      - ".config/neofetch"
+      - ".vim/colors"
+      - ".vim/plugged"
+      - ".vim/autoload"
+      - ".local/share/fonts"
+
+- name: create conky directory
+  tags: conky
+  file:
+    path: /etc/conky
+    state: directory
+    mode: '0755'
+    owner: root
+    group: root
+
+# - name: create vim directories
+#   tags: vim
+#   file:
+#     path: /home/{{ user }}/.vim/{{ item }}
+#     state: directory
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     mode: '0755'
+#   with_items:
+#     - "colors"
+#     - "plugged"
+#     - "autoload"
+
+# - name: create font directory
+#   tags: font
+#   file:
+#     path: /home/{{ user }}/.local/share/fonts
+#     state: directory
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     mode: '0755'

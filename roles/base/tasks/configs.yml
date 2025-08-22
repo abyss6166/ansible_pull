@@ -1,37 +1,57 @@
 ---
 
-- name: generate aliasrc file from template
-  tags: aliasrc
-  template:
-    src: "{{ alias_template_file }}"
-    dest: /home/{{ user }}/aliasrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0644
+- name: configure user dotfiles
+  vars:
+    user_home: "/home/{{ user }}"
+    dotfiles:
+      - { src: "{{ alias_template_file }}", dest: "aliasrc", tag: "aliasrc" }
+      - { src: "{{ zshrc_template_file }}", dest: ".zshrc", tag: "zshrc" }
+      - { src: "{{ vimrc_template_file }}", dest: ".vimrc", tag: "vimrc" }
 
-- name: generate zshrc file from template
-  tags: zshrc
-  template:
-    src: "{{ zshrc_template_file }}"
-    dest: /home/{{ user }}/.zshrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0644
+  block:
+    - name: validate user exists
+      getent:
+        database: passwd
+        key: "{{ user }}"
 
-- name: generate vimrc file from template
-  tags: vimrc
-  template:
-    src: "{{ vimrc_template_file }}"
-    dest: /home/{{ user }}/.vimrc
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0644
+    - name: generate dotfiles from templates
+      template:
+        src: "{{ item.src }}"
+        dest: "{{ user_home }}/{{ item.dest }}"
+        owner: "{{ user }}"
+        group: "{{ user }}"
+        mode: '0644'
+        backup: yes
+      loop: "{{ dotfiles }}"
+      tags: 
+        - dotfiles
+        - "{{ item.tag }}"
 
-- name: install neofetch config
-  copy:
-    src: files/neofetchconfig.conf
-    dest: /home/{{ user }}/.config/neofetch/config.conf
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
 
+
+# - name: generate aliasrc file from template
+#   tags: aliasrc
+#   template:
+#     src: "{{ alias_template_file }}"
+#     dest: /home/{{ user }}/aliasrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     mode: 0644
+
+# - name: generate zshrc file from template
+#   tags: zshrc
+#   template:
+#     src: "{{ zshrc_template_file }}"
+#     dest: /home/{{ user }}/.zshrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     mode: 0644
+
+# - name: generate vimrc file from template
+#   tags: vimrc
+#   template:
+#     src: "{{ vimrc_template_file }}"
+#     dest: /home/{{ user }}/.vimrc
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     mode: 0644

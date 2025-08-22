@@ -1,11 +1,4 @@
-- name: create font directory
-  tags: font
-  file:
-    path: /home/{{ user }}/.local/share/fonts
-    state: directory
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0755
+---
 
 - name: install fonts
   tags: font,fonts
