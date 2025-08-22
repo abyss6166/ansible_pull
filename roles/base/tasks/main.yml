@@ -21,9 +21,9 @@
     - name: create directories
       include_tasks: directories.yml
     
-    - name: install general packages
-      include_tasks: packages.yml
-      when: ansible_distribution != "Void"
+    # - name: install general packages
+    #   include_tasks: packages.yml
+    #   when: ansible_distribution != "Void"
     
     - name: apply config files
       include_tasks: configs.yml
