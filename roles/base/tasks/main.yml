@@ -21,13 +21,10 @@
     - name: create directories
       include_tasks: directories.yml
     
-    # - name: install general packages
-    #   include_tasks: packages.yml
-    #   when: ansible_distribution != "Void"
+    - name: install general packages
+      include_tasks: packages.yml
+      when: ansible_distribution != "Void"
     
-    - name: apply config files
-      include_tasks: configs.yml
-
     - name: configure applications
       include_tasks: "{{ item }}"
       loop:
@@ -36,6 +33,9 @@
         - fonts.yml
         - vim.yml
         - fzf.yml
+
+    - name: apply config files
+      include_tasks: configs.yml
 
     - name: Configure OneDrive GUI
       include_tasks: tasks/onedrivegui.yml
