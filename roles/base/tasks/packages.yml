@@ -55,14 +55,14 @@
       ignore_errors: true
       register: variable_package_result
     
-    - name: install packages not available on all distributions
-      package:
-        name: "{{ package_groups.partial_availability }}"
-        state: present
-      ignore_errors: true
-      register: partial_package_result
-      failed_when: false
+- name: install packages not available on all distributions
+  package:
+    name: "{{ package_groups.partial_availability }}"
+    state: present
+  ignore_errors: true
+  register: partial_package_result
 
+  block:
     - name: report failed variable installations
       debug:
         msg: "Failed to install some packages: {{ variable_package_result.msg | default('Unknown error') }}"
