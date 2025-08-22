@@ -56,6 +56,14 @@
       register: variable_package_result
     
 - name: install packages not available on all distributions
+  vars:
+    package_groups:
+      partial_availability:
+        - eza
+        - fastfetch
+        - onedrive  ## Not available on Arch
+        - zoxide
+
   package:
     name: "{{ package_groups.partial_availability }}"
     state: present
