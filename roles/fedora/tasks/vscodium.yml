@@ -19,4 +19,4 @@
   dnf:
     name:
       - codium
-    state: latest
+    state: present

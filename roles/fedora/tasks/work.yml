@@ -30,7 +30,7 @@
   dnf:
     name:
       - '@virtualization'
-    state: latest
+    state: present
 
 - name: add libvirt group
   command: 

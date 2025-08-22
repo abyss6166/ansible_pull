@@ -26,7 +26,7 @@
       - gstreamer1-plugin-openh264
       - mozilla-openh264
     enablerepo: fedora-cisco-openh264
-    state: latest
+    state: present
   when: ansible_distribution == "Fedora"
 
 # - name: install openh264
