@@ -38,7 +38,6 @@
 
       partial_availability:
         - eza
-      when: ansible_distribution == "Debian"
         - fastfetch
         - onedrive  ## Not available on Arch
         - zoxide
@@ -62,22 +61,23 @@
         state: present
       ignore_errors: true
       register: partial_package_result
+      failed_when: false
 
-  #   - name: report failed variable installations
-  #     debug:
-  #       msg: "Failed to install some packages: {{ variable_package_result.msg | default('Unknown error') }}"
-  #     when: 
-  #       - variable_package_result is defined
-  #       - variable_package_result.failed | default(false)
+    - name: report failed variable installations
+      debug:
+        msg: "Failed to install some packages: {{ variable_package_result.msg | default('Unknown error') }}"
+      when: 
+        - variable_package_result is defined
+        - variable_package_result.failed | default(false)
 
-  #   - name: report failed partial availability installations
-  #     debug:
-  #       msg: "Failed to install some packages: {{ partial_package_result.msg | default('Unknown error') }}"
-  #     when: 
-  #       - partial_package_result is defined
-  #       - partial_package_result.failed | default(false)
+    - name: report failed partial availability installations
+      debug:
+        msg: "Failed to install some packages: {{ partial_package_result.msg | default('Unknown error') }}"
+      when: 
+        - partial_package_result is defined
+        - partial_package_result.failed | default(false)
         
-  # rescue:
-  #   - name: handle package installation failure
-  #     debug:
-  #       msg: "Package installation failed. Check package names for your distribution."
+  rescue:
+    - name: handle package installation failure
+      debug:
+        msg: "Package installation failed. Check package names for your distribution."
