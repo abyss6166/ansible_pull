@@ -14,7 +14,6 @@
     #     database: passwd
     #     key: "{{ user }}"
 
-- name: generate dotfiles from templates
   template:
     src: "{{ item.src }}"
     dest: "{{ user_home }}/{{ item.dest }}"
@@ -23,9 +22,6 @@
     mode: '0644'
     backup: yes
   loop: "{{ dotfiles }}"
-  tags: 
-    - dotfiles
-    - "{{ item.tag }}"
 
 
 
