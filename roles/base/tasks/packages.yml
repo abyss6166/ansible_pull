@@ -62,6 +62,7 @@
   ignore_errors: true
   register: partial_package_result
 
+- name: reporting
   block:
     - name: report failed variable installations
       debug:
