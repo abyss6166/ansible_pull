@@ -1,25 +1,29 @@
+---
+
 - name: collect uname
   tags: virtualbox
   shell: uname -r
   register: uname_result
 
-# - name: install packages for VirtualBox
-#   tags: virtualbox
-#   apt:
-#     name:
-#       - build-essential
-#       - dkms
-#       - gcc
-#       - make
-#       - linux-headers-{{ uname_result.stdout }}
+- name: install packages for VirtualBox
+  tags: virtualbox
+  apt:
+    name:
+      - build-essential
+      - dkms
+      - gcc
+      - make
+      - linux-headers-{{ uname_result.stdout }}
+      - virtualbox-guest-utils 
+      - virtualbox-guest-x11
 
-# - name: Download VirtualBox Guest Additions install file
-#   tags: virtualbox
-#   get_url:
-#     url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
-#     dest: /tmp
-#     owner: root
-#     group: root
+- name: Download VirtualBox Guest Additions install file
+  tags: virtualbox
+  get_url:
+    url: http://download.virtualbox.org/virtualbox/{{ vbox_version }}/VBoxGuestAdditions_{{ vbox_version }}.iso
+    dest: /tmp
+    owner: root
+    group: root
 
 - name: create directory
   tags: directory
@@ -45,22 +49,11 @@
     mode: +x
     owner: root
     group: root
-    mode: 0644
 
 - name: set guest additions script to executable
   file:
     path: /tmp/VBoxLinuxAdditions.run
     mode: +x
-
-# - name: install VirtualBox Guest Additions
-#   tags: virtualbox
-#   become: true
-#   shell:
-#     cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
-#     chdir: /tmp
-#   args:
-#     executable: /bin/bash
-#   ignore_errors: true
 
 - name: install VirtualBox Guest Additions
   tags: virtualbox
@@ -71,22 +64,15 @@
       '^Do': "Yes"
   ignore_errors: true
 
-# - hosts: "{{ hosts }}"
-#   tasks:
-#   - name: mysql_secure_installation Command Test
-#     expect:
-#       command: mysql_secure_installation
-#       responses:
-#         'Enter current password for root (enter for none):': "\n"
-#         'Set root password? [Y/n]:': 'y'
-#         'New password:': '123456'
-#         'Re-enter new password:': '123456'
-#         'Remove anonymous users? [Y/n]:': 'y'
-#         'Disallow root login remotely? [Y/n]:': 'y'
-#         'Remove test database and access to it? [Y/n]:': 'y'
-#         'Reload privilege tables now? [Y/n]:': 'y'
-
-#       echo: yes
+# - name: install VirtualBox Guest Additions
+#   tags: virtualbox
+#   become: true
+#   shell:
+#     cmd: sudo sh ./VBoxLinuxAdditions.run --nox11 > /dev/null
+#     chdir: /tmp
+#   args:
+#     executable: /bin/bash
+#   ignore_errors: true
 
 
 # - name: Unmount VirtualBox iso

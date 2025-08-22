@@ -1,3 +1,5 @@
+---
+
 - block:
   - include_tasks: ../debian/tasks/directories.yml
   - include_tasks: packages.yml
@@ -10,9 +12,9 @@
   - include_tasks: ../lubuntu/tasks/vscodium.yml
   - include_tasks: cleanup.yml
 
-  # - include_tasks: ../debian/tasks/oh-my-posh.yml
-  # - include_tasks: virtualbox.yml
-  #   when: ansible_virtualization_type == 'virtualbox'
+  - include_tasks: ../fedora/tasks/oh-my-posh.yml
+  - include_tasks: virtualbox.yml
+    when: ansible_virtualization_type == 'virtualbox'
 
   # - include_tasks: btop.yml
   # - include_tasks: samba.yml
