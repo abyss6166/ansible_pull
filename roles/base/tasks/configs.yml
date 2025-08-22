@@ -8,24 +8,24 @@
       - { src: "{{ zshrc_template_file }}", dest: ".zshrc", tag: "zshrc" }
       - { src: "{{ vimrc_template_file }}", dest: ".vimrc", tag: "vimrc" }
 
-  block:
+  # block:
     # - name: validate user exists
     #   getent:
     #     database: passwd
     #     key: "{{ user }}"
 
-    - name: generate dotfiles from templates
-      template:
-        src: "{{ item.src }}"
-        dest: "{{ user_home }}/{{ item.dest }}"
-        owner: "{{ user }}"
-        group: "{{ user }}"
-        mode: '0644'
-        backup: yes
-      loop: "{{ dotfiles }}"
-      tags: 
-        - dotfiles
-        - "{{ item.tag }}"
+- name: generate dotfiles from templates
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ user_home }}/{{ item.dest }}"
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0644'
+    backup: yes
+  loop: "{{ dotfiles }}"
+  tags: 
+    - dotfiles
+    - "{{ item.tag }}"
 
 
 
