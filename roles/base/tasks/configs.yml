@@ -9,10 +9,10 @@
       - { src: "{{ vimrc_template_file }}", dest: ".vimrc", tag: "vimrc" }
 
   block:
-    - name: validate user exists
-      getent:
-        database: passwd
-        key: "{{ user }}"
+    # - name: validate user exists
+    #   getent:
+    #     database: passwd
+    #     key: "{{ user }}"
 
     - name: generate dotfiles from templates
       template:
