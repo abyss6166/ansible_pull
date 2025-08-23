@@ -4,6 +4,7 @@
   - include_tasks: nala.yml
   - include_tasks: ../antix/tasks/zsh-alias.yml
   - include_tasks: files.yml
+  - include_tasks: vim.yml
   - include_tasks: xfconf.yml
   - include_tasks: tilix_config.yml
   - include_tasks: autologin.yml
