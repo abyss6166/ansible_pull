@@ -8,10 +8,26 @@
     owner: "{{ user }}"
     group: "{{ user }}"
     
-- name: tilix settings
+# - name: tilix settings
+#   become_user: "{{ user }}"
+#   shell:
+#     cmd: dconf load /com/gexperts/Tilix/ < tilix.dconf
+#     chdir: /home/{{ user }}
+#   args:
+#     executable: /bin/bash
+
+- name: load tilix dconf settings
+  tags: tilix
+  become: true
   become_user: "{{ user }}"
-  shell:
-    cmd: dconf load /com/gexperts/Tilix/ < tilix.dconf
-    chdir: /home/{{ user }}
+  shell: |
+    export DISPLAY=${DISPLAY:-:0}
+    dconf load /com/gexperts/Tilix/ < ~/.config/tilix.dconf
   args:
     executable: /bin/bash
+  when: 
+    - dconf_check.rc == 0
+    - tilix_config_copied is changed or tilix_force_reload | default(false)
+  register: dconf_load_result
+  failed_when: dconf_load_result.rc != 0
+  changed_when: dconf_load_result.rc == 0
