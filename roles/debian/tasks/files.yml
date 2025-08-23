@@ -24,11 +24,6 @@
     src: files/cairo-dock.tar.gz
     dest: /home/{{ user }}/.config/
 
-# - name: download Writer icon
-#   copy:
-#     src: files/LibreOffice_Writer.png
-#     dest: /home/{{ user }}/.config/cairo-dock/current_theme/icons
-
 - name: download settings script
   tags: settings
   copy:

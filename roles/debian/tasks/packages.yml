@@ -7,7 +7,6 @@
       - cairo-dock
       - dconf-cli
       - python3-psutil
-      - rsync
     state: latest
 
 - name: install spice
