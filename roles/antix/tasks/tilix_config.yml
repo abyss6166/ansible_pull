@@ -22,6 +22,6 @@
   become_user: "{{ user }}"
   shell: |
     export DISPLAY=${DISPLAY:-:0}
-    dconf load /com/gexperts/Tilix/ < ~/.config/tilix.dconf
+    dconf load /com/gexperts/Tilix/ < /home/{{ user }}/tilix.dconf
   args:
     executable: /bin/bash
