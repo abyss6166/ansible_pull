@@ -1,3 +1,5 @@
+---
+
 - name: cleanup package cache
   apt:
     autoclean: yes
@@ -11,7 +13,7 @@
 
 - name: remove install folders
   file:
-    path: /home/{{ user }}/{{item}}
+    path: /home/{{ user }}/{{ item }}
     state: absent
   with_items:
     - "install.sh"

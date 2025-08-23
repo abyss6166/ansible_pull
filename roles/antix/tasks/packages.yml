@@ -13,4 +13,4 @@
       - nitrogen
       - onedrive
       - fonts-terminus
-    state: latest
+    state: present

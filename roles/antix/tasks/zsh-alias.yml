@@ -40,21 +40,18 @@
     update: yes
     force: true
 
-- name: copy zsh config
-  tags: zsh
+- name: install zsh configuration files
+  tags: [zsh, config]
   copy:
-    src: files/zshrc
-    dest: /home/{{ user }}/.zshrc
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     owner: "{{ user }}"
     group: "{{ user }}"
-
-- name: copy p10k config
-  tags: zsh
-  copy:
-    src: files/p10k.zsh
-    dest: /home/{{ user }}/.p10k.zsh
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    mode: '0644'
+    backup: yes
+  loop:
+    - { src: "files/zshrc", dest: "/home/{{ user }}/.zshrc" }
+    - { src: "files/p10k.zsh", dest: "/home/{{ user }}/.p10k.zsh" }
 
 - name: change shell
   tags: zsh,shell

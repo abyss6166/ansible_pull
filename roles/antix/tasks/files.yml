@@ -69,19 +69,17 @@
     regexp: '^let g:airline_theme'
     line: "let g:airline_theme='light'"
 
-- name: install vim themes - 1
+- name: install vim onedark theme files
+  tags: [vimrc, theme]
   copy:
-    src: files/onedark-autoload.vim
-    dest: /home/{{ user }}/.vim/autoload/onedark.vim
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
     owner: "{{ user }}"
     group: "{{ user }}"
-
-- name: install vim themes - 2
-  copy:
-    src: files/onedark-colors.vim
-    dest: /home/{{ user }}/.vim/colors/onedark.vim
-    owner: "{{ user }}"
-    group: "{{ user }}"
+    mode: '0644'
+  loop:
+    - { src: "files/onedark-autoload.vim", dest: "/home/{{ user }}/.vim/autoload/onedark.vim" }
+    - { src: "files/onedark-colors.vim", dest: "/home/{{ user }}/.vim/colors/onedark.vim" }
 
 - name: install compton config
   copy:
@@ -102,24 +100,18 @@
     regexp: '^feh'
     line: "feh --no-fehbg --bg-scale '/usr/share/wallpaper/debian.jpg'"
 
-- name: install conky config file
+- name: install conky configuration
   tags: conky
   copy:
-    src: files/conkyrc
-    dest: /home/{{ user }}/.conkyrc
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
     backup: yes
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
-- name: install conkywonky
-  tags: conky
-  copy:
-    src: files/conkywonky
-    dest: /usr/bin/
-    backup: yes
-    mode: +x
-    owner: "root"
-    group: "root"
+  loop:
+    - { src: "files/conkyrc", dest: "/home/{{ user }}/.conkyrc", owner: "{{ user }}", group: "{{ user }}", mode: "0644" }
+    - { src: "files/conkywonky", dest: "/usr/bin/conkywonky", owner: "root", group: "root", mode: "0755" }
 
 - name: install gtk3 config file
   tags: gtk
@@ -138,14 +130,6 @@
     owner: "{{ user }}"
     group: "{{ user }}"
 
-# - name: create anyconnect download directory
-#   file:
-#     path: /home/{{ user }}/Downloads/anyconnect/
-#     state: directory
-#     owner: root
-#     group: root
-#     mode: 0775
-
 - name: extract anyconnect archive
   unarchive:
     src: files/anyconnect-linux64-4.10.07073.tar.gz
@@ -154,63 +138,13 @@
     group: "{{ user }}"
     # creates: yes
 
-- name: install firefox.desktop file
+- name: install desktop files and icons
   copy:
-    src: files/firefox.desktop
-    dest: /usr/share/applications/firefox.desktop
-    owner: "root"
-    group: "root"
-
-- name: install Teams icon
-  copy:
-    src: files/Microsoft_Office_Teams.svg
-    dest: /.local/share/icons/
-    owner: "{{ user }}"
-    group: "{{ user }}"
-
-
-# - name: install menu icon
-#   copy:
-#     src: files/menu-bar.png
-#     dest: /usr/share/icons/
-#     owner: root
-#     group: root
-
-# - name: download tilix settings script
-#   tags: tilix,settings
-#   copy:
-#     src: files/tilix.sh
-#     dest: /home/{{ user }}
-#     mode: +x
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-
-# - name: install sources.list
-#   copy:
-#     src: files/sources.list
-#     dest: /etc/apt/
-#     owner: "root"
-#     group: "root"
-#     backup: yes
-
-# - name: install jwm configs
-#   copy:
-#     src: files/{{ item }}
-#     dest: /home/{{ user }}/.jwm/
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-#   with_items:
-#     - menu
-#     - startup
-#     - theme
-#     - tray
-
-# - name: install jwmrc config
-#   copy:
-#     src: files/jwmrc
-#     dest: /home/{{ user }}/.jwmrc
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode | default('0644') }}"
+  loop:
+    - { src: "files/firefox.desktop", dest: "/usr/share/applications/firefox.desktop", owner: "root", group: "root" }
+    - { src: "files/Microsoft_Office_Teams.svg", dest: "/home/{{ user }}/.local/share/icons/Microsoft_Office_Teams.svg", owner: "{{ user }}", group: "{{ user }}" }
