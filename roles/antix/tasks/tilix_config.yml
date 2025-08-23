@@ -25,3 +25,4 @@
     dconf load /com/gexperts/Tilix/ < /home/{{ user }}/tilix.dconf
   args:
     executable: /bin/bash
+  ignore_errors: true
