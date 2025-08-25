@@ -1,3 +1,5 @@
+---
+
 - name: copy desktop background
   copy:
     src: files/joy-theme_1920x1080.svg
