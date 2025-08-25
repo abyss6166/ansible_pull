@@ -43,6 +43,7 @@
     name: vboxservice
     state: started
     enabled: yes
+  when: ansible_virtualization_type == "virtualbox"
 
 - name: back up poshtheme file
   tags: poshtheme
