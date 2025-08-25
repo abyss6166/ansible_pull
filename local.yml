@@ -3,50 +3,60 @@
   become: true
 
   pre_tasks:
-    - name: update repo and upgrade
+    - name: Update package cache and upgrade all packages (non-Arch)
       tags: always
       package:
-        update_cache: yes
+        update_cache: true
         name: "*"
         state: latest
-      when: ansible_distribution != "Archlinux"
-    
-    - name: update Arch
+      when: ansible_distribution not in ["Archlinux", "Void"]
+      register: package_update
+      
+    - name: Update Arch Linux packages
       tags: arch
       pacman:
-        update_cache: yes
-        upgrade: yes
+        update_cache: true
+        upgrade: true
       when: ansible_distribution == "Archlinux"
+      register: arch_update
+      
+    - name: Update Void Linux packages
+      tags: void
+      xbps:
+        update_cache: true
+        upgrade: true
+      when: ansible_distribution == "Void"
+      register: void_update
 
-- name: get flavor
+- name: Get Ubuntu flavor information
+  shell:
+    cmd: cat /var/log/installer/media-info | awk '{print $1}' 2>/dev/null || echo "unknown"
+    executable: /bin/bash
+  register: flavor
+  failed_when: false
+  changed_when: false
+  when: ansible_distribution == "Ubuntu"
+
+- name: Detect distribution variants
   hosts: localhost
+  connection: local
+  gather_facts: false
+  
   tasks:
-    - shell:
-        cmd: cat /var/log/installer/media-info | awk '{print $1}'
-      register: flavor
-      args:
-        executable: /bin/bash
-    - debug:
-        msg={{flavor.stdout}}
-
-# - name: get hostname
-#   hosts: localhost
-#   tasks:
-#     - shell:
-#         cmd: hostname
-#       register: hostname
-#       args:
-#         executable: /bin/bash
-#     - debug:
-#         msg={{hostname.stdout}}
-
-# - hosts: localhost
-#   connection: local
-#   tags: fedora,debian,lubuntu,void,arch
-#   become: true
-#   roles:
-#     - role: arch
-#       when: ansible_distribution == "Archlinux"
+    - name: Check if distribution is Crunch Bang ++
+      stat:
+        path: /usr/bin/cbpp-welcome
+      register: cbpp_check
+      
+    - name: Check if distribution is antiX
+      stat:
+        path: /usr/share/antiX/issue
+      register: antix_check
+      
+    - name: Set distribution variant facts
+      set_fact:
+        is_cbpp: "{{ cbpp_check.stat.exists | default(false) }}"
+        is_antix: "{{ antix_check.stat.exists | default(false) }}"
 
 - hosts: localhost
   connection: local
@@ -54,29 +64,54 @@
   become: true
   roles:
     - role: base
-      # when: hostname.stdout != "cbpp"
-      # when: ansible_distribution != "Archlinux"
 
-- hosts: localhost
+- name: Apply distribution-specific configurations
+  hosts: localhost
   connection: local
-  tags: fedora,debian,lubuntu,void,arch
   become: true
+  
   roles:
     - role: fedora
       when: ansible_distribution == "Fedora"
+      tags: fedora
+      
     - role: cbpp
-      when: ansible_hostname == "cbpp"
+      when: ansible_hostname == "cbpp" or is_cbpp | default(false)
+      tags: debian
+      
     - role: antix
-      when: ansible_hostname == "antix"
+      when: ansible_hostname in ["antix", "antix1"] or is_antix | default(false)
+      tags: debian
+      
     - role: debian
-      when: ansible_distribution == "Debian" and ansible_hostname != "cbpp" and ansible_hostname != "antix"
+      when: 
+        - ansible_distribution == "Debian"
+        - not (is_cbpp | default(false))
+        - not (is_antix | default(false))
+        - ansible_hostname not in ["cbpp", "antix", "antix1"]
+      tags: debian
+      
     - role: lubuntu
-      when: flavor.stdout == "Lubuntu"
+      when: 
+        - ansible_distribution == "Ubuntu"
+        - ubuntu_flavor | default('') == "Lubuntu"
+      tags: lubuntu
+      
     - role: puppetmaster
       when: ansible_hostname == "ubuntuserver"
+      tags: ubuntu
+      
     - role: void
       when: ansible_distribution == "Void"
+      tags: void
+      
     - role: ubuntu
-      when: ansible_distribution == "Ubuntu" and ansible_hostname != "ubuntuserver"
+      when: 
+        - ansible_distribution == "Ubuntu"
+        - ansible_hostname != "ubuntuserver"
+        - ubuntu_flavor | default('') != "Lubuntu"
+      tags: ubuntu
+      
     - role: arch
       when: ansible_distribution == "Archlinux"
+      tags: arch
