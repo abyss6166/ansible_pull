@@ -1,40 +1,10 @@
+---
+
 - name: install packages
   tags: base
   community.general.pacman:
     name: '{{item}}'
   loop:
-      # Base
-      # - zsh
-      # - zsh-syntax-highlighting
-      # - zsh-autosuggestions
-      # - tilix
-      # - htop
-      # - conky
-      # - ncdu
-      # - bat
-      # - samba
-      # - cifs-utils
-      # - "{{ firefox_package }}"
-      # - thunderbird
-      # - "{{ libreoffice_package }}"
-      # - gnupg
-      # - geany
-      # - unzip
-      # - dconf-editor
-      # - "{{ chromium_package }}"
-      # - "{{ ssh_package }}"
-      # - btop
-      # - copyq
-      # - "{{ fd_package }}"
-      # - fzf
-      # - ripgrep
-      # - duf
-      # - vim
-      # - vi
-      # # - smbclient
-      # - neofetch
-      # - rsync
-
       # Desktop environment
       - xorg
       - lightdm
@@ -86,7 +56,6 @@
       - caja
       - discord
       - ark
-      # - nomacs  #not in Arch repos
       - dolphin
       - fastfetch
       - xsel
@@ -113,3 +82,39 @@
       - obsidian-icon-theme
       # - arc-theme
   # state: latest
+
+
+
+
+      # Base
+      # - zsh
+      # - zsh-syntax-highlighting
+      # - zsh-autosuggestions
+      # - tilix
+      # - htop
+      # - conky
+      # - ncdu
+      # - bat
+      # - samba
+      # - cifs-utils
+      # - "{{ firefox_package }}"
+      # - thunderbird
+      # - "{{ libreoffice_package }}"
+      # - gnupg
+      # - geany
+      # - unzip
+      # - dconf-editor
+      # - "{{ chromium_package }}"
+      # - "{{ ssh_package }}"
+      # - btop
+      # - copyq
+      # - "{{ fd_package }}"
+      # - fzf
+      # - ripgrep
+      # - duf
+      # - vim
+      # - vi
+      # # - smbclient
+      # - neofetch
+      # - rsync
+

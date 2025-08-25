@@ -1,3 +1,5 @@
+---
+
 - name: create safe git directory
   tags: git
   shell:
@@ -8,27 +10,6 @@
     - git
     - git/polybar
     - git/yay
-
-# - name: create safe git directory
-#   tags: git
-#   shell:
-#     cmd: git config --global --add safe.directory /home/{{ user }}/git
-#   args:
-#     executable: /bin/bash
-
-# - name: create safe git directory
-#   tags: git
-#   shell:
-#     cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
-#   args:
-#     executable: /bin/bash
-
-# - name: create safe git directory
-#   tags: git
-#   shell:
-#     cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
-#   args:
-#     executable: /bin/bash
 
 - name: create git config info - 1
   tags: git
@@ -74,37 +55,6 @@
 - name: change pacman-updates script to executable
   command: "chmod +x /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh"
 
-# - name: change pacman-updates script to executable
-#   tags: polybar,pacman
-#   file:
-#     path: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
-#     mode: +x
-  #   owner: "{{ user }}"
-  #   group: "{{ user }}"
-  # become_user: "{{ user }}"
-  # become_pass: "{{ userpass }}"
-
-# - name: edit pacman-updates script
-#   lineinfile:
-#     dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
-#     state: present
-#     regexp: 'echo "# $updates"'
-#     line: 'echo "$updates"'
-
-- name: edit inbox-imap script-1
-  lineinfile:
-    dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
-    state: present
-    regexp: "'^obj = imaplib.IMAP4_SSL('imap.mail.com', 993)"
-    line: "'obj = imaplib.IMAP4_SSL('imap.gmail.com', 993)'"
-
-- name: edit inbox-imap script-2
-  lineinfile:
-    dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
-    state: present
-    regexp: '^obj.login'
-    line: "'obj.login('msh1921@jagmail.southalabama.edu', password)'"
-
 - name: Clone yay
   become_user: "{{ user }}"
   become_method: su
@@ -112,21 +62,6 @@
     repo: https://aur.archlinux.org/yay-bin.git
     dest: /home/{{ user }}/git/yay
     update: true
-
-# - name: install pexpect
-#   pip:
-#     name: pexpect
-
-# - name: Build and install yay
-#   become_user: "{{ user }}"
-#   become_method: su
-#   expect:
-#     command:
-#       chdir: /home/{{ user }}/git/yay
-#       cmd: "makepkg -sfi --noconfirm"
-#       creates: /usr/bin/yay
-#     responses:
-#       (?i)password: "msh"
 
 - name: Build and install yay
   become_user: "{{ user }}"
@@ -221,4 +156,71 @@
 #     cmd: git config --global --add safe.directory /home/{{ user }}/.config/i3blocks/scripts
 #   args:
 #     executable: /bin/bash
+
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git
+#   args:
+#     executable: /bin/bash
+
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git/polybar
+#   args:
+#     executable: /bin/bash
+
+# - name: create safe git directory
+#   tags: git
+#   shell:
+#     cmd: git config --global --add safe.directory /home/{{ user }}/git/yay
+#   args:
+#     executable: /bin/bash
+
+# - name: install pexpect
+#   pip:
+#     name: pexpect
+
+# - name: Build and install yay
+#   become_user: "{{ user }}"
+#   become_method: su
+#   expect:
+#     command:
+#       chdir: /home/{{ user }}/git/yay
+#       cmd: "makepkg -sfi --noconfirm"
+#       creates: /usr/bin/yay
+#     responses:
+#       (?i)password: "msh"
+
+# - name: change pacman-updates script to executable
+#   tags: polybar,pacman
+#   file:
+#     path: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
+#     mode: +x
+  #   owner: "{{ user }}"
+  #   group: "{{ user }}"
+  # become_user: "{{ user }}"
+  # become_pass: "{{ userpass }}"
+
+# - name: edit pacman-updates script
+#   lineinfile:
+#     dest: /home/{{ user }}/git/polybar/polybar-scripts/updates-pacman/updates-pacman.sh
+#     state: present
+#     regexp: 'echo "# $updates"'
+#     line: 'echo "$updates"'
+
+# - name: edit inbox-imap script-1
+#   lineinfile:
+#     dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
+#     state: present
+#     regexp: "'^obj = imaplib.IMAP4_SSL('imap.mail.com', 993)"
+#     line: "'obj = imaplib.IMAP4_SSL('imap.gmail.com', 993)'"
+
+# - name: edit inbox-imap script-2
+#   lineinfile:
+#     dest: /home/{{ user }}/git/polybar/polybar-scripts/inbox-imap-pythongpg/inbox-imap-python.py
+#     state: present
+#     regexp: '^obj.login'
+#     line: "'obj.login('msh1921@jagmail.southalabama.edu', password)'"
 

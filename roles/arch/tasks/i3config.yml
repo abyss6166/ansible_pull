@@ -75,15 +75,6 @@
     path: /home/{{ user }}/.config/polybar/launch.sh
     mode: +x
 
-# - name: install quiterss config
-#   tags: quiterss
-#   copy:
-#     src: ../files/QuiteRss.ini
-#     dest: /home/{{ user }}/.config/QuiteRss/
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-
 - name: install rofi config file
   tags: rofi,i3
   copy:
@@ -191,3 +182,13 @@
 #     regexp: '^Exec='
 #     line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.1-x86_64.AppImage
 #   when: ansible_distribution == "Fedora"
+
+# - name: install quiterss config
+#   tags: quiterss
+#   copy:
+#     src: ../files/QuiteRss.ini
+#     dest: /home/{{ user }}/.config/QuiteRss/
+#     owner: "{{ user }}"
+#     group: "{{ user }}"
+#     backup: yes
+

@@ -1,7 +1,7 @@
 - name: create directories
   tags: directories,theme,icons
   file:
-    path: /home/{{ user }}/{{item}}
+    path: /home/{{ user }}/{{ item }}
     state: directory
     owner: "{{ user }}"
     group: "{{ user }}"
@@ -15,7 +15,6 @@
       - ".config/onedrive"
       - "git"
       - "vaults"
-      # - ".config/QuiteRss"
       - ".ansible/tmp"
       - ".cache/dconf"
       - ".config/i3blocks"
