@@ -1,3 +1,5 @@
+---
+
 - name: check if i3 config file exists
   tags: i3
   stat:
@@ -10,15 +12,6 @@
     src: /home/{{ user }}/.config/i3/config
     dest: /home/{{ user }}/.config/i3/config.bak
   when: i3config.stat.exists
-
-- name: install i3 config file
-  tags: i3
-  copy:
-    src: files/config_poly
-    dest: /home/{{ user }}/.config/i3/config
-    backup: yes
-    owner: "{{ user }}"
-    group: "{{ user }}"
 
 - name: check if picom config file exists
   tags: picom
@@ -35,14 +28,25 @@
     group: "{{ user }}"
   when: picomconfig.stat.exists
 
-- name: install picom config file
-  tags: picom,i3
+
+- name: Install compositor and desktop component configurations
+  tags: ["{{ item.tag }}", desktop]
   copy:
-    src: files/picom.conf
-    dest: /home/{{ user }}/.config/picom/picom.conf
+    src: "files/{{ item.src }}"
+    dest: "{{ item.dest }}"
     owner: "{{ user }}"
     group: "{{ user }}"
-    backup: yes
+    mode: "{{ item.mode | default('0644') }}"
+    backup: true
+  loop:
+    - { src: "picom.conf", dest: "/home/{{ user }}/.config/picom/picom.conf", tag: "picom" }
+    - { src: "config_poly", dest: "/home/{{ user }}/.config/i3/config", tag: "i3" }
+    - { src: "config-color.ini", dest: "/home/{{ user }}/.config/polybar/config.ini", tag: "polybar" }
+    - { src: "launch-newpolybar.sh", dest: "/home/{{ user }}/.config/polybar/launch.sh", tag: "polybar", mode: "0755" }
+    - { src: "config.rasi", dest: "/home/{{ user }}/.config/rofi/config.rasi", tag: "rofi" }
+    - { src: "tilix.dconf", dest: "/home/{{ user }}/tilix.dconf", tag: "tilix" }
+    - { src: "Xresources", dest: "/home/{{ user }}/.Xresources", tag: "xresources" }
+  notify: "{{ item.notify | default(omit) }}"
 
 - name: wallpaper
   copy:
@@ -50,145 +54,4 @@
     dest: /usr/share/wallpapers/
     owner: "{{ user }}"
     group: "{{ user }}"
-
-- name: install polybar config file
-  tags: polybar,i3
-  copy:
-    src: files/config-color.ini
-    dest: /home/{{ user }}/.config/polybar/config.ini
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
-
-- name: install polybar launch file
-  tags: polybar,i3
-  copy:
-    src: files/launch-newpolybar.sh
-    dest: /home/{{ user }}/.config/polybar/launch.sh
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
-
-- name: set polybar script to executable
-  tags: polybar
-  file:
-    path: /home/{{ user }}/.config/polybar/launch.sh
-    mode: +x
-
-- name: install rofi config file
-  tags: rofi,i3
-  copy:
-    src: files/config.rasi
-    dest: /home/{{ user }}/.config/rofi/config.rasi
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
-
-- name: download tilix config file
-  tags: tilix
-  copy:
-    src: files/tilix.dconf
-    dest: /home/{{ user }}/
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
-
-- name: install Xresources file
-  tags: Xresources
-  copy:
-    src: files/Xresources
-    dest: /home/{{ user }}/.Xresources
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    backup: yes
-
-
-# - name: download script file
-#   copy:
-#     src: files/script.sh
-#     dest: /home/{{ user }}/
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-
-# - name: set script to executable
-#   file:
-#     path: /home/{{ user }}/script.sh
-#     mode: +x
-
-# - name: install i3blocks config file
-#   tags: i3blocks,i3
-#   copy:
-#     src: files/config-i3blocks
-#     dest: /home/{{ user }}/.config/i3blocks/config
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
-
-# - name: xdg-user-dirs
-#   tags: xdg
-#   shell: xdg-user-dirs-update
-
-# - name: add lines to i3 config file
-#   tags: i3
-#   blockinfile:
-#     path: /home/{{ user }}/.config/i3/config
-#     block: |
-#       # switch between workspaces
-#       bindsym $mod+Control+Left workspace prev
-#       bindsym $mod+Control+Right workspace next
-
-#       # picom
-#       exec picom
-
-# - name: add line to i3 config file
-#   tags: i3
-#   lineinfile:
-#     path: /home/{{ user }}/.config/i3/config
-#     insertbefore: '# Font for window titles.*'
-#     line: "set $mod Mod4"
-#     state: present
-
-# - name: edit i3 config
-#   tags: i3
-#   lineinfile:
-#     path: /home/{{ user }}/.config/i3/config
-#     regexp: '^bindsym $mod+Return'
-#     line: '# \1'
-#     backrefs: yes
-#     state: present
-
-# - name: edit i3 config
-#   tags: i3
-#   lineinfile:
-#     path: /home/{{ user }}/.config/i3/config
-#     insertafter: '# bindsym $mod+Return *'
-#     line: "bindsym $mod+Return exec tilix"
-#     state: present
-
-
-# - name: edit i3 config
-#   tags: i3
-#   lineinfile:
-#     path: /.config/i3/config
-#     regexp: '^bindsym $mod+Return'
-#     line: "bindsym $mod+Return exec tilix"
-
-
-# - name: edit user on OneDriveGUI entry
-#   tags: onedrive
-#   lineinfile:
-#     path: /.config/i3/config
-#     regexp: '^Exec='
-#     line: Exec=/home/{{ user }}/Downloads/OneDriveGUI-1.0.1-x86_64.AppImage
-#   when: ansible_distribution == "Fedora"
-
-# - name: install quiterss config
-#   tags: quiterss
-#   copy:
-#     src: ../files/QuiteRss.ini
-#     dest: /home/{{ user }}/.config/QuiteRss/
-#     owner: "{{ user }}"
-#     group: "{{ user }}"
-#     backup: yes
 

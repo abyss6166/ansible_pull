@@ -1,3 +1,5 @@
+---
+
 - name: add hosts to /etc/hosts file
   tags: hosts
   blockinfile:
@@ -57,6 +59,7 @@
     - { src: "gtksettings.ini", dest: "/home/{{ user }}/.config/gtk-3.0/settings.ini", tag: "gtk" }
     - { src: "vimrc", dest: "/home/{{ user }}/.vimrc", tag: "vim" }
     - { src: "OneDriveGUI.desktop", dest: "/home/{{ user }}/.local/share/applications/OneDriveGUI.desktop", tag: "onedrive", mode: "0755" }
+    - { src: "kitty.conf", dest: "/home/{{ user }}/.config/kitty/kitty.conf", tag: "kitty", mode: "0755" }
 
 - name: add extra Arch aliases - configs
   blockinfile:
