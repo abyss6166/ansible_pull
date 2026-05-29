@@ -24,6 +24,7 @@
         - rsync
         - syncthing
         - kitty
+        - flameshot
 
       variable:
         - "{{ bat }}"
